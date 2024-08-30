@@ -1,0 +1,77 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+	<div class="row">
+			<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends -->
+		
+		<div class="col-md-9 mx-auto">
+
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="col-md-12">
+						<h1 class="main-heading">{HEADING_TITLE}</h1>
+					</div>
+				</div>
+				<div class="card-body card-body-custom p-0">
+					<div class="table-responsive-sm">
+					<table class="table table-hover">
+						<thead>
+							<tr class="jobs-table-headbar">
+								<td class="style30">{TABLE_HEADING_PLAN_TYPE_NAME}</td>
+								<td class="style30">{TABLE_HEADING_PRICE}</td>
+								<td class="style30">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+								<td class="style30 m-none">{TABLE_HEADING_STATUS}</td>
+								<td class="style30 m-none">{TABLE_HEADING_PURCHASED}</td>
+								<td class="style30 m-none">{TABLE_HEADING_INSERTED}</td>
+								<td class="style30 m-none" align="middle">{TABLE_HEADING_LAST_UPDATED}</td>
+							</tr>
+						</thead>
+						<!-- BEGIN orders -->
+						<tbody>
+							<tr{orders.row_selected}>
+							<td valign="top" class="dataTableContent">{orders.plan_type_name}</td>
+							<td valign="top" class="dataTableContent">{orders.price}</td>
+							<td valign="top" class="dataTableContent" align="center">{orders.time}</td>
+							<td valign="top" class="dataTableContent m-none">{orders.status}</td>
+							<td valign="top" class="dataTableContent m-none">{orders.purchase}</td>
+							<td valign="top" class="dataTableContent m-none">{orders.inserted}</td>
+							<td valign="top" align="middle" class="dataTableContent m-none">{orders.last_updated}</td>
+						</tr>						
+						<form name="page" method="post">
+							<tr>
+								<td class="label">{total}</td>
+								<td valign="top" align="right" class="label">{list_page}&nbsp;{page}&nbsp;</td>
+							</tr>
+							{hidden_fields}
+						</form>
+					</tbody>
+					<!-- END orders -->
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+{FOOTER_HTML}

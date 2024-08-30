@@ -1,0 +1,67 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+  <div class="card">
+  {LEFT_HTML}
+    <div class="card-header card-header-custom">
+      <h1 class="main-heading">{HEADING_TITLE}</h1>
+    </div>
+	<tr><span class="small px-3 py-2">{total}</span>
+              {list_page}{page}</tr>
+    <div class="card-body p-0" id="general_search_result" {result_class}>
+      <form name="page" method="post">
+        <table class="table table-hover">
+          <thead>
+            
+            <tr>
+              <th>{TABLE_HEADING_TARGET_JOB}</th>
+              <th>{TABLE_HEADING_CATEGORIES}</th>
+              <th>{TABLE_HEADING_CITY}</th>
+              <th>{TABLE_HEADING_RESUME}</th>
+              <th>{TABLE_HEADING_RATING}</th>
+              <th>{TABLE_HEADING_AVAILABILITY}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- BEGIN search_resume_result -->
+            <tr {search_resume_result.row_selected}>
+              <td>{search_resume_result.name}</td>
+              <td>{search_resume_result.category}</td>
+              <td>{search_resume_result.city}</td>
+              <td>{search_resume_result.view}</td>
+              <td><div align="center">{search_resume_result.rating}</div></td>
+              <td><div align="center">{search_resume_result.available_status}</div></td>
+            </tr>																					
+            <!-- END search_resume_result -->
+          </tbody>
+          {hidden_fields}
+        </form>
+        <tfoot>
+          <tr>
+            <td colspan="3">{total}{list_page}{page}</td>
+            <td></td>
+            <td colspan="3">{rate_mark}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

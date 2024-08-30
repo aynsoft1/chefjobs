@@ -1,0 +1,170 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+{INFO_TEXT_JSCRIPT_FILE}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+			<!-- Left Starts -->
+					{LEFT_HTML}
+			<!-- Left Ends -->    
+		
+		<div class="col-md-9 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+            <div class="card card-custom">
+              <div class="card-header">
+                <div class="d-flex align-items-center mb-12 m-dblock">
+                  <h1 class="m-0">{INFO_TEXT_IMPORT_MULTIPLE_JOBS}</h1>
+                  <div class="d-flex ms-auto">{INFO_TEXT_SAMPLE_FILE} {INFO_TEXT_SAMPLE_FILE1}</div>
+              </div>
+              </div>
+                <div class="card-body card-body-custom">
+				 	   
+			<div class="alert-custom alert-primary" role="alert">{INFO_TEXT_IMPORT}</div>
+			{upload_form}
+			<div class="border py-2 px-3"><span class="mb-1 d-block">{INFO_TEXT_IMPORT_FILE}</span>
+			 <div>{INFO_TEXT_IMPORT_FILE1}<input type="submit" value="import now"></div>
+			 <div class="small mt-1">{INFO_TEXT_IMPORT_FILE2}</div>
+			</div>		   
+<!-- Middle Starts -->
+<p class="font-weight-bold mt-3">{INFO_TEXT_TO_IMPORT_MULTIPLE_JOBS}</p>
+<ol type="a">
+<li>{INFO_TEXT_SELECT_CSV_FILE} <a href="jobs.csv" target="_blank" style="color:#000000"><u>{INFO_TEXT_SAMPLE_CSV_FILE}</u></a><br>&nbsp;</li>
+<li>{INFO_TEXT_SELECT_XML} <a href="job_xml.xml" target="_blank" style="color:#000000"><u>{INFO_TEXT_SAMPLE_XML_FILE}</u></a></li>
+</ol>
+
+<p>{INFO_TEXT_SUBSEQUENTLY_THE_JOBS} <a href="job_search.php" target="_blank" style="color:#000000"><u>{INFO_TEXT_JOB_SEARCH_RESULTS}</u></a>.</p>
+
+<div class="alert-custom alert-primary mt-3" role="alert">{INFO_TEXT_FIELD_OVERVIEW}</div>
+<table class="table table-hover table-bordered table-sm small">
+  <thead>
+    <tr>
+      <th scope="col">{INFO_TEXT_FIELD}</th>
+      <th scope="col">{INFO_TEXT_EXAMPLE}</th>
+      <th scope="col">{INFO_TEXT_NOTES}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{INFO_TEXT_JOB_TITLE}</td>
+      <td>{INFO_TEXT_PROGRAMMER}</td>
+      <td><span class="inputRequirement">*</span> {INFO_TEXT_FREE_TEXT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_REFERENCE}</td>
+      <td>{INFO_TEXT_RECRUITMENT}</td>
+      <td>{INFO_TEXT_FREE_TEXT_THE_REFERENCE}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_COUNTRY}</td>
+      <td>{INFO_TEXT_INDIA}</td>
+      <td><span class="inputRequirement">*</span>{INFO_TEXT_FREE_TEXT_FROM_LIST_PROVIDED}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_STATE}</td>
+      <td>{INFO_TEXT_DELHI}</td>
+      <td>{INFO_TEXT_FREE_TEXT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_LOCATION}</td>
+      <td>{INFO_TEXT_JOB_NEW_DELHI}</td>
+      <td>{INFO_TEXT_FREE_TEXT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_SALARY}</td>
+      <td>{INFO_TEXT_MONEY}</td>
+      <td>{INFO_TEXT_FREE_TEXT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_INDUSTRY}</td>
+      <td>{INFO_TEXT_IT_SOFTWARE}</td>
+      <td><span class="inputRequirement">*</span> {INFO_TEXT_MAXIMUN_5}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_SHORT_DESCRIPTION}</td>
+      <td>{INFO_TEXT_SHORT_DESCRIPTION}</td>
+      <td><span class="inputRequirement">*</span> {INFO_TEXT_200_LIMIT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_DESCRIPTION}</td>
+      <td>{INFO_TEXT_DETAILED_DESCRIPTION}</td>
+      <td><span class="inputRequirement">*</span>
+{INFO_TEXT_1000_LIMIT}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_TYPE}</td>
+      <td>{INFO_TEXT_CONTRACT_PERMANENT}</td>
+      <td>{INFO_TEXT_MAXIMUN_5}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_EXPERIENCE}</td>
+      <td>5</td>
+      <td>{INFO_TEXT_AN_INTEGER}</td>
+    </tr>
+	<tr>
+      <td>{INFO_TEXT_JOB_DURATION}</td>
+      <td>5</td>
+      <td>{INFO_TEXT_AN_INTEGER_VALUE}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert-custom alert-primary mt-3" role="alert">{INFO_TEXT_XML_FILE_FORMAT}</div>
+																						<style>
+																							span.xml_blue
+																							{
+																								color:#0000FF;
+																							}
+																							span.xml_red
+																							{
+																								color:#FF0000;
+																							}
+																							span.xml_comment
+																							{
+																								color:#666666;
+																							}
+																							</style>
+<pre class="style2"><span class="xml_blue">&lt;?xml version="1.0" encoding="iso-8859-1" ?&gt; </span><br> <span class="xml_blue">&lt;</span><span class="xml_red">channel</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_title</span><span class="xml_blue">&gt;</span>Programmer<span class="xml_blue">&lt;/</span><span class="xml_red">job_title</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_reference</span><span class="xml_blue">&gt;</span>Reecuiterment 2009<span class="xml_blue">&lt;/</span><span class="xml_red">job_reference</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_country</span><span class="xml_blue">&gt;</span>India<span class="xml_blue">&lt;/</span><span class="xml_red">job_country</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_state</span><span class="xml_blue">&gt;</span>Delhi<span class="xml_blue">&lt;/</span><span class="xml_red">job_state</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_location</span><span class="xml_blue">&gt;</span>Delhi<span class="xml_blue">&lt;/</span><span class="xml_red">job_location</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_salary</span><span class="xml_blue">&gt;</span>Rs.25000<span class="xml_blue">&lt;/</span><span class="xml_red">job_salary</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_industry</span><span class="xml_blue">&gt;</span>IT/Software<span class="xml_blue">&lt;/</span><span class="xml_red">job_industry</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;!--</span> <span class="xml_comment">({INFO_TEXT_SEPARATED_BY})</span><span class="xml_blue"> --&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_short_description</span><span class="xml_blue">&gt;</span>job short description<span class="xml_blue">&lt;/</span><span class="xml_red">job_short_description</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_description</span><span class="xml_blue">&gt;</span>Detail description<span class="xml_blue">&lt;/</span><span class="xml_red">job_description</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_type</span><span class="xml_blue">&gt;</span>Contract<span class="xml_blue">&lt;/</span><span class="xml_red">job_type</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;!--</span> <span class="xml_comment">({INFO_TEXT_SEPARATED_BY_JOB_TYPE}) </span><span class="xml_blue">--&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_experience</span><span class="xml_blue">&gt;</span>5<span class="xml_blue">&lt;/</span><span class="xml_red">job_experience</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;!--</span> <span class="xml_comment">{INFO_TEXT_NUMBER_OF_MONTHS}</span><span class="xml_blue"> --&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_duration</span><span class="xml_blue">&gt;</span>5<span class="xml_blue">&lt;/</span><span class="xml_red">job_duration</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;!--</span> <span class="xml_comment">{INFO_TEXT_NUMBER_OF_DAYS}</span><span class="xml_blue"> --&gt;</span>
+  <span class="xml_blue">&lt;/</span><span class="xml_red">job</span><span class="xml_blue">&gt;</span>
+ <span class="xml_blue">&lt;/</span><span class="xml_red">channel</span><span class="xml_blue">&gt;</span>
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

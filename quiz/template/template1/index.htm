@@ -1,0 +1,45 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                    <span class="heading_bar_internal_content">
+                        <h1 class="display-6 p-0 m-0 float-left">{HEADING_TITLE}</h1>
+                    </span>
+                </div>
+                <div class="card-body card-body-custom">
+                    <table width="100%" border="0" cellpadding="4" cellspacing="1" class="forum_box">
+                        <tbody>
+                            <!-- BEGIN quizs -->
+                            <tr class="forum_header_bar">
+                                <td colspan="2" class="forum-category">
+                                    {quizs.title}
+                                </td>
+                                <td width="86" class="font-weight-bold dnone">{QUESTION} </td>
+                                <td width="86" class="font-weight-bold dnone"></td>
+                            </tr>
+                            <tr class="forum_row">
+                                <td width="35" class="forum_row_content dnone">
+                                    <div class="">
+                                        {quizs.picture}
+                                    </div>
+                                </td>
+                                <td valign="top" class="forum_row_content dnone">
+                                    {quizs.description}
+                                </td>
+                                <td class="forum_row_content1 dnone">{quizs.totalQuestion}</td>
+                                <td class="forum_row_content1">{quizs.startQuizButton}</td>
+                            </tr>
+                            <!-- END quizs -->
+                            <!-- if there is no quiz -->
+                            {NOT_FOUND_QUIZ}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

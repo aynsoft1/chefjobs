@@ -1,0 +1,139 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	.desc p {color: #212529!important;
+	}
+	.mydiv br {
+display: none;
+}
+.preview-container { margin-top: 10px; }
+.preview-container iframe { width: 100%!important; height: 1595px; border-bottom: 1px solid; }
+.preview-container img { max-width: 100%; height: auto; }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+		<div class="d-flex mb-3 justify-content-center">{different_jobs}
+		<span><a class="btn btn-sm btn-outline-secondary" href="javascript:history.back();" style="padding-top: 5px!important;padding-bottom: 5px!important;min-height: 38px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+     </svg> Back</a></span>
+                        </div>
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="dflex align-items-center m-dblock">
+						<h1 class="main-heading">{INFO_TEXT_JOB_TITLE1}</h1>
+                    </div>
+                </div>
+                <div class="card-body card-body-custom">
+				{preview_job_form}
+				<div class="row">
+					<div class="col-md-4 text-end">{INFO_TEXT_JOB_REF}</div>
+					<div class="col-md-8">{INFO_TEXT_JOB_REF1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_COUNTRY}</div>
+					<div class="col-md-8">{INFO_TEXT_COUNTRY1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_STATE}</div>
+					<div class="col-md-8">{INFO_TEXT_STATE1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_LOCATION}</div>
+					<div class="col-md-8">{INFO_TEXT_LOCATION1}</div>
+				</div>
+				<!-- <div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_SALARY}</div>
+					<div class="col-md-8">{INFO_TEXT_SALARY1}</div>
+				</div> -->
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_APPLICATION_GOTO}</div>
+					<div class="col-md-8">{INFO_TEXT_APPLICATION_GOTO1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_COMPANY_SIZES}</div>
+					<div class="col-md-8">{INFO_COMPANY_SIZES1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_JOB_TYPE}</div>
+					<div class="col-md-8">{INFO_TEXT_JOB_TYPE1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_CAREER_LEVEL}</div>
+					<div class="col-md-8">{INFO_CAREER_LEVEL1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_EXPERIENCE}</div>
+					<div class="col-md-8">{INFO_TEXT_EXPERIENCE1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_VACANCY_ADDED_ON}</div>
+					<div class="col-md-8">{INFO_TEXT_VACANCY_ADDED_ON1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_VACANCY_EXPIRED}</div>
+					<div class="col-md-8">{INFO_TEXT_VACANCY_EXPIRED1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">Job Auto Renew :</div>
+					<div class="col-md-8">{INFO_TEXT_JOB_AUTO_RENEW1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_INDUSTRY_SECTOR}</div>
+					<div class="col-md-8">{INFO_TEXT_INDUSTRY_SECTOR1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_PROFESSION_SECTOR}</div>
+					<div class="col-md-8">{INFO_TEXT_INDUSTRY_SUB_SECTOR}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_POSTED_JOBFAIR}</div>
+					<div class="col-md-8">{INFO_TEXT_POSTED_JOBFAIR1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_JOB_SKILLS}</div>
+					<div class="col-md-8">{INFO_TEXT_JOB_SKILLS1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_VACANCY_SUMMARY}</div>
+					<div class="col-md-8 mydiv">{INFO_TEXT_VACANCY_SUMMARY1}</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-md-4 text-end">{INFO_TEXT_DESCRIPTION}</div>
+					<div class="col-md-8 desc mydiv">{INFO_TEXT_DESCRIPTION1}</div>
+				</div>
+				
+				<h3 class="pt-3 pb-2" style="font-size:1.2rem;">Uploaded document</h3>
+				<div class="preview-container">{PREVIEW_UPLOADED_DOCS}</div>
+				
+
+				
+				
+				
+				
+
+            </form>
+
+        
+<!-- Middle Ends -->
+   </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

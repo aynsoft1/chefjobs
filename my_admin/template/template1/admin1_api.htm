@@ -1,0 +1,145 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="time-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-11">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body px-4">
+            <h4 class="fw-bold">1. {URL_JLOGIN}</h4>
+            <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+              post method<br>
+              act = check <span style="color:red">required</span><br>
+              email_address <span style="color:red">required</span><br>
+              password <span style="color:red">required</span>
+              </div>
+              <h4 class="fw-bold">2. {URL_LOGOUT}</h4>
+              <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                access_key = <span style="color:red">required</span>
+                </div>
+                <h4 class="fw-bold">3. {URL_INFO}</h4>
+                <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                  for jobseeker information<br>
+                  access_key = <span style="color:red">required</span><br>
+                  login user information
+                  </div>
+                <h4 class="fw-bold">4. {URL_JREG}</h4>
+                <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                  for register /update profile<br>
+                  post method<br>
+                  act = (register – <span style="color:red">new register</span>/ update ) <span style="color:red">required</span><br>
+                  email_address <span style="color:red">required</span><br>
+                  password <span style="color:red">required</span> (new register)<br>
+                  access_key = <span style="color:red">required</span> (update case)<br>
+                  first_name <span style="color:red">required</span><br>
+                  last_name<br>
+                  address1 <span style="color:red">required</span><br>
+                  country <span style="color:red">required numeric id</span><br>
+                  state<br>
+                  city <span style="color:red">required</span><br>
+                  mobile
+                  </div>
+
+                  <h4 class="fw-bold">5. {URL_SEARCH}</h4>
+                  <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method<br>
+                    act = search <span style="color:red">required</span><br>
+                    keyword<br>
+                    country<br>
+                    state<br>
+                    location<br>
+                    job_category <span style="color:red">numeric id existing site</span><br>
+                    start_index optional <span style="color:red">default 0</span> search result show start position
+                    </div>
+                  <h4 class="fw-bold">6. {URL_RESUME}</h4>
+                  <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method<br>
+                    access_key = <span style="color:red">required</span><br>
+                    output success : resume_id resume_title array
+                    </div>
+                  <h4 class="fw-bold">7. {URL_APPLY}</h4>
+                  <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method<br>
+                    access_key = <span style="color:red">required</span><br>
+                    job_id = <span style="color:red">required</span><br>
+                    resume_id = <span style="color:red">required</span>
+                    </div>
+                  <h4 class="fw-bold">8. {URL_APPLIEDJOBS}</h4>
+                  <div class="mb-4" style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method<br>
+                    access_key = <span style="color:red">required</span><br>
+                    output success : jobID, apply_id, job_title, apply_date
+                    </div>
+                  <h4 class="fw-bold">9. {URL_JOB_COUNTRY}</h4>
+                  <div style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method<br>
+                    act = list <span style="color:red">required</span><br>
+                    output success : id,name
+                    </div>
+					<h4 class="fw-bold">10. {URL_RLOGIN}</h4>
+                  <div style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    post method
+					act = <span style="color:red">required</span>
+					email_address = <span style="color:red">required</span>
+					password = <span style="color:red">required</span>
+                    </div>
+                   <h4 class="fw-bold">11. {URL_RINFO}</h4>
+				   <div style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    for recruiter information
+					access_key = <span style="color:red">required</span>
+					login user information
+                    </div>
+                   <h4 class="fw-bold">12. {URL_ADDJOB}</h4>
+				   <div style="padding: 5px;background-color: #fafafa;border: solid 1px #eeeeee;margin: 20px 0 20px 0;">
+                    method : post method
+					parameter
+					access_key <span style="color:red">required</span>
+					job_title <span style="color:red">required</span>
+					reference optional free text
+
+					job_country <span style="color:red">required</span> numeric id existing site or free text
+
+					state optional free text
+
+					location optional free text
+
+					salary optional free text
+
+					job_industry numeric id existing site
+
+					job_short_description <span style="color:red">required</span>
+
+					job_description <span style="color:red">required</span>
+
+					job_experience optional in no of months (numeric )
+
+					job_type optional existing site
+
+					skills optional your job tags
+
+					job_duration no of days job show (numeric )
+                    </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

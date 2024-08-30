@@ -1,0 +1,342 @@
+<title>{page_title}</title>
+<meta name="Keywords" content=" {meta_title}" />
+<meta name="Description" content=" {meta_description} " />
+{HEADER_HTML} {HEADER_MIDDLE_HTML}
+<script>
+  window.setTimeout(function () {
+    $(".alert")
+      .fadeTo(500, 0)
+      .slideUp(500, function () {
+        $(this).remove();
+      });
+  }, 4000);
+</script>
+<!-- video recording -->
+<!-- <script src="jscript/RecordRTC.js"></script> -->
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+<!-- for Edige/FF/Chrome/Opera/etc. getUserMedia support -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+<div class="be-content">
+  {update_message}
+  <div class="main-content container">
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3"
+    >
+      <h1 class="h2" id="header">{TEST_TITLE}</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-groupp mr-2">{test_menus}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-custom">
+            <span class="heading_bar_internal_content">
+              <h1 class="display-6 p-0 m-0 float-left">{QUIZ_TITLE}</h1>
+            </span>
+            <div class="float-right text-right">
+              <p class="timer mt-2 text-info" id="timer_left"></p>
+            </div>
+          </div>
+          <!-- {form} -->
+          <div class="card-body">
+            <div>
+              {hidden_quiz_input_id}
+              <!-- BEGIN questions -->
+              {questions.quizTemplate}
+              <!-- END questions -->
+            </div>
+            <div class="d-flex justify-content-center">
+              <video id="my-video-id" controls="" autoplay=""></video>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-center">
+            <button class="btn btn-primary mr-2" id="btn-start-recording">
+              Start Recording
+            </button>
+            <button
+              class="btn btn-danger d-none mr-2"
+              id="btn-stop-recording"
+              disabled
+            >
+              Stop Recording
+            </button>
+            <button
+              class="btn btn-danger d-none mr-2"
+              id="save-to-disk"
+              disabled
+            >
+              Upload
+            </button>
+          </div>
+          <!-- </form> -->
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <ul class="list-group">
+            <!-- BEGIN candidate_list_test -->
+            <li class="list-group-item">{candidate_list_test.title}</li>
+            <!-- END candidate_list_test -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var video = document.querySelector("video");
+  var recorder; // globally accessible
+  // get quiz minute from quiz table and convert it into seconds
+  let seconds = {QUIZ_TIMER} * 60;
+  // video btns
+  const startBtn = document.getElementById("btn-start-recording");
+  const stopBtn = document.getElementById("btn-stop-recording");
+  const uploadBtn = document.getElementById("save-to-disk");
+  let recordedVideo;
+
+  const testID = {test_id};
+  const seekerID = {jobseeker_id};
+  const assessmentID = {assessment_id};
+  const questionID = document.getElementById("q_id").value;
+
+  const redirectURL = "{REDIRECT_TO_MY_TEST}";
+
+  let isFocused = true;
+
+  // Check if window focused EVERY 1.5 seconds
+  function checkWindowFocused() {
+    if (document.hasFocus()) {
+      isFocused = true;
+    } else {
+      isFocused = false;
+    }
+    // console.log(isFocused)
+  }
+
+  setInterval(checkWindowFocused, 1500); // check if focused every 1.5 seconds
+
+  // functions for video
+  function captureCamera(callback) {
+    navigator.mediaDevices
+      .getUserMedia({
+        audio: true,
+        video: true,
+      })
+      .then(function (camera) {
+        callback(camera);
+      })
+      .catch(function (error) {
+        alert(error);
+        console.error(error);
+      });
+  }
+
+  function stopRecordingCallback() {
+    // get recorded blob
+    var blob = recorder.getBlob();
+
+    // open recorded blob in a new window
+    // window.open(URL.createObjectURL(blob));
+
+    // release camera
+    video.srcObject = null;
+
+    recorder.camera.getTracks().forEach(function (track) {
+      track.stop();
+    });
+    // you can preview recorded data on this page as well
+    video.src = URL.createObjectURL(blob);
+
+    recordedVideo = blob;
+  }
+
+  function runMedia() {
+    captureCamera(function (camera) {
+      video.muted = true;
+      video.volume = 0;
+      video.srcObject = camera;
+
+      recorder = RecordRTC(camera, {
+        recorderType: MediaStreamRecorder,
+        mimeType: "video/webm",
+        timeSlice: 1000, // pass this parameter
+      });
+
+      (function looper() {
+        if (!recorder) {
+          return;
+        }
+
+        var internal = recorder.getInternalRecorder();
+        if (internal && internal.getArrayOfBlobs) {
+          var blob = new Blob(internal.getArrayOfBlobs(), {
+            type: "video/webm",
+          });
+
+          document.querySelector("h1").innerHTML =
+            "Recording length: " + bytesToSize(blob.size);
+        }
+
+        setTimeout(looper, 1000);
+      })();
+      recorder.startRecording();
+
+      // release camera on stopRecording
+      recorder.camera = camera;
+
+      // hide start btn and show stop btn
+      stopBtn.classList.remove("d-none");
+      stopBtn.disabled = false;
+      startBtn.classList.add("d-none");
+
+      // automatic stops the recorder
+      // var milliSeconds = seconds * 1000;
+      // setTimeout(function () {
+      //     // stop recording
+      //     recorder.stopRecording(stopRecordingCallback)
+      // }, milliSeconds);
+    });
+  }
+
+  function timer_counter() {
+    const element = document.getElementById("timer_left");
+    let minutes = Math.round((seconds - 30) / 60);
+    let remainingSeconds = seconds % 60;
+
+    if (remainingSeconds < 10) {
+      remainingSeconds = "0" + remainingSeconds;
+    }
+
+    element.innerHTML = "Time Left: " + minutes + ":" + remainingSeconds;
+
+    if (seconds <= 0) {
+      clearInterval("countdownTimer");
+      element.innerHTML = "Time Out...";
+      const stopRec = document.getElementById("btn-stop-recording").click();
+      element.innerHTML = "Now upload the video";
+    } else {
+      seconds--;
+    }
+  }
+
+  // start btn clicked
+  startBtn.onclick = function () {
+    this.disabled = true;
+    let countdownTimer = setInterval(timer_counter, 1000);
+    runMedia();
+  };
+
+  // stop btn clicked
+  stopBtn.onclick = function () {
+    this.disabled = true;
+    recorder.stopRecording(stopRecordingCallback);
+    // hide the stop btn and show upload btn
+    stopBtn.classList.add("d-none");
+    uploadBtn.classList.remove("d-none");
+    uploadBtn.disabled = false;
+  };
+
+  // upload to server
+  uploadBtn.onclick = function () {
+    const recordedBlob = recordedVideo;
+
+    // generating a random file name
+    var fileName = getFileName("webm");
+
+    // we need to upload "File" --- not "Blob"
+    var fileObject = new File([recordedBlob], fileName, {
+      type: "video/webm",
+    });
+
+    var formData = new FormData();
+
+    // recorded data
+    formData.append("video-blob", fileObject);
+    // file name
+    formData.append("video-filename", fileObject.name);
+
+    // append testid, seekerid, question_id, assessment_id
+    formData.append("test_id", testID);
+    formData.append("jobseeker_id", seekerID);
+    formData.append("question_id", questionID);
+    formData.append("assessment_id", assessmentID);
+
+    const sameWin = isFocused === true ? 1 : 0;
+    formData.append("same_window", sameWin);
+
+    document.getElementById("header").innerHTML =
+      "Uploading to PHP using jQuery.... file size: (" +
+      bytesToSize(fileObject.size) +
+      ")";
+
+    var upload_url = "{upload_api_url}";
+    var upload_directory = "RecordRTC-to-PHP/uploads/";
+
+    // upload using jQuery
+    $.ajax({
+      url: upload_url, // replace with your own server URL
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: "POST",
+      success: function (response) {
+        if (response === "success") {
+          alert("file successfully uploaded");
+          window.location.replace(redirectURL);
+        } else {
+          console.log("file upload error", response);
+          alert(response); // error/failure
+        }
+      },
+    });
+
+    // release camera
+    video.srcObject = video.src = null;
+    recorder.camera.getTracks().forEach(function (track) {
+      track.stop();
+    });
+
+    // this function is used to generate random file name
+    function getFileName(fileExtension) {
+      var d = new Date();
+      var year = d.getUTCFullYear();
+      var month = d.getUTCMonth();
+      var date = d.getUTCDate();
+      return (
+        "RecordRTC-" +
+        year +
+        month +
+        date +
+        "-" +
+        getRandomString() +
+        "." +
+        fileExtension
+      );
+    }
+
+    function getRandomString() {
+      if (
+        window.crypto &&
+        window.crypto.getRandomValues &&
+        navigator.userAgent.indexOf("Safari") === -1
+      ) {
+        var a = window.crypto.getRandomValues(new Uint32Array(3)),
+          token = "";
+        for (var i = 0, l = a.length; i < l; i++) {
+          token += a[i].toString(36);
+        }
+        return token;
+      } else {
+        return (Math.random() * new Date().getTime())
+          .toString(36)
+          .replace(/\./g, "");
+      }
+    }
+  };
+</script>
+<!--container end here-->
+{FOOTER_HTML}

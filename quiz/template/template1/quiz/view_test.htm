@@ -1,0 +1,81 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h1 class="h2">{HEADING_TITLE}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-groupp mr-2">
+                    {quiz_menus}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">{HEAD_TEST}</div>
+                    <div class="card-body">
+                        <p>{TEST_NAME} <span>{TEST_TITLE}</span></p>
+                        <p>{TEST_DURATION} <span>{TEST_TIMER}</span></p>
+                        <p>{TH_TEST_CREATED} <span>{TEST_DATE}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">{HEAD_QUES}</div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TH_QUESTION}</th>
+                                    <th>{TH_QUES_DATE}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN questions -->
+                                <tr>
+                                    <td>{questions.ques_name}</td>
+                                    <td>{questions.ques_date}</td>
+                                </tr>
+                                <!-- END questions -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        {HEAD_TEST_TAKEN}
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TH_NAME}</th>
+                                    <th>{TH_DATE}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN test_taken -->
+                                <tr>
+                                    <td>{test_taken.jobseeker}</td>
+                                    <td>{test_taken.submitted_date}</td>
+                                </tr>
+                                <!-- END test_taken -->
+
+                                {NOT_FOUND}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

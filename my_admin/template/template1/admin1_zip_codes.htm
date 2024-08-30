@@ -1,0 +1,82 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="settings-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-md-10">
+                <form name="disply" method="get" class="btn btn-group">
+                  <!-- {INFO_TEXT_SEARCH_ZIP_CODE}  -->
+                  {INFO_TEXT_SEARCH_ZIP_CODE1} 
+                  {INFO_TEXT_SEARCH_STATE}
+                  <button type="submit" class="btn btn-info">Search</button>
+                </form>
+              </div>
+              <div class="col-md-2">
+                {new_button}
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_ZIP_CODE}</th>
+                  <th>{TABLE_HEADING_ZIP_CODE_CITY}</th>
+                  <th>{TABLE_HEADING_ZIP_CODE_STATE}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN zip_code -->
+                <tr{zip_code.row_selected}>
+                  <td>{zip_code.name}</td>
+                  <td>{zip_code.city}</td>
+                  <td>{zip_code.state}</td>
+                  <td>{zip_code.action}</td>
+                  </tr>
+                  <!-- END zip_code -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>{count_rows}</td>
+                  <td align="right">{no_of_pages}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+            <!-- Right Starts -->
+            <div class="col-md-3 pl-1">
+              <div class="card card-border-color card-border-color-primary">
+                <div class="card-body">
+              {ADMIN_RIGHT_HTML}
+            </div>
+            </div>
+          </div>
+            <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

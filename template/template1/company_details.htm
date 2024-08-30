@@ -1,0 +1,112 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+<div class="container-fluid company-bg">
+    
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+        
+            <div class="d-flex">
+                <div class="flex-shrink-0">
+                    {company_logo}
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <h3 class="mt-2 mb-0 fw-bold">{COMPANY_NAME}</h3>
+                    <div class="small"><i class="bi bi-geo-alt-fill"></i> {INFO_TEXT_RECRUITER_ADDRESS}</div>
+                </div>
+            </div>
+            <div class="border-top"></div>
+            <div class="mt-4">
+                <div class="fw-bold">
+                    <h3>Company Description</h3>
+                </div>
+                <div class="">
+                    {INFO_TEXT_DESCRIPTION1}
+                </div>
+            </div>
+
+<!------------------------------RECRUITER RATING SECTION----------------------------------->				
+<div class="1card 1card-custom">
+    <div class="1card-body 1card-body-custom">
+        <!--Start comment is used to hide the card if jobseeker logged in
+This below card is viewed when jobseeker logged in otherwise not-->
+        {RATE_RESUME_BUTTON_FOR_REC}
+        <div class="collapse" id="collapseExample">
+            {comment_start}
+            <div class="1card">
+                <div class="1card-header 1card-header-custom">
+                    <h6 class="p-0 m-0 float-left">{SECTION_RATE_COMPANY}</h6>
+                    <div class="float-right">
+                        {INFO_TEXT_CURRENT_RATING}
+                        {INFO_TEXT_CURRENT_RATING1}
+                    </div>
+                </div>
+                {rate_form}
+                <div class="1card-body 1card-body-custom">
+                    {INFO_TEXT_CURRENT_RATE_IT1}
+                </div>
+                </form>
+            </div>
+            {comment_end}
+        </div>
+        <!--End comment-->
+    </div>
+</div>
+<!----------------------------------------------------------------->
+<div class="mt-5">
+    <div class="fw-bold">
+        <h3 class="{RESULT_CLASS}">{INFO_TEXT_JOBS}</h3>
+    </div>
+    <div class="">
+
+
+        <div>
+            <h3 class="c_profile"></h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="c_profile_heading px-0">Position</th>
+                        <th class="c_profile_heading px-0">Date</th>
+                        <th class="c_profile_heading px-0">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- BEGIN jobs -->
+                    <tr>
+                        <td class="c_profile_data text-dark px-0">{jobs.job_title}</td>
+                        <td class="c_profile_data px-0">{jobs.inserted}</td>
+                        <td class="c_profile_data px-0">{jobs.job_location}&nbsp;</td>
+                    </tr>
+                    <!-- END jobs -->
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-end">{MORE_JOB}</div>
+        </div>
+        <!-- Right Starts -->
+        {RIGHT_HTML}
+        <!-- Right ends -->
+    </div>
+</div>
+    </div>
+</div>
+</div>
+</div>
+{FOOTER_HTML}

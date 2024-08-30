@@ -1,0 +1,71 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+			<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends -->
+        <div class="col-md-9 mx-auto">
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="col-md-12">
+                        <h1 class="main-heading">{HEADING_TITLE}</h1>
+                    </div>
+                </div>
+                <div class="card-body card-body-custom">
+                    <!-- {COUNTRY_STATE_SCRIPT} -->
+
+
+                    {INFO_TEXT_COUNTRY}
+                    {form}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-3 mt-2">
+                                {INFO_TEXT_COUNTRY1}
+                                <div class="input-group-append">
+                                    {button}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <tr>
+                    <td><div align="right"><span class="style27">{INFO_TEXT_STATE}</span></div></td>
+                    <td>&nbsp;</td>
+                    <td>{INFO_TEXT_STATE1}</td>
+                </tr> -->
+
+                    <!-- BEGIN continent_country -->
+                    <!-- {continent_country.continent} -->
+                    {continent_country.country}
+
+                    <!-- END continent_country -->
+                    <!--<tr>
+                    <td bgcolor="#FFFFFF"><img src="img/search_line.gif" width="1" ></td>
+                </tr>
+                <tr>
+                    <td><div id="map_canvas" style="width:100%;"></div></td>
+                </tr> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

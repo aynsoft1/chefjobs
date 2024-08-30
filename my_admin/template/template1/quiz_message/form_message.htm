@@ -1,0 +1,160 @@
+{ADMIN_HEADER_HTML}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    
+    $(document).ready(function () {
+        $('#messagecheck').hide();
+        $('#mincheck').hide();
+        $('#maxcheck').hide();
+        let messageError = false;
+        let minError = false;
+        let maxError = false;
+        let isError = true;
+
+        function validateMessage() {
+            const messageValue = $('#message').val();
+            if (messageValue.length == '') {
+                $('#messagecheck').show();
+                messageError = true;
+                return false;
+            } else {
+                messageError = false;
+                $('#messagecheck').hide();
+                return true;
+            }
+        }
+
+        function validateMinValue() {
+            const minValue = $('#min').val();
+            if ((minValue.length) == '') {
+                $('#mincheck').show();
+                minError = true;
+                return false;
+            } else {
+                minError = false;
+                $('#mincheck').hide();
+                return true
+            }
+        }
+
+        function validateMaxValue() {
+            const maxValue = $('#max').val();
+            if ((maxValue.length) == '') {
+                $('#maxcheck').show();
+                maxError = true;
+                return false;
+            } else {
+                maxError = false;
+                $('#maxcheck').hide();
+                return true
+            }
+        }
+
+        function validateMinMaxValue() {
+            const minValue = $('#min').val();
+            const maxValue = $('#max').val();
+            if (+minValue === +maxValue) {
+                alert('min and max value cannot be equal');
+                isError = true;
+                return false;
+            } else if (+minValue > +maxValue) {
+                // console.log(+minValue > +maxValue) // convert it into number
+                alert('max value cannot be less then min value');
+                isError = true;
+                return false;
+            } else {
+                isError = false
+                return true;
+            }
+        }
+
+        $("#submitBtn").click(function (e) {
+            e.preventDefault();
+            validateMessage();
+            validateMinValue();
+            validateMaxValue();
+            validateMinMaxValue();
+            console.log(messageError, minError, maxError, isError)
+            if ((messageError == false) && (minError == false) && (maxError == false) && (isError == false)) {
+                $('form').submit();
+            }
+        });
+    });
+
+</script>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>
+            <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+        </h3>
+        <div class="row">
+            <div class="col-md-9">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    {form}
+                    <div class="card-body" id="cardBody">
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label text-sm-right">{TITLE_LABEL}</label>
+                            <div class="col-6">
+                                {QUESTION_INPUT}
+                                {TITLE_ERROR}
+                            </div>
+                        </div>
+                        {hidden_quiz_id_input_field}
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{MIN_LABEL}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <div class="row">
+                                    <div class="col">
+                                        {MIN_INPUT}
+                                        {MIN_ERROR}
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <label class="col col-form-label text-sm-right">
+                                                {MAX_LABEL}
+                                            </label>
+                                            <div class="col">
+                                                {MAX_INPUT}
+                                                {MAX_ERROR}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {BUTTON}
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

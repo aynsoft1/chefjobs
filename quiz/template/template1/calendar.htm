@@ -1,0 +1,147 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Alert message File path is class/message_stack.php -->
+<link rel="stylesheet" href="{FULLCALENDAR_CSS}">
+</li>
+<script src="{FULLCALENDAR__JS}"></script>
+
+<style>
+  .tooltipevent {
+    width: 400px;
+    background: #ccc;
+    position: absolute;
+    z-index: 10001;
+    transform: translate3d(-50%, -100%, 0);
+    font-size: 0.8rem;
+    box-shadow: 1px 1px 3px 0px #888888;
+    line-height: 1rem;
+  }
+
+  .tooltipevent div {
+    padding: 10px;
+  }
+
+  .tooltipevent div:first-child {
+    font-weight: bold;
+    color: White;
+    background-color: #888888;
+    /* border: 5px solid red; */
+  }
+
+  .tooltipevent div:last-child {
+    background-color: whitesmoke;
+    position: relative;
+  }
+
+  .tooltipevent div:last-child::after,
+  .tooltipevent div:last-child::before {
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    /* box-shadow: 1px 1px 2px 0px #888888; */
+    border-bottom: 0;
+    border-top-color: whitesmoke;
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tooltipevent div:last-child::before {
+    border-top-color: #888888;
+    bottom: -5px;
+  }
+</style>
+<script>
+  let lang = "{LANGUAGE}";
+
+  window.addEventListener("load", function () {
+    if (lang === "es") {
+      const todayBtn = document.querySelectorAll(".fc-today-button");
+      const monthBtn = document.querySelectorAll(".fc-dayGridMonth-button");
+      const weekBtn = document.querySelectorAll(".fc-timeGridWeek-button");
+      const dayBtn = document.querySelectorAll(".fc-timeGridDay-button");
+      todayBtn[0].innerText = "hoy dia";
+      monthBtn[0].innerText = "mes";
+      weekBtn[0].innerText = "semana";
+      dayBtn[0].innerText = "día";
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var calendarEl = document.getElementById("calendar");
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      // plugins: [momentPlugin, dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
+      initialView: "dayGridMonth",
+      // themeSystem: 'bootstrap',
+      dayMaxEvents: true,
+      height: 600,
+      locale: lang,
+      selectable: true,
+      editable: true,
+      headerToolbar: {
+        left: "today,prev,next",
+        center: "title",
+        right: "dayGridMonth,timeGridWeek,timeGridDay",
+      },
+      eventClick: function (info) {
+        var eventObj = info.event;
+        // console.log(eventObj.extendedProps.description);
+      },
+      // eventDidMount: function (info) {
+      //     $(info.el).tooltip({
+      //         title: info.event.title + '. Total Points: ' + info.event.extendedProps.points,
+      //     });
+      // },
+      eventMouseEnter: function (info) {
+        const tis = info.el;
+        const top = $(tis).offset().top - 5;
+        const left = $(tis).offset().left + $(tis).width() / 2;
+        const tooltip =
+          '<div class="tooltipevent" style="top:' +
+          top +
+          "px;left:" +
+          left +
+          'px">' +
+          info.event.extendedProps.popUpContent +
+          "</div>";
+        const $tooltip = $(tooltip).appendTo("body");
+      },
+      eventMouseLeave: function (info) {
+        // console.log('eventMouseLeave');
+        $(info.el).css("z-index", 8);
+        $(".tooltipevent").remove();
+      },
+      events: "calendar.php?action=api",
+      eventColor: "#378006",
+    });
+
+    calendar.render();
+  });
+</script>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+          <h1 class="m-0">{HEADING_TITLE}</h1>
+          <div class="d-flex ms-auto m-dblock">
+              {test_menus}
+          </div>
+      </div>
+  </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <!-- Below Alert message File path is class/message_stack.php -->
+        {update_message}
+        <div class="card card-custom">
+          <div class="card-body card-body-custom">
+            <div id="calendar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{FOOTER_HTML}

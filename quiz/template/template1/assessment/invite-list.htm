@@ -1,0 +1,47 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<div class="container">
+    {update_message}
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="dflex ms-auto">{quiz_menus} {quiz_menus_1}</div>
+        </div>
+    </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header card-header-custom">
+                        <div class="float-right mobile-float-left"></div>
+                    </div>
+                    <div class="card-body p-0 card-body-custom table-responsive-sm">
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr class="small">
+                                    <th class="">{TH_INVITE_EMAIL}</th>
+                                    <th class="">{TH_INVITE_ASSESSMENT}</th>
+                                    <th class="">{TH_INVITE_STATUS}</th>
+                                    <th class="">{TH_INVITE_DATE}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN invitations -->
+                                <tr>
+                                    <td class="small text-muted">{invitations.email_to}</td>
+                                    <td class="small text-muted">{invitations.assessment_name}</td>
+                                    <td class="small">{invitations.status}</td>
+                                    <td class="small text-muted">{invitations.date}</td>
+                                </tr>
+                                <!-- END invitations -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

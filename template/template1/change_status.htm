@@ -1,0 +1,135 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<script language="JavaScript">
+  <!--
+  function set_action1(application,action)
+  {
+   if(application!='' && action!='') 
+   {
+    document.page.application_id.value=application;
+    document.page.action1.value=action;
+    document.page.submit();
+    }
+  }
+  //-->
+  </script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+		<!-- <div class="col-md-2 small-font">
+		<div class="list-group mb-4">
+		  <button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+			//{INFO_TEXT_JOB_TITLE}{INFO_TEXT_JOB_TITLE1}///
+		  </button>
+		  <div>{INFO_TEXT_ALL_APPLICANT}</div>
+		  <div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+		  <div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+		  <div>{INFO_TEXT_JOB_DETAIL}</div>
+		  <div>{INFO_TEXT_ADD_APPLICANT}</div>
+		</div>
+		
+		<div class="list-group mb-4">
+		  <button type="button" class="list-group-item list-group-item-action font-weight-bold">
+			{INFO_TEXT_REPORTS}
+		  </button>
+			<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+			<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+			<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+			<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+		</div>
+		</div> -->
+		
+		<div class="col-md-3 small-font m-none">
+			<div class="card card-custom">
+				<div class="card-body card-body-custom p-0">
+					{RIGHT_HTML}
+				</div>
+			</div>
+		</div>
+        <div class="col-md-9">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+			<div class="card-header">
+				<div class="col-md-12">
+					<h1 class="m-0">{HEADING_TITLE}</h1>
+				</div>
+				<div class="py-2 text-dark"><span class="font-weight-bold">{INFO_TEXT_LATEST_STATUS}</span></div>
+			</div>
+                <div class="card-body card-body-custom p-0">
+				<div class="table-responsive">
+				<table class="table table-hover">
+               <thead>
+				<tr class="dataTableHeadingRow">
+                <th scope="col" class="dataTableHeadingContent m-none">{TABLE_HEADING_ROUND}</th>
+                <th scope="col" class="dataTableHeadingContent m-none">{TABLE_HEADING_CURRENT_STATUS}</th>
+                <th scope="col" class="dataTableHeadingContent m-none">{TABLE_HEADING_UPDATED}</th>
+                <th width="100" scope="col" class="dataTableHeadingContent m-none">{TABLE_HEADING_SET_STATUS}</th>
+                <th scope="col" class="dataTableHeadingContent m-none" align="right"></th>
+               </tr>
+			   </thead>
+               <!-- BEGIN application_set_status -->
+               <tr class="status">{form1}
+                <td valign="top" class="dataTableContent break fw-bold">{application_set_status.round}</td>
+                <td valign="top" class="dataTableContent break mw-100">{application_set_status.current_status}</td>
+                <td valign="top" class="dataTableContent break" >{application_set_status.updated}</td>
+                <td valign="top" class="dataTableContent break" >{application_set_status.status_drop_down}</td>
+                <td valign="top" class="dataTableContent break" >{button}</td>
+               </tr></form>
+             <!-- END application_set_status -->    
+            </table>
+		  </div>
+		</div>
+	</div>
+			
+			<div class="card card-custom mt-4">
+				<div class="card-header">
+					<div class="py-2"><span class="fw-bold text-dark">{INFO_TEXT_STATUS_HISTORY}</span></div>
+				</div>
+                <div class="card-body card-body-custom p-0">
+					<div class="table-responsive">
+			<table class="table table-hover">
+			<thead>
+						<tr class="dataTableHeadingRow">
+							<th class="dataTableHeadingContent">{TABLE_HEADING_ROUND}</th>
+							<th class="dataTableHeadingContent m-none">{TABLE_HEADING_PRE_STATUS}</th>
+							<th class="dataTableHeadingContent">{TABLE_HEADING_CHANGE_STATUS}</th>
+							<th class="dataTableHeadingContent m-none">{TABLE_HEADING_INSERTED}</th>
+						</tr>
+					</thead>
+						<!-- BEGIN application_status -->
+						<tr{application_status.row_selected}>
+							<td valign="top" class="dataTableContent">{application_status.round}</td>
+							<td valign="top" class="dataTableContent m-none" >{application_status.pre_status}</td>
+							<td valign="top" class="dataTableContent" >{application_status.change_status}</td>
+							<td valign="top" class="dataTableContent m-none" >{application_status.inserted}</td>
+						</tr>
+						<!-- END application_status -->    
+						</table>
+					</div>
+
+																				
+			</div>
+			</div>																	
+				
+		</div>
+	</div>	
+</div>			
+
+{FOOTER_HTML}

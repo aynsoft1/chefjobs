@@ -1,0 +1,134 @@
+{ADMIN_HEADER_HTML}
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->       
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+     <td>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+       <tr>
+        <td class="pageHeading">{HEADING_TITLE}</td>
+       </tr>
+      </table><br>{update_message}
+      <table border="0" align="center" cellspacing="3" cellpadding="2">
+       <tr>{feed_form}
+        <td class="label">{TEXT_INFO_CAMPAIGN_NAME}</td>
+        <td >{TEXT_INFO_CAMPAIGN_NAME1}</td>
+       </tr>
+       <tr>
+        <td class="label" valign="top">{TEXT_INFO_PUBLISHER_ID}</td>
+        <td >{TEXT_INFO_PUBLISHER_ID1}&nbsp;&nbsp;<br>{TEXT_PUBLISHER_ID_HELP}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_RECRUITER_ID}</td>
+        <td >{TEXT_INFO_RECRUITER_ID1}&nbsp;&nbsp;{TEXT_RECRUITER_ID_HELP}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_COUNTRY}</td>
+        <td >{TEXT_INFO_COUNTRY1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_LOCATION}</td>
+        <td >{TEXT_INFO_LOCATION1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_JOB_TITLE}</td>
+        <td >{TEXT_INFO_JOB_TITLE1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_JOB_COMPANY}</td>
+        <td >{TEXT_INFO_JOB_COMPANY1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_JOB_DURATION}</td>
+        <td >{TEXT_INFO_JOB_DURATION1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_MAX_FEED}</td>
+        <td >{TEXT_INFO_MAX_FEED1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_SORT_BY}</td>
+        <td >{TEXT_INFO_SORT_BY1}</td>
+       </tr>
+       <tr>
+        <td class="label">{TEXT_INFO_STATUS}</td>
+        <td >{TEXT_INFO_STATUS1}</td>
+       </tr>
+       <tr>
+        <td class="label"><b><u>{TEXT_INFO_KEYWORD}</u></b></td>
+       </tr>
+       <tr>
+        <td colspan="2" >
+         <table border="0" width="100%" cellspacing="0" cellpadding="2">
+         <tr>
+         	<td valign="top">
+           <table border="0" cellspacing="0" cellpadding="1">
+            <!-- BEGIN job_category1 -->
+            <tr  {job_category1.row_selected}>
+            	<td>{job_category1.check_box}</td>
+            	<td>{job_category1.job_category}</td>
+            </tr>
+            <!-- END job_category1 -->
+           </table>
+          </td>
+         	<td valign="top">
+           <table border="0" cellspacing="0" cellpadding="1">
+            <!-- BEGIN job_category2 -->
+            <tr  {job_category2.row_selected}>
+            	<td>{job_category2.check_box}</td>
+            	<td>{job_category2.job_category}</td>
+            </tr>
+            <!-- END job_category2 -->
+           </table>
+          </td>
+         	<td valign="top">
+           <table border="0" cellspacing="0" cellpadding="1">
+            <!-- BEGIN job_category3 -->
+            <tr  {job_category3.row_selected}>
+            	<td>{job_category3.check_box}</td>
+            	<td>{job_category3.job_category}</td>
+            </tr>
+            <!-- END job_category3 -->
+           </table>
+          </td>
+         </tr>
+         </table>
+        </td>
+       </tr>
+       <tr>
+        <td class="label" colspan="2"><a onclick="checkall()">Check All</a> / <a  onclick="uncheckall()">Uncheck All</a></td>
+       </tr>
+      </table>
+       <tr>
+        <td class="label" align="center">{submit_button}</td>
+       </tr></form>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">
+     </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+     
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

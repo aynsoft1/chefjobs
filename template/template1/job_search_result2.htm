@@ -1,0 +1,160 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+<!--
+function ckeck_application()
+{
+ var count;
+ var arrnew = new Array();
+ count=0;
+ new_string='';
+ for( var i =0; i< document.apply_form.length;i++)
+ {
+  if(document.apply_form[i].type=='checkbox')
+  {
+   if(document.apply_form[i].checked==true)
+   {
+    arrnew[count]=document.apply_form[i].value;
+    count++;
+   }   
+  }
+ }
+	if(count>0)
+ {
+  if(count>5)
+  {
+   alert('You cannot apply to more than 5 jobs per page');
+   return false;
+  }
+  else
+  {
+   window.open('bulk_apply_now.php?query_string='+arrnew.join(','),'new');
+   return true;
+  }
+ }
+ else
+ {
+  alert('Please checked atleast one job');
+  return false;
+ }
+}
+//-->
+</script>
+<!-- Left Starts -->
+<table class="template"  border="0"  cellspacing="0" cellpadding="2">
+ <tr>
+<!-- Left Ends -->        
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="0">
+   <script type="text/javascript"><!--
+google_ad_client = "pub-4987788162507876";
+/* 728x90, created 7/15/10 */
+google_ad_slot = "0984293573";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+    <tr>
+     <td valign="top">
+			   <table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox" align="center">
+				   <tr bgcolor="FFFFFF">
+					   <td valign="top">
+         <table border="0" width="100%" cellspacing="0" cellpadding="10">
+          <tr>
+           <td class="pageHeading" align="center">{HEADING_TITLE}ddd<br>&nbsp;</td>
+          </tr>
+         </table>
+         <table border="0" width="100%" cellspacing="3" cellpadding="0">
+          <tr>
+           <td valign="top">
+           {update_message}
+           {save_search}
+            <table border="0"  width="100%" cellspacing="0" cellpadding="5">
+             <tr>
+              <td class="label">{INFO_TEXT_TITLE_NAME}</td>
+              <td>{INFO_TEXT_TITLE_NAME1}</td>
+              <td align="right">{save_button}</td>
+              {hidden_fields}
+             </tr></form>
+            </table>
+            <form name="page" method="post">
+            <table border="0" width="100%" cellspacing="3" cellpadding="0">
+             <tr>
+		            <td class="label">{total}</td><td valign="top" align="right">{list_page}&nbsp;{page}&nbsp;</td>
+             </tr>{hidden_fields}</form>{apply_form}
+            </table>
+            <table border="0" width="100%" cellspacing="0" cellpadding="0">
+             <tr>
+              <td align="right">{apply_button}</td>
+             </tr>
+             <tr>
+              <td><hr></td>
+             </tr>
+            </table>
+<table width="100%" border="0" align="center" cellPadding="3" cellSpacing="0">
+	<!-- BEGIN job_search_result -->
+	<tr bgcolor="#002e79">
+		<td class="job_search_results1" width='17%' style="color:white;" align="right"><b>Job title:</b></td>
+		<td class="job_search_results1" width='33%'style="color:white;"><b>{job_search_result.title}<b></td>
+		<td class="job_search_results1" width='17%'style="color:white;" align="right"><b>Apply before:</b></td>
+		<td class="job_search_results2"  width='32%'align='left'style="color:white;"><b>{job_search_result.apply}<b></td>
+		<td background="img/header_bg.gif" width='1%'  valign="top">{job_search_result.check_box}</td>
+	</tr>
+	<tr>
+		<td class="label" align="right" valign="top">{INFO_TEXT_COMPANY_NAME}</td>
+		<td class="gray_text" align="left" valign="top">{job_search_result.company_name}</td>
+		<td class="label" align="right" valign="top">{INFO_TEXT_LOCATION}</td>
+		<td class="gray_text" align="left" valign="top" colspan='2'>{job_search_result.location}</td>
+	</tr>
+	<tr>
+		<td class="label" align="right" valign="top">{INFO_TEXT_EXPERIENCE}</td>
+		<td class="gray_text" align="left" valign="top">{job_search_result.experience}</td>
+		<td class="label" align="right" valign="top">{INFO_TEXT_SALARY}</td>
+		<td class="gray_text" align="left" valign="top" colspan='2'>{job_search_result.job_salary}</td>
+	</tr>
+	<tr>
+		<td colspan="4" class="gray_text">{job_search_result.summary} </td>
+	</tr>
+	<tr>
+		<td colspan='3' class="small_red">&nbsp;</td>
+ 	<td align='right' colspan='2'  class="label">{job_search_result.details}</td>
+	 </tr>
+ <tr>
+  <td colspan="5"><hr></td>
+ </tr>
+	<!-- END job_search_result -->
+</form>
+</table>
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+  <td width="{RIGHT_BOX_WIDTH}" valign="top">
+   <table border="0" width="99%" cellspacing="1" cellpadding="0" class="infoBox" align="center">
+    <tr class="background">
+     <td valign="top">
+      <table border="0" width="{RIGHT_BOX_WIDTH}" cellspacing="0" cellpadding="0" class="columnRight1">
+       <tr>
+        <td valign="top">{RIGHT_HTML}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{FOOTER_HTML}

@@ -1,0 +1,68 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+  <div class="left-sidebar-wrapper">
+    <div class="left-sidebar-spacer">
+      <div class="left-sidebar-scroll" style="overflow-y: scroll !important">
+        <div class="left-sidebar-content">{LEFT_HTML}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="container be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px; font-size: 26px; float: left">
+        <ion-icon name="desktop-outline"></ion-icon> </span
+      >{ESSAY_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary"
+        >
+          <div class="card-header"></div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TB_HEAD_ESSAY}</th>
+                  <th>{TB_HEAD_QUESTION}</th>
+                  <th>{TB_HEAD_SEEKER}</th>
+                  <th>{TB_HEAD_ASSESSMENT_NAME}</th>
+                  <th>{TH_COMPANY_NAME}</th>
+                  <th>{TB_HEAD_TEST_NAME}</th>
+                  <th>{TB_HEAD_DATE}</th>
+                  <th>{TB_HEAD_JOB}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN essay_lib -->
+                <tr>
+                  <td>{essay_lib.name}</td>
+                  <td>{essay_lib.question}</td>
+                  <td>{essay_lib.seeker_name}</td>
+                  <td>{essay_lib.assessment}</td>
+                  <td>{essay_lib.company}</td>
+                  <td>{essay_lib.test}</td>
+                  <td>{essay_lib.created_at}</td>
+                  <td>{essay_lib.job_title}</td>
+                </tr>
+                <!-- END essay_lib -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="10">{PAGINATION_LINK}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

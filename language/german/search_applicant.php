@@ -1,0 +1,38 @@
+<?
+define('HEADING_TITLE', 'Bewerberliste');
+define('INFO_TEXT_APPLICATION', 'Anwendungs-ID');
+define('ERROR_APPLICATION_NOT_EXIST', 'Es tut uns leid, diese Anwendung existiert nicht.');
+define('IMAGE_SEARCH', 'Bewerber suchen');
+define('INFO_TEXT_SEARCH_BY_ID', 'Suche nach Anwendungs-ID:');
+define('INFO_TEXT_ADVANCE_SEARCH', 'Erweiterte Suche:');
+define('INFO_TEXT_FIRST_NAME', 'Vorname:');
+define('INFO_TEXT_LAST_NAME', 'Familienname, Nachname:');
+define('APPLICATION_ID2','Anwendungs-ID:');
+define('INFO_TEXT_EMAIL_ADDRESS', 'E-Mail-Adresse:');
+define('TABLE_HEADING_APPLICATION_NO', 'Antragsnummer');
+define('TABLE_HEADING_NAME', 'Name');
+define('TABLE_HEADING_EMAIL_ADDRESS', 'E-Mail-Adresse');
+define('TABLE_HEADING_JOB_TITLE', 'Berufsbezeichnung');
+define('TABLE_HEADING_INSERTED', 'Eingefügt');
+define('INFO_TEXT_APPLICATIONS', 'Anwendungen');
+define('INFO_TEXT_HAS_MATCHED', 'hat abgestimmt');
+define('INFO_TEXT_TO_YOUR_SEARCH', 'zu Ihren Suchkriterien.');
+define('INFO_TEXT_HAS_NOT_MATCHED', 'hat keinen Bewerber zu Ihren Suchkriterien gefunden.');
+define('HEADING_SEARCH', 'Bewerber suchen');
+define('INFO_TEXT_UNREGISTERED_RESUMES', 'Liste der Direktbewerber');
+define('INFO_TEXT_ALL_APPLICANTS', 'Alle Bewerber');
+define('INFO_APP_SEARCH', 'Bewerber suchen');
+define('INFO_APPLICATION_ID', 'Anwendungs-ID');
+define('INFO_FIRST_NAME', 'Vorname');
+define('INFO_LAST_NAME', 'Familienname, Nachname');
+define('INFO_ANY_EXP', 'Jede Erfahrung');
+define('INFO_TEXT_SEARCH_APPLICANTS', 'Bewerber suchen');
+define('INFO_TEXT_CR_APP', 'Aktuelle Bewerber');
+define('INFO_TEXT_MATCHED', 'Abgestimmt');
+define('INFO_ALL_APPLICANTS', 'Bewerber Ergebnis');
+define('INFO_TEXT_EXPERIENCE', 'Erfahrung');
+define('TEXT_SEARCH','Suchen');
+define('APPLICANT_PIPELINE','Bewerber-Pipeline');
+define('VIEW_RESUME','Lebenslauf anzeigen');
+define('TEXT_CONTACT','Kontakt');
+?>

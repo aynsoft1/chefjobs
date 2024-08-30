@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="../css/stylesheet1.css">
+<script src="../jscript/common.js"></script>
+<script src="../jscript/page.js"></script>
+<title>Print Recruiter</title>
+<body onload="window.print();">
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->       
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+     <td>
+      <table border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td><h3>{HEADING_TITLE}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">
+      <table border="0" width="100%" cellspacing="1" cellpadding="0" class="middle_table1">
+       <tr>
+        <td valign="top">
+         <table border="0" width="100%" cellspacing="1" cellpadding="4" class="middle_table2">
+          <tr>
+           {HEADER_ROW}           
+          </tr>
+          {HEADER_VALUE}
+         </table>
+   					</td>
+       </tr>
+      </table>
+					</td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->

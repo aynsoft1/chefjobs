@@ -1,0 +1,78 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+		<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends -->
+					
+        <div class="col-md-9">
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message} 
+            <div class="card card-custom">
+			<div class="card-header card-header-custom">
+				<div class="col-md-12">
+					<h1 class="">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+                  <div class="card-body card-body-custom p-0">
+											 
+									
+<div class="table-responsive-sm">												 
+<table class="table table-hover">
+<thead>
+															<tr class="jobs-table-headbar">
+																<th>{TABLE_HEADING_PLAN_TYPE_NAME}</th>
+																<th>{TABLE_HEADING_PRICE}</th>
+																<th class="m-none">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</th>
+																<th>{TABLE_HEADING_STATUS}</th>
+																<th class="m-none">{TABLE_HEADING_INSERTED}</th>
+																<th class="m-none">{TABLE_HEADING_LAST_UPDATED}</th>
+																<th class="m-none"></th>
+															</tr>
+															</thead>
+<!-- BEGIN orders -->
+<tr{orders.row_selected}>
+															<td valign="top" class="dataTableContent fw-bold">{orders.plan_type_name}</td>
+																<td valign="top" class="dataTableContent">{orders.price}</td>
+																<td valign="top" class="dataTableContent m-none">{orders.time}</td>
+																<td valign="top" class="dataTableContent">{orders.status}</td>
+															 <td valign="top" class="dataTableContent m-none">{orders.inserted}</td>
+															 <td valign="top" align="middle" class="dataTableContent m-none">{orders.last_updated}</td>
+															 <td valign="top" align="middle" class="dataTableContent m-none">{orders.action}</td>
+															</tr>
+														 <!-- END orders -->
+												 	</table>
+													</div>
+													 
+													 
+												 
+                </div>
+				
+				<div class="card-footer">
+				{hidden_fields}
+				{total} {list_page} {page}
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{FOOTER_HTML}

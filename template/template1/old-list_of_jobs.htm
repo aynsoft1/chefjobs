@@ -1,0 +1,97 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<tr>
+	<td valign="top">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				<td>
+				 <div align="center">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="left"><img src="img/main_bar_left.gif" width="2" height="30"></div></td>
+										<td width="100%" background="img/main_bar_bg.gif">
+											<table  width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+												<tr>
+													<td><img src="img/spacer.gif" width="12" height="5"></td>
+													<td><img src="img/dotted_bullet.gif" width="10" height="10"></td>
+													<td><img src="img/spacer.gif" width="6" height="5"></td>
+													<td><span class="style8">{HEADING_TITLE}</span></td>
+													<td width="60%" align="right">{different_jobs}</td>
+													<td><img src="img/spacer.gif" width="6" height="5"></td>
+												</tr>
+											</table>
+										</td>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="right"><img src="img/main_bar_right.gif" width="2" height="30"></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" height="550"  border="0" cellpadding="15" cellspacing="1" bgcolor="#E2E2E2">
+									<tr>
+										<td valign="top" bgcolor="#FFFFFF">
+										 <table border="0" width="100%" cellspacing="3" cellpadding="0">
+            <tr>
+             <td valign="top">
+             {update_message}
+														<table border="0" width="100%" cellspacing="0" cellpadding="2">
+															<tr class="dataTableHeadingRow" style="background-color:#3e5a6c;">
+																<td class="dataTableHeadingContent">{TABLE_HEADING_TITLE}</td>
+																<td class="dataTableHeadingContent">{TABLE_HEADING_INSERTED}</td>
+																<td class="dataTableHeadingContent">{TABLE_HEADING_EXPIRED}</td>
+																<td class="dataTableHeadingContent">{TABLE_HEADING_STATUS}</td>
+																<td class="dataTableHeadingContent" align="middle">{TABLE_HEADING_VIEWED}</td>
+																<td class="dataTableHeadingContent" align="middle">{TABLE_HEADING_CLICKED}</td>
+																<td class="dataTableHeadingContent" align="middle">{TABLE_HEADING_APPLICATIONS}</td>
+																<td class="dataTableHeadingContent" align="right">{TABLE_HEADING_ACTION}&nbsp;</td>
+															</tr>
+															<!-- BEGIN jobs -->
+															<tr{jobs.row_selected}>
+																<td valign="top" class="dataTableContent">{jobs.title}</td>
+																<td valign="top" class="dataTableContent">{jobs.inserted}</td>
+																<td valign="top" class="dataTableContent">{jobs.expired}</td>
+																<td valign="top" class="dataTableContent">{jobs.status}</td>
+																<td valign="top" class="dataTableContent" align="middle">{jobs.viewed}</td>
+																<td valign="top" class="dataTableContent" align="middle">{jobs.clicked}</td>
+																<td valign="top" class="dataTableContent" align="middle">{jobs.applications}</td>
+																<td valign="top" class="dataTableContent" align="right">{jobs.action}</td>
+															</tr>
+															<!-- END jobs -->
+														</table>
+														<table border="0" width="100%" cellspacing="0" cellpadding="2">
+															<tr>
+																<td>{count_rows}</td>
+																<td align="right">{no_of_pages}</td>
+															</tr>
+															<tr>
+																<td colspan="2" align="right">{new_button}</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+     </div>
+			 </td>
+    {RIGHT_HTML}
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+{FOOTER_HTML}

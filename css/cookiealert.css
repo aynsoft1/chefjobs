@@ -1,0 +1,36 @@
+.cookiealert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 13px;
+    width: 295px;
+    margin: 0 !important;
+    z-index: 999;
+    border: 1px solid #eee;
+    transition: all 500ms ease-out;
+    border-radius: 0px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+}
+.cookiealert a {
+    font-size: 13px;
+}
+.cookiealert a:hover {
+    font-size: 13px;
+    text-decoration: underline!important;
+}
+
+.cookiealert.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+    transition-delay: 1000ms;
+    padding: 14px 20px;
+}
+
+.cookiealert a {
+    text-decoration: underline!important;
+    color: #0a66c2!important;
+	display: contents;
+}
+
+

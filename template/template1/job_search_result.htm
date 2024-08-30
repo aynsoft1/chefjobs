@@ -1,0 +1,173 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{HOST_NAME}{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src="{INFO_TEXT_JSCRIPT_SEARCH_FILE}"></script>
+<script src="{PREVIEW_BOX_JSCRIPT_FILE}"></script>
+{MAP_JAVA_SCRIPT_LINK}
+<script src="{HOST_NAME}jscript/map.js"></script>
+<style>
+	#map-canvas {
+		width: 600px;
+		height: 400px;
+	}
+</style>
+<!-- Below Script for auto close -->
+<style>
+	.displayNone {
+		display: none;
+	}
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone");
+			// $messageStackSuccess
+		});
+	}, 50000);
+</script>
+<!-- Preview Box script -->
+<script src="{HOST_NAME}jscript/job_pagination.js"></script>
+<div class="container-fluid" style="max-width: 1440px;">
+	<div class="row">
+		<div class="col-md-3 pr-1">
+			<div class="card no-border">
+				<div class="card-header bg-white"><span style="margin: 2px 0 0 0;position: absolute;">
+						<ion-icon name="funnel"></ion-icon>
+					</span> <span style="margin-left:20px;">Filterdd</span></div>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">{JOB_SEARCH_LEFT}</li>
+			</ul>
+
+		</div>
+		<div class="col-md-4 pr-1">
+
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message}
+			<div class="card card-custom">
+				<div class="card-header card-header-custom card-header-custom-result-page2 bg-white px-4">
+					<h1 class="display-6 p-0 m-0 text-dark">{HEADING_TITLE}</h1>
+					<div class="text-muted mt-2">{total}</div>
+
+				</div>
+
+				<div class="card-header card-header-custom card-header-custom-result-page bg-white">
+					{INFO_TEXT_SEARCH_STRING}
+					<div class="pr-0 m-none">
+						{save_search}{hidden_fields}{hidden_fields1}
+						<div class="input-group">
+							{INFO_TEXT_ALERT_TEXT}
+						</div>
+					</div>
+
+					<div class="input-group">
+						{INFO_TEXT_TITLE_NAME1}
+						<div class="input-group-append">
+							{INFO_TEXT_ALERT_SAVE}
+						</div>
+					</div>
+				</div>
+
+				<div class="card-body pt-2">
+					<div class="mb-2">{INFO_TEXT_APPLY_BUTTON}</div>
+					<div class="mb-3 text-muted font-italic"><i class="fa fa-long-arrow-down"
+							style="color:#333!important;" aria-hidden="true"></i> {INFO_TEXT_APPLY_NOW1}
+					</div>
+
+					{MAP_PAGE_VIEW_RESULT1_TEMP}
+					</form>
+					<!--don;t remove this form because apply button will not work-->
+					{form}
+					<div id="page_contents">
+						<!-- BEGIN job_search_result -->
+						<div class="previewBox border-topp" id="{job_search_result.jobId}">
+							<div class="media py-3 pl-4 pr-3">
+								<div class="media-body">
+									<div class="row">
+										<div class="cold text-right m-none-float-right" style="width:20px;">
+											{job_search_result.check_box}</div>
+										<div class="col-md-11 m-none-inline pl-2">
+
+											<h5 class="mt-0 mb-2 text-dark">{job_search_result.job_title}</h5>
+											<span class="text-muted mobile-line-break">
+												{job_search_result.company_name}
+											</span>
+											<span class="mx-1">
+												&#8226;
+											</span>
+											<span class=" text-muted mobile-line-break">
+												{job_search_result.location}
+											</span>
+											<div>
+
+												<span class="text-muted">
+													{job_search_result.job_type}
+												</span>
+												<span class="mx-1">
+													&#8226;
+												</span>
+												<span class="text-muted">
+													{job_search_result.salary}
+												</span>
+												<span class="mx-1">
+													&#8226;
+												</span>
+												<span class="text-muted">
+													{job_search_result.experience}
+												</span>
+											</div>
+											<div class="text-muted mt-1">{job_search_result.description}</div>
+											<div class="small mt-2 skill-tag m-none">{job_search_result.job_skill}
+											</div>
+
+											<!-- <span class="result-email m-none">{job_search_result.email_job}</span> -->
+
+											<span class="result-ends">
+												<span class="text-muted" style="font-size:14px;">
+													{INFO_TEXT_POSTED_ON} {job_search_result.posted_on}
+												</span>
+											</span>
+											<span class="mx-1">
+												&#8226;
+											</span>
+											<span class="result-ends m-none">
+												<span class="text-muted" style="font-size:14px;">
+													{INFO_TEXT_APPLY_BEFORE} {job_search_result.apply_before}
+												</span>
+											</span>
+
+											<!--<span> {job_search_result.applywithoutlogin}</span>-->
+
+										</div>
+
+									</div>
+
+								</div>
+								<div class="mini-profile-img m-none text-right">{job_search_result.logo}</div>
+								<div class="hide-on-desktop">{job_search_result.apply_job}</div>
+							</div>
+
+						</div>
+						<!-- END job_search_result -->
+						<div class="card-footer card-footer-custom2 bg-white">
+							<div class="float-left">{pages}</div>
+							<div class="float-right mobile-float-left" id='pagination-flickr'>{total_pages}</div>
+						</div>
+					</div>
+				</div><!-- endpage contents-->
+				</form>
+			</div>
+		</div>
+		<div class="col-md-5" id="previewDiv"></div>
+	</div>
+</div>
+
+<!-- Middle Ends -->
+<!-- Right Starts -->
+
+<!-- Right ends -->
+
+{FOOTER_HTML}

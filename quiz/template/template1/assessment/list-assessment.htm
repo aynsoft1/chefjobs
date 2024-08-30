@@ -1,0 +1,81 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Left Starts -->
+<!-- Left Ends -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="dflex ms-auto">
+                {quiz_menus} {quiz_menus_1}
+            </div>
+        </div>
+    </div>
+    <!-- Middle Starts -->
+    {update_message}
+    
+        <div class="cardcard-custom mb-4 ">
+            <div class="cardbody">
+        <div class="row row-cols-3 row-cols-md-5 m-gap-0">
+        <!-- BEGIN report_box -->
+        <div class="col">
+            <div class="card card-custom box {report_box.class}">
+                <div class="card-body">
+                    <h5 class="card-title m-0 d-flex align-items-center">
+                        <div class="me-3"><i class="{report_box.iconClass}"></i></div>
+                        <div class="">
+                            <h3 class="ms-auto m-0" style="color: #5e5873;">{report_box.total}</h3>
+                            <div class="asses-title">{report_box.title}</div>
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <!-- END report_box -->
+    </div>
+</div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card card-custom">
+            <!-- <div class="card-header card-header-custom">
+                        <p class="float-left">Pick a Test from test library &nbsp; Create your own test</p>
+                    </div> -->
+            <div class="card-body p-0 card-body-custom table-responsive-sm">
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr class="small">
+                            <th class="">{TB_HEAD_TITLE}</th>
+                            <!-- <th class="m-none">{NO_OF_TESTS}</th>
+                            <th class="m-none">{TB_HEAD_CANDIDATE}</th> -->
+                            <th class="m-none">{JOB_TITLE}</th>
+                            <th class="m-none">{TB_HEAD_DATE}</th>
+                            <th class="">{TB_HEAD_INVITE}</th>
+                            <th class="">{TB_HEAD_ACTION}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- BEGIN assessment -->
+                        <tr>
+                            <td class="small">
+                                <div class="fw-bold">{assessment.title}</div>
+                                <div>
+                                    <span class="me-3" style="font-size: 0.8rem;">Tests: {assessment.no_of_test}</span>
+                                    <span style="font-size: 0.8rem;">Candidates: {assessment.no_of_candidate}</span>
+
+                                </div>
+                            </td>
+                            <td class="small text-muted m-none">{assessment.job_title}</td>
+                            <td class="small text-muted m-none">{assessment.created_at}</td>
+                            <td class="">{assessment.invite_link}</td>
+                            <td class="small text-muted">{assessment.action}</td>
+                        </tr>
+                        <!-- END assessment -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

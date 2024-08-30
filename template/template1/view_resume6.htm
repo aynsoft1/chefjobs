@@ -1,0 +1,98 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+</td>
+</tr>
+<SCRIPT LANGUAGE="JavaScript">
+	function popUp(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=800,height=600,left = 0,top = 0');");
+	}
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+	function popUp1(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=270,left = 100,top = 100');");
+	}
+</script>
+<tr>
+	<td valign="top">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				<td width="86%">
+					<div align="center">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="0%" background="img/main_bar_bg.gif">
+												<div align="left"><img src="img/main_bar_left.gif" width="2"
+														height="30"></div>
+											</td>
+											<td width="100%" background="img/main_bar_bg.gif">
+												<table border="0" align="left" cellpadding="0" cellspacing="0">
+													<tr>
+														<td><img src="img/spacer.gif" width="12" height="5"></td>
+														<td><img src="img/dotted_bullet.gif" width="10" height="10">
+														</td>
+														<td><img src="img/spacer.gif" width="6" height="5"></td>
+														<td><span class="style8">{HEADING_TITLE}</span></td>
+													</tr>
+												</table>
+											</td>
+											<td width="0%" background="img/main_bar_bg.gif">
+												<div align="right"><img src="img/main_bar_right.gif" width="2"
+														height="30"></div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>{update_message}
+									<table width="100%" height="550" border="0" cellpadding="15" cellspacing="1"
+										bgcolor="#E2E2E2">
+										<tr>
+											<td bgcolor="#FFFFFF" valign="top">
+												<table width="100%" border="0" cellpadding="17" cellspacing="0">
+													<tr>
+														<td>&nbsp;
+															<table border="0" width="100%" cellspacing="1"
+																cellpadding="0" class="resumebox">
+																{SECTION_OBJECTIVE}
+																<a
+																	name="work_experience"></a>{SECTION_WORK_HISTORY_DETAIL}
+																{SECTION_REFERENCE_DETAILS}
+																{SECTION_EDUCATION_DETAILS}
+																{SECTION_SKILLS}
+																{SECTION_LANGUAGES}
+																<a name="target_job"></a>{SECTION_TARGET_JOB}
+																{SECTION_DOCUMENT_VIDEO}
+																{SECTION_DOCUMENT_UPLOAD}
+															</table>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<!-- Middle Ends -->
+				<!-- Right Starts -->
+				<!-- Right ends -->
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+{FOOTER_HTML}

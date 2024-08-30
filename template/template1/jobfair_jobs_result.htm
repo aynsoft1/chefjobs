@@ -1,0 +1,72 @@
+{INFO_TEXT_HEADER_TITLE}
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+ <div class="container">
+    <div class="row">
+		<div class="col-md-3">
+		{JOB_SEARCH_LEFT}
+		</div>
+		
+        <div class="col-md-9">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                <div class="media">
+				  <span class="mr-3">{INFO_TEXT_RECRUITER_LOGO}</span>
+				  <div class="media-body">
+					<h5 class="mt-0">{HEADING_TITLE}</h5>
+					{INFO_TEXT_RECRUITER_ADDRESS}
+					
+					<div class="float-right tecxt-right">{back_button}</div>
+				  </div>
+				</div>
+                </div>
+				
+				<div class="card-body card-body-custom p-0">
+			
+				
+				<div class="table-responsive">
+				<table class="table table-hover">
+				<thead>
+				<tr>
+					<th class="dataTableHeadingContent" width="150">{TABLE_HEADING_JOB_TITLE}</th>
+					<th class="dataTableHeadingContent">{TABLE_HEADING_JOB_CATEGORY}</th>
+					<th class="dataTableHeadingContent">{TABLE_HEADING_ADVERTISED}</th>
+					<th class="dataTableHeadingContent">{TABLE_HEADING_EXPIRED}</th>
+					<th class="dataTableHeadingContent">{TABLE_HEADING_APPLY}</th>
+				</tr>
+				</thead>
+				<!-- BEGIN result -->
+				<tr{result.row_selected}>
+					<td valign="top" class="dataTableContent">{result.job_title}</td>
+					<td width="200" valign="top" class="dataTableContent">{result.job_category}</td>
+					<td valign="top" class="dataTableContent">{result.re_adv}</td>
+					<td valign="top" class="dataTableContent">{result.expired}</td>
+					<td valign="top" class="dataTableContent">{result.apply}</td>
+				</tr>
+				<!-- END result -->
+				</table>
+				</div>
+			</div>
+			<div class="card-footer">{count_rows} {no_of_pages}</div>
+		</div>
+	</div>
+	</div>
+	</div>
+{FOOTER_HTML}

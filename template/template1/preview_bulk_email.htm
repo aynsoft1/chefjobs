@@ -1,0 +1,99 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+</td>
+</tr>
+<script language="JavaScript">
+  function set_action(action) {
+    document.preview_mail.action1.value = action;
+    document.preview_mail.submit();
+  }
+//-->
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 small-font">
+      <div class="list-group mb-4">
+        <h4 type="button" class="card-header">
+          <!--{INFO_TEXT_JOB_TITLE}-->{INFO_TEXT_JOB_TITLE1}
+        </h4>
+        <div>{INFO_TEXT_ALL_APPLICANT}</div>
+        <div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+        <div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+        <div>{INFO_TEXT_JOB_DETAIL}</div>
+        <div>{INFO_TEXT_ADD_APPLICANT}</div>
+      </div>
+
+      <div class="list-group mb-4">
+        <h4 type="button" class="card-header">
+          Reports
+        </h4>
+        <div>{INFO_TEXT_REPORT_PIPELINE}</div>
+        <div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+        <div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+        <div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+            <h1 class="main-heading">{HEADING_TITLE}</h1>
+        </div>
+    </div>
+      {update_message}
+
+      <div class="card card-custom">
+        {form}
+        <div class="card-body card-body-custom">
+
+          <div class="form-group row">
+            <label for="my-input" class="col-sm-3 col-form-label">{INFO_TEXT_TO}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_TO1}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_FROM}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_FROM1}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_SUBJECT}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_SUBJECT1}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">{INFO_MAIL_ATTACHMENT}</label>
+            <div class="col-sm-9">
+              {INFO_MAIL_ATTACHMENT1}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_MESSAGE}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_MESSAGE1}
+            </div>
+          </div>
+          {hidden_fields}
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+              {buttons}
+            </div>
+          </div>
+        </div>
+        <!--Card body-->
+      </div>
+    </div>
+    <!--card-->
+    </form>
+  </div>
+</div>
+</div>
+
+{FOOTER_HTML}

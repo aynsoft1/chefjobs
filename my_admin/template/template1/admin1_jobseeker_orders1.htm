@@ -1,0 +1,161 @@
+{ADMIN_HEADER_HTML}
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+	<div class="main-content container-fluid">
+		<!-- Start Order Page -->
+		<section>
+			<div class="row">
+				<div class="col-md-12">
+					{update_message}
+					<div class="card">
+						<div class="card-header">
+							<div class="row">
+								<div class="col-md-6">
+									{HEADING_TITLE1}
+								</div>
+								<div class="col-md-6">
+									{HEADING_TITLE}
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="row order-page">
+								<div class="col-md-6">
+									<div class="card">
+										<h3 class="m-2 p-2">
+											Order Status
+										</h3>
+										{form}
+										<div class="card-body">
+											<div class="form-group row">
+												<label for="entry-status"
+													class="col-sm-3 col-form-label">{ENTRY_STATUS}</label>
+												<div class="col-sm-9">
+													{ENTRY_STATUS1}
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="table-headin-comments"
+													class="col-sm-3 col-form-label">{TABLE_HEADING_COMMENTS}:</label>
+												<div class="col-sm-9">
+													{TABLE_HEADING_COMMENTS2}
+												</div>
+											</div>
+											<div class="form-check">
+												{ENTRY_NOTIFY_CUSTOMER1}
+												<label class="form-check-label" for="entry-notify-customer">
+													{ENTRY_NOTIFY_CUSTOMER}
+												</label>
+											</div>
+											<div class="form-check">
+												{ENTRY_NOTIFY_COMMENTS1}
+												<label class="form-check-label" for="entry-notify-comments">
+													{ENTRY_NOTIFY_COMMENTS}
+												</label>
+											</div>
+											<div class="form-group row">
+												<div class="col-sm-10">
+													{button}
+												</div>
+											</div>
+										</div>
+										</form>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="card">
+										<h3 class="m-2 p-2">
+											Payment Method
+										</h3>
+										<div class="card-body">
+											<dl class="row">
+												<dt class="col-sm-5">Payment Via:</dt>
+												<dd class="col-sm-7">
+													{ENTRY_PAYMENT_METHOD1}
+												</dd>
+												{credit_card_string}
+												<dt class="col-sm-5">{TABLE_HEADING_PRODUCTS}</dt>
+												<dd class="col-sm-7">{TABLE_HEADING_PRODUCTS1}</dd>
+												<dt class="col-sm-5">{TABLE_HEADING_TOTAL_PRICE}</dt>
+												<dd class="col-sm-7">{TABLE_HEADING_TOTAL_PRICE1}</dd>
+												{order_total_text}
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="card">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<h3 class="m-2 p-2">
+									Customer
+								</h3>
+								<div class="card-body">
+									{ENTRY_CUSTOMER1}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card">
+								<h3 class="m-2 p-2">
+									Billing Address
+								</h3>
+								<div class="card-body">
+									{ENTRY_BILLING_ADDRESS1}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-body">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>{TABLE_HEADING_DATE_ADDED}</th>
+										<th>{TABLE_HEADING_STATUS}</th>
+										<th>{TABLE_HEADING_COMMENTS}</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>{TABLE_HEADING_DATE_ADDED1}</td>
+										<td>{TABLE_HEADING_STATUS1}</td>
+										<td>{TABLE_HEADING_COMMENTS1}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<!-- End Order Page -->
+	</div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

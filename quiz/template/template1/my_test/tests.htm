@@ -1,0 +1,67 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{HEADING_MY_TEST}</h1>
+            <div class="dflex ms-auto">
+                {test_menus}
+            </div>
+        </div>
+    </div>
+
+
+    {update_message}
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-custom">
+                    <div class="card-body p-0 card-body-custom table-responsive-sm">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TB_HEAD_ASSESSMENT}</th>
+                                    <th>{TB_HEAD_JOB}</th>
+                                    <th>{TB_HEAD_COMPANY}</th>
+                                    <th>{TB_HEAD_TEST_DATE}</th>
+                                    <th>{TB_HEAD_TEST_EXPIRED}</th>
+                                    <th>{TB_HEAD_START_TEST}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN my_assessment -->
+                                <tr>
+                                    <td>{my_assessment.title}</td>
+                                    <td>{my_assessment.view_job}</td>
+                                    <td>{my_assessment.company}</td>
+                                    <td>{my_assessment.date}</td>
+                                    <td>{my_assessment.deadline}</td>
+                                    <td>{my_assessment.start_test}</td>
+                                </tr>
+                                <!-- END my_assessment -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

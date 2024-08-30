@@ -1,0 +1,44 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+	const classAdd = () => {
+		document.querySelector("input[name='gift_code']").classList.add("form-control");
+	}
+	window.addEventListener("load", classAdd);
+</script>
+<style>
+.form-control {
+    display: -webkit-inline-box;
+    width: 40%;
+    margin: 10px 0 0 0!important;
+}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>
+				 <div class="card-header card-header-custom">
+                    <div class="text-dark font-weight-bold">{amount_due}</div>
+                </div>
+				
+                <div class="card-body card-body-custom">
+				{form}
+		   
+		   {gift_string}
+		   {button}
+		   </form>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+
+		   
+		   
+
+<!-- Right Ends -->
+{FOOTER_HTML}

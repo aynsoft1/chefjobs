@@ -1,0 +1,192 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+<style type="text/css">
+  .btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+  }
+
+  .img_box {
+    display: block;
+    border: 1px solid #aaa;
+    background-color: #ededed;
+    width: 100px;
+    min-height: 100px;
+    padding: 2px;
+    margin: 2px;
+    float: left;
+    text-align: center;
+  }
+</style>
+<script type="text/javascript">
+// < !--
+    { ajax_url }
+//-->
+</script>
+<script language="javascript">
+  function set_oneday_date() {
+    if (document.jobfair.oneday.checked == true) {
+      document.jobfair.TR_enddate.disabled = true;
+      document.jobfair.TR_endmonth.disabled = true;
+      document.jobfair.TR_endyear.disabled = true;
+    }
+    else {
+      document.jobfair.TR_enddate.disabled = false;
+      document.jobfair.TR_endmonth.disabled = false;
+      document.jobfair.TR_endyear.disabled = false;
+    }
+  }
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<script language="javascript" type="text/javascript" src="../jscript/jobfair.js"></script>
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="description"],textarea[name="short_description"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+
+
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-floppy-o fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header card-header-divider">{view_list_of_jobfairs}<span class="card-subtitle text-danger">*Required Field</span></div>
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            {form}
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_TITLE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JF_TITLE1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_LOGO}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBFAIR_LOGO1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_VIDEO}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JF_VIDEO1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_BEGINDATE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBFAIR_BEGINDATE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_ENDDATE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBFAIR_ENDDATE1} {INFO_TEXT_ONE_DAY1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBFAIR_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_LOCATION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JF_LOCATION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_VENUE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JF_VENUE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_GOOGLEMAP_URL}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JF_GOOGLEMAP_URL1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_SHORT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHORT_DESCRIPTION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_DESCRIPTION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right" for="inputText3"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+          </form>
+          <!-- Middle Ends	-->
+
+              <!--             <tr> 
+      <td class="label">{INFO_TEXT_JOBFAIR_REGISTRATION_BEGINDATE}</td>
+      <td>{INFO_TEXT_JOBFAIR_REGISTRATION_BEGINDATE1}</td>
+     </tr>
+     <tr> 
+      <td class="label">{INFO_TEXT_JOBFAIR_REGISTRATION_ENDDATE}</td>
+      <td>{INFO_TEXT_JOBFAIR_REGISTRATION_ENDDATE1}</td>
+     </tr>
+-->
+
+             <!--              <tr> 
+      <td colspan="2">{INFO_TEXT_PARTNERS_LOGO}</td>
+     </tr>
+    <tr>
+<td class="label">{INFO_PARTNERS_UPLOAD}</td>
+<td>{click_logo_to_delete}
+ <div id="partner_logo"><input type="file" name="files[]" multiple="multiple" /></div>
+ <div class="btn btn-info"><span id="add_more_photo">Add More Partner Logo</span></div>
+
+</td>
+</tr>
+-->          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

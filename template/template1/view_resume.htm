@@ -1,0 +1,289 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+    function popUp(URL) {
+        day = new Date();
+        id = day.getTime();
+        eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=800,height=600,left = 0,top = 0');");
+    }
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+    function popUp1(URL) {
+        day = new Date();
+        id = day.getTime();
+        eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=270,left = 100,top = 100');");
+    }
+</script>
+<script>
+    function addClassName() {
+        const selectField = document.querySelector("[name='rate_it']").classList;
+
+        selectField.add('form-control');
+
+        const textAreat = document.querySelector('[name="private_notes"]').classList;
+
+        textAreat.add('form-control');
+
+    }
+    window.addEventListener("load", addClassName);
+</script>
+
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+    body {
+        background: #eee;
+    }
+
+    html body {
+        margin: 0 !important;
+    }
+
+    .cv-attach a {
+        text-decoration: underline;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {update_message}
+
+            <!-- <div class="card card-custom mb-2">
+                <div class="card-header card-header-custom">
+                    <h1 class="display-6 p-0 m-0 float-left mt-1">View Resume</h1>
+                    
+                </div>
+            </div> -->
+            <div class="d-flex align-items-center mb-3">
+                <!-- <div class="btn-group d-flex" role="group" aria-label="Basic example" role="group" aria-label="Button group with nested dropdown"></div> -->
+                <div class="d-flex mx-auto m-dblock" role="group" aria-label="Basic example" role="group"
+                    aria-label="Button group with nested dropdown"><!--<span class="m-none">{DOWNLOAD_RESUME_BTN}</span>
+                    {SAVE_RESUME_BTN}-->
+                    {add_button}
+                    {RATE_RESUME_BUTTON_FOR_REC}
+                </div>
+            </div>
+
+            <div class="card1 card-custom1 m-none">
+                <div class="card-header1 card-header-custom1">
+                    <!-- Start comment is used to hide the card if jobseeker logged in
+    This below card is viewed when recuriter logged in otherwise not -->
+
+                    <div class="collapse" id="collapseExample">
+                        {comment_start}
+                        <div class="card mb-3">
+                            <div class="card-header card-header-custom fw-bold">
+
+                                {INFO_TEXT_CURRENT_RATING}
+                                {INFO_TEXT_CURRENT_RATING1}
+
+                            </div>
+                            {rate_form}
+                            <div class="card-body card-body-custom">
+                                <form class="row">
+                                    <div class="col-md-12 d-flex align-items-center">{INFO_TEXT_CURRENT_RATE_IT1}</div>
+                                </form>
+                            </div>
+                            </form>
+                        </div>
+                        {comment_end}
+                    </div>
+                    <!-- End comment-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 mx-auto">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-custom">
+                        <!--<div class="card-header card-header-custom resume-bg">&nbsp;</div>-->
+                        <div class="card-body pt-4 px-4">
+                            <!-- Profile Section -->
+                            <div class="d-flex border-bottom pb-3 mb-4 m-dblock">
+                                <div class="flex-shrink-0">
+                                    <div class="resume-pic-view">{photo}</div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <div class="">
+                                        <div class="">
+                                            <h4 class="m-0 fw-bold mb-2" style="font-size:32px;">{INFO_TEXT_FULL_NAME1}
+                                            </h4>
+                                            <div class="cname">{INFO_PRESENT_COMPANY}</div>
+                                            <div class="location"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                    height="16" fill="currentColor" class="bi bi-at me-2"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z" />
+                                                </svg>{INFO_TEXT_EMAIL_ADDRESS1}</div>
+                                            <div class="location">
+                                                {INFO_TEXT_ALL_PHONE}
+                                            </div>
+                                            <div class="location"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                    height="16" fill="currentColor" class="bi bi-geo-alt me-2"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path
+                                                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>{INFO_TEXT_ADDRESS1}</div>
+                                            <div class="location"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                    height="16" fill="currentColor" class="bi bi-star me-2"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                </svg>{INFO_TEXT_CURRENT_RATING} {INFO_TEXT_CURRENT_RATING1}<span class="mx-2">•</span><span>{INFO_RESUME_VIEWS}</span></div>
+                                            <div class="mt-2 d-flex align-items-center m-dblock m-text-center">
+                                                {RESUME_DOWNLOAD} {RESUME_CONTACT}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Profile Section -->
+
+                            <!-- Basic Info Social Profile Section -->
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="mb-3" style="font-size:18px;font-weight:bold;">{BASIC_INFO}</h3>
+                                        {SECTION_TARGET_JOB}
+                                    </div>
+                                    <div class="col-md-12 mt-4">
+                                        <h3 class="mb-3" style="font-size:18px;font-weight:bold;">{SOCIAL_PROFILE}</h3>
+                                        {SECTION_SOCIAL_URL}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Info Social Profile Section -->
+
+                            <!-- Objective Section -->
+                            {SECTION_OBJECTIVE}
+                            <!-- End Objective Section -->
+
+                            <!-- Work History Section -->
+                            {SECTION_WORK_HISTORY_DETAIL}
+                            <!-- End Work History Section -->
+
+                            <!-- Education Section -->
+                            {SECTION_EDUCATION_DETAILS}
+                            <!-- End Education Section -->
+
+                            <!-- Skills Section -->
+                            {SECTION_SKILLS}
+                            <!-- End Skills Section -->
+
+                            <!-- Reference Section -->
+                            {SECTION_REFERENCE_DETAILS}
+                            <!-- End Reference Section -->
+
+                            <!-- Languages Section -->
+                            {SECTION_LANGUAGES}
+                            <!-- End Languages Section -->
+
+                            <!-- Video Resume Section -->
+                            {SECTION_DOCUMENT_VIDEO}
+                            <!-- End Video Resume Section -->
+
+                            <!-- Copy Paste Resume Section -->
+                            {SECTION_DOCUMENT_UPLOAD_PRINT}
+                            <!-- End Copy Paste Resume Section -->
+
+                            <!-- Screener Answer Section -->
+                            {SCREENER_ANSWER_RESULT}
+                            <!-- End Screener Answer Section -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="row mb-2">
+    <div class="col-md-12">
+    <div class="card card-custom">
+        <div class="card-body pt-4 px-4">
+            
+            {SECTION_SOCIAL_ACCOUNT}
+        </div>
+    </div>
+</div>
+</div> -->
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="commentModalLabel">Add Comment</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="{ADD_COMMENT_POST_URL}" name="add-comment-form">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="private_notes" class="form-label">Comment</label>
+                            <input type="hidden" name="resume_id" id="resume_id" value="" />
+                            <textarea class="form-control" name="private_notes" id="private_notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="submit" class="btn btn-primary" id="submit_add_comment_btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function addComment(resume_id) {
+            const submitBtn = document.getElementById('submit_add_comment_btn');
+            const commentElem = document.getElementById('private_notes');
+            const resumeIdElem = document.getElementById('resume_id');
+
+            const data = await fetchRecord(resume_id)
+
+            console.log('data are>>>>>>>>>>>>>>>>>>', data, data.length, data[0])
+            // check comment is already added then edit otherwise add
+            if (data.length > 0) {
+                const notes = data[0].private_notes;
+                commentElem.innerHTML = notes;
+                resumeIdElem.value = resume_id;
+                submitBtn.innerHTML = 'Update'
+            } else {
+                resumeIdElem.value = resume_id;
+                submitBtn.innerHTML = 'Submit'
+            }
+
+            $('#commentModal').modal('show')
+        }
+
+        // fetch comment for resume id 
+        async function fetchRecord(resume_id) {
+            console.log("{ADD_COMMENT_API_URL}")
+            const API_URL = "{ADD_COMMENT_API_URL}" + resume_id;
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const resData = await response.json();
+
+                return resData;
+            } catch (error) {
+                console.error('Error: fetchRecord of add comment', error);
+            }
+        }
+    </script>
+    {FOOTER_HTML}

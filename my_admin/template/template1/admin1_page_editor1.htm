@@ -1,0 +1,63 @@
+{ADMIN_HEADER_HTML}
+		<script language="javascript" type="text/javascript" src="../tinymce2/tinymce.js"></script>
+  		<script language="javascript" type="text/javascript">
+			tinyMCE.init({
+			  theme : "modern",
+			plugins: [
+				'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+				'searchreplace wordcount visualblocks visualchars code fullscreen',
+				'insertdatetime media nonbreaking save table contextmenu directionality',
+				'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+			  ],
+			  toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+			  toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+			  menubar:false,
+			  image_advtab: true,
+			  
+			  relative_urls : false,
+			remove_script_host : false,
+						mode : "exact",
+				elements : "file_contents",
+			  theme_advanced_toolbar_location : "top",
+					theme_advanced_toolbar_align : "center"
+
+				});
+					</script>
+
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="build-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body p-5">
+            <!-- Middle Starts -->
+            {form}
+            {INFO_TEXT_FILE_CONTENT}
+            <p class="mt-4">{INFO_TEXT_BUTTON}</p>
+          </form>
+          <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

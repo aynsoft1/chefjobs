@@ -1,0 +1,90 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->        
+<script language="javascript" type="text/javascript" src="../TinyMCE/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+		<script language="javascript" type="text/javascript">
+			tinyMCE.init({
+				mode : "exact",
+				elements : "TR_description",
+				content_css : "",
+				theme : "advanced",
+				theme_advanced_toolbar_location : "top",
+				verify_html : "false",
+				verify_css_classes : "false",
+				plugins : "table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,zoom,flash,ibrowser",
+				theme_advanced_buttons1_add : "fontselect,fontsizeselect,forecolor",
+				theme_advanced_buttons2_add_before: "cut,copy,paste,separator",
+				theme_advanced_buttons2_add : "separator,insertdate,inserttime,preview,zoom",
+				theme_advanced_buttons3_add : "tablecontrols,emotions,iespell,flash,advhr,ibrowser",
+				document_base_url : "{HOST_NAME}",
+				relative_urls : "false",
+    remove_script_host : "false",
+				plugin_insertdate_dateFormat : "%Y-%m-%d",
+				plugin_insertdate_timeFormat : "%H:%M:%S",
+				valid_elements : "*[*]",
+				extended_valid_elements : "*[*]",
+				auto_reset_designmode : "true",
+				trim_span_elements : "false"
+			});
+		</script>
+<!-- Middle Starts -->
+  <td width="100%" valign="top">{update_message}<br>
+   <table border="0" width="100%" cellspacing="1" cellpadding="0" class="middle_table1">
+    <tr>
+     <td valign="top">
+      <table border="0" width="100%" cellspacing="0" cellpadding="0" class="middle_table2">
+       <tr>
+        <td valign="top">
+         <table border="0" cellspacing="3" cellpadding="5">
+          <tr>
+           <td class="pageHeading">{HEADING_TITLE}</td>
+          </tr>
+         </table>
+         <table border="0" width="100%" cellspacing="3" cellpadding="10">
+       {form}
+        <tr>
+         <td class="label" align="right">{INFO_TEXT_ARTICLE_TEMPLATE_NAME}</td>
+         <td>{INFO_TEXT_ARTICLE_TEMPLATE_NAME1}</td>
+        </tr>
+        <tr>
+         <td class="label" align="right">{INFO_TEXT_ARTICLE_TEMPLATE_PRIORITY}</td>
+         <td>{INFO_TEXT_ARTICLE_TEMPLATE_PRIORITY1}</td>
+        </tr>
+        <tr>
+         <td class="label" align="left" colspan="2">{INFO_TEXT_ARTICLE_TEMPLATE_DESCRIPTION}</td>
+        </tr>
+        <tr>
+         <td colspan="2">{INFO_TEXT_ARTICLE_TEMPLATE_DESCRIPTION1}
+         </td>
+        </tr>
+        <tr>
+         <td class="label" align="left">{TEXT_MESSAGE}</td>
+         <td>{TEXT_MESSAGE1}
+         </td>
+        </tr>
+        <tr>
+         <td>&nbsp;</td>
+         <td align="middle">{buttons}</td>
+        </tr>
+        </form>
+       </table>
+      </td>
+     </tr>
+    </table>
+   </td>
+<!-- Middle Ends -->
+	</tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

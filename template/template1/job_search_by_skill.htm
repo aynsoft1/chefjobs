@@ -1,0 +1,120 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--
+	var base_url ="{base_url}";
+//-->
+</script>
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src="{base_url}{PREVIEW_BOX_JSCRIPT_FILE}"></script>
+<script src="{HOST_NAME}jscript/job_pagination.js"></script>
+{MAP_JAVA_SCRIPT_LINK}
+<script src="{HOST_NAME}jscript/map.js"></script>
+<script language="JavaScript">
+	function ckeck_application(user) {
+		var count;
+		var user_type = user;
+		var arrnew = new Array();
+		count = 0;
+		new_string = '';
+		for (var i = 0; i < document.page.length; i++) {
+			if (document.page[i].type == 'checkbox') {
+				if (document.page[i].checked == true) {
+					arrnew[count] = document.page[i].value;
+					count++;
+				}
+			}
+		}
+		if (count > 0) {
+			if (count > 5) {
+				alert('You cannot apply to more than 5 jobs per page');
+				return false;
+			}
+			else {
+				if (user_type == 'new')
+					window.open('jobseeker_registration_step1.php?job_apply=' + arrnew.join(','), 'new');
+				else
+					window.open('{HOST_NAME}bulk_apply_now.php?query_string=' + arrnew.join(','), 'new');
+				return true;
+			}
+		}
+		else {
+			alert('Please select at least one job');
+			return false;
+		}
+	}
+	//-->
+</script>
+<style>
+	#map-canvas {
+		width: 600px;
+		height: 400px;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		<!-- Left Starts -->
+			
+			<!-- Left Ends -->
+		<div class="col-md-5 mx-auto">
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message}
+			<div class="card card-custom">
+				<div class="card-header card-header-custom">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+					{save_search}{hidden_fields}{hidden_fields1}
+					{INFO_TEXT_ALERT_IMAGE}
+					{INFO_TEXT_ALERT_TEXT}
+				</div>
+				<div class="card-body card-body-custom">
+					{INFO_TEXT_TITLE_NAME} {INFO_TEXT_TITLE_NAME1} {INFO_TEXT_ALERT_SAVE}
+					<div class="small">{total}</div>
+					<div class="{content_hide}">
+						{hidden_fields}
+
+						<div class="mt-2 mb-2">{INFO_TEXT_APPLY_BUTTON}</div>
+						<div>{list_page} {page}</div>
+						<div class="mb-3 m-none"><i class="fa fa-long-arrow-down" style="color:#333!important;"
+								aria-hidden="true"></i> <span
+								style="font-size:12px;color:#363a37;">{INFO_TEXT_APPLY_NOW1}</div>
+
+						{form}{hidden_fields}
+						<!-- BEGIN job_search_result -->
+						<div class="d-flex previewBox border-topp py-3" id="{job_search_result.jobId}">
+
+							<div class="flex-shrink-1 ms-3">
+								<div class="job-result-img me-2 skeleton">{job_search_result.logo}</div>
+								<div class="hide-on-desktop skeleton">{job_search_result.apply_job}</div>
+							</div>
+							<div class="flex-grow-1 ms-1">
+								<div class="d-flex align-items-top">
+									<div class="d-grow-1">
+										<h6 class="m-0 skeleton">{job_search_result.job_title}</h6>
+										<div class="cname skeleton">
+											{job_search_result.company_name}</div>
+										<div class="location skeleton">
+											{job_search_result.location}</div>
+										<div class="posted mt-2 skeleton">
+											{job_search_result.apply_before}</div>
+									</div>
+									<div class="me-3 ms-auto">{job_search_result.check_box}</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- END job_search_result -->
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="col-md-7" id="previewDiv"></div>
+
+	</div>
+		
+</div>
+
+
+{FOOTER_HTML}

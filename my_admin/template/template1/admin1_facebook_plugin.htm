@@ -1,0 +1,166 @@
+{ADMIN_HEADER_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+  function test_authentication() {
+    if (document.facebook_form.facebook_app_key.value == '') {
+      alert("Please enter Facebook API Key .");
+      document.facebook_form.facebook_app_key.focus();
+      return false
+    }
+    if (document.facebook_form.facebook_app_secret.value == '') {
+      alert("Please enter Facebook APP Secret.");
+      document.facebook_form.facebook_app_secret.focus();
+      return false
+    }
+    document.facebook_form.action.value = 'test_authentication';
+    document.facebook_form.submit();
+  }
+  function page_authentication() {
+    if (document.facebook_form.facebook_app_key.value == '') {
+      alert("Please enter Facebook API Key .");
+      document.facebook_form.facebook_app_key.focus();
+      return false
+    }
+    if (document.facebook_form.facebook_app_secret.value == '') {
+      alert("Please enter Facebook APP Secret.");
+      document.facebook_form.facebook_app_secret.focus();
+      return false
+    }
+    if (document.facebook_form.facebook_page.value == '') {
+      alert("Please enter Facebook page URL.");
+      document.facebook_form.facebook_page.focus();
+      return false
+    }
+    document.facebook_form.action.value = 'page_authentication';
+    document.facebook_form.submit();
+  }
+
+  var oldLinkvalue = '{linkvalue}'
+  function checkPageLink() {
+    var linkvalue = document.facebook_form.facebook_page.value;
+    if (linkvalue != '' && linkvalue != oldLinkvalue) {
+      document.getElementById("auth_button").innerHTML = '<a  href="#" onclick="page_authentication();" class="link_blink">Authentication This Page</a>';
+    }
+    else
+      document.getElementById("auth_button").innerHTML = '';
+
+  }
+</SCRIPT>
+<style>
+  a.link_blink:active,
+  a.link_blink:visited,
+  a.link_blink:link,
+  a.link_blink:hover {
+    text-decoration: blink;
+    color: red;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    background-color: #ffff00;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-right: 1px solid #E4F89A;
+    border-bottom: 1px solid #97C36B;
+    font-weight: normal;
+    font-size: 12px;
+    border-radius: 1em;
+  }
+
+  a.link_blink:hover {
+    background-color: #E1F0FF;
+  }
+</style>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="logo-facebook"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header card-header-divider">
+            Facebook Plugin is currently {FACEBOOK_PLUGIN_STATUS}
+            <ul class="small m-0">
+              <li><b>App Domain :</b> <u>{INFO_TEXT_FACEBOOK_APP_DOMAIN}</u></li>
+              <li>Website <b>Site URL :</b> <u>{INFO_TEXT_FACEBOOK_WEBSITE_URL}</u></li>
+              <li>APP on Facebook <b>Canvas URI :</b> <u>{INFO_TEXT_FACEBOOK_CANVAS_URL}</u></li>
+            </ul>
+          </div>
+          {facebook_form}
+          <div class="card-body">
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_FACEBOOK_PLUGIN}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FACEBOOK_PLUGIN1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_FACEBOOK_PLUGIN_KEY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FACEBOOK_PLUGIN_KEY1}
+                <div>Enter your Facebook Api KEY.<br>Don't you have such a key?.
+                  <a href="https://developers.facebook.com/apps" target="_blank" class="blue">Request one
+                    here!</a>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_FACEBOOK_PLUGIN_SECRET}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FACEBOOK_PLUGIN_SECRET1} {authentication_link}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_J_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_J_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_R_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_R_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_JOB_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_JOB_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_FACEBOOK_PAGE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FACEBOOK_PAGE1}<span
+                  id="auth_button">{authentication_page}</span>{INFO_TEXT_FACEBOOK_PAGE_DESC}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

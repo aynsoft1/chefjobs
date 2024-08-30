@@ -1,0 +1,89 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->       
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="0" id="admin-outer-table">
+    <tr>
+     <td>
+	 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td><div class="admin-page-heading"><i class="fa fa-rss-square fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}</div></td>
+       </tr>
+	   <tr>
+        <td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="top-select-bar">
+		  <tr><form name="disply" method="get">
+			<td align="left">{INFO_TEXT_STATUS} {INFO_TEXT_STATUS1}</td>
+			<td align="right">{new_button}</td>
+		  </tr></form>
+		</table>
+		</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">{update_message}<br>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0" id="admin-main-data-table">
+       <tr>
+        <td valign="top">
+         <table border="0" width="100%" cellspacing="0" cellpadding="0" class="admin-second-data-table">
+          <tr class="admin-table-head-bar">
+           <td class="dataTableHeadingContent" valign="top"><nobr>{TABLE_HEADING_SIMPLYHIRED_FEED_NAME}</nobr></td>
+           <td class="dataTableHeadingContent">{TABLE_HEADING_SIMPLYHIRED_FEED_PUBLISHER_ID}</td>
+           <td class="dataTableHeadingContent">{TABLE_HEADING_SIMPLYHIRED_FEED_LAST_ACTIVE}</td>
+           <td class="dataTableHeadingContent"><nobr>{TABLE_HEADING_SIMPLYHIRED_FEED_IMPORT_JOBS}</nobr></td>
+           <td class="dataTableHeadingContent">{TABLE_HEADING_SIMPLYHIRED_FEED_FATCH}</td>
+           <td class="dataTableHeadingContent">{TABLE_HEADING_SIMPLYHIRED_FEED_STATUS}</td>
+           <td class="dataTableHeadingContent" align="right">{TABLE_HEADING_ACTION}&nbsp;</td>
+          </tr>
+          <!-- BEGIN simplyhired_feeds -->
+          <tr{simplyhired_feeds.row_selected}>
+           <td valign="top" class="dataTableContent">{simplyhired_feeds.name}</td>
+           <td valign="top" class="dataTableContent">{simplyhired_feeds.publisher}</td>
+           <td valign="top" class="dataTableContent"><nobr>{simplyhired_feeds.last_active}</nobr></td>
+           <td valign="top" class="dataTableContent"><font color="#FF0000">{simplyhired_feeds.import_jobs}</font></td>
+           <td valign="top" class="dataTableContent">{simplyhired_feeds.fatch}</td>
+           <td valign="top" class="dataTableContent">{simplyhired_feeds.status}</td>
+           <td valign="top" class="dataTableContent" align="right">{simplyhired_feeds.action}</td>
+          </tr>
+          <!-- END simplyhired_feeds -->
+         </table>
+         <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+            <tr>
+             <td align="left">{count_rows}</td>
+             <td align="right">{no_of_pages}</td>
+            </tr>
+        </table>
+   					</td>
+       </tr>
+      </table>
+     </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+     <td width="{RIGHT_BOX_WIDTH}" valign="top">
+      <table border="0" width="{RIGHT_BOX_WIDTH}" cellspacing="0" cellpadding="0" id="admin-right-table2">
+       <tr>
+        <td valign="top">{ADMIN_RIGHT_HTML}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

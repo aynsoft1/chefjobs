@@ -1,0 +1,45 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <div class="d-flex justify-content-between">
+                <h3>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {HEADING_TITLE}
+                </h3>
+                <div>
+                    {BACK_BUTTON}
+                    {add_question_link_btn}
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{DESCRIPTION_LABEL}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {DESCRIPTION}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

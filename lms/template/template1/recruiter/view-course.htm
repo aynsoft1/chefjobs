@@ -1,0 +1,683 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<div class="container">
+    <div class="row">
+		{LEFT_HTML}
+        <div class="col-md-12 mx-auto d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{COURSE_NAME}</h1>
+            <div class="dflex ms-auto">
+                {menus} {new_button}
+            </div>
+        </div>
+    </div>
+
+    {update_message}
+    <!-- message alert box using js -->
+    <div id="liveAlertPlaceholder"></div>
+
+    <div class="row row-cols-1 row-cols-md-5 mt-4">
+        <div class="col-md-12">
+            <div class="1card 1card-custom">
+                <div class="1card-header d-flex text-center mb-4">
+
+                    <button type="button" class="btn btn-add-section me-3" id="addSectionBtn" data-bs-toggle="modal"
+                        data-bs-target="#addSectionModal">
+                        <i class="bi bi-plus-lg"></i> New section
+                    </button>
+                    <button type="button" class="btn btn-add-lesson" id="addLessonBtn" data-bs-toggle="modal"
+                        data-bs-target="#addLessonModal">
+                        <i class="bi bi-plus-lg"></i> New lesson
+                    </button>
+                </div>
+                <div class="1card-body p-0 1card-body-custom table-responsive-sm">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10" id="sectionRowData">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal for section -->
+<div class="modal fade" id="addSectionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="addSectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addSectionModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 id="message-box" class="text-success"></h5>
+                <form>
+                    <div class="row mb-3 align-items-center">
+                        <label for="section_name" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="section_title" id="section_title">
+                            <span id="error_section_title" class="text-danger"></span>
+
+                            <input type="hidden" name="course_id" id="course_id" value="{COURSE_ID}" />
+                            <input type="hidden" name="section_id" id="section_id" value="" />
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary visually-hidden" id="section-submit-btn">Create</button>
+                <button type="submit" class="btn btn-primary visually-hidden" id="section-update-btn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- modal for lesson -->
+<div class="modal fade" id="addLessonModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="addLessonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lessonLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="row mb-3">
+                        <!-- <label for="lesson_title" class="col-sm-2 col-form-label">Title</label> -->
+                        <div class="col-sm-12">
+                            <input type="text" placeholder="Enter lesson title" class="form-control" name="lesson_title"
+                                id="lesson_title">
+                            <span id="error_lesson_title" class="text-danger"></span>
+                        </div>
+
+                        <input type="hidden" name="lesson_id" id="lesson_id" value="" />
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- <label for="lms_section_id" class="col-sm-2 col-form-label">Section</label> -->
+                        <div class="col-sm-12">
+                            <select name="lms_section_id" id="lms_section_id" class="form-select">
+
+                            </select>
+                            <span id="error_lms_section_id" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="lesson_text" class="col-sm-12 col-form-labelj text-muted mb-2">Description</label>
+                        <div class="col-sm-12">
+                            <textarea name="lesson_text" id="lesson_text" class="form-control" cols="30"
+                                rows="10"></textarea>
+                            <span id="error_lesson_text" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- <label for="lesson_summary" class="col-sm-2 col-form-label">Summary</label> -->
+                        <div class="col-sm-12">
+                            <textarea name="lesson_summary" placeholder="Summary" id="lesson_summary"
+                                class="form-control" cols="30" rows="3"></textarea>
+                            <span id="error_lesson_summary" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- <label for="video_url" class="col-sm-2 col-form-label">Video URL</label> -->
+                        <div class="col-sm-12">
+                            <input type="url" placeholder="Video URL" class="form-control" name="video_url"
+                                id="video_url">
+                            <span id="error_video_url" class="text-danger"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary visually-hidden" id="lesson-submit-btn">Create</button>
+                <button type="submit" class="btn btn-primary visually-hidden" id="lesson-update-btn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script language="javascript" type="text/javascript" src="{tiny_mce_script_url}"></script>
+
+<!-- Add section script -->
+<script>
+    $(document).ready(function () {
+        tinymce.init({
+            selector: 'textarea[name="lesson_text"]',
+            plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code' ],
+            images_upload_url: 'tinymce6/upload_image.php',
+            force_br_newlines : true,
+            force_p_newlines : false,
+            branding: false,
+            promotion: false,
+            convert_urls: false,
+            relative_urls: false,
+        });
+
+        // section modal element
+        const myModalEl = document.getElementById("addSectionModal");
+        var myModal = new bootstrap.Modal(myModalEl, {
+            keyboard: false,
+        });
+
+        // lessson modal element
+        const myModalLesson = document.getElementById("addLessonModal");
+        var myLessonModal = new bootstrap.Modal(myModalLesson, {
+            keyboard: false,
+        });
+
+        var API_URL = "{api_url_section}";
+        var SECTION_API_URL_UPDATE = "{api_url_section_update}";
+        var SECTION_API_URL_DELETE = "{api-section-delete}";
+
+        var API_URL_LOAD_SECTION = "{load_section_url}";
+        // store lesson url api
+        var API_URL_LESSON = "{api_url_lesson}";
+        // update lesson url api
+        var API_LESSON_UPDATE = "{api_url_lesson_update}";
+        // delete lesson url api
+        var API_LESSON_DELETE = "{api-lesson-delete}";
+
+        const addSectionBtn = document.getElementById("addSectionBtn");
+
+        var courseID = "{COURSE_ID}";
+        ///////////////////////////////////////////////////Section js////////////////////////////
+        load_latest_section();
+
+        // store form
+        $("#section-submit-btn").click(function () {
+            sectionFormSubmit();
+        });
+
+        // update form
+        $("#section-update-btn").click(function () {
+            sectionFormSubmit('update', $("#section_id").val());
+        });
+
+        // if close button is clicked clear the form field
+        myModalEl.addEventListener("hidden.bs.modal", function () {
+            sectionFormFieldClear();
+        });
+
+        addSectionBtn.addEventListener("click", function () {
+            $("#addSectionModalLabel").html(['New Section']);
+            $("#section-submit-btn").removeClass("visually-hidden");
+            $("#section-update-btn").addClass("visually-hidden");
+        });
+
+        // if section delete button clicked
+
+        function sectionFormSubmit(method = 'store', secID = null) {
+            var requestInputData = {
+                section_title: $("#section_title").val(),
+                course_id: $("#course_id").val(),
+            };
+
+            if (method === 'update') {
+                var URL = SECTION_API_URL_UPDATE + '&section_id=' + secID;
+            } else {
+                var URL = API_URL;
+            }
+
+            $.ajax({
+                    type: "POST",
+                    url: URL,
+                    data: requestInputData,
+                    dataType: "json",
+                    encode: true,
+                })
+                .done(function (data) {
+                    // console.log(data)
+
+                    // validation error show
+                    if (!data.success) {
+                        if (data.errors.section_title) {
+                            $("#error_section_title").text(data.errors.section_title);
+                        }
+                    } else {
+                        $("#message-box").text(data.message);
+                        setTimeout(() => {
+                            $("#message-box").text("");
+                        }, 3000);
+
+                        sectionFormFieldClear();
+
+                        // modal close
+                        myModal.hide();
+
+                        // show message
+                        showAlertMessage(data.message);
+
+                        // load latest data
+                        load_latest_section();
+                    }
+                })
+                .fail(function (data) {
+                    console.log("error");
+                });
+        }
+
+        // edit section
+        function editSectionForm(sectionID) {
+            $.ajax({
+                type: "GET",
+                url: API_URL + '&section-view=api-view-section&sec-id=' + sectionID,
+            }).done(function (res) {
+                const secData = $.parseJSON(res);
+                $("#addSectionModalLabel").html(['Update Section'])
+                $("#section_id").val(secData[0].id)
+                $("#section-update-btn").removeClass("visually-hidden");
+                $("#section-submit-btn").addClass("visually-hidden");
+                myModal.show();
+                $("#section_title").val(secData[0].section_name)
+
+            }).fail(function (err) {
+                console.error('Error Update: section data not found')
+            });
+        }
+
+        // delete section
+        function deleteSection(sectionID) {
+            $.ajax({
+                type: "POST",
+                url: SECTION_API_URL_DELETE + '&section_id=' + sectionID,
+                dataType: "json",
+                encode: true,
+            }).done(function (res) {
+                // console.log(res.message)
+                if (!res.success) {
+                    showAlertMessage(res.message);
+                } else {
+                    // show message
+                    showAlertMessage(res.message);
+                    // load latest data
+                    load_latest_section();
+                }
+            }).fail(function (err) {
+                console.error('Error Delete: section data not found')
+            });
+        }
+
+
+
+        //  section form field clear
+        function sectionFormFieldClear() {
+            $("#section_title").val("");
+            $("#error_section_title").text("");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ///////////////////////////////////////////////////Lesson js////////////////////////////
+        // if close button is clicked clear the form field
+        myModalLesson.addEventListener("hidden.bs.modal", function () {
+            clearLessonFormInputs();
+        });
+
+        // if modal button is clicked
+        myModalLesson.addEventListener("shown.bs.modal", function () {
+            $('#lesson-submit-btn').prop('disabled', false)
+        });
+
+        // if add lesson btn clicked
+        addLessonBtn.addEventListener("click", function () {
+            load_latest_section_for_lesson();
+            $("#lessonLabel").html(['New Lesson']);
+            $("#lesson-submit-btn").removeClass("visually-hidden");
+            $("#lesson-update-btn").addClass("visually-hidden");
+        });
+
+        $("#lesson-submit-btn").click(function () {
+            // $('#lesson-submit-btn').prop('disabled', true)            
+            lessonFormSubmit(courseID);
+        });
+
+
+        // update lesson btn clicked
+        $("#lesson-update-btn").click(function () {
+            lessonFormSubmit(courseID, $("#lesson_id").val());
+        });
+
+
+        // load leates section for the course
+        function load_latest_section_for_lesson(selectedID = null) {
+            $.ajax({
+                    type: "GET",
+                    url: API_URL_LOAD_SECTION,
+                })
+                .done(function (resp) {
+                    const sections = $.parseJSON(resp);
+                    var optionDiv = '<option value="0">Select sections</option>';
+                    if (sections.length > 0) {
+                        $.each(sections, function (key, value) {
+                            optionDiv += "<option value='" + value["id"] + "' " + (value['id'] ===
+                                    selectedID ? 'selected' : '') + ">" + value["section_name"] +
+                                "</option>";
+                        });
+                    } else {
+                        optionDiv += "<option>Section Not Found</option>";
+                    }
+
+                    $("#lms_section_id").html(optionDiv);
+                })
+                .fail(function (error) {
+                    console.log("something went wrong in section option", error);
+                });
+        }
+
+        // submit the form
+        function lessonFormSubmit(courseID, lessonID = null) {
+            var tiny_mce_text = tinymce.get("lesson_text").getContent();
+
+            var requestInputData = {
+                lesson_title: $("#lesson_title").val(),
+                lms_section_id: $("#lms_section_id").val(),
+                lms_course_id: courseID,
+                lesson_text: tiny_mce_text,
+                lesson_summary: $("#lesson_summary").val(),
+                video_url: $("#video_url").val(),
+            };
+
+            if (lessonID) {
+                var URL = API_LESSON_UPDATE + '&lesson_id=' + lessonID;
+            } else {
+                var URL = API_URL_LESSON;
+            }
+
+            $.ajax({
+                    type: "POST",
+                    url: URL,
+                    data: requestInputData,
+                    dataType: "json",
+                    encode: true,
+                })
+                .done(function (data) {
+                    // console.log(data);
+                    // validation error show
+                    if (!data.success) {
+                        if (data.errors.lesson_title) {
+                            $("#error_lesson_title").text(data.errors.lesson_title);
+                        }
+                        if (data.errors.lesson_text) {
+                            $("#error_lesson_text").text(data.errors.lesson_text);
+                        }
+                        if (data.errors.lms_section_id) {
+                            $("#error_lms_section_id").text(data.errors.lms_section_id);
+                        }
+                    } else {
+                        clearLessonFormInputs();
+                        // modal close
+                        myLessonModal.hide();
+
+                        // show message
+                        showAlertMessage(data.message);
+
+                        // load latest data
+                        load_latest_section();
+                    }
+                })
+                .fail(function (data) {
+                    console.log("error");
+                });
+        }
+
+
+
+        // edit lesson
+        function editLessonForm(id) {
+            const view_lesson_url = "{api_url_lesson_view}";
+
+            $.ajax({
+                type: "GET",
+                url: view_lesson_url + '&lesson_id=' + id,
+            }).done(function (res) {
+                const data = $.parseJSON(res);
+                console.log('lesson data', data)
+                $("#lessonLabel").html(['Update Lesson'])
+                $("#lesson-update-btn").removeClass("visually-hidden");
+                $("#lesson-submit-btn").addClass("visually-hidden");
+
+                $("#lesson_title").val(data[0].lesson_name)
+
+                // $("#lms_section_id").val(data[0].lms_section_id)
+
+                load_latest_section_for_lesson(data[0].lms_section_id);
+
+                $("#lesson_id").val(data[0].id)
+                tinymce.activeEditor.setContent(data[0].lesson_text)
+                $("#lesson_summary").val(data[0].lesson_summary)
+                $("#video_url").val(data[0].video_url)
+
+                myLessonModal.show();
+
+            }).fail(function (err) {
+                console.error('Error Update: section data not found')
+            });
+        }
+
+
+        // delete section
+        function deleteLesson(lessonID) {
+            $.ajax({
+                type: "POST",
+                url: API_LESSON_DELETE + '&lesson_id=' + lessonID,
+                dataType: "json",
+                encode: true,
+            }).done(function (res) {
+                // console.log(res.message)
+                if (!res.success) {
+                    showAlertMessage(res.message);
+                } else {
+                    // show message
+                    showAlertMessage(res.message);
+                    // load latest data
+                    load_latest_section();
+                }
+            }).fail(function (err) {
+                console.error('Error Delete: lesson data not found')
+            });
+        }
+
+
+
+        // lesson form clear
+        function clearLessonFormInputs() {
+            //  section form field clear
+            // console.log('form lesson cleared')
+            $("#lesson_title").val("");
+            $("#error_lesson_title").text("");
+            $("#lms_section_id").val("");
+            $("#error_lms_section_id").text("");
+            $("#lesson_text").val("");
+            tinymce.activeEditor.setContent("");
+            $("#error_lesson_text").text("");
+            $("#lesson_summary").val("");
+            $("#error_lesson_summary").text("");
+            $("#video_url").val("");
+            $("#error_video_url").text("");
+
+            $('#lesson-submit-btn').prop('disabled', false)
+        }
+
+
+        // fetch section data
+        function load_latest_section() {
+            $.ajax({
+                    type: "GET",
+                    url: API_URL_LOAD_SECTION,
+                })
+                .done(function (resp) {
+                    const sections = $.parseJSON(resp);
+
+                    var cardDiv = "";
+                    var cardHead = "";
+                    var cardBody = "";
+
+                    if (sections.length > 0) {
+                        $.each(sections, function (key, value) {
+                            // card open div
+                            cardDiv += '<div class="card card-custom mb-3 border" id="card-' +
+                                value["id"] + '">';
+
+                            // card head
+                            cardDiv +=
+                                '<div class="card-header pb-2"><div class="row align-items-center">';
+
+                            cardDiv += '<div class="col-md-8"><h5 class="text-dark m-0">Section ' +
+                                (
+                                    key + 1) + ' - ' + value['section_name'] + '</h5></div>';
+                            cardDiv +=
+                                '<div class="col-md-4 text-end lession-icon"><button class="edit-text-section edit-section me-3" id="edit-section-' +
+                                value['id'] + '" data-edit="' + value['id'] +
+                                '"><i class="bi bi-pen"></i></button>';
+                            cardDiv +=
+                                '<button class="delete-text-section delete-section" id="delete-section-' +
+                                value['id'] + '" data-delete="' + value['id'] +
+                                '"><i class="bi bi-trash3"></i></button></div>';
+
+                            cardDiv += '</div></div>';
+                            // card body open
+                            cardDiv += '<div class="card-body py-0">';
+                            $.each(value["lessons"], function (lkey, lvalue) {
+                                cardDiv += '<div class="row my-3 align-items-center">';
+                                cardDiv +=
+                                    '<div class="col-md-8"><span><i class="bi bi-play-circle"></i> ' +
+                                    lvalue["lesson_name"] +
+                                    '</span></div> <div class="col-md-4 text-end lession-icon">';
+                                cardDiv +=
+                                    '<button class="edit-text-section edit-lesson me-3" id="edit-lesson-' +
+                                    lvalue['id'] + '" data-edit="' + lvalue['id'] +
+                                    '"><i class="bi bi-pen"></i></button>'
+                                cardDiv +=
+                                    '<button class="delete-text-section delete-lesson" id="delete-lesson-' +
+                                    lvalue['id'] + '" data-delete="' + lvalue['id'] +
+                                    '"><i class="bi bi-trash3"></i></button>'
+                                cardDiv += '</div>';
+                                cardDiv += '</div>';
+                            });
+                            // card body close
+                            cardDiv += "</div>";
+
+                            // card close div
+                            cardDiv += "</div>";
+                        });
+                    } else {
+                        cardDiv += "<h5 class='text-center mt-5'>No record found</h5>";
+                    }
+
+                    $("#sectionRowData").html(cardDiv);
+
+                    // do edit and delete functionality for section here
+                    $('.edit-section').click(function () {
+                        const sectionID = $(this).attr('data-edit');
+                        editSectionForm(sectionID)
+                    })
+
+                    $('.delete-section').click(function () {
+                        const sectionID = $(this).attr('data-delete');
+
+                        const isDeleted = confirm(
+                            'Are you sure want to delete? The lesson attached with it will be deleted'
+                        )
+
+                        if (isDeleted) {
+                            deleteSection(sectionID)
+                        }
+                    })
+
+
+                    // do edit delete for lesson here
+                    $('.edit-lesson').click(function () {
+                        const lessonID = $(this).attr('data-edit');
+                        editLessonForm(lessonID);
+                    })
+
+                    // delete lesson
+                    $('.delete-lesson').click(function () {
+                        const lessID = $(this).attr('data-delete');
+
+                        const isDeleted = confirm(
+                            'Are you sure want to delete?'
+                        )
+
+                        if (isDeleted) {
+                            deleteLesson(lessID)
+                        }
+                    })
+
+                })
+                .fail(function (error) {
+                    console.error('Something went wrong in lesson delete ' + error);
+                });
+        }
+
+
+        // function show alert message
+        function showAlertMessage(
+            message = "Record added successfully",
+            alertType = "success"
+        ) {
+            const alertMessageDiv = document.getElementById("liveAlertPlaceholder");
+
+            const alertBox = (message, type) => {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add('messageStackSuccess')
+                wrapper.innerHTML = [
+                    '<div class="alert alert-' + type + ' alert-dismissible" role="alert">',
+                    "   <div>" + message + "</div>",
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    "</div>",
+                ].join("");
+
+                alertMessageDiv.append(wrapper);
+            };
+
+            alertBox(message, alertType);
+
+            setTimeout(function () {
+                $('.messageStackSuccess').fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 5000)
+
+        }
+    });
+</script>
+
+{FOOTER_HTML}

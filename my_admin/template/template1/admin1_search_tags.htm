@@ -1,0 +1,83 @@
+{ADMIN_HEADER_HTML}
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header d-flex">
+            <form class="" name="disply" method="get">
+              <div class="form-inline"><span class="mr-2">{INFO_TEXT_STATUS}</span> {INFO_TEXT_STATUS1}</div>
+            </form>
+            <div class="ms-auto">{new_button}</div>
+          </div>
+
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <thead>
+                <tr class="admin-table-head-bar">
+                  <th>{TABLE_HEADING_SEARCH_TAG_NAME}</th>
+                  <th>{TABLE_HEADING_SEARCH_TAG_POINT}</th>
+                  <th>{TABLE_HEADING_SEARCH_TAG_STATUS}</th>
+                  <th>{TABLE_HEADING_ACTION}&nbsp;</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <!-- BEGIN search_tag -->
+                <tr{search_tag.row_selected}>
+                  <td>{search_tag.name}</td>
+                  <td>{search_tag.point}</td>
+                  <td>{search_tag.status}</td>
+                  <td>{search_tag.action}</td>
+                  </tr>
+                  <!-- END search_tag -->
+              </tbody>
+              
+            
+            <!-- Middle Ends -->
+            <tfoot>
+
+              <tr>
+                <td align="left">{count_rows}</td>
+                <td align="right">{no_of_pages}</td>
+              </tr>
+            <tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Right Starts -->
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+        {ADMIN_RIGHT_HTML}
+      </div>
+      </div>
+    </div>
+      <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+
+
+{ADMIN_FOOTER_HTML}

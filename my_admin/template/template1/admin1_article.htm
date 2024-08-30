@@ -1,0 +1,114 @@
+{ADMIN_HEADER_HTML}
+
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="description1"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <div class="col-md-7">
+    <div class="d-flex align-items-center">
+    <h3>{HEADING_TITLE}</h3>
+    <h4 class="ms-auto">{view_list_of_articles}</h4>
+  </div>
+</div>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body p-5">
+            {form}
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TITLE}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_TITLE1}
+              </div>
+            </div>
+            <!-- <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SEO_NAME}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_SEO_NAME1}{INFO_TEXT_SEO_NAME_DES}
+              </div>
+            </div> -->
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_CATEGORY}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_CATEGORY1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_AUTHOR}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_AUTHOR1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW_DATE}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_SHOW_DATE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_ARTICLE_PHOTO}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_ARTICLE_PHOTO1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_SHOW1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHORT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_SHORT_DESCRIPTION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {INFO_TEXT_DESCRIPTION1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-9 col-lg-9">
+                {button}
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

@@ -1,0 +1,71 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+
+<!-- Middle Starts -->
+<div class="container be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>
+            <span style="margin-right: 5px;font-size: 26px;float: left;">
+                <ion-icon name="desktop-outline"></ion-icon>
+            </span>{HEADING_TITLE}
+        </h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header">
+                        {back_btn}
+                    </div>
+                    <div class="card-body">
+                        {form}
+                        {form_method}
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{NAME_LABEL}</label>
+                            <div class="col-12 col-sm-9 col-lg-6">
+                                {INPUT_NAME}
+                                {CAT_NAME_ERROR}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{FILE_LABEL}</label>
+                            <div class="col-12 col-sm-9 col-lg-6">
+                                {INPUT_FILE}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-right">{SUMMARY_LABEL}</label>
+                            <div class="col-12 col-sm-9 col-lg-6">
+                                {INPUT_SUMMARY}
+                                {CAT_SUMMARY_ERROR}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+                            <div class="col-12 col-sm-9 col-lg-6">
+                                {BUTTON}
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

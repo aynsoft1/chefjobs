@@ -1,0 +1,54 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<div class="container">
+	<div class="row">
+			<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends -->
+		<!-- Middle Starts -->
+		<div class="col-md-9 mx-auto">
+		{update_message}{reply_form}
+			<div class="card">
+				<div class="card-header">
+				
+				<div class="d-flex alignitems-center">
+				<div>
+					<h1 class="main-heading">Response to Job Seeker <!--{HEADING_TITLE}--></h1>
+				</div>
+					<div class="d-flex ms-auto me-0">{INFO_TEXT_BACK}</div>
+				</div>
+			</div>
+				
+				<div class="card-body">
+					<div class="mb-4">
+						<div class="fw-bold mb-2">{INFO_TEXT_SUBJECT}</div>
+						<div>{INFO_TEXT_SUBJECT1}</div>
+					</div>
+					<div class="mb-4">
+						<div class="fw-bold mb-2">{INFO_MAIL_ATTACHMENT}</div>
+						<div>{INFO_MAIL_ATTACHMENT1}</div>
+					</div>
+					<div class="mb-4">
+						<div class="fw-bold mb-2">{INFO_TEXT_MESSAGE}</div>
+						<div>{INFO_TEXT_MESSAGE1}</div>
+					</div>
+					<div class="mb-4">
+ 						<div>{INFO_TEXT_BUTTON}</div>
+					</div>
+				</div>
+			</div></form>
+		</div>
+
+	</div>
+	<!-- Right Starts -->
+	{RIGHT_HTML}
+	<!-- Right ends -->
+</div>
+</div>
+{FOOTER_HTML}

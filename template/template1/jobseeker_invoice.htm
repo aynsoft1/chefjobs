@@ -1,0 +1,117 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<!-- Below Script for auto close -->
+<style>
+  .displayNone {
+    display: none;
+  }
+</style>
+<script>
+  window.setTimeout(function () {
+  $(".alert").fadeTo(500, 0).slideUp(500, function () {
+    $(this).remove();
+    $(".messageStackSuccess").addClass("displayNone");
+    // $messageStackSuccess
+  });
+  }, 50000);
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Below Alert message File path is class/message_stack.php -->
+      {update_message}
+      <div class="card card-custom">
+        <div class="card-header card-header-custom">
+          <h1 class="display-6 p-0 m-0 float-left">{HEADING_TITLE}</h1>
+          <div class="float-right">{HEADING_TITLE1}{PRINT_INVOICE}</div>
+        </div>
+        <div class="card-body card-body-custom">
+          <div class="row">
+
+            <div class="col-md-6 mb-4">
+              <div class="card">
+                <h5 class="card-header fw-bold text-dark">{ENTRY_PAYMENT_METHOD}</h5>
+                <div class="card-body">
+                  <p class="card-text text-muted">{ENTRY_PAYMENT_METHOD1}</p>
+                  <p class="card-text text-muted">{credit_card_string}</p>
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th scope="row">{TABLE_HEADING_PRODUCTS}</th>
+                        <td>{TABLE_HEADING_PRODUCTS1}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">{TABLE_HEADING_TOTAL_PRICE}</th>
+                        <td>{TABLE_HEADING_TOTAL_PRICE1}</td>
+                      </tr>
+                      <tr>
+
+                        {order_total_text}
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="card">
+                    <h5 class="card-header fw-bold text-dark">{ENTRY_CUSTOMER}</h5>
+                    <div class="card-body">
+                      <p class="card-text text-muted">{ENTRY_CUSTOMER1}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="card">
+                    <h5 class="card-header fw-bold text-dark">{ENTRY_BILLING_ADDRESS}</h5>
+                    <div class="card-body">
+                      <p class="card-text text-muted">{ENTRY_BILLING_ADDRESS1}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-12">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">{TABLE_HEADING_DATE_ADDED}</th>
+                  <th scope="col">{TABLE_HEADING_STATUS}</th>
+                  <th scope="col">{TABLE_HEADING_COMMENTS}</th>
+                </tr>
+              </thead>
+              <tr>
+                <td valign="top">{TABLE_HEADING_DATE_ADDED1}</td>
+                <td valign="top">{TABLE_HEADING_STATUS1}</td>
+                <td valign="top">{TABLE_HEADING_COMMENTS1}</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card info-bg mt-4">
+              <div class="card-body">
+                {form}
+                <div>{TABLE_HEADING_MY_COMMENTS}</div>
+                <div>{TABLE_HEADING_MY_COMMENTS1}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{FOOTER_HTML}

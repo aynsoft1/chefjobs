@@ -1,0 +1,58 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-body">
+            {configure_form}
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right">{INFO_TEXT_MODULE_FORUM_SEARCH_CAPTCHA}</label>
+              <div class="col-12 col-sm-7 col-lg-6">
+                {INFO_TEXT_MODULE_FORUM_SEARCH_CAPTCHA1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right">{INFO_TEXT_MODULE_FORUM_SEARCH_KAYWORD}</label>
+              <div class="col-12 col-sm-7 col-lg-6">
+                {INFO_TEXT_MODULE_FORUM_SEARCH_KAYWORD1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right">{INFO_TEXT_MODULE_FORUM_MAXIMUM_RESULT}</label>
+              <div class="col-12 col-sm-7 col-lg-6">
+                {INFO_TEXT_MODULE_FORUM_MAXIMUM_RESULT1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-4 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-7 col-lg-6">
+                {button}
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

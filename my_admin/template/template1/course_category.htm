@@ -1,0 +1,68 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="desktop-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">
+            {new_button}
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_COURSE_CATEGORY_NAME}</th>
+                  <th>{TABLE_HEADING_FR_COURSE_CATEGORY_NAME}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN course_category -->
+                <tr{course_category.row_selected}>
+                  <td>{course_category.name}</td>
+                  <td>{course_category.fr_name}</td>
+                  <td>{course_category.action}</td>
+                  </tr>
+                  <!-- END course_category -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2">{count_rows}</td>
+                  <td align="right">{no_of_pages}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

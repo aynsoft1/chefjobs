@@ -1,0 +1,175 @@
+{HEADER_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+{HEADER_MIDDLE_HTML}
+<script language="Javascript1.2">
+function set_action(action1)
+{
+ document.skills.action.value=action1;
+}
+function set_action1(action1)
+{
+ document.languages.action.value=action1;
+}
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+	<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends --> 
+        <div class="col-md-9">
+		{JOBSEEKER_RESUME_LEFT}
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+            <div class="card card-custom">
+			<div class="card-header">
+					<div class="d-flex align-items-center mb-12 m-dblock">
+        <h1 class="resume-heading m-0">{HEADING_TITLE}</h1>
+        <div class="d-flex ms-auto">{INFO_TEXT_RESUME_NAME1}</div>
+      </div>
+				</div>
+                <div class="card-body card-body-custom">
+
+{registration_form}
+{RESUME_NAVIGATION}
+
+<!--<div class="alert alert-warning alert-warning-custom" role="alert">{SECTION_ACCOUNT_RESUME_NAME} {REQUIRED_INFO}</div>
+{INFO_TEXT_RESUME_NAME}
+{INFO_TEXT_RESUME_NAME1}-->
+
+
+<div class="table-responsive-sm">
+<table class="table table-hover table-bordered border-bottom mb-4">
+	<thead>
+		<tr class="dataTableHeadingRow ">
+			<th scope="col" class="dataTableHeadingContent" width="20%">{TABLE_HEADING_SKILL}</th>
+			<th scope="col" class="dataTableHeadingContent" width="20%">{TABLE_HEADING_SKILL_LEVEL}</th>
+			<th scope="col" class="dataTableHeadingContent m-none" width="20%">{TABLE_HEADING_LAST_USED}</th>
+			<th scope="col" class="dataTableHeadingContent m-none" width="20%">{TABLE_HEADING_YEARS_OF_EXP}</th>
+			<th scope="col" class="dataTableHeadingContent" width="9%">{TABLE_HEADING_EDIT}</th>
+			<th scope="col" class="dataTableHeadingContent" width="11%">{TABLE_HEADING_DELETE}</th>
+		</tr>
+		</thead>	
+		<!-- BEGIN skills -->
+		<tr {skills.row_selected}>
+			<td class="dataTableContent" >{skills.skill}</td>
+			<td class="dataTableContent" >{skills.skill_level}</td>
+			<td class="dataTableContent m-none" >{skills.last_used}</td>
+			<td class="dataTableContent m-none" >{skills.years_of_exp}</td>{skills.list_form}
+			<td class="dataTableContent" >{skills.edit_skills}</td>
+			<td class="dataTableContent" >{skills.delete} </td></form>
+		</tr>
+		<!-- END skills -->
+	</table>
+</div>
+
+<div class="form-group row align-items-center">
+  <label for="staticEmail" class="col-sm-3 text-success fw-bold text-end m-text-start mmb-0">{SECTION_SKILLS}</label>
+  <div class="col-sm-9">
+  </div>
+</div>
+{skills_form}
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_SKILL}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_SKILL1}
+    </div>
+  </div>
+  
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_SKILL_LEVEL}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_SKILL_LEVEL1}
+    </div>
+  </div> 
+  
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_LAST_USED}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_LAST_USED1}
+    </div>
+  </div> 
+  
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_YEARS_OF_EXP}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_YEARS_OF_EXP1}
+    </div>
+  </div> 
+
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom"></label>
+    <div class="col-sm-9 text-center">
+     {skills_button}
+    </div>
+  </div>
+</form>
+
+<div class="form-group row align-items-center">
+  <label for="staticEmail" class="col-sm-3 text-success fw-bold text-end m-text-start mmb-0">{SECTION_LANGUAGES}</label>
+  <div class="col-sm-9">
+  </div>
+</div>
+<div class="table-responsive-sm">
+<table class="table table-hover table-bordered table-sm border-bottom mb-4">
+																								<thead>
+																								<tr class="dataTableHeadingRow">
+																									<th class="dataTableHeadingContent" width="">{TABLE_HEADING_LANGUAGE}</th>
+																									<th class="dataTableHeadingContent m-none" width="">{TABLE_HEADING_PROFICIENCY}</th>
+																									<th class="dataTableHeadingContent" width="">{TABLE_HEADING_EDIT}</th>
+																									<th class="dataTableHeadingContent" width="">{TABLE_HEADING_DELETE}</th>
+																								</tr>
+																								</thead>
+																								<!-- BEGIN languages -->
+																								<tr {languages.row_selected}>
+																									<td class="dataTableContent" >{languages.languages}</td>
+																									<td class="dataTableContent m-none" >{languages.proficiency}</td>{languages.list_form}
+																									<td class="dataTableContent" >{languages.edit_languages}</td></form>
+																									<td class="dataTableContent" >{languages.delete}</td>
+																								</tr>
+																								<!-- END languages -->
+																							</table>
+</div>
+{languages_form}
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_LANGUAGE}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_LANGUAGE1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_PROFICIENCY}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_PROFICIENCY1}
+    </div>
+  </div>  
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom"></label>
+    <div class="col-sm-9 text-center">
+     {languages_button} {add_next_button1} {add_next_button}
+    </div>
+  </div> 
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

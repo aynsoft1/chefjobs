@@ -1,0 +1,353 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=700,height=400,left = 0,top = 0');");
+}
+function set_action(application)
+{
+ document.page.application_id.value=application;
+ {lower_value}
+ {higher_value}
+ document.page.submit();
+}
+function set_action1(application,action)
+{
+ if(application!='' && action!='') 
+ {
+   if(action=='applicant_confirm_delete')
+   {
+    var check= confirm("Warning: All the data of this applicant will also be deleted.");
+    if(check==true)
+    {
+     document.page.application_id.value=application;
+     document.page.action1.value=action;
+     {lower_value}
+     {higher_value}
+     document.page.submit();
+    }
+   }
+   else
+   {
+    document.page.application_id.value=application;
+    document.page.action1.value=action;
+    {lower_value}
+    {higher_value}
+    document.page.submit();
+   }
+  }
+}
+function view_status(round1)
+{
+ document.page.process_round.options[document.page.process_round.selectedIndex].value=round1;
+ document.page.submit();
+}
+
+function select_action1()
+{
+ if(document.page.quick_action.options[document.page.quick_action.selectedIndex].value=="send_bulk_mail") 
+ {
+  document.page.action1.value='send_bulk_mail';
+  document.page.submit();
+ }
+ else
+ return false;
+}
+function select_action2()
+{
+	var check;
+	var j=0;
+ check=false;
+	for (var i=0;i < document.page.elements.length;i++)
+	{
+		var e = document.page.elements[i];
+		if(e.type == "checkbox")
+		{
+			if((e.checked) == true)
+			{
+   	check=true;
+    if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="compair_profile") 
+    {
+     j=j+1;
+     if(j==3)
+				  break;
+    }
+    else
+				break;
+			}
+		}
+	}
+ if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="compair_profile") 
+ {
+  if(j<2)
+   alert('Please check two checkbox.');
+  else if(j>2)
+   alert('Please check two checkbox.');
+   if(j==2)
+   {
+    document.page.action1.value='compair_profile';
+    document.page.submit();
+   }
+	 document.page.select_action.value='';
+  
+ }
+	else if(check)
+	{
+  if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="send_mail") 
+  {
+   document.page.action1.value='send_mail';
+   document.page.submit();
+  }
+  else
+  {
+   return false;
+  }
+ }
+ else
+	{
+	 document.page.select_action.value='';
+  alert('Please check atleast one checkbox.');
+	}
+}
+</script>
+<style>
+input[type="checkbox"]{
+    background: transparent;
+    border-radius: 1px;
+    box-sizing: border-box;
+    position: relative;
+    box-sizing: content-box;
+    width: 16px;
+    height: 16px;
+    border-width: 0;
+    margin:  0;
+    transition: all .3s linear;
+    border: 1px solid #a8a8a8;
+    display: -webkit-inline-box;
+}
+.mini-profile-img img {
+border-radius:50px!important;
+}
+</style>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+var ajax_url='{AJAX_URL}';
+</script>
+{INFO_TEXT_JSCRIPT_FILE}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-custom mmb-15">
+                    <div class="card-header border-bottom"
+                        style="border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
+                        <div class="d-flex align-items-center m-dblock">
+                            <h1>{INFO_TEXT_JOB_TITLE1}</h1>
+                            {search_form}
+                                <div class="input-group mb-3">
+                                   {INFO_TEXT_APPLICATION1}  
+                                    <button class="btn btn-primary btn-ats-search"
+                                     type="submit"
+                                        id="button-addon2"><i class="bi bi-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                   <form name="page" method="post" >
+                    <div class="card-header border-bottom no-radius pb-3">
+                        <div class="d-flex align-items-center m-dblock">
+                             
+                                {INFO_TEXT_SELECTED_APPLICANT1}  
+                                <button class="btn btn-sm btn-text border dropdown-toggle me-4 btn-ats" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> 
+                                  <i class="bi bi-bar-chart me-1"></i>Reports
+								</button>
+                                  <div class="dropdown"> 
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										 {INFO_TEXT_REPORT_PIPELINE}
+										 {INFO_TEXT_REPORT_ROUNDWISE}
+										 {INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}
+										 {INFO_TEXT_VIEW_DATE_REPORT}
+									</div>
+                                </div>
+                                 {INFO_TEXT_SEARCH_APPLICANT1}  
+                             
+                        </div>
+                    </div>
+                    <div class="card-header my-3">
+                        <div class="d-flex align-items-center m-dblock">
+                              <!-- BEGIN round_link -->	 
+                                {round_link.round_name}
+                              <!-- END round_link -->	 
+
+                        </div>
+                    </div>
+						
+                    <div class="card-header">
+                        <div class="d-flex align-items-center m-dblock">
+                            <div class="d-flex align-items-center m-dblock">
+                                <div class="form-check me-5 ps-0" style="width:240px;">
+                                   <div class="" style="font-size:12px;width: 70%;">{check_link}</div> 				
+                                </div>
+                                 <div class="text-end">{check_link1}</div>
+                            </div>
+                             {display_search_key}
+                            <div class="d-flex ms-auto  m-dblock">
+                                <div class="input-group ats-input-group">
+                                   <div class="row d-flex align-items-center">
+						<div class="col-md-3 mmt-15">Rounds/Status</div>
+						<div class="col-md-4">
+						  <!-- <label for="validationCustom01">{INFO_TEXT_TRACKING_ROUND}</label> -->
+						  {INFO_TEXT_TRACKING_ROUND1}
+						</div>
+						<div class="col-md-4">
+						  <!-- <label for="validationCustom02">{INFO_TEXT_APPLICATION_STATUS}ff</label> -->
+						   {INFO_TEXT_APPLICATION_STATUS1}
+						</div>
+						</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body card-body-custom px-3">
+                        <!--Applicant Box Area-->
+	                    <!-- BEGIN jobs -->	 
+                        <div class="card-1 card-custom card-hover mb-3" id="app_{jobs.d_id}" >
+                            <div class="card-body card-body-custom p-3" >
+                                <div class="d-flex align-items-center m-dblock">
+                                    <div>
+                                        <div class="d-flex align-items-center m-dblock">
+                                            <div class="me-3">
+                                               {jobs.check_box} 
+                                            </div>
+                                            <div class="mini-profile-img-ats me-3">{jobs.photo} </div>
+                                            <div>
+                                                <div class="d-flex align-items-center m-dblock">
+                                                    <h4 class="m-0 job_search_title me-2">{jobs.name}</h4> 
+                                                    <span style="font-size:14px;">[{jobs.application_id}]</span>
+                                                </div>
+                                                <div class="small">{jobs.job_title}</div>
+                                                <div class="small mb-2">{jobs.location}</div>
+
+                                                <span class="cv-match-text m-none">{INFO_TEXT_RESUME_MATCH}</span>
+                                                  <div class="progress progress-ats mmb-15" role="progressbar" aria-label="success Example with label" aria-valuenow="25"  aria-valuemin="0" aria-valuemax="100">
+                                                  <div class="progress-bar bg-success" style="width: {jobs.match}%">{jobs.match}%</div>
+                                                </div>
+												<!--<div class="small text-dark fw-bold my-1">{INFO_TEXT_TRACKING_ROUND}</div>
+												{jobs.round}-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex ms-auto m-dblock">
+                                         
+                                        {jobs.edit_round}
+										{jobs.contact}
+                                      	{jobs.applicant_selected}                                  
+                                        <div class="dropdown m-dropdown">
+                                            <button class="btn btn-default ats-toggle-btn" type="button"   data-bs-toggle="dropdown" aria-expanded="false">
+                                              <i class="bi bi-three-dots-vertical"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li> {jobs.menu_edit_round}</li>
+                                                <li>{jobs.menu_delete_applicant}</li>
+                                                <li>{jobs.menu_selection_histor}</li>
+                                                <li>{jobs.menu_add_comment}</li>
+                                                <li>{jobs.menu_rate_applicant}</li>
+                                                 <li>{jobs.menu_match_detail}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END jobs -->	
+                <div class="small text-muted">{total}</div>
+				{list_page}&nbsp;{page}
+				{hidden_fields}
+				</form>		 
+                        <!--Applicant Box Area-->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="commentModalLabel">Add Comment</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form method="post" action="{ADD_COMMENT_POST_URL}" name="add-comment-form">
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="private_notes" class="form-label">Comment</label>
+						<input type="hidden" name="resume_id" id="resume_id" value="" />
+						<textarea class="form-control" name="private_notes" id="private_notes" rows="3"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary" id="submit_add_comment_btn">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	async function addComment(resume_id) {
+		const submitBtn = document.getElementById('submit_add_comment_btn');
+		const commentElem = document.getElementById('private_notes');
+		const resumeIdElem = document.getElementById('resume_id');
+
+		const data = await fetchRecord(resume_id)
+
+		console.log('data are>>>>>>>>>>>>>>>>>>', data, data.length, data[0])
+		// check comment is already added then edit otherwise add
+		if (data.length > 0) {
+			const notes = data[0].private_notes;
+			commentElem.innerHTML = notes;
+			resumeIdElem.value = resume_id;
+			submitBtn.innerHTML = 'Update'
+		} else {
+			resumeIdElem.value = resume_id;
+			submitBtn.innerHTML = 'Submit'
+		}
+
+		$('#commentModal').modal('show')
+	}
+
+	// fetch comment for resume id 
+	async function fetchRecord(resume_id) {
+		const API_URL = "{ADD_COMMENT_API_URL}" + resume_id;
+		try {
+			const response = await fetch(API_URL);
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			const resData = await response.json();
+
+			return resData;
+		} catch (error) {
+			console.error('Error: fetchRecord of add comment', error);
+		}
+	}
+</script>
+{FOOTER_HTML}

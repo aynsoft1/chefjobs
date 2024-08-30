@@ -1,0 +1,216 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src="{HOST_NAME}jscript/job_pagination.js"></script>
+{MAP_JAVA_SCRIPT_LINK}
+<script src="{HOST_NAME}jscript/map.js"></script>
+<style>
+#map-canvas
+{
+ width:600px;
+ height:400px;
+ :
+</style>
+
+			 <tr>
+	<td valign="top">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				<td valign="top">
+					{JOB_SEARCH_LEFT}
+				</td>
+				<td width="25" valign="top" style="width:10px!important;display: block;">&nbsp;</td>
+				<td width="76%"><div align="center">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="0%"></td>
+										<td width="100%">											<div class="page-headbar">
+											<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td>													
+														<table  border="0" align="left" cellpadding="0" cellspacing="0">
+															<tr>
+																
+																<td><div class="left-bar-heading"><i class="fa fa-briefcase" aria-hidden="true"></i> {HEADING_TITLE}</div></td>
+															</tr>
+														</table>													
+													</td>
+													<td>{save_search}{hidden_fields}{hidden_fields1}
+														<table  border="0" align="right" cellpadding="0" cellspacing="0">
+															<tr>
+																<td>{INFO_TEXT_ALERT_IMAGE}</td>
+																<td><span class="style17"><img src="img/spacer.gif" width="7" height="5"></span></td>
+																<td class="style17">{INFO_TEXT_ALERT_TEXT}</td>
+																<td class="style17"><img src="img/spacer.gif" width="7" height="5"></td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>										</div>
+										</td>
+										<td width="0%"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" height="550"  border="0" cellpadding="0" cellspacing="0" id="main-jobs-table2">
+									<tr>
+										<td valign="top" bgcolor="#FFFFFF">
+											<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+											 <tr>
+             <td colspan="3" valign="middle">{INFO_TEXT_TITLE_NAME} {INFO_TEXT_TITLE_NAME1} {INFO_TEXT_ALERT_SAVE}</td>
+            </tr>
+												<tr>
+													<td class="style27">{total}</td>
+												</tr>
+												<tr>
+													<td>&nbsp;{update_message}</td>
+												</tr>
+												<tr>
+													<td class="{content_hide}">
+														<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td width="2%" valign="bottom">{INFO_TEXT_APPLY_ARROW}</td>
+																<td width="92%">
+																	<table width="100%" border="0" cellpadding="0" cellspacing="0" id="search-result-top-box">
+																		<tr>
+																			<td>
+																				<table width="90%"  border="0" align="center" cellpadding="0" cellspacing="0">
+																					<tr>
+																						<td>
+																							<table width="100%"  border="0" align="left" cellpadding="0" cellspacing="0">
+																								<tr>
+																									<td width="1%" class="style33"><nobr>{INFO_TEXT_APPLY_NOW}</nobr></td>
+																									<td >{INFO_TEXT_APPLY_BUTTON}</td>
+																								</tr>
+																							</table>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td><img src="img/spacer.gif" width="5" height="7"></td>
+																					</tr>
+																					<tr>
+																						<td class="style27">{INFO_TEXT_APPLY_NOW1}</td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																	</table></form>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>&nbsp;</td>
+												</tr>
+            <tr>
+             <td>{form}
+              <div id="page_contents">
+               <div align="right"><i class="fa fa-map-marker" aria-hidden="true"></i> {page_view}&nbsp;&nbsp;</div>
+              <!--<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                <td width="60%">{pages}</td>
+                <td id='pagination-flickr' align="right">{total_pages}</td>
+               </tr>
+              </table>-->
+              <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+														<tr>
+               	<td>&nbsp;</td>
+               </tr>
+               <!-- BEGIN job_search_result -->
+               <tr>
+               	<td class="{job_search_result.row_selected}">
+																 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+               	   <td width="15" valign="top">{job_search_result.check_box}</td>
+               	   <td>
+                    <table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                     <tr>
+               	      <td colspan="4">{job_search_result.job_title}</td>
+               	     </tr>
+                     <tr>
+               	      <td class="job_search_content">{INFO_TEXT_COMPANY_NAME}</td>
+               	      <td class="job_search_content1">:</td>
+               	      <td class="job_search_content1">{job_search_result.company_name}</td>
+               	      <td rowspan="4" valign="top" align="right">{job_search_result.logo}</td>
+               	     </tr>
+                     <tr>
+               	      <td width="15%" class="job_search_content">{INFO_TEXT_LOCATION_NAME}</td>
+               	      <td class="job_search_content1" width="5">:</td>
+               	      <td class="job_search_content1">{job_search_result.location}</td>
+               	     </tr>
+                     <tr>
+               	      <td class="job_search_content">{INFO_TEXT_EXPERIENCE}</td>
+               	      <td class="job_search_content1" width="1">:</td>
+               	      <td class="job_search_content1">{job_search_result.experience}</td>
+               	     </tr>
+                     <tr class="{job_search_result.salary_class}">
+               	      <td class="job_search_content">{INFO_TEXT_SALARY}</td>
+               	      <td class="job_search_content1" width="1">:</td>
+               	      <td class="job_search_content1">{job_search_result.salary}</td>
+               	     </tr>
+                     <tr class="{job_search_result.skill_class}">
+               	      <td class="job_search_content">{INFO_TEXT_JOB_SKILL}</td>
+               	      <td class="job_search_content1" width="1">:</td>
+               	      <td class="job_search_content1">{job_search_result.job_skill}</td>
+               	     </tr>
+					 <tr>
+               	      <td colspan="4" class="job_search_content1">{job_search_result.description}</td>
+               	     </tr>
+																					<tr>
+               	      <td colspan="4">
+																						 <table width="100%" border="0">
+																						 <tr>
+																						 	<td class="job_search_apply">{job_search_result.apply_job}</td>
+																						 	<td class="job_search_email" valign="top">{job_search_result.email_job}</td>
+																						 	<td class="job_search_content1" width="50%" align="right">{INFO_TEXT_APPLY_BEFORE} {job_search_result.apply_before}</td>
+																						 </tr>
+																						 </table>
+																						</td>
+               	     </tr>
+																				</table>
+																			</td>
+                  </tr>                  
+                 </table>  
+																</td>
+               </tr>
+               <tr>
+               	<td>&nbsp;</td>
+               </tr>
+               <!-- END job_search_result -->
+              </table>
+              
+              <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                <td width="60%">{pages}</td>
+                <td id='pagination-flickr' align="right">{total_pages}</td>
+               </tr>
+              </table>
+              </div></form>
+             </td>
+            </tr> 
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</td>
+				<!-- Middle Ends -->
+    <!-- Right Starts -->
+				
+    <!-- Right ends -->
+			</tr>
+			
+		</table>
+	</td>
+</tr>
+{FOOTER_HTML}

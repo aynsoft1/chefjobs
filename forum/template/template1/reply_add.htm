@@ -1,0 +1,60 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+<script>
+  function classAdd()
+  {
+    const textarea = document.querySelector("[name='TR_description']").classList.add('form-control');
+  }
+  window.addEventListener('load', classAdd);
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+
+	{update_message}
+      <div class="card card-custom">
+        <div class="card-header">
+          <div class="col-md-12 align-items-center">
+            <h1 class="m-0">{forum_title}</h1>
+            <div class="mb-3 small">
+              {INFO_TEXT_FORUM_HEADER_LINK}
+            </div>
+        </div>
+        </div>
+        <div class="float-right text-right">
+          {INFO_TEXT_HEADING_SEARCH}
+        </div>	
+        <div class="card-body card-body-custom">
+          
+          <div class="justify-content-center">
+            {form}
+  
+            {hidden_fields}
+  
+            <div class="form-group row">
+              <!-- <div class="col-md-2 text-right">
+                <label for="" class="">
+                  {INFO_TEXT_DESCRIPTION}
+                </label>
+              </div> -->
+              <div class="col-md-12">
+                {INFO_TEXT_DESCRIPTION1}
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <div class="col-md-12">
+                {button}
+              </div>
+            </div>
+            
+  
+           </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

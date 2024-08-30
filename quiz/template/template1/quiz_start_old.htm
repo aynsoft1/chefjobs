@@ -1,0 +1,93 @@
+<title>{page_title}</title>
+<META NAME="Keywords" CONTENT=" {meta_title}">
+<meta NAME="Description" CONTENT=" {meta_description} ">
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 4000);
+</script>
+<script>
+    // get quiz minute from quiz table and convert it into seconds
+    let seconds = {QUIZ_TIMER} * 60;
+
+    function secondPassed() {
+        const element = document.getElementById('timer_left');
+        let minutes = Math.round((seconds - 30) / 60);
+        let remainingSeconds = seconds % 60;
+
+        if (remainingSeconds < 10) {
+            remainingSeconds = "0" + remainingSeconds;
+        }
+
+        element.innerHTML = "Time Left: " + minutes + ":" + remainingSeconds;
+
+        if (seconds <= 0) {
+            clearInterval('countdownTimer');
+            element.innerHTML = "Time Out...";
+            document.getElementById("formSubmit").submit();
+        } else {
+            seconds--;
+        }
+    }
+
+    let countdownTimer = setInterval(secondPassed, 1000);
+</script>
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h1 class="h2">{TEST_TITLE}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-groupp mr-2">
+                    {test_menus}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-custom">
+                        <span class="heading_bar_internal_content">
+                           <h1 class="display-6 p-0 m-0 float-left">{QUIZ_TITLE}</h1>
+                        </span>
+                        <div class="float-right text-right">
+                            <p class="timer mt-2" id="timer_left"></p>
+                        </div>
+                    </div>
+                    {form}
+                    <div class="card-body">
+                        {hidden_quiz_input_id}
+                        <!-- BEGIN questions -->
+                        {questions.quizTemplate}
+                        <!-- END questions -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-md-12 text-center">
+                            <button type="submit" name="submitted" class="btn btn-primary float-right m-2">
+                                {SUBMIT}
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                    <!--card body end here-->
+                </div>
+                <!--card end here-->
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <ul class="list-group">
+                        <!-- BEGIN candidate_list_test -->
+                            <li class="list-group-item">{candidate_list_test.title}</li>
+                        <!-- END candidate_list_test -->
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--container end here-->
+{FOOTER_HTML}

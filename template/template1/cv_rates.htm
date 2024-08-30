@@ -1,0 +1,83 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="cardcard-custom">
+			<div class="cardheader">
+                <div class="col-md-12 mb-4 text-center">
+                    <h1 class="m-0">{HEADING_TITLE}</h1>
+                    <div class="small">{HEADING_SUB_TITLE}</div>
+                </div>
+            </div>
+				
+				
+        <div class="card-body card-body-custom">
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+                <!-- BEGIN rates -->
+                <div class="col-md-6 mb-4">
+                  <div class="card card-custom card-hover border" style="border: 2px solid #ddd!important;">
+                    <div class="card-header card-header-custom text-center border-bottom bg-transparent mt-2">
+                      <div class="text-uppercase">{rates.name}</div>
+                      <h3 class="text-dark" style="font-weight: 800;">{rates.fee}</h3>
+                    </div>
+                    <div class="card-body card-body-custom p-0">
+                      <div class="table-responsive-sm">
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                                <td class="px-4 fw-bold" scope="row">Plan Name</td>
+                                <td>{rates.name}</td>
+                              </tr>
+                            <tr>
+                              <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                              <td>{rates.time}</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="card-footer bg-transparent py-3 border-top text-center">
+                      {order_form}
+                      {rates3.rate_card_buy}
+                      {rates.buy}
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- END rates -->
+              </div>
+
+            
+           </div>
+		   
+		   <div class="cardfooter small text-center">
+		   <span class="text-danger">*</span> For other options or clarifications, pl. <a href="contact_us.php" class="blue">contact us</a>
+		   </div>
+		   
+		   
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

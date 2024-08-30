@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<channel>
+ <job>
+  <job_title>Programmer</job_title>
+  <job_reference>Reecuiterment 2009</job_reference>
+  <job_country>India</job_country>
+  <job_state>Delhi</job_state>
+  <job_location>Delhi</job_location>
+  <job_salary>Rs.25000</job_salary>
+  <job_industry>IT/Software</job_industry><!-- (separate by "," and match in post job category) -->
+  <job_short_description>job short description</job_short_description>
+  <job_description>Detail description</job_description>
+  <job_type>Contract</job_type><!-- (separate by "," and match in post job type) -->
+  <job_experience>5</job_experience><!-- Number of Month -->
+  <job_duration>5</job_duration><!-- Number of day (1-60) -->
+ </job>
+</channel>

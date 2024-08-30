@@ -1,0 +1,51 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Left Starts -->
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="dflex ms-auto">{quiz_menus} {quiz_menus_1}</div>
+        </div>
+    </div>
+
+    {update_message}
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-custom">
+
+                    <div class="card-body p-0 card-body-custom">
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr class="small">
+                                    <th class="">{TABLE_HEADING_TITLE}</th>
+                                    <th class="m-none">{TABLE_HEADING_DATE_ADDED}</th>
+                                    <th class="m-none">{TABLE_HEADING_TEST_TYPE}</th>
+                                    <!-- <th class="m-none">{ADD_REPORT_MESSAGES}</th> -->
+                                    <th>Frontend Page</th>
+                                    <th class="">{TABLE_HEADING_ACTION}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN quizs -->
+                                <tr>
+                                    <td class="small text-muted">{quizs.title}</td>
+                                    <td class="small text-muted m-none">{quizs.created_at}</td>
+                                    <td class="small text-muted m-none">{quizs.type}</td>
+                                    <!-- <td class="small text-muted m-none">{quizs.messages_link}</td> -->
+                                    <td class="small text-muted m-none">{quizs.interface}</td>
+                                    <td class="small text-muted">{quizs.action}</td>
+                                </tr>
+                                <!-- END quizs -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

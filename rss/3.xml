@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://careerjobs.de/rss/">
+<channel>
+<title>IT &amp; Software RSS - CareerJobs</title>
+<description> jobs </description>
+<link>https://careerjobs.de/</link><copyright>Copyright 2024 careerjobs.de All Rights Reserved</copyright>
+<job:link  href="http://careerjobs.de/rss/3.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Truck engineer</title>
+<description>asdfasfsf</description>
+<job:job_id>16</job:job_id>
+<job:state>Grevenmacher</job:state>
+<job:location>Grevenmacher</job:location>
+<link>https://careerjobs.de/16/Truck-engineer</link>
+<guid>https://careerjobs.de/16/Truck-engineer</guid>
+</item>
+<item>
+<title>Javascript developer</title>
+<description>sdcfsdfsdfsd</description>
+<job:job_id>9</job:job_id>
+<job:state>197</job:state>
+<job:location>Zwillikon</job:location>
+<link>https://careerjobs.de/9/Javascript-developer</link>
+<guid>https://careerjobs.de/9/Javascript-developer</guid>
+</item>
+<item>
+<title>Javascript developer</title>
+<description>sadfsdfsdfsdfsdfsdf</description>
+<job:job_id>5</job:job_id>
+<job:state>Esch an der Alzette</job:state>
+<job:location>Leudelingen</job:location>
+<link>https://careerjobs.de/5/Javascript-developer</link>
+<guid>https://careerjobs.de/5/Javascript-developer</guid>
+</item>
+</channel>
+</rss>

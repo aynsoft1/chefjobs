@@ -1,0 +1,222 @@
+{HEADER_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=400,left = 0,top = 0');");
+}
+</script>
+<tr>
+	<td valign="top">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				{design}
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="left"><img src="img/main_bar_left.gif" width="2" height="30"></div></td>
+										<td width="100%" background="img/main_bar_bg.gif">
+											<table  border="0" align="left" cellpadding="0" cellspacing="0">
+												<tr>
+													<td><img src="img/spacer.gif" width="12" height="5"></td>
+													<td><img src="img/dotted_bullet.gif" width="10" height="10"></td>
+													<td><img src="img/spacer.gif" width="6" height="5"></td>
+													<td><span class="style8">{HEADING_TITLE}</span></td>
+												</tr>
+											</table>
+										</td>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="right"><img src="img/main_bar_right.gif" width="2" height="30"></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>{update_message}{COUNTRY_STATE_SCRIPT}
+							 <table width="100%" height="550"  border="0" cellpadding="7" cellspacing="1" bgcolor="#E2E2E2">
+									<tr>{registration_form}
+										<td bgcolor="#FFFFFF" valign="top">
+											<table width="100%"  border="0" cellpadding="1" cellspacing="0" bgcolor="#dadbdc">
+												<tr>
+													<td bgcolor="#FFFFFF">
+														<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td>
+																	<table width="100%" height="25"  border="0" cellpadding="0" cellspacing="0">
+																		<tr>
+																			<td bgcolor="#f7f7f7"><span class="style33">&nbsp;&nbsp;{SECTION_ACCOUNT_DETAILS}</span></td>
+																			<td bgcolor="#f7f7f7">{REQUIRED_INFO}</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td><img src="img/spacer.gif" width="5" height="5"></td>
+															</tr>
+															<tr>
+																<td>
+																	<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+																		<tr>
+																			<td><img src="img/spacer.gif" width="5" height="5"></td>
+																			<td><div align="right" class="style27">{INFO_TEXT_EMAIL_ADDRESS}</div></td>
+																			<td><img src="img/spacer.gif" width="5" height="5"></td>
+																			<td>{INFO_TEXT_EMAIL_ADDRESS1}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_CONFIRM_EMAIL_ADDRESS}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_CONFIRM_EMAIL_ADDRESS1}</td>
+																		</tr>
+																		<tr>
+																			<td colspan="4">
+																				<table width="100%" height="25"  border="0" cellpadding="0" cellspacing="0">
+																					<tr>
+																						<td bgcolor="#f7f7f7"><span class="style33">&nbsp;&nbsp;{SECTION_ACCOUNT_PRIVACY}</span></td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_PRIVACY}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_PRIVACY1}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27"><nobr>{INFO_TEXT_RESUME_SEARCHEABLE}</nobr></div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_RESUME_SEARCHEABLE1}</td>
+																		</tr>
+																		<tr>
+																			<td colspan="4">
+																				<table width="100%" height="25"  border="0" cellpadding="0" cellspacing="0">
+																					<tr>
+																						<td bgcolor="#f7f7f7"><span class="style33">&nbsp;&nbsp;{SECTION_CONTACT_DETAILS}</span></td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_FIRST_NAME}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_FIRST_NAME1}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_MIDDLE_NAME}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_MIDDLE_NAME1}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_LAST_NAME}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_LAST_NAME1}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_ADDRESS1}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_ADDRESS11}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_ADDRESS2}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_ADDRESS21}</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_CITY}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_CITY1}
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td><div align="right" class="style27">{INFO_TEXT_ZIP}</div></td>
+																			<td>&nbsp;</td>
+																			<td>{INFO_TEXT_ZIP1}</td>
+																		</tr>
+																		<tr>
+																				<td>&nbsp;</td>
+																				<td><div align="right" class="style27">{INFO_TEXT_COUNTRY}</div></td>
+																				<td>&nbsp;</td>
+																				<td>{INFO_TEXT_COUNTRY1}</td>
+																		</tr>
+																		<tr>
+																				<td>&nbsp;</td>
+																				<td><div align="right" class="style27">{INFO_TEXT_STATE}</div></td>
+																				<td>&nbsp;</td>
+																				<td>{INFO_TEXT_STATE1}</td>
+																		</tr>
+																		<tr>
+																				<td>&nbsp;</td>
+																				<td><div align="right" class="style27">{INFO_TEXT_HOME_PHONE}</div></td>
+																				<td>&nbsp;</td>
+																				<td>{INFO_TEXT_HOME_PHONE1}</td>
+																		</tr>
+																		<tr>
+																				<td>&nbsp;</td>
+																				<td><div align="right" class="style27">{INFO_TEXT_MOBILE}</div></td>
+																				<td>&nbsp;</td>
+																				<td>{INFO_TEXT_MOBILE1}</td>
+																		</tr>
+																		<tr>
+																				<td>&nbsp;</td>
+																				<td><div align="right" class="style27">{INFO_TEXT_NEWS_LETTER}</div></td>
+																				<td>&nbsp;</td>
+																				<td>{INFO_TEXT_NEWS_LETTER1}</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>&nbsp;</td>
+															</tr>
+															<tr>
+																<td class="style23">{INFO_TEXT_AGREEMENT}</td>
+															</tr>
+															<tr>
+																<td>&nbsp;</td>
+															</tr>
+															<tr>
+																<td><div align="center">{add_save_button}</div></td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td></form>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</td>
+				<!-- Middle Ends -->
+    <!-- Right Starts -->
+				{RIGHT_HTML}
+    <!-- Right ends -->
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+{FOOTER_HTML}

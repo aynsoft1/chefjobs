@@ -1,0 +1,64 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->        
+<script>
+function page_submit()
+{
+ document.page.print.value='print';
+ document.page.submit();
+}
+</script>
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="print-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-12">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-body">  
+        <td valign="top">
+         <table class="table table-hover">
+         <form method="get" name="page">
+          <tr class="dataTableHeadingRow">
+           {HEADER_ROW}           
+          </tr>
+          {HEADER_VALUE}
+       {hidden_fields}
+       </form>
+         </table>
+         <table border="0" width="100%" cellspacing="0" cellpadding="2" class="show_page">
+          <tr>
+           <td class="" colspan="3">{count_rows}</td>
+           <td align="right" class="" colspan="2">{no_of_pages}</td>
+          </tr>
+         </table>
+   		</td>
+       </form>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+</table>
+</div>
+<div class="card-footer text-right">
+{new_button}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

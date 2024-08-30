@@ -1,0 +1,58 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="at-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+
+            <table class="table table-hover">
+              <tr >
+                          <td class="dataTableRow5" align="right" valign="top" width="20%">{INFO_TEXT_USER_NAME}</td>
+                          <td class="dataTableRow2" >{INFO_TEXT_USER_NAME1}</td>
+                        </tr>
+              <tr>
+                          <td class="dataTableRow5" align="right" valign="top">{INFO_TEXT_USER_EMAIL}</td>
+                          <td class="dataTableRow1">{INFO_TEXT_USER_EMAIL1}</td>
+                        </tr>
+              <tr>
+                          <td class="dataTableRow5" align="right" valign="top">{INFO_TEXT_SUBJECT}</td>
+                          <td class="dataTableRow2">{INFO_TEXT_SUBJECT1}</td>
+                        </tr>
+                        <tr>
+                          <td class="dataTableRow5" align="right" valign="top">{INFO_TEXT_MESSAGE}</td>
+                          <td class="dataTableRow1">{INFO_TEXT_MESSAGE1}</td>
+                        </tr>
+                        <tr>
+                          <td class="label" align="right" valign="top">&nbsp;</td>
+                          <td>{INFO_TEXT_REPLY} &nbsp; {INFO_TEXT_BACK}</td>
+                        </tr>
+             </table>
+            <!-- Middle Ends	-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

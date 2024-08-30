@@ -1,0 +1,78 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+		<!-- Left Starts -->
+			{LEFT_HTML}
+		<!-- Left Ends -->     
+					
+        <div class="col-md-9 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+            <div class="card card-custom">
+			<div class="card-header">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+                <div class="card-body card-body-custom p-0">
+				<div class="table-responsive-sm">
+				<table class="table table-hover">
+						<!--<tr>
+							<td align="right" class="style27" colspan="2">{INFO_TEXT_MAX_COVERLETTER}</td>
+							<td align="right" class="small" colspan="4">{add_new}</td>
+						</tr>
+						{INFO_TEXT_MY_SAVE_JOB_TEXT}-->
+					<thead>
+						<tr class="dataTableHeadingRow jobs-table-headbar">
+						<th class="dataTableHeadingContent">{TABLE_HEADING_JOB_TITLE}</th>
+						<!-- <th class="dataTableHeadingContent m-none">{TABLE_HEADING_COMPANY_NAME}</th> -->
+						<th class="dataTableHeadingContent m-none">{TABLE_HEADING_ADVERTISED}</th>
+						<th class="dataTableHeadingContent m-none">{TABLE_HEADING_EXPIRED}</th>
+						<th class="dataTableHeadingContent">{TABLE_HEADING_DELETE}</th>
+						<th class="dataTableHeadingContent">{TABLE_HEADING_APPLY}</th>
+					</tr>
+					</thead>
+					 <!-- BEGIN job -->
+					<tr{job.row_selected}>
+					 <td valign="top">{job.job_title}
+						<div class="small">{job.company_name}</div>
+					 </td>
+					 <td class="m-none" valign="top">{job.re_adv}</td>
+					 <td class="m-none" valign="top">{job.expired}</td>
+					<td valign="top">{job.delete}</td>
+					<td valign="top">{job.apply}</td>
+					</tr>
+					<!-- END job -->
+				</table>
+				</div>						
+			</div>
+			
+			<div class="card-footer small p-2">
+			{count_rows} {no_of_pages}
+			</div>
+			
+			
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{FOOTER_HTML}

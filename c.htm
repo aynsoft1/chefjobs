@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+ <title>Chart</title>
+ </head>
+ <body>
+ <div id="chart_div1" style="background-color:#fff!important;"></div>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", { packages: ["corechart"] });
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["job_title","2024-04-10" ],
+["Test",0],
+["PHP DEVELOPER",0] 
+    ]);
+     
+    var options = {
+      title: 'Report',
+      pointSize: 2,
+      backgroundColor: 'f9f9f9'
+    };   
+   var chart = new google.visualization.AreaChart(document.getElementById('chart_div1'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>
+
+	

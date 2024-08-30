@@ -1,0 +1,87 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-9">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header d-flex">
+            <div class="form-inline mb-2">
+                {search_form}
+                  {search_text}
+                </form>
+              </div>
+              <div class="ms-auto form-inline">
+                {order_form}
+                  {order_text}
+                </form>
+              </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead class="admin-table-head-bar">
+                <th>{TABLE_HEADING_INVOICE_NO}</th>
+                <th>{TABLE_HEADING_CUSTOMERS}</th>
+                <th>{TABLE_HEADING_ORDER_TOTAL}</th>
+                <th>{TABLE_HEADING_DATE_PURCHASED}</th>
+                <th>{TABLE_HEADING_STATUS}</th>
+                <th>{TABLE_HEADING_VIEW}</th>
+                <th class="action-text">{TABLE_HEADING_ACTION}</th>
+              </thead>
+              <tbody>
+                <!-- BEGIN order -->
+                <tr{order.row_selected}>
+                  <td>{order.invoice_no}</td>
+                  <td><h4 class="m-0">{order.name}</h4></td>
+                  <td>{order.order_total}</td>
+                  <td>{order.date_purchased}</td>
+                  <td>{order.status}</td>
+                  <td>{order.view} {order.email_invoice}</td>
+                  <td>{order.action}</td>
+                  </tr>
+                  <!-- END order -->
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer d-flex">
+              <div class="">
+                {count_rows}
+              </div>
+              <div class="ms-auto">
+                {no_of_pages}
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+            {ADMIN_RIGHT_HTML}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right Ends -->
+  </div>
+  <!--end main-content container-fluid-->
+</div>
+<!--end be-content-->
+{ADMIN_FOOTER_HTML}

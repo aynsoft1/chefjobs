@@ -1,0 +1,48 @@
+<title>{page_title}</title>
+<META NAME="Keywords" CONTENT=" {meta_title}">
+<meta NAME="Description" CONTENT=" {meta_description} ">
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 4000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom d-flex justify-content-between">
+                    <h1 class="display-6 p-0 m-0">{HEADING_TITLE}</h1>
+                </div>
+
+                <div class="card-header card-header-custom">
+                    <div class="float-left text-left">{INFO_TEXT_QUIZ_HEADER_LINK}</div>
+                    <div class="float-right text-right">
+                        {new_button}
+                    </div>
+                </div>
+
+                <div class="card-header card-header-custom">
+                    <h1 class="display-6 p-0 m-0 float-left">
+                        {QUIZ_TITLE}
+                    </h1>
+                </div>
+
+                <div class="card-body card-body-custom p-0">
+                    <p class="m-2">
+                        {QUIZ_DESCRIPTION}
+                    </p>
+                </div>
+                <!--card body end here-->
+            </div>
+            <!--card end here-->
+
+        </div>
+    </div>
+</div>
+<!--container end here-->
+{FOOTER_HTML}

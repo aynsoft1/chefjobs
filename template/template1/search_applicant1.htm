@@ -1,0 +1,143 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+  function popUp(URL) {
+    day = new Date();
+    id = day.getTime();
+    eval("page" + id + " = window.open(URL, '" + id + "','toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=300,left = 0,top = 0');");
+  }
+</script>
+<style>
+  .displayNone {
+    display: none;
+  }
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone");
+      // $messageStackSuccess
+    });
+  }, 50000);
+</script>
+<!-- Left Starts -->
+<div class="container">
+  <div class="row">
+	<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends --> 
+
+    <div class="col-md-9 mx-auto">
+	
+	
+	      <div class="card mb-3">
+        <div class="card-body">
+		<div class="fw-bold mb-2">{HEADING_SEARCH} {INFO_APP_SEARCH}</div>
+      {search_resume_form}
+		<div class="row row-cols-1 row-cols-md-3">
+      <div class="col">
+        {INFO_TEXT_APPLICATION1}
+      </div>
+
+      <div class="col">
+        {INFO_TEXT_FIRST_NAME1}
+      </div>
+      
+      <div class="col">
+        {INFO_TEXT_LAST_NAME1}
+      </div>
+
+      <div class="col">
+        {INFO_TEXT_EXPERIENCE1}
+      </div>
+
+      <div class="col">
+        {INFO_TEXT_EMAIL_ADDRESS1}
+      </div>
+	  <div class="col">
+        {buttons}
+      </div>
+	  </div>
+    </div>
+  </div>
+      
+          <!--<table border="0" align="center" cellpadding="0" cellspacing="0" id="table-container-resume-sidebar">
+          <tr>
+            <td class="table-container-resume"><div class="jobseeker-register">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><table width="100%" border="0" align="left"
+                                                        cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td valign="top"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                           <tr>
+                            <td>
+                              <div class="sidebar-heading">
+                                <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td> Applicant Tracking</td>
+                                  </tr>
+                                </table>
+                              </div></td>
+                          </tr>
+                         <tr>
+                            <td><ul class="left-panel-menu">
+                            <li>&nbsp;</li>
+                              {applicant_tracking}
+                            </ul></td>
+                          </tr>
+                        </table></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table>
+            </div></td>
+          </tr>
+        </table>-->
+        <div class="card card-custom mb-3">
+        <div class="card-body">
+            <div class="d-flex align-items-center m-dblock mmb-15">
+              <h1 class="m-0 mb-2">{INFO_ALL_APPLICANTS}</h1>
+              <div class="d-flex ms-auto">{direct_applicants}</div>
+            </div>
+          <div class="text-muted small">{INFO_TEXT_MATCHED}<span
+              class="text-muted font-weight-bold">{no_of_applicants}</span>{INFO_TEXT_CR_APP}</div>
+          </div>
+        </div>
+          <!-- BEGIN search_applicant -->
+          <div class="card card-custom mb-3">
+            <div class="card-body card-body-custom p-0">
+          <div class="d-flex p-3 list-hover m-dblock">
+            <div class="flex-shrink-0">
+              {search_applicant.photo}
+            </div>
+            <div class="flex-grow-1 ms-3 mml-0 mmt-15">
+              <div class="d-flex m-dblock">
+                <h4 class="m-0">{search_applicant.name}</h4>
+                <span class="d-flex ms-auto small">{INFO_TEXT_RESUME_WEIGHT}{search_applicant.match_percentage} Resume match</span>
+              </div>
+              <div class="small text-muted">{search_applicant.email_address}</div>
+              <div class="small text-muted">{search_applicant.job_title}</div>
+              <div class="small text-muted">{search_applicant.city}</div>
+              <div class="small text-muted">{search_applicant.totalexp}</div>
+              <div class="g-4">
+              <span class="mmb-10">{search_applicant.applicant_pipeline}</span>
+              <span class="mmb-10">{search_applicant.view_resume}</span>
+              <span class="mmb-10">{search_applicant.contact}</span>
+              <span class="text-muted">{INFO_INSERTED}{search_applicant.inserted}</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- <span class="candidate-exp">{search_applicant.experience} Exp.</span>-->
+
+          <!-- END search_applicant -->
+
+        
+    </div>
+  </div>
+</div>
+
+{FOOTER_HTML}

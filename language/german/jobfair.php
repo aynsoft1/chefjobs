@@ -1,0 +1,36 @@
+<?
+define('HEADING_TITLE','Jobmesse');
+define('TEXT_DISPLAY_NUMBER_OF_JOBFAIRS', 'Anzeige <b>%d</b> bis <b>%d</b> (von <b>%d</b> Berufsmesse)');
+define('INFO_TEXT_NEWSLETTER','Heim');
+define('INFO_TEXT_EMAIL','An Freund senden');
+define('INFO_TEXT_PRINT','Drucken Sie diese Jobmesse aus');
+define('INFO_TEXT_MORE','Mehr');
+define('INFO_TEXT_SORRY_NO_JOBFAIR','Es gibt leider keine JobFair.');
+define('INFO_TEXT_BY','Von');
+define('INFO_TEXT_LATEST_JOBFAIR','Aktuelle Jobmessen');
+define('INFO_TEXT_PRINT_JOBFAIR','Jobmesse für Drucksachen');
+define('INFO_TEXT_SORRY_NO_FILE_EXIST','Es ist leider keine Datei vorhanden.');
+define('HEADING_TITLE_ALL_FAIR','Alle Messen');
+define('SEE_DOCUMENT','Siehe das Dokument');
+define('INFO_TITLE_DOCUMENT','Siehe die Gazette');
+define('INFO_TITLE_DOCUMENT_DESC1','Sehen Sie sich das Veranstaltungsblatt an und laden Sie es herunter');
+define('INFO_TITLE_DOCUMENT_DESC2','Sehen Sie sich das Veranstaltungsblatt an und laden Sie es herunter. Suchen Sie einen Job? Eine Ausbildung? Oder sogar eine selbständige Tätigkeit? Oder einfach praktische und konkrete Informationen für Ihren Wiedereinstieg ins Berufsleben?');
+define('INFO_TEXT_SORT_BY','Sortiere nach');
+define('INFO_TEXT_START_ASC','Anfangsdatum [Asc]');
+define('INFO_TEXT_START_DESC','Anfangsdatum [Desc]');
+define('INFO_TEXT_NAME_ASC','Titel [Asc]');
+define('INFO_TEXT_NAME_DESC','Titel [Desc]');
+define('INFO_TEXT_END_ASC','Endtermin [Asc]');
+define('INFO_TEXT_END_DESC','Endtermin [Desc]');
+define('ALL_JOBS','Alle Jobs anzeigen');
+define('INFO_TEXT_COMPANY_IN_DIRECTORY','Unternehmen im Firmenverzeichnis.');
+define('INFO_TEXT_NO_COMPANY_DIRECTORY','Kein Unternehmen im Firmenverzeichnis.');
+define('INFO_TEXT_ALL_CATEGORIES','Alle Kategorien');
+define('INFO_BUTTON_SEARCH','Suchen');
+define('INFO_KEYWORD','Stichwort');
+define('INFO_ALL_JOBFAIR','Alle Jobmessen');
+define('INFO_TEXT_ALL_CATEGORIES','Alle Kategorien');
+define('INFO_BUTTON_SEARCH','Suchen');
+define('INFO_TEXT_NO_COMPANY_DIRECTORY','Direktor');
+define('INFO_TEXT_HAVE','haben');
+?>

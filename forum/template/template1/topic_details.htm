@@ -1,0 +1,92 @@
+<title>{page_title}</title>
+<META NAME="Keywords" CONTENT=" {meta_title}">
+<meta NAME="Description" CONTENT=" {meta_description} ">
+
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!--below script for auto disclose message -->
+<script>
+	window.setTimeout(function() {
+	   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+		   $(this).remove(); 
+	   });
+   }, 4000);
+</script>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card card-custom">
+			<div class="card-header">
+				<div class="col-md-12 d-flex align-items-center m-dblock mmb-15">
+					<h1 class="m-0">{topic_title}</h1>
+					<div class="d-flex ms-auto m-dblock">
+						{INFO_TEXT_HEADING_SEARCH} {new_button}
+					</div>
+				</div>
+			<div class="small">{INFO_TEXT_FORUM_HEADER_LINK}</div>
+			<div class="mb-3 small">
+				{total} {list_page} {page}
+			</div>
+			</div>
+			<div class="card-body card-body-custom">
+
+		{update_message}
+			<div class="1card 1card-custom">
+				{form}
+				<div class="1card-body 1card-body-custom">
+				
+				<div class="card card-custom mb-3 bg-info-light">
+					<div class="card-header card-header-custom bg-info-light d-flex align-items-center m-dblock">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2 m-none" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						  </svg> {topic_author}
+						<div class="d-flex ms-auto small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3 me-2 d-flex mt-1" viewBox="0 0 16 16">
+							<path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+							<path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+						  </svg> {topic_posted}</div>
+					</div>
+					<div class="card-body card-body-custom">
+					<h6 class="forum_sub_heading2">{topic_title}</h6>
+					<p>{topic_description}</p>
+					</div>
+				</div>
+				
+				<!-- BEGIN topic -->
+				<div class="card card-custom mb-3 bg-warning-light">
+					<div class="card-header card-header-custom bg-warning-light d-flex align-items-center m-dblock">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2 m-none" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						  </svg> <span class="me-3">{topic.author}</span> <div class="text-danger">{topic.reply_no}</div>
+						<div class="d-flex ms-auto small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3 me-2 d-flex mt-1" viewBox="0 0 16 16">
+							<path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+							<path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+						  </svg> {topic.last_post}</div>
+					</div>
+					<div class="card-body card-body-custom">
+					<p>{topic.desc}</p>
+					</div>
+				</div>				
+				<!-- END topic -->
+				
+				
+
+					
+					
+
+					
+				</div>
+				
+				<div class="card-footer card-footer-custom">{total} {list_page} {page}</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+{FOOTER_HTML}

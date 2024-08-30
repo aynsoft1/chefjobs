@@ -1,0 +1,147 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+<script language="javascript" type="text/javascript" src="tinymce2/tinymce.js"></script>
+<script type="text/javascript">
+	tinyMCE.init({
+		theme: "modern",
+		plugins: [
+			'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+			'searchreplace wordcount visualblocks visualchars code fullscreen',
+			'insertdatetime media nonbreaking save table contextmenu directionality',
+			'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+		],
+		toolbar1: 'styleselect | bold italic | forecolor | alignleft aligncenter alignright alignjustify | bullist numlist | link |image',
+		// toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+		menubar: false,
+		image_advtab: true,
+
+		relative_urls: false,
+		remove_script_host: false,
+		mode: "exact",
+		elements: "message1",
+		theme_advanced_toolbar_location: "top",
+		theme_advanced_toolbar_align: "center",
+		force_br_newlines: true,
+		force_p_newlines: false,
+		forced_root_block: ''
+
+	});
+</script>
+
+<!-- Below Script for auto close -->
+<style>
+	.displayNone {
+		display: none;
+	}
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone");
+			$(".messageStackError").addClass("displayNone");
+			// $messageStackSuccess
+		});
+	}, 50000););
+</script>
+
+<script>
+	function classAdd() {
+		const textarea = document.querySelector('name["message1"]');
+		textarea.classList.add('form-control');
+
+		const mailInput2 = document.querySelector("[name='TR_subject']").placeholder = "subject";
+
+	}
+	window.addEventListener("load", classAdd);
+</script>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 small-font">
+			<div class="list-group mb-4">
+				<h4 type="button" class="card-header">
+					<!--{INFO_TEXT_JOB_TITLE}-->{INFO_TEXT_JOB_TITLE1}
+				</h4>
+				<div>{INFO_TEXT_ALL_APPLICANT}</div>
+				<div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+				<div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+				<div>{INFO_TEXT_JOB_DETAIL}</div>
+				<div>{INFO_TEXT_ADD_APPLICANT}</div>
+			</div>
+
+			<div class="list-group">
+				<h4 type="button" class="card-header">
+					Reports {INFO_TEXT_REPORTS}
+				</h4>
+				<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+				<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message}
+
+			<div class="card card-custom">
+				{form}
+				<div class="card-body card-body-custom">
+
+					<div class="form-group row">
+						<label for="my-input" class="col-sm-3 col-form-label">{INFO_TEXT_TO}</label>
+						<div class="col-sm-9">
+							{INFO_TEXT_TO1}
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_FROM}</label>
+						<div class="col-sm-9">
+							{INFO_TEXT_FROM1}
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="inputPassword"
+							class="col-sm-3 col-form-label">{INFO_TEXT_SUBJECT}</label>
+						<div class="col-sm-9">
+							{INFO_TEXT_SUBJECT1}
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="inputPassword"
+							class="col-sm-3 col-form-label">{INFO_MAIL_ATTACHMENT}</label>
+						<div class="col-sm-9">
+							{INFO_MAIL_ATTACHMENT1}
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="inputPassword"
+							class="col-sm-3 col-form-label">{INFO_TEXT_MESSAGE}</label>
+						<div class="col-sm-9">
+							{INFO_TEXT_MESSAGE1}
+						</div>
+					</div>
+					{hidden_fields}
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-3 col-form-label"></label>
+						<div class="col-sm-9">
+							{buttons}
+						</div>
+					</div>
+				</div> <!--Card body-->
+			</div>
+		</div> <!--card-->
+	</form>
+	</div>
+</div>
+
+{FOOTER_HTML}

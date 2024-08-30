@@ -1,0 +1,76 @@
+{HEADER_HTML} {HEADER_MIDDLE_HTML}
+<!-- Middle Starts -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 d-flex align-items-center mb-5 m-dblock">
+          <h1 class="m-0">{HEADING_TITLE}</h1>
+          <div class="dflex ms-auto">
+              {quiz_menus}
+          </div>
+      </div>
+  </div>
+
+  {update_message}
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <a
+              href="{video_test_link}"
+              class=""
+              >
+            <div class="card card-custom card-hover">
+              <div class="card-body card-body-custom text-center">
+                <div class="mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+                  <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                  <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                </svg>
+              </div>
+                <h3 class="card-title">Video</h3>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              href="{mcq_test_link}"
+              class=""
+              >
+              <div class="card card-custom card-hover">
+                <div class="card-body card-body-custom text-center">
+                <div class="mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </div>
+                <h3 class="card-title">Multiple-choice</h3>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col">
+            <a
+              href="{essay_test_link}"
+              class=""
+              >
+            <div class="card card-custom card-hover">
+              <div class="card-body card-body-custom text-center">
+              <div class="mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                  </svg>
+                </div>
+                <h3 class="card-title">Essay</h3>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<div style="position: absolute; bottom: 0; width: 100%">{FOOTER_HTML}</div>

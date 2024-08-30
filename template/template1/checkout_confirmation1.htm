@@ -1,0 +1,153 @@
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet1.css">
+<title>{HEADING_TITLE1}</title>
+<body onload="window.print();">
+<!-- Left Starts -->
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+ <tr>
+<!-- Left Ends -->        
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+     <td valign="top">
+			   <table border="0" width="99%" cellspacing="1" cellpadding="2" class="infoBox" align="center">
+				   <tr class="background">
+					   <td valign="top">
+         <table border="0" width="100%" cellspacing="0" cellpadding="10">
+         <tr >
+           <td class="pageHeading" align="left">{HEADING_TITLE_LOGO}<br>{INFO_TEXT_LOGO}</td>
+          </tr>
+         </table>
+         <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td>
+												<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td width="0%" background="img/main_bar_bg.gif"><div align="left"><img src="img/main_bar_left.gif" width="2" height="30"></div></td>
+														<td width="100%" background="img/main_bar_bg.gif">
+															<table  border="0" align="left" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td><img src="img/spacer.gif" width="12" height="5"></td>
+																	<td><img src="img/dotted_bullet.gif" width="10" height="10"></td>
+																	<td><img src="img/spacer.gif" width="6" height="5"></td>
+																	<td><span class="style8">{HEADING_TITLE1}</span></td>
+																</tr>
+															</table>
+														</td>
+														<td width="0%" background="img/main_bar_bg.gif"><div align="right"><img src="img/main_bar_right.gif" width="2" height="30"></div></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<table width="100%" height="450"  border="0" cellpadding="15" cellspacing="1" bgcolor="#E2E2E2">
+													<tr>
+														<td valign="top" bgcolor="#FFFFFF">{update_message}
+															<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td width="63%" height="27" bgcolor="#020e80"><span class="style34">&nbsp;&nbsp;&nbsp;{HEADING_BILLING_INFORMATION}</span></td>
+																	<td width="2%"><img src="img/spacer.gif" width="15" height="5"></td>
+																	<td width="35%" bgcolor="#020E80"><span class="style34">&nbsp;&nbsp;&nbsp;{HEADING_PRODUCTS}</span></td>
+																</tr>
+																<tr valign="top">
+																	<td>
+																		<table width="100%" height="125"  border="0" cellpadding="15" cellspacing="1" bgcolor="#e9e9e9">
+																			<tr>
+																				<td bgcolor="#FFFFFF" valign="top" class="style22"><u>{HEADING_BILLING_ADDRESS}</u></td>
+																			</tr>
+																			<tr>
+																				<td bgcolor="#FFFFFF">{HEADING_BILLING_ADDRESS1}</td>
+																			</tr>
+																		</table>
+																	</td>
+																	<td>&nbsp;</td>
+																	<td>
+																		<table width="100%" height="125"  border="0" cellpadding="15" cellspacing="1" bgcolor="#e9e9e9">
+																			<tr>
+																				<td bgcolor="#FFFFFF">
+																					<table width="100%"  border="0" cellspacing="0" cellpadding="5">
+																						<tr>
+																							<td valign="top" class="style27" >{product_name} : </td>
+																							<td class="style27" >{product_fee}</td>
+																						</tr>
+																						{order_total_string}
+																					</table>
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
+																<tr valign="top">
+																	<td><img src="img/spacer.gif" width="5" height="15"></td>
+																	<td><img src="img/spacer.gif" width="5" height="15"></td>
+																	<td><img src="img/spacer.gif" width="5" height="15"></td>
+																</tr>
+																<tr>
+																	<td height="26" bgcolor="#020E80"><span class="style34">&nbsp;&nbsp;&nbsp;{HEADING_PAYMENT_METHOD}</span></td>
+																	<td>&nbsp;</td>
+																	<td bgcolor="#020E80"><span class="style34">&nbsp;&nbsp;&nbsp;{TABLE_HEADING_COMMENTS}</span></td>
+																</tr>
+																<tr valign="top">
+																	<td>
+																		<table width="100%" height="125"  border="0" cellpadding="15" cellspacing="1" bgcolor="#e9e9e9">
+																			<tr>
+																				<td bgcolor="#FFFFFF">
+																					<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+																						<tr>
+																							<td class="style22">{HEADING_PAYMENT_METHOD1}</td>
+																						</tr>
+																						<tr>
+																							<td><img src="img/spacer.gif" width="5" height="7"></td>
+																						</tr>
+																						<tr>
+																							<td>
+																								<table width="80%"  border="0" align="left" cellpadding="0" cellspacing="0">
+																									<tr>
+																										<td bgcolor="#DDDDDD" colspan="3" class="style22">{HEADING_PAYMENT_INFORMATION}</td>
+																									</tr>   
+																									<tr>
+																										<td valign="top" class="style27">{HEADING_PAYMENT_INFORMATION1}</td>
+																										<td><img src="img/spacer.gif" width="5" height="2"></td>
+																										<td valign="top" class="style27">{HEADING_PAYMENT_INFORMATION2}</td>
+																									</tr>
+																								</table>
+																							</td>
+																						</tr>
+																					</table>
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																	<td>&nbsp;</td>
+																	<td><div align="center">
+																		<table width="100%" height="140"  border="0" cellpadding="15" cellspacing="1" bgcolor="#e9e9e9">
+																			{gift_error}
+																			<tr bgcolor="#FFFFFF">
+																				<td class="style27" valign="top">{HEADING_ORDER_COMMENTS1}</td>
+																			</tr>
+																		</table>
+																		</div>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+         <br>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+ </tr>
+</table>
+<!-- Right Ends -->

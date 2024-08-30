@@ -1,0 +1,885 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .box {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .active_tab1 {
+        background-color: #fff;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .inactive_tab1 {
+        background-color: #f5f5f5;
+        color: #333;
+        cursor: not-allowed;
+    }
+
+    .has-error {
+        border-color: #cc0000;
+        background-color: #ffff99;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="d-flex ms-auto">
+                {quiz_menus}
+            </div>
+        </div>
+    </div>
+    {update_message}
+    <!-- message alert box using js -->
+    <div id="liveAlertPlaceholder"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center">
+                    <div class="arrow-steps clearfix">
+                        <div class="step current" id="step1-add-assessment">
+                            {STEP_1}
+                        </div>
+                        <div class="step" id="step2-add-test-library">
+                            {STEP_2}
+                        </div>
+                        <div class="step" id="step3-list_custom_question">
+                            {STEP_3}
+                        </div>
+                        <div class="step" id="step4-review-assessment">
+                            {STEP_4}
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+
+                <div class="cardheadercard-header-custom mb-3">
+                    
+                        {add_my_own_test}
+                </div>
+                
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <form>
+                            <div class="m-2 text-danger" id="error_list_tests"></div>
+                            <div class="tab-content" style="margin-top:16px;">
+                                <!-- step 1 -->
+                                <div class="tab-pane active" id="login_details">
+                                    <div class="form-group row align-items-center">
+                                        <label
+                                            class="col-12 col-sm-4 col-form-label text-sm-right">{label_title}</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            {input_title}
+                                            <span id="error_name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row align-items-center mb-0">
+                                        <label
+                                            class="col-12 col-sm-4 col-form-label text-sm-right">{label_template}</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            {dropdown_jobs}
+                                            <span id="error_job_id" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-4 col-form-label text-sm-right"></label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <span>{add_job}</span>
+                                            <span id="error_job_id" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-4 col-form-label text-sm-right">&nbsp;</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <button type="button" name="step_1_next_clicked" id="step_1_next_clicked"
+                                                class="btn btn-add-section mw-100">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- step 2 -->
+                                <div class="tab-pane fade" id="personal_details">
+                                    <div class="form-group row" id="test-lists">
+                                        {dropdown_test_lib}
+                                    </div>
+
+                                    <div class="form-group row text-center">
+                                        <div class="col-12 col-sm-8 col-lg-12">
+
+                                            <button type="button" name="previous_to_step_1_btn"
+                                                id="previous_to_step_1_btn" class="btn btn-add-lesson me-3">
+                                                Previous
+                                            </button>
+                                            <button type="button" name="step_2_next_clicked" id="step_2_next_clicked"
+                                                class="btn btn-add-section">
+                                                Next & Skip
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- step 3 -->
+                                <div class="tab-pane fade" id="custom_library">
+                                    <div class="form-group row" id="custom-ques-lib">
+                                        <!-- my question load -->
+                                    </div>
+
+                                    <div class="form-group row text-center">
+                                        <div class="col-12 col-sm-8 col-lg-12">
+                                            <button type="button" name="previous_to_step_2_btn"
+                                                id="previous_to_step_2_btn" class="btn btn-add-lesson me-3">
+                                                Previous
+                                            </button>
+                                            <button type="button" name="step_3_next_clicked" id="step_3_next_clicked"
+                                                class="btn btn-add-section">
+                                                Next
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- step 4 -->
+                                <div class="tab-pane fade" id="contact_details">
+                                    <div class="row">
+                                        <div class="col-12">
+
+                                            <h5 class="">Selected Test</h5>
+                                            <div class="mb-3">Please review and configure your assessment.</div>
+                                            <div class="card">
+                                                
+                                                <div class="table-responsive" id="table-data">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>NAME</th>
+                                                                <th>DURATION</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="t-body"></tbody>
+                                                    </table>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <div class="form-group row text-center mt-4">
+                                                <div class="col-12 col-sm-8 col-lg-12">
+                                                <button type="button" name="previous_to_step_3_btn"
+                                                    id="previous_to_step_3_btn"
+                                                    class="btn btn-add-lesson me-3">
+                                                    Previous
+                                                </button>
+
+                                                <button type="button" name="finish_btn_clicked"
+                                                    id="finish_btn_clicked"
+                                                    class="btn btn-add-section">
+                                                    Finish
+                                                </button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- video and essay test modalform -->
+<div class="modal fade" id="testModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="testModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formBody">
+                    <input type="hidden" name="type" id="type" />
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="test_title">Title</label>
+                            <input type="text" name="test_title" class="form-control" id="test_title" />
+                            <span class="text-danger" id="error_test_title"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="timer">Timer (in minute)</label>
+                            <input type="number" name="timer" class="form-control" id="timer"
+                                placeholder="Time to answer the question in minute" />
+                            <span class="text-danger" id="error_timer"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="question">Question</label>
+                        <textarea name="question" wrap="soft" cols="30" rows="5" class="form-control" id="question"
+                            placeholder=""></textarea>
+                        <span class="text-danger" id="error_question"></span>
+                    </div>
+
+                    <div class="answerBody d-none" id="answerBody">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <span class="h5">Answers</span>
+                                <span class="btn btn-sm btn-outline-success me-3" id="add-answer"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-plus-lg me-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- choice 1 box -->
+                        <div class="form-row row">
+                            <div class="form-group col-md-6">
+                                <label for="choice">Choice</label>
+                                <input type="text" name="question_choice[]" class="form-control" id="question-choice-0"
+                                    placeholder="Choice" autocomplete="off">
+                                <span class="choice_err text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="point">Point</label>
+                                <input type="number" name="points[]" placeholder="Point" class="form-control"
+                                    id="points-0" min="0" autocomplete="off">
+                                <span class="point_err text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-2"></div>
+                        </div>
+
+                        <!-- choice 2 box -->
+                        <div class="form-row row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="question_choice[]" class="form-control" id="question-choice-1"
+                                    placeholder="Choice" autocomplete="off">
+                                <span class="choice_err text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="number" name="points[]" placeholder="Point" class="form-control"
+                                    id="points-1" min="0" autocomplete="off">
+                                <span class="point_err text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-2"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeTestModal"
+                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="submitTestModal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        let selectedTestLists1 = [];
+        let selectedTestLists2 = [];
+        let newMergeredSelectedLists;
+
+        $('#step_1_next_clicked').click(function () {
+
+            var error_name = '';
+            var error_job_id = '';
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            // title required
+            if ($.trim($('#title').val()).length == 0) {
+                error_name = 'Assessment name is required.';
+                $('#error_name').text(error_name);
+                $('#title').addClass('is-invalid');
+            } else {
+                $('#error_name').text('');
+                $('#title').removeClass('is-invalid');
+            }
+
+            // job id required
+            if ($('#template_job_id').val() <= 0) {
+                error_job_id = 'Please select a valid job.';
+                $('#error_job_id').text(error_job_id);
+                $('#template_job_id').addClass('is-invalid');
+            } else {
+                $('#error_job_id').text('');
+                $('#template_job_id').removeClass('is-invalid');
+            }
+
+            if (error_name != '' || error_job_id != '') {
+                return false;
+            } else {
+                $('#step1-add-assessment').removeClass('active active_tab1 current');
+                $('#step1-add-assessment').removeAttr('href data-toggle');
+                $('#step1-add-assessment').addClass('inactive_tab1');
+
+                $('#login_details').removeClass('active');
+
+                $('#step2-add-test-library').removeClass('inactive_tab1 current');
+                $('#step2-add-test-library').addClass('active active_tab1 current');
+                $('#step2-add-test-library').attr('href', '#personal_details');
+                $('#step2-add-test-library').attr('data-toggle', 'tab');
+
+                $('#personal_details').removeClass('fade');
+                $('#personal_details').addClass('active');
+            }
+        });
+
+        $('#previous_to_step_1_btn').click(function () {
+            $('#step2-add-test-library').removeClass('active active_tab1 current');
+            $('#step2-add-test-library').removeAttr('href data-toggle');
+            $('#personal_details').removeClass('active in');
+            $('#step2-add-test-library').addClass('inactive_tab1 ');
+            $('#step1-add-assessment').removeClass('inactive_tab1 current');
+            $('#step1-add-assessment').addClass('active_tab1 active current');
+            $('#step1-add-assessment').attr('href', '#login_details');
+            $('#step1-add-assessment').attr('data-toggle', 'tab');
+            $('#login_details').addClass('active current');
+
+            // set text null
+            $('#test_link_menu').removeClass("d-none")
+        });
+
+        // step 2 next btn clicked
+        $('#step_2_next_clicked').click(function () {
+            let error_list_tests = '';
+            const multiTestSelectorCard = document.querySelector('#test-lists');
+            const testsChecked = [].slice.call(
+                multiTestSelectorCard.querySelectorAll(
+                    '[type=checkbox]:checked')).map(function (v) {
+                // get clicked element id first
+                const elemId = $(v).attr('id');
+                const arrElem = $(v).attr('data-id');
+
+
+                $('#' + elemId).attr('checked', true);
+
+                $('#' + elemId).click(function () {
+                    if (v.checked == false) {
+                        $('#' + elemId).attr('checked', false);
+                    } else {
+                        $('#' + elemId).attr('checked', true);
+                    }
+                })
+
+                return v.value;
+            });
+
+            // selected test push into an array
+            if (testsChecked.length > 0) {
+                // first empty the previous array
+                selectedTestLists1 = [];
+                testsChecked.map((value) => {
+                    // join new array
+                    selectedTestLists1.push(value);
+                })
+            } else {
+                selectedTestLists1 = [];
+            }
+
+            if (error_list_tests != '') {
+                return false;
+            } else {
+                $('#step2-add-test-library').removeClass('active active_tab1 current');
+                $('#step2-add-test-library').removeAttr('href data-toggle');
+                $('#personal_details').removeClass('active');
+                $('#step2-add-test-library').addClass('inactive_tab1');
+
+                $('#step3-list_custom_question').removeClass('inactive_tab1 current');
+                $('#step3-list_custom_question').addClass('active_tab1 active current');
+                $('#step3-list_custom_question').attr('href', '#custom_library');
+                $('#step3-list_custom_question').attr('data-toggle', 'tab');
+                $('#custom_library').removeClass('fade');
+                $('#custom_library').addClass('active');
+
+                // replace text with anchor tag
+                $('#test_link_menu').removeClass('d-none')
+
+                // console.log('admin test', selectedTestLists1)
+                load_my_question()
+            }
+        });
+
+        // In step 3 if next btn clicked
+        $('#step_3_next_clicked').click(function () {
+            let error_custom_list = '';
+            const customTestSelectorCard = document.querySelector('#custom-ques-lib');
+            const customTestsChecked = [].slice.call(
+                customTestSelectorCard.querySelectorAll('[type=checkbox]:checked')).map(function (
+                v) {
+
+                // get clicked element id first
+                const elemId = $(v).attr('id');
+                const arrElem = $(v).attr('data-id');
+
+                $('#' + elemId).attr('checked', true);
+                $('#' + elemId).click(function () {
+                    if (v.checked == false) {
+                        $('#' + elemId).attr('checked', false);
+                    } else {
+                        $('#' + elemId).attr('checked', true);
+                    }
+                })
+
+                return v.value;
+            });
+
+            // selected test push into an array
+            if (customTestsChecked.length > 0) {
+                // first empty the previous array
+                selectedTestLists2 = [];
+                customTestsChecked.map((value) => {
+                    // join new array
+                    selectedTestLists2.push(value);
+                })
+            } else {
+                selectedTestLists2 = [];
+            }
+
+            // merge the step 2 and step 3 array into a new array
+            newMergeredSelectedLists = selectedTestLists1.concat(selectedTestLists2);
+
+            if (newMergeredSelectedLists.length <= 0) {
+                error_custom_list = 'At least select one test either in step 2 or step 3';
+                $('#error_list_tests').text(error_custom_list);
+            } else {
+                $('#error_list_tests').text('');
+            }
+
+            if (error_custom_list != '') {
+                return false;
+            } else {
+                $('#step3-list_custom_question').removeClass('active active_tab1 current');
+                $('#step3-list_custom_question').removeAttr('href data-toggle');
+                $('#step3-list_custom_question').addClass('inactive_tab1');
+
+                $('#custom_library').removeClass('active');
+
+                $('#step4-review-assessment').removeClass('inactive_tab1 current');
+                $('#step4-review-assessment').addClass('active_tab1 active current');
+                $('#step4-review-assessment').attr('href', '#contact_details');
+                $('#step4-review-assessment').attr('data-toggle', 'tab');
+
+                $('#contact_details').removeClass('fade');
+                $('#contact_details').addClass('active');
+
+                // now remove text
+                $('#test_link_menu').addClass('d-none')
+
+                const ids = [...new Set(newMergeredSelectedLists)];
+                loadData(ids)
+                // console.log('emp test', selectedTestLists2)
+            }
+        });
+
+        // In step 3 if previous btn clicked
+        $('#previous_to_step_2_btn').click(function () {
+            $('#step3-list_custom_question').removeClass('active active_tab1 current');
+            $('#step3-list_custom_question').removeAttr('href data-toggle');
+            $('#step3-list_custom_question').addClass('inactive_tab1');
+
+            $('#custom_library').removeClass('active in');
+
+            $('#step2-add-test-library').removeClass('inactive_tab1 current');
+            $('#step2-add-test-library').addClass('active_tab1 active current');
+            $('#step2-add-test-library').attr('href', '#personal_details');
+            $('#step2-add-test-library').attr('data-toggle', 'tab');
+            $('#personal_details').addClass('active in');
+
+            // remove anchor tag and set text
+            $('#test_link_menu').addClass('d-none')
+        });
+
+        // step 4 previous btn clicked
+        $('#previous_to_step_3_btn').click(function () {
+            $('#step4-review-assessment').removeClass('active active_tab1 current');
+            $('#step4-review-assessment').removeAttr('href data-toggle');
+            $('#step4-review-assessment').addClass('inactive_tab1');
+
+            $('#contact_details').removeClass('active in');
+
+            $('#step3-list_custom_question').removeClass('inactive_tab1');
+            $('#step3-list_custom_question').addClass('active_tab1 active current');
+            $('#step3-list_custom_question').attr('href', '#personal_details');
+            $('#step3-list_custom_question').attr('data-toggle', 'tab');
+
+            $('#custom_library').addClass('active in');
+
+            $('#t-body').empty()
+
+            // add custom test link
+            $('#test_link_menu').removeClass('d-none');
+        });
+
+        // step4 submit btn clicked
+        $('#finish_btn_clicked').click(function () {
+            if (newMergeredSelectedLists.length > 0 && error_list_tests != '' && error_job_id != '' &&
+                error_name != '') {
+
+                var requestInputData = {
+                    title: $("#title").val(),
+                    template_job_id: $("#template_job_id").val(),
+                    tests: selectedTestLists1,
+                    custom_tests: selectedTestLists2,
+                };
+
+                assessment_store(requestInputData, "{FORM_TYPE}")
+                // $('#finish_btn_clicked').attr("disabled", "disabled");
+                // $("#assessment_form").submit();
+            } else {
+                alert('Something went wrong!...')
+                return false;
+            }
+
+        });
+
+
+
+        // script for modal add test
+        var API_URL_TEST_STORE = "{API_URL_TEST_STORE}";
+        const testModalEl = document.getElementById("testModal");
+        var testModalForm = new bootstrap.Modal(testModalEl, {
+            keyboard: false,
+        });
+
+        $("#videoModalBtn").click(function (e) {
+            const modalTitle = $(this).attr("data-test-type");
+            $("#modalTitleLabel").html('New Video Test');
+            $("#question").attr('placeholder', 'For example: What attracts you most to our company?')
+            $("#type").val(modalTitle);
+            testModalForm.show();
+        });
+
+
+        $("#mcqModalBtn").click(function () {
+            const modalTitle = $(this).attr("data-test-type");
+            $("#modalTitleLabel").html('New Test');
+            $("#question").attr('placeholder', 'what is 2 + 2 = ?')
+
+            // show choice box
+            $('#answerBody').removeClass('d-none');
+
+            $("#type").val(modalTitle);
+            testModalForm.show();
+        });
+
+
+        $("#essayModalBtn").click(function () {
+            const modalTitle = $(this).attr("data-test-type");
+            $("#modalTitleLabel").html('New Essay Test');
+            $("#question").attr('placeholder',
+                'For example: What would be your priorities for the first 100 days in the job? please explain...'
+            )
+            $("#type").val(modalTitle);
+            testModalForm.show();
+        });
+
+
+        // submit the modal
+        $("#submitTestModal").click(function () {
+            submitTestModal();
+        });
+
+        // if close button is clicked clear the form field
+        testModalEl.addEventListener("hidden.bs.modal", function () {
+            testFormClearModal();
+        });
+
+        function submitTestModal() {
+            if (($("#type").val() === 'video') || ($("#type").val() === 'essay')) {
+                let requestInputData = {
+                    test_title: $("#test_title").val(),
+                    timer: $("#timer").val(),
+                    question: $("#question").val(),
+                };
+
+                // submit the form
+                ajax_form_submit(requestInputData)
+            } else if ($("#type").val() === 'mcq') {
+                var choices = [];
+                var points = [];
+
+                $('[name="question_choice[]"]').each(function () {
+                    if ($(this).val() <= 0) {
+                        $('.choice_err').html('choices are required')
+                    } else {
+                        choices.push($(this).val())
+                    }
+                });
+
+                $('[name="points[]"]').each(function () {
+                    if ($(this).val() <= 0) {
+                        $(this).val('0')
+                        // $('.point_err').html('points are required')
+                    }
+                    points.push($(this).val())
+                });
+
+                let requestInputData = {
+                    test_title: $("#test_title").val(),
+                    timer: $("#timer").val(),
+                    question: $("#question").val(),
+                    question_choice: choices,
+                    points: points,
+                };
+
+                // console.log(requestInputData)
+                if (choices.length === points.length) {
+                    ajax_form_submit(requestInputData)
+                } else {
+                    alert('something went wrong with your input fields')
+                }
+            } else {
+                alert('something went wrong! type should be video, mcq or essay')
+            }
+
+        }
+
+        function assessment_store(requestInputData, form_type = "POST") {
+            if (form_type === 'PUT') {
+                var ASSESSMENT_URL = "{API_URL_ASSMNT_UPDATE}";
+            }else {
+                var ASSESSMENT_URL = "{API_URL_ASSMNT_STORE}";
+            }
+
+            $.ajax({
+                type: "POST",
+                url: ASSESSMENT_URL,
+                data: requestInputData,
+                dataType: "json",
+                encode: true,
+                success: function (res) {
+                    if (!res.success) {
+                        alert('Error: ' + res.message);
+                    } else {
+                        $("#finish_btn_clicked").attr('disabled', true)
+                        // redirect to page
+                        location.href = "{ASSESSMENT_HOMEPAGE}";
+                        // location.replace("{ASSESSMENT_HOMEPAGE}")
+                    }
+                },
+                error: function (err) {
+                    console.log('form submit err', err)
+                }
+            })
+        }
+
+        function ajax_form_submit(requestInputData) {
+            $.ajax({
+                    type: "POST",
+                    url: API_URL_TEST_STORE + '&type=' + $("#type").val(),
+                    data: requestInputData,
+                    dataType: "json",
+                    encode: true,
+                })
+                .done(function (data) {
+                    // console.log(data)
+                    // validation error show
+                    if (!data.success) {
+                        if (data.errors.test_title) {
+                            $("#error_test_title").text(data.errors.test_title);
+                        }
+
+                        if (data.errors.timer) {
+                            $("#error_timer").text(data.errors.timer);
+                        }
+
+                        if (data.errors.question) {
+                            $("#error_question").text(data.errors.question);
+                        }
+                        if (data.errors.type) {
+                            alert('Error: add type request param in url also')
+                        }
+                    } else {
+                        testFormClearModal();
+                        // modal close
+                        testModalForm.hide();
+
+                        // show message
+                        showAlertMessage(data.message);
+
+                        // load latest test
+                        load_my_question()
+                    }
+                })
+                .fail(function (data) {
+                    console.log("error");
+                });
+        }
+
+        function testFormClearModal() {
+            // console.log('modal field cleared')
+            $("#test_title").val("");
+            $("#error_test_title").text("");
+            $("#timer").val("");
+            $("#error_timer").text("");
+            $("#question").val("");
+            $("#error_question").text("");
+
+            // queston placeholder empty
+            $('#question').attr('placeholder', '');
+
+            // new option button delete and d-none add to anserBody
+            $('#answerBody').addClass('d-none');
+            $('.new-field').remove();
+
+            // clear choice and point
+            $('[name="question_choice[]"]').each(function () {
+                $(this).val("")
+                $('.choice_err').html('')
+            });
+
+            $('[name="points[]"]').each(function () {
+                $(this).val("")
+                $('.point_err').html('')
+            });
+        }
+
+        //when the Add Field button is clicked
+        $("#add-answer").click(function (e) {
+            //Append a new row of code to the "#items" div
+            $("#answerBody").append(
+                `
+                <div class="form-row row new-field">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="question_choice[]" id="option" placeholder="Choice">
+                        <span class="choice_err text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="number" class="form-control" name="points[]" placeholder="Point">
+                        <span class="point_err text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-danger deleteBox" role="button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form-group col-md-2"></div>
+                </div>
+                `
+            );
+        });
+
+        $("body").on("click", ".deleteBox", function (e) {
+            const clickedElement = e.currentTarget;
+            clickedElement.closest(".new-field").remove()
+        });
+
+        // function show alert message
+        function showAlertMessage(
+            message = "Record added successfully",
+            alertType = "success"
+        ) {
+            const alertMessageDiv = document.getElementById("liveAlertPlaceholder");
+
+            const alertBox = (message, type) => {
+                const wrapper = document.createElement("div");
+                wrapper.innerHTML = [
+                    '<div class="alert alert-' + type + ' alert-dismissible" role="alert">',
+                    "   <div>" + message + "</div>",
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    "</div>",
+                ].join("");
+
+                alertMessageDiv.append(wrapper);
+            };
+
+            alertBox(message, alertType);
+        }
+
+
+        // common function
+        function loadData(ids) {
+            $.ajax({
+                url: 'assessment.php?action=api&ids=' + ids,
+                method: "GET",
+                dataType: "JSON",
+                success: function (result) {
+                    result.map((val) => {
+                        const tr = '<tr><td>' + val['title'] + '</td><td>' + val['timer'] +
+                            '</td></tr>'
+                        $('#t-body').append(tr)
+                    })
+                },
+            });
+        }
+
+        function load_my_question() {
+            $.ajax({
+                type: "GET",
+                url: "{my_questions_url}",
+            }).done(function (res) {
+                const data = $.parseJSON(res);
+
+                var cardDiv = '';
+
+                if (data.length > 0) {
+                    $.each(data, function (key, value) {
+                        cardDiv += '<div class="col-md-3 mb-3">';
+                        cardDiv += '<div class="card card-custom" id="card-' + value['id'] +
+                            '">';
+                        cardDiv +=
+                            '<div class="card-header border-bottom"  style="border-top-left-radius: 0.8rem;border-top-right-radius: 0.8rem;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;font-weight:500;padding: 7px 17px;">' +
+                            value[
+                                'title'] + '</div>';
+                        cardDiv +=
+                            '<div class=""card-body card-body-custom align-items-center d-flex">' +
+                            value['description'] + '</div>';
+                        cardDiv += '<div class="card-footer card-footer-custom">';
+                        cardDiv +=
+                            '<input class="form-check-input" type="checkbox" name="custom_tests[]" id="custom_tests-' +
+                            value['id'] + '" value="' + value['id'] + '" data-title="' + value[
+                                'title'] +
+                            '" data-duration="' + value['timer'] + ' min" data-id="' + value[
+                                'id'] + '" />';
+                        cardDiv += '<label for="custom_tests-' + value['id'] +
+                            '" class="ms-2"> Select Test</label></div>';
+                        cardDiv += '</div></div>'
+                    });
+                } else {
+                    cardDiv += `
+                    <div class="text-center">No record found.</div>
+                    `;
+                    console.log('No my own test found')
+                }
+                $("#custom-ques-lib").html(cardDiv);
+            }).fail(function (err) {
+                console.error('Something went wrong! ' + err);
+            })
+        }
+
+    });
+</script>
+{FOOTER_HTML}

@@ -1,0 +1,55 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                    <h1 class="display-6 p-0 m-0 float-left">{HEADING_TITLE}</h1>
+                </div>
+                <div class="card-body card-body-custom table-responsive p-0">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>{TITLE}</th>
+                                <th>{MESSAGE}</th>
+                                <th>{TOTAL_SCORE}</th>
+                                <th>{OUT_OF}</th>
+                                <th>{START}</th>
+                            </tr>
+                        </thead>
+                        <!-- BEGIN latest_report -->
+                        <tr>
+                            <td>{latest_report.title}ddddd</td>
+                            <td>{latest_report.message}</td>
+                            <td>{latest_report.total_points}</td>
+                            <td>{latest_report.out_of}</td>
+                            <td>{latest_report.start}</td>
+                        </tr>
+                        <!-- END latest_report -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

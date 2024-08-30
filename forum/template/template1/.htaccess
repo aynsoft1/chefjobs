@@ -1,0 +1,6 @@
+# Example: http://server/admin/html/text.htm will not work
+
+<Files *.htm>
+Order Deny,Allow
+Deny from all
+</Files>

@@ -1,0 +1,116 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+<!--
+<script language="JavaScript">
+    function view_data(data, data1) {
+      document.page.view.value = data;
+      document.page.mail_status.value = data1;
+      document.page.submit();
+    }
+  function select_action2() {
+    var check;
+    check = false;
+    for (var i = 0; i < document.page.elements.length; i++) {
+      var e = document.page.elements[i];
+      if (e.type == "checkbox") {
+        if ((e.checked) == true) {
+          check = true;
+          break;
+        }
+      }
+    }
+    if (check) {
+      if (document.page.select_action.options[document.page.select_action.selectedIndex].value != "") {
+        document.page.action1.value = document.page.select_action.options[document.page.select_action.selectedIndex].value;
+        { mail_status }
+        { lower_value }
+        { higher_value }
+        document.page.submit();
+      }
+      else {
+        return false;
+      }
+    }
+    else {
+      document.page.select_action.value = "";
+      alert('Please check atleast one checkbox.');
+    }
+  }
+-->
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-tag fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <tr>
+
+                {form}
+                <td valign="top" colspan="3">{view_link}</td>
+                <td valign="top" colspan="2" align="right">{view_link1}</td>
+              </tr>
+              <tr class="dataTableHeadingRow">
+                <td class="style34" width="2%"></td>
+                <td class="style34" width="20%">{TABLE_HEADING_MAIL_SENDER}</td>
+                <td class="style34" width="19%">{TABLE_HEADING_MAIL_ADDRESS}</td>
+                <td class="style34" width="38%">{TABLE_HEADING_MAIL_SUBJECT}</td>
+                <td class="style34" width="21%">{TABLE_HEADING_MAIL_INSERTED}</td>
+              </tr>
+              <!-- BEGIN jobseeker_mail -->
+              <tr{jobseeker_mail.row_selected}>
+                <td valign="top" class="dataTableContent">{jobseeker_mail.check_box}</td>
+                <td valign="top" class="dataTableContent">{jobseeker_mail.sender}</td>
+                <td valign="top" class="dataTableContent">{jobseeker_mail.email_address}</td>
+                <td valign="top" class="style27">{jobseeker_mail.subject}</td>
+                <td valign="top" class="dataTableContent">{jobseeker_mail.inserted}</td>
+                </tr>
+                <!-- END jobseeker_mail -->
+                <tr>
+                  <td class="small" colspan="4">{check_link} {check_link1}</td>
+                  <td class="small" align="right">{quick_action}</td>
+                </tr>
+                <tr>{hidden_fields}
+                  <td class="label" colspan="3">{total}</td>
+                  <td valign="top" colspan="2" align="right" class="label">{list_page}&nbsp;{page}&nbsp;</td>
+                </tr>
+                </form>
+            </table>
+
+            <!-- Middle Ends	-->
+          </div>
+        </div>
+      </div>
+            <!-- Right Starts -->
+            <div class="col-md-3 pl-1">
+              <div class="card card-border-color card-border-color-primary">
+                <div class="card-body">
+              {ADMIN_RIGHT_HTML}
+            </div>
+            </div>
+          </div>
+            <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

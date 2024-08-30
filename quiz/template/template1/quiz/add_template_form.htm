@@ -1,0 +1,55 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="row">
+            <div class="col-md-9">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header card-header-custom">
+                        <h1 class="display-6 p-0 m-0 float-left">{HEADING_TITLE}</h1>
+                        <div class="float-right mobile-float-left">{quiz_menus}</div>
+                    </div>
+                    {form}
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEMPLATE_LABEL_JOBS}</label>
+                                <div class="col-12 col-sm-8 col-lg-6">
+                                    {EMPLOYER_JOB_LIST}
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEMPLATE_LABEL_TITLE}</label>
+                                <div class="col-12 col-sm-8 col-lg-6">
+                                    {TEMPLATE_SELECT_DROPDOWN}
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+                                <div class="col-12 col-sm-8 col-lg-6">
+                                    {BUTTON}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

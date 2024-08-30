@@ -1,0 +1,6 @@
+# Example: http://server/css/stylesheet.css will not work
+
+<Files *.css>
+Order Deny,Allow
+Deny from all
+</Files>

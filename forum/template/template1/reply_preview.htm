@@ -1,0 +1,57 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+  function set_action(action) {
+    document.topic.action1.value = action;
+    document.topic.submit();
+  }
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-custom">
+        <div class="card-header card-header-custom">
+          <span class="heading_bar_internal_content">
+            {HEADING_TITLE}
+          </span>
+          {INFO_TEXT_HEADING_SEARCH}
+          <div class="float-right">
+            {INFO_TEXT_FORUM_HEADER_LINK}
+          </div>
+        </div>
+        <div class="card-body card-body-custom">
+          {update_message}
+          <table width="100%" border="0" cellpadding="0" cellspacing="1">
+            <table width="100%" border="0" cellpadding="0" cellspacing="10" style="border:1px solid #d7d7d7;">
+              <tr>
+                <td class="forum_sub_heading">{forum_title}</td>
+              </tr>
+              <tr>
+                <td class="forum_sub_heading">{INFO_TEXT_FORUM_HEADER_LINK}</td>
+              </tr>
+            </table>
+            <br>
+            <table width="100%" border="0" cellpadding="4" cellspacing="1">
+              <tr valign="top">
+                <td colspan="3" style="border:1px solid #d7d7d7" class="">
+                  <table width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
+                    {form}{hidden_fields}
+                    <tr>
+                      <td width="10%" class="label">{INFO_TEXT_DESCRIPTION}</td>
+                      <td>{INFO_TEXT_DESCRIPTION1}</td>
+                    </tr>
+                    <tr>
+                      <td align="middle" colspan="2">{button}</td>
+                    </tr>
+                    </form>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

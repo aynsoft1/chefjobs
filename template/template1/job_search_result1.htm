@@ -1,0 +1,163 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--
+	var base_url ="{base_url}";
+//-->
+const INFO_TEXT_SUMMARY= "{INFO_TEXT_SUMMARY}";
+const INFO_TEXT_APPLY= "{INFO_TEXT_APPLY}";
+const INFO_TEXT_JOB_DESCRIPTION = "{INFO_TEXT_JOB_DESCRIPTION}";
+const INFO_TEXT_KEYSKILLS = "{INFO_TEXT_KEYSKILLS}";
+</script>
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src="{PREVIEW_BOX_JSCRIPT_FILE}"></script>
+
+{MAP_JAVA_SCRIPT_LINK}
+<script src="{HOST_NAME}jscript/map.js"></script>
+<style>
+	#map-canvas {
+		width: 600px;
+		height: 400px;
+	}
+</style>
+<!-- Below Script for auto close -->
+<style>
+	.displayNone {
+		display: none;
+	}
+
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone");
+			// $messageStackSuccess
+		});
+	}, 50000);
+</script>
+<!-- Preview Box script -->
+
+<script src="{HOST_NAME}jscript/job_pagination.js"></script>
+<!-- <div class="container-fluid" style="max-width: 1440px;"> -->
+<div class="container-fluid border-bottom mb-3 filters-bar-job-result">
+	<div class="container">
+		<div class="col-md-12 d-flex align-items-center">
+			
+			{JOB_SEARCH_LEFT}
+
+			<div class="ms-auto m-none">
+				<div class="pr-0">
+					{save_search}{hidden_fields}{hidden_fields1}
+					<div class="input-group">
+						{INFO_TEXT_ALERT_TEXT}
+					</div>
+				</div>
+				<div class="input-group">
+					{INFO_TEXT_TITLE_NAME1}
+					<div class="input-group-append">
+						{INFO_TEXT_ALERT_SAVE}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-5 pr-1">
+			<div class="row" style="display: none;">
+				<div class="col-md-12 d-flex align-items-center mb-3">
+					<h1 class="m-0">{HEADING_TITLE} {BY_SEARCH_FIELD}</h1>
+					<div class="ms-auto">
+
+						<div class="pr-0 for-mobile">
+							{save_search}{hidden_fields}{hidden_fields1}
+							<div class="input-group">
+								{INFO_TEXT_ALERT_TEXT}
+							</div>
+						</div>
+
+						<div class="input-group">
+							{INFO_TEXT_TITLE_NAME1}
+							<div class="input-group-append">
+								{INFO_TEXT_ALERT_SAVE}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message}
+			<div class="card card-custom">
+				<div class="card-body pb-0">
+					<div class="mb-2">{INFO_TEXT_APPLY_BUTTON}</div>
+					<div class="" style="color:#2f7b15;">
+						{total}
+					</div>
+					<div class="mb-3 text-muted small"> 
+						{INFO_TEXT_APPLY_NOW1}
+					</div>
+					<div>{INFO_TEXT_SEARCH_STRING}</div>
+
+					{MAP_PAGE_VIEW_RESULT1_TEMP}
+					</form>
+					<!--don;t remove this form because apply button will not work-->
+					{form}
+					<div id="page_contents">
+						<!-- BEGIN job_search_result -->
+						<div class="d-flex previewBox border-topp py-3" id="{job_search_result.jobId}">
+							<div class="flex-shrink-1 ms-3">
+								<div class="job-result-img me-2 skeleton">{job_search_result.logo}</div>
+								<div class="hide-on-desktop skeleton">{job_search_result.apply_job}</div>
+							</div>
+							
+							<div class="flex-grow-1 ms-1">
+								<div class="d-flex align-items-top">
+									
+									<div class="d-grow-1">
+										<h6 class="m-0 skeleton">{job_search_result.job_title}</h6>
+										<div class="cname skeleton">
+											{job_search_result.company_name}</div>
+										<div class="location skeleton">
+											{job_search_result.location}</div>
+										 <div class="posted mt-2 skeleton">
+											{job_search_result.posted_on}</div>
+										 
+									</div>
+									<div class="me-3 ms-auto">{job_search_result.check_box}</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- END job_search_result -->
+						<div class="card-footer border-top card-footer-custom2 bg-white d-flex align-items-center pb-2">
+							<div class="">{pages}</div>
+							<div class="d-flex ms-auto small me-3" id='pagination-flickr'>{total_pages}</div>
+						</div>
+
+
+
+					</div>
+
+
+
+				</div><!-- endpage contents-->
+				</form>
+			</div>
+		</div>
+		<div class="col-md-7" id="previewDiv"></div>
+	</div>
+</div>
+
+<!-- Middle Ends -->
+<!-- Right Starts -->
+
+<!-- Right ends -->
+
+{FOOTER_HTML}

@@ -1,0 +1,2 @@
+#  php_value register_globals Off
+ # php_value session.use_trans_sid 0

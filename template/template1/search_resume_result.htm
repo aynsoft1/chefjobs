@@ -1,0 +1,207 @@
+<!-- used in job search by location, search by industry etc--->
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+	function popUp(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page" + id + " = window.open(URL, '" + id + "','toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=300,left = 0,top = 0');");
+	}
+	var ajaxurl = '{HOST_NAME}ajax/search_resume.php'
+</script>
+
+<script src="{HOST_NAME}jscript/resume_pagination.js"></script>
+{MAP_JAVA_SCRIPT_LINK}
+<script src="{HOST_NAME}jscript/map.js"></script>
+<style>
+	#map-canvas {
+		height: 500px;
+	}
+</style>
+
+<script language="JavaScript">
+	function collapse(id) {
+		//alert(id);
+		ID = window.document.getElementById(id);
+		//alert(ID);
+		//alert(id);
+		if (ID.style.display == "") {
+			ID.style.display = "none";
+		}
+		else {
+			ID.style.display = "";
+		}
+	}
+</script>
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+
+<div class="container-fluid border-bottom bg-white mb-3 filters-bar-resume-result">
+	<div class="container">
+		<div class="col-md-12 d-flex align-items-center search-filter-bar">
+			{search_resume_form}
+			<div class="text-dark d-flex align-items-center search-resume-form m-dblock">
+				<div class="me-2">
+					{search_resume_form_keyword}
+				</div>
+
+				<div class="me-2">
+					{search_resume_form_location}
+				</div>
+
+				<div class="me-2">
+					{search_resume_form_cat}
+				</div>
+
+				<div class="me-2">
+					{search_resume_form_exp}
+				</div>
+				<div class="me-2">
+					{search_resume_form_button}
+				</div>
+				<div class="advanced-text mmt-15">{advance_search}</div>
+			</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+
+<!-- Below Script for auto close -->
+<div class="container">
+	<div class="row">
+		{update_message}
+		<div class="col-md-5">
+			<div class="card card-custom">
+				<div class="card-body pb-0">
+
+					<div class="d-flex align-items-center m-dblock">
+						<!--<div>All Resumes</div>-->
+
+						<div class="input-group d-flex" id="resume-search-form">
+							{save_search}
+							{hidden_fields}
+							{INFO_TEXT_TITLE_NAME1}
+							{save_button}
+							</form>
+						</div>
+					</div>
+
+					<div>
+						<div class="my-2" style="color:#2f7b15;">{total}, {total_1}</div>
+						<div class="mb-3 text-muted small">
+							{check_link}
+						</div>
+
+					</div>
+					
+					<!--start  featured search  -->
+					<form name="page1" method="post">
+						<!-- BEGIN search_resume_result1 -->
+						<div class="d-flex border-topp py-0" style="background:#e2f0fe;">
+							<div class="card-body card-body-custom p-0">
+								<div class="d-flex p-3 list-hover">
+									<div class="flex-shrink-0">
+										{search_resume_result1.photo}
+									</div>
+									<div class="flex-grow-1 ms-3">
+										<div class="d-flex align-items-top">
+											<h4 class="m-0">{search_resume_result1.name}</h4>
+										</div>
+										<div class="cname">{search_resume_result1.title}</div>
+										<div class="location">{search_resume_result1.working}</div>
+										<div class="location">{search_resume_result1.city}</div>
+										<span class="location">{search_resume_result1.totalexp} yrs.</span>
+										
+										<!--<div class="small text-muted">{search_resume_result1.objective}</div>
+										<div class="g-4">
+											<span>{search_resume_result1.connect}</span>
+											<span>{search_resume_result1.view}</span>
+											<span>{search_resume_result1.contact}</span>
+											<span>{search_resume_result1.download}</span>
+											<span>{search_resume_result1.rate_resume}</span>
+											<span>{search_resume_result1.private_notes}</span>
+											<span>{search_resume_result1.rating}</span>
+										</div>-->
+									</div>
+									<div class="ms-auto">{search_resume_result1.check_box}</div>
+								</div>
+							</div>
+						</div>
+						<!-- END search_resume_result1 -->
+						{hidden_fields}
+						{hidden_fields1}
+					</form>
+					<!-- --------------------------------------- -->
+					<!-- close  featured search  -->
+					<!-- start normal search-->
+					<!-- ---------------------------------- - -->
+					
+					<form name="page" method="post">
+						<!-- BEGIN search_resume_result -->
+						<div class="d-flex border-topp py-0 resumeLeftBox" id="{search_resume_result.div_id}"
+							onclick="resume_box('{search_resume_result.div_id}')">
+							<div class="card-body card-body-custom p-0">
+								<div class="d-flex p-3 list-hover2 align-items-top">
+									<div class="flex-shrink-0">
+										{search_resume_result.photo}
+									</div>
+									<div class="flex-grow-1 ms-3">
+										<div class="d-flex">
+										<h4 class="m-0">{search_resume_result.name}</h4>
+										</div>
+										<div class="cname">{search_resume_result.title}</div>
+										<div class="location">{search_resume_result.working}</div>
+										<div class="location">{search_resume_result.city}</div>
+										<div class="location">{search_resume_result.totalexp} Yrs. Exp.</div>
+										<!--<div class="small text-muted">{search_resume_result.objective}</div>-->
+										<!--<div class="g-4">
+											<span>{search_resume_result.connect}</span>
+											<span>{search_resume_result.view}</span>
+											<span>{search_resume_result.contact}</span>
+											<span>{search_resume_result.download}</span>
+											<span>{search_resume_result.rate_resume_main}</span>
+										</div>-->
+									</div>
+									<div class="ms-auto">{search_resume_result.check_box}</div>
+								</div>
+							</div>
+						</div>
+						<!-- END search_resume_result -->
+						{hidden_fields}
+						{hidden_fields1}
+					</form>
+					<!-- --------------------------------------- -->
+					<!-- close normal  search  -->
+					<div class="card-footer border-top card-footer-custom2 bg-white pb-3">
+						<div align="left">{check_link1}</div>
+						<div class="mt-2" align="left">{list_page_1}</div>
+						<div class="" align="right">{page_1}</div>
+						<div class="my-1" style="font-size:12px;">{page} {list_page}</div>
+						<div style="font-size:12px;">{rate_mark_1}</div>
+					</div>
+
+					
+					<!--- td end of right part-->
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-7" id="resumePreviewBox">
+			
+		</div>
+	</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+	 const HEADING_BASIC_INFO = "{HEADING_BASIC_INFO}";
+	 const HEADING_Objective ="{HEADING_Objective}";
+	 const HEADING_WORK_HISTORY ="{HEADING_WORK_HISTORY}";
+	 const HEADING_EDUCATION ="{HEADING_EDUCATION}";
+	 const HEADING_SKILLS ="{HEADING_SKILLS}";
+	 const HEADING_LANGUAGES ="{HEADING_LANGUAGES}";
+	 const HEADING_PASTED = "{HEADING_PASTED}";
+	</script>
+<script src="{RESUME_JS_PATH}"></script>
+{FOOTER_HTML}

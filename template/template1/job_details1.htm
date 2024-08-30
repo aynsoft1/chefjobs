@@ -1,0 +1,132 @@
+<html>
+<head>
+{INFO_TEXT_PAGE_HEADING_TITLE}
+<link rel="stylesheet" type="text/css" href="{HOST_NAME}css/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="{HOST_NAME}css/stylesheet1.css">
+</head>
+<body onload="window.print();">
+<!-- Left Starts -->
+<table  width="100%"class="template" border="0" cellspacing="0" cellpadding="2">
+ <tr>
+<!-- Left Ends -->        
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=400,left = 0,top = 0');");
+}
+</script>
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+     <td valign="top">
+			   <table border="0" width="98%" cellspacing="1" cellpadding="5" class="infoBox" align="center">
+				   <tr bgcolor="FFFFFF">
+					   <td valign="top">
+         <table border="0" width="100%" cellspacing="0" cellpadding="5">
+          <tr>
+											<td ><h1 class="pageMainHeading">{INFO_TEXT_JOB_TITLE1}</h1></td>
+          </tr>
+         </table>
+         <table border="0" width="100%" cellspacing="0" cellpadding="2">          
+          <tr>
+           <td class="job_detail_cname">{INFO_TEXT_COMPANY_NAME1}</td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+				   <tr class="background">
+					   <td valign="top">
+         <table border="0" width="100%" cellspacing="4" cellpadding="2"  >
+          <tr>
+           <td>
+            <table border="0" width="100%" cellspacing="4" cellpadding="2" >
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_TITLE}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_TITLE1}</td>
+              <td align="center" valign="middel" rowspan="8">{company_logo}</td>
+             </tr>
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_REFERENCE}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_REFERENCE1}</td>
+             </tr>
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_LOCATION}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_LOCATION1}</td>
+             </tr>
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_SALARY}</td>
+              <td class="job_detail_1">{INFO_TEXT_SALARY1}</td>
+             </tr>
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_POSTED}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_POSTED1}</td>
+             </tr>               
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_APPLY_BEFORE}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_APPLY_BEFORE1}</td>
+             </tr>               
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_JOB_TYPE}</td>
+              <td class="job_detail_1">{INFO_TEXT_JOB_TYPE1}</td>
+             </tr>               
+             <tr>
+              <td align="left" class="job_detail">{INFO_TEXT_EXPERIENCE}</td>
+              <td class="job_detail_1">{INFO_TEXT_EXPERIENCE1}</td>
+             </tr>               
+             <tr>
+              <td align="left" class="job_detail">{INFO_JOB_CATEGORY}</td>
+              <td class="job_detail_1" colspan="2">{INFO_JOB_CATEGORY1}</td>
+             </tr>
+             <tr>
+              <td align="left" class="job_detail">{INFO_JOB_SKILL}</td>
+              <td class="job_detail_1" colspan="2">{INFO_JOB_SKILL1}</td>
+             </tr>
+            </table>
+           </td>
+          </tr >
+          <tr>
+           <td>         
+            <table border="0" width="100%" cellspacing="2" cellpadding="4" >
+             <tr>
+              <td valign="top" class="pageHeading">{INFO_TEXT_JOB_DETAILS}</td>
+             </tr>
+             <tr>
+              <td class="job_detail_1">{INFO_TEXT_JOB_DETAILS1}</td>
+             </tr>             
+            </table>
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+<script language="javascript">
+<!--
+var max_history =1;
+if (navigator.appName == 'Microsoft Internet Explorer')
+max_history =0;
+var h_obj= document.getElementById("job_detail_back");
+if(h_obj)
+{
+ if(window.history.length > max_history)
+  h_obj.style.display="visible";
+ 	else
+  h_obj.style.display="none";
+}
+//-->
+</script>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+  
+ </tr>
+</table>
+<!-- Right Ends -->
+</body>
+</html>

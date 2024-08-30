@@ -1,0 +1,99 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->        
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+     <td>
+      <table border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td class="pageHeading">{HEADING_TITLE}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top"><br>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+       <tr>
+        <td valign="top">
+        <table border="0" width="90%" align="center" cellspacing="2" cellpadding="0" class="middle_table1">
+          <tr>
+           <td valign="top">
+            <table border="0" width="100%" cellspacing="1" cellpadding="4" class="middle_table2">
+             <tr class="dataTableRowSelected">
+              <td >Viadeo  Plugin is currently <b>{VIADEO_PLUGIN_STATUS}</b>.
+               <br>
+                <ul>
+                <li>Application URL : <u>{INFO_TEXT_VIADEO_INTEGRATION_URL}</u></li>
+                <li>App redirect URL : <u>{INFO_TEXT_VIADEO_R_INTEGRATION_URL}</u></li>
+                </ul>
+              </td>
+             </tr>
+            </table>
+           </td>
+          </tr>
+         </table><br>{update_message}
+         <table border="0" width="100%" cellspacing="0" cellpadding="0" >
+          <tr>
+           <td valign="top">
+            <table border="0" width="100%" cellspacing="0" cellpadding="4" >
+             <tr >
+              <td >{viadeo_form}
+               <table border="0" width="100%" cellspacing="10" cellpadding="4" >
+                <tr >
+                 <td class="label" width="20%"><nobr>{INFO_TEXT_VIADEO_PLUGIN}</nobr></td>
+                 <td class="dataTableContent">{INFO_TEXT_VIADEO_PLUGIN1}</td>
+                </tr>
+                <tr>
+                 <td class="label" valign="top"><nobr>{INFO_TEXT_VIADEO_PLUGIN_KEY}</nobr></td>
+                 <td class="label">{INFO_TEXT_VIADEO_PLUGIN_KEY1}<div>Enter your VIADEO  Api KEY.<br>Don't you have such a key? <a href="http://dev.viadeo.com/documentation/authentication/request-an-api-key/" target="_blank" class="blue">Request one here!</a>.</div> </td>
+                </tr>                
+                <tr>
+                 <td class="label" valign="top"><nobr>{INFO_TEXT_VIADEO_PLUGIN_SECRET}</nobr></td>
+                 <td class="label">{INFO_TEXT_VIADEO_PLUGIN_SECRET1}  </td>
+                </tr>
+                <tr >
+                 <td class="label" width="20%"><nobr>{TEXT_INFO_J_MODULE_STATUS}</nobr></td>
+                 <td class="dataTableContent">{TEXT_INFO_J_MODULE_STATUS1}</td>
+                </tr>
+                <tr >
+                 <td class="label" width="20%"><nobr>{TEXT_INFO_R_MODULE_STATUS}</nobr></td>
+                 <td class="dataTableContent">{TEXT_INFO_R_MODULE_STATUS1}</td>
+                </tr>
+                <tr>
+                 <td></td>
+                 <td class="label" valign="top" >{button}</td>
+                </tr></form>
+               </table>
+              </td>
+             </tr>
+            </table>
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

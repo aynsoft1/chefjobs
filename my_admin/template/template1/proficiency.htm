@@ -1,0 +1,68 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header d-flex">
+            <div class="ms-auto">{new_button}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_PROFICIENCY_NAME}</th>
+                  <th>{TABLE_HEADING_FR_PROFICIENCY_NAME}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN proficiency -->
+                <tr{proficiency.row_selected}>
+                  <td>{proficiency.name}</td>
+                  <td>{proficiency.de_name}</td>
+                  <td>{proficiency.action}</td>
+                  </tr>
+                  <!-- END proficiency -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>{count_rows}</td>
+                  <td align="right">{no_of_pages}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

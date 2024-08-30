@@ -1,0 +1,103 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	div.list-group-item-action:nth-child(1) {
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+	}
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+  <div class="row">
+            <!-- Left Starts -->
+			{LEFT_HTML}
+            <!-- Left Ends -->
+    <div class="col-md-9">
+    {update_message} 
+      <div class="row">
+
+        <div class="col-md-9">
+            	<!-- Below Alert message File path is class/message_stack.php -->
+		
+      <div class="card card-custom mb-3">
+        <div class="card-header">
+          <div class="dflex align-items-center mb-12">
+            <h1 class="m-0 text-capitalize">{HEADING_TITLE}</h1>
+            <div class="d-flex ms-auto">{different_jobs}</div>
+        </div>
+        </div>
+        <div class="card-body p-0 card-body-custom">
+          <div class="table-responsive-sm">
+		  <table class="table table-hover table-sm">
+            <thead>
+              <tr class="small">
+                <th width="320" scope="col">{TABLE_HEADING_TITLE}</th>
+                <!-- <th scope="col" class="m-none">{TABLE_HEADING_INSERTED}</th>
+                <th scope="col" class="m-none">{TABLE_HEADING_EXPIRED}</th> -->
+                <th class="text-center" scope="col">{TABLE_HEADING_STATUS}</th>
+                <!-- <th scope="col" class="m-none">{TABLE_HEADING_VIEWED}</th>
+                <th scope="col" class="m-none">{TABLE_HEADING_CLICKED}</th> -->
+                <th class="text-center m-none" scope="col">{TABLE_HEADING_APPLICATIONS}</th>
+                <th class="text-center" scope="col">{TABLE_HEADING_ACTION}</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <!-- BEGIN jobs -->
+              <tr{jobs.row_selected}>
+              <td><h6 class="text-capitalize m-0">{jobs.title}</h6>
+                <div class="small">
+                  <div class="me-4">Posted: {jobs.inserted}</div>
+                  <div class="m-dblock">Expiry; {jobs.expired}</div>
+                </div>
+                <div class="small">
+                  <span class="me-3"><i class="bi bi-eye me-1"></i> {jobs.viewed}</span>
+                  <span><i class="bi bi-hand-index me-1"></i> {jobs.clicked}</span>
+                </div>
+              </td>
+                <td class="text-center">{jobs.status}</td>
+              <td class="small text-muted m-none text-center">{jobs.applications}</td>
+              <td class="text-center">{jobs.action}</td>
+            </tr>
+            <!-- END jobs -->
+          </tbody>
+        </table>
+        </div>
+        
+        <div>{new_button}</div>
+        
+      </div>
+      <div class="card-footer d-flex align-items-center small no-radius">
+        <div class="">{count_rows}</div>
+        <div class="d-flex ms-auto">{no_of_pages}</div>
+      </div>
+      
+    </div>
+        </div>
+        <div class="col-md-3">
+          <div class="cardcard-custom">
+            <div class="card-bodycard-body-csutom">
+              {RIGHT_HTML}
+            </div>
+          </div>
+           
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+{FOOTER_HTML}

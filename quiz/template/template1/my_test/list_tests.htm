@@ -1,0 +1,65 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h5>
+                {assessment_name}
+            </h5>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-groupp mr-2">
+                    {test_menus}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-body p-0 card-body-custom table-responsive-sm">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TB_HEAD_ASSESSMENT}</th>
+                                    <th>{TB_HEAD_TEST_DURATION}</th>
+                                    <th>{TB_HEAD_TEST_TAKE}</th>
+                                    <th>{TB_HEAD_START_TEST}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN list_test -->
+                                <tr>
+                                    <td>{list_test.title}</td>
+                                    <td>{list_test.timer}</td>
+                                    <td>{list_test.status}</td>
+                                    <td>{list_test.start}</td>
+                                </tr>
+                                <!-- END list_test -->
+                                {NOT_FOUND_DATA}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

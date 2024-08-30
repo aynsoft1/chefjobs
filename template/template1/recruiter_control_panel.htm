@@ -1,0 +1,319 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+  function classAdd() {
+    const btnClass = document.querySelector('div a.customClass');
+    btnClass.classList.add('btn', 'btn-sm', 'btn-primary-x');
+  }
+  window.addEventListener('load', classAdd);
+</script>
+<style>
+  .displayNone {
+    display: none;
+  }
+
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone");
+    });
+  }, 500000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
+  integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<div class="container">
+  <div class="row">
+    <!-- Left Starts -->
+			{LEFT_HTML}
+    <!-- Left Ends -->
+
+<div class="col-md-9">
+    {update_message}
+    <!-- Below Alert message File path is class/message_stack.php -->
+<div class="row">
+<div class="col-md-7 mb-3">
+    <div class="row mb-2">
+        <div class="col-xl-6 col-md-6 mb-2">
+            <div class="card-widget h-100 border">
+                <div class="card-widget-body">
+                    <div class="dot me-3 bg-indigo"></div>
+
+                    <div class="">
+                        <div class="m-flex">
+                           <a href="list_of_jobs.php"> <div
+                                class="text-gray-500 numbers2 mmr-10">{INFO_TEXT_TOTAL_JOBS} <span class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{INFO_TEXT_TOTAL_JOBS_HEADING}</span></div></a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon text-white bg-indigo ms-auto">
+                    <i class="bi bi-briefcase dashboard-icon1"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-md-6 mb-2">
+            <div class="card-widget h-100 border">
+                <div class="card-widget-body">
+                    <div class="dot me-3 bg-green"></div>
+                    <div class="">
+                        <div class="m-flex">
+                           <a href="applicant_tracking.php"> <div
+                                class="text-gray-500 numbers2 mmr-10">{INFO_TEXT_TOTAL_APPLICANT} <span class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{INFO_TEXT_TOTAL_APPLICANT_HEADING}</span></div></a>                 
+                        </div>
+                    </div>
+                </div>
+                <div class="icon text-white bg-green ms-auto">
+                    <i class="bi bi-people dashboard-icon2"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-md-6 mb-2">
+            <div class="card-widget h-100 border">
+                <div class="card-widget-body">
+                    <div class="dot me-3 bg-blue"></div>
+                    <div class="">
+                        <div class="m-flex">
+                            <div
+                                class="text-gray-500 numbers2 mmr-10">{INFO_TEXT_TOTAL_APPLICANT_SELETED} <span class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{INFO_TEXT_TOTAL_APPLICANT_SELETED_HEADING}</span></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="icon text-white bg-blue ms-auto">
+                    <i class="bi bi-person-check dashboard-icon3"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-md-6 mb-2">
+            <div class="card-widget h-100 border">
+                <div class="card-widget-body">
+                    <div class="dot me-3 bg-red"></div>
+                    <div class="">
+                        <div class="m-flex">
+                            <div
+                                class="text-gray-500 numbers2 mmr-10">{TOTAL_VIEW} <span class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{TEXT_TOTAL_VIEWS}</span></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="icon text-white bg-red ms-auto">
+                    <i class="bi bi-eye dashboard-icon4"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row graph">
+          {INFO_TEXT_GRAPH}
+        </div>
+      </div>
+
+</div>
+
+
+<div class="col-md-5 mb-3">
+    <div class="card card-jobseeker mb-3">
+        <h6 class="card-header card-header-custom px-3 pt-3 mb-2" style="border-top-left-radius:0.8rem;border-top-right-radius:0.8rem;">{INFO_TEXT_JOB_POSTING}</h6>
+        <div class="card-body px-2 py-0">
+          <div class="text-muted text-muted-custom px-2 font-15" style="font-size:12px!important;">{INFO_TEXT_FROM_TO}</div>
+          <table class="table table-sm text-muted">
+            <thead>
+              <tr>
+                <th scope="col" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_JOBS}</th>
+                <th scope="col" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_JOBS1}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_JOBS_USED}</th>
+                <td class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_JOBS_USED1}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-jobseeker mb-3">
+        <h6 class="card-header card-header-custom px-3 pt-3 mb-2" style="border-top-left-radius:0.8rem;border-top-right-radius:0.8rem;">{INFO_TEXT_RESUME}</h6>
+        <div class="card-body px-2 py-0">
+           <div class="text-muted text-muted-custom px-2 font-15" style="font-size:12px!important;">{INFO_TEXT_FROM_TO1}</div>
+
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_CV}</th>
+                <th scope="col" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_CV1}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_CV_USED}</th>
+                <td class="px-2 fw-normal font-14" style="font-size:12px!important;">{INFO_TEXT_NO_OF_CV_USED1}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-jobseeker mb-4">
+        <h6 class="card-header card-header-custom px-3 pt-3 mb-2" style="border-top-left-radius:0.8rem;border-top-right-radius:0.8rem;">{SUBSCRIPTION_PLAN}</h6>
+        <div class="card-body px-3 pt-0">
+          <span class="text-muted justify-content-sm-center d-block mb-2">
+            {SUBSCRIPTION_PLAN_TEXT}
+          </span>
+          <div style="padding: 0 0 7px 0;">{RATE_CARD}</div>
+        </div>
+      </div>
+
+      <div class="m-none" style="display: none;">
+        <div class="text-center">
+          <a href="applicant_tracking.php" class="btn btn-outline-secondary mw-100 "><i class="bi bi-person-workspace me-2"></i> {START_APPLICANT_TRACKING}</a>
+        </div>
+      </div>
+
+</div>
+</div>
+
+</div>
+   
+</div>
+
+</div>
+
+<!-- <div class="row mb-3">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="row">
+                    {INFO_TEXT_GRAPH}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+<!--<div class="row">
+            <div class="col-md-6 mt-3 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <canvas id="chartDivPie" width="100" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <canvas id="chartDivBar" width="200" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+<script>
+  const pieData = {
+    pieChart
+  } //for first chart json data
+  const barData = {
+    barChart
+  } //for second chart json data
+
+  pieChart(pieData);
+  barChart(barData);
+
+  function pieChart(pieD) {
+    const dataLabels = pieD.map(data => data.label);
+    const dataValue = pieD.map(data => data.y);
+    var ctx = document.getElementById('chartDivPie').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: dataLabels,
+        datasets: [{
+          data: dataValue,
+          backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)'
+          ],
+          borderWidth: 1,
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Jobs Status'
+          }
+        }
+      },
+    });
+  }
+
+  function barChart(barD) {
+    const dataLabels = barD.map(data => data.label);
+    const dataValue = barD.map(data => data.y);
+    var ctx = document.getElementById('chartDivBar').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: dataLabels,
+        datasets: [{
+          label: 'Applicant Pipeline',
+          data: dataValue,
+          backgroundColor: [
+            'rgba(75, 192, 192)',
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderWidth: 1,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Applicant Pipeline'
+          }
+        }
+      },
+    });
+  }
+</script>
+{FOOTER_HTML}

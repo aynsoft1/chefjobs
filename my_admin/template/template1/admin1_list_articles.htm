@@ -1,0 +1,87 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+  <div class="left-sidebar-wrapper">
+    <div class="left-sidebar-spacer">
+      <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+        <div class="left-sidebar-content">
+          {LEFT_HTML}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header text-end">
+            {new_button}
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>{TABLE_HEADING_ARTICLE_TITLE}</th>
+                  <th>{TABLE_HEADING_ARTICLE_CATEGORY}</th>
+                  <th>{TABLE_HEADING_ARTICLE_STATUS}</th>
+                  <th>{TABLE_HEADING_ARTICLE_VIEWS}</th>
+                  <th>{TABLE_HEADING_ARTICLE_SHOW_DATE}</th>
+                  <th>{TABLE_HEADING_ARTICLE_DATE_ADDED}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN article -->
+                <tr{article}>
+                  <td width="100">
+                    {article.article_image}
+                  </td>
+                  <td width="500">
+                    <h4>{article.title}</h4>
+                  </td>
+                  <td>{article.category}</td>
+                  <td width="100">{article.status}</td>
+                  <td width="100">{article.views}</td>
+                  <td>{article.show_date}</td>
+                  <td>{article.inserted}</td>
+                  <td>{article.action}</td>
+                  </tr>
+                  <tr>
+                    {hidden_fields}
+                  </tr>
+                  <!-- END article -->
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer d-flex">
+            <div class="">
+              {count_rows}
+            </div>
+            <div class="ms-auto">
+              {no_of_pages}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Starts -->
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+            {ADMIN_RIGHT_HTML}
+          </div>
+        </div>
+      </div>
+      <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

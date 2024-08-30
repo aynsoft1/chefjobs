@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Job Board - Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic,800italic' rel='stylesheet' type='text/css'>
+ <link href="css/jobboard.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo-jobboard.png" alt="Jobboard Logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Jobs</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Seeker <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Post Resume</a>
+                            </li>
+                            <li>
+                                <a href="#">Search Jobs</a>
+                            </li>
+                            <li>
+                                <a href="#">Login</a>
+                            </li>
+                            <li>
+                                <a href="#">Register</a>
+                            </li>
+                            <li>
+                                <a href="#">View Applications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employer <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Post Jobs</a>
+                            </li>
+                            <li>
+                                <a href="#">Search Resume</a>
+                            </li>
+                            <li>
+                                <a href="#">Login</a>
+                            </li>
+                            <li>
+                                <a href="#">Register</a>
+                            </li>
+                            <li>
+                                <a href="#">Applicant Tracking</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Forum</a>
+                            </li>
+                            <li>
+                                <a href="#">Articles</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="portfolio-item.html">Post a Job</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill img-responsive" style="background-image:url('images/slider1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>The Fastest Way to your Next Job with just one Search</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill img-responsive" style="background-image:url('images/slider2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Get New Job Postings of your Industry via email alert</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill img-responsive" style="background-image:url('images/slider3.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Daily career advice, Forum updates and Insider Tips</h2>
+                </div>
+            </div>
+			<div class="item">
+                <div class="fill img-responsive" style="background-image:url('images/slider4.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Find the best Candidates for your Open Positions</h2>
+                </div>
+            </div>
+			<div class="item">
+                <div class="fill img-responsive" style="background-image:url('images/slider5.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Be the first to know about new Jobs in your Area</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+		
+    </header>
+	
+	<div class="search-block-home">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				  <input type="text" class="form-control" placeholder="Keyword">
+			</div>
+			<div class="col-md-3">
+				   <input type="text" class="form-control" placeholder="Location">
+			</div>
+			<div class="col-md-3">
+			<select name="ob_category[]" id="select" class="form-control"><option value="0">Any Category</option><option value="59">Arts & Design</option><option value="51">Automotive</option><option value="60">Aviation/Airlines</option><option value="65">Banking & Financial Services</option><option value="61">Call Centre/BPO</option><option value="20">Chief Accounting Officer</option><option value="62">Construction/Architecture</option><option value="23">Consulting Services</option><option value="4">Courier/Distribution/Logistics</option><option value="24">CustomerSupport/Telemarketing</option><option value="25">Education/Training</option><option value="26">Engineering/Manufacturing</option><option value="27">Entertainment/Media</option><option value="5">Environmental</option><option value="52">Export/Import</option><option value="63">Fashion/Garments</option><option value="12">Foodservice Industry</option><option value="29">Government Services</option><option value="30">HealthCare/Pharma</option><option value="31">Hospitality/Travel/Tourism</option><option value="7">Insurance</option><option value="8">Internet/E-Commerce</option><option value="32">IT/Hardware</option><option value="33">IT/Software</option><option value="9">Legal/Company Secretarial</option><option value="34">Maintenance/Repair</option><option value="10">Media/Publishing</option><option value="66">Mining</option><option value="35">Oil/Gas/Utilities</option><option value="17">Others</option><option value="36">Production/Operations</option><option value="72">Property Manager</option><option value="18">Purchase/ Supply Chain</option><option value="6">Recruitment/HR</option><option value="37">Retail/Wholesale</option><option value="38">Sales/Business Development</option><option value="39">Science/Research/Development</option><option value="11">Sports and Recreation</option><option value="40">Supply Chain/Logistics</option><option value="19">Telecom/ ISP</option><option value="41">Transportation/Warehousing</option></select>
+			</div>
+			<div class="col-md-2">
+				   <button type="button" class="btn btn-danger">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+			</div>
+			
+		</div>
+		</div>
+		</div><!-- End Sarch Block -->
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Job Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Latest Jobs
+                </h1>
+                <p class="head-desc">View Thousands of Latest Full Time or Part Time Job Offers listed by Top Companies</p>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    <center><img src="images/featured1.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    <center><img src="images/featured2.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="images/featured3.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="images/featured4.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="images/featured5.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="images/featured6.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                    <h1 class="job-title">
+                    	<a href="#">Android Developer</a>
+                	</h1>
+                    <p class="job-desc">Skilled in key accountmanagement JobenvoyExecutive Search...</p>
+                    </div>
+                </div>
+            </div>
+			<div class="home-btn-spacer"></div>
+			<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">All Jobs</button></center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>
+		
+        <!-- Categories Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Jobs by Categories
+                </h1>
+                <p class="head-desc">Search and apply jobs by category in Sales, Finance, IT, Hospitality and many more</p>
+            </div>
+            <div class="col-md-3">
+			<ul class="categories">
+				<li><a href="#">Accounts Jobs</a></li>
+				<li><a href="#">Interior Design Jobs</a></li>
+				<li><a href="#">Automobile Jobs</a></li>
+				<li><a href="#">Bank Jobs</a></li>
+				<li><a href="#">BPO Jobs</a></li>
+			</ul>
+
+            </div>
+            <div class="col-md-3">
+			<ul class="categories">
+				<li><a href="#">Construction Jobs</a></li>
+				<li><a href="#">Consultant Jobs</a></li>
+				<li><a href="#">Consultant Jobs</a></li>
+				<li><a href="#">Content Writing Jobs</a></li>
+				<li><a href="#">Corporate Planning Jobs</a></li>
+			</ul>
+            </div>
+            <div class="col-md-3">
+			<ul class="categories">
+				<li><a href="#">Design Engineer Jobs</a></li>
+				<li><a href="#">Export Import Jobs</a></li>
+				<li><a href="#">Merchandiser Jobs</a></li>
+				<li><a href="#">Fresher Jobs</a></li>
+				<li><a href="#">Medical Jobs</a></li>
+			</ul>
+            </div>
+            <div class="col-md-3">
+			<ul class="categories">
+				<li><a href="#">Design Engineer Jobs</a></li>
+				<li><a href="#">Export Import Jobs</a></li>
+				<li><a href="#">Merchandiser Jobs</a></li>
+				<li><a href="#">Fresher Jobs</a></li>
+				<li><a href="#">Medical Jobs</a></li>
+			</ul>
+            </div>
+			<div class="home-btn-spacer"></div>
+			<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">All Categories</button></center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>
+
+        <!-- Featured Logos Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Featured Recruiters
+                </h1>
+                <p class="head-desc">Find jobs and career information across various job categories from Premier Companies</p>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <center><img src="images/featured-logo1.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo2.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo3.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo4.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo5.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo6.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo7.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo8.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo9.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo10.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo11.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <a href="portfolio-item.html">
+                    <center><img src="images/featured-logo12.png" class="featured-logo thumbnail img-responsive img-hover"></center>
+                </a>
+            </div>
+			<div class="home-btn-spacer"></div>
+			<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">All Recruiters</button></center>
+        </div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>
+		
+        <!-- Career Article Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Latest Career Articles
+                </h1>
+                <p class="head-desc">Read Articles about Career advice, resume writing tips and picking your perfect Job</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="images/career1.jpg" alt="">
+                </a>
+				<p class="article-desc ">7 Ways You're Holding Yourself Back<br>From Becoming aHuge Success</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="images/career2.jpg" alt="">
+                </a>
+				<p class="article-desc ">6 Time Management Strategies That'll<br>Help You Break Out of Your 9-to-5 Rut</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="images/career3.jpg" alt="">
+                </a>
+				<p class="article-desc ">9 Things You Need to Know When a<br>Co-worker's Making Your Life Harder</p>
+            </div>
+			<div class="home-btn-spacer"></div>
+		<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">All Articles</button></center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>
+		
+		<!-- Welcome Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to our Jobboard
+                </h1>
+                <p class="head-desc">Connecting the next generation of job seekers with new job opportunities from leading companies</p>
+            </div>
+            <div class="col-md-4">
+                    <div class="panel-body">
+                    <center><img src="images/jobseeker.jpg" class="img-circle img-responsive img-hover"></center>
+                    <center><h1 class="welcome-title">
+                    	Job Seekers
+                	</h1></center>
+                    <center><p class="welcome-desc">Submit your Resume Online<br>and Search Jobs Now</p></center>
+					<div class="home-btn-spacer"></div>
+					<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">Sign Up</button></center>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                    <div class="panel-body">
+                    <center><img src="images/employer.jpg" class="img-circle img-responsive img-hover"></center>
+                    <center><h1 class="welcome-title">
+                    	Employers
+                	</h1></center>
+                    <center><p class="welcome-desc">Hire Candidates using<br>Applicant Tracking System</p></center>
+					<div class="home-btn-spacer"></div>
+					<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">Sign Up</button></center>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-body">
+                    <center><img src="images/advertiser.jpg" class="img-circle img-responsive img-hover"></center>
+                    <center><h1 class="welcome-title">
+                    	Advertiser
+                	</h1/center>
+                    <center><p class="welcome-desc">Stay on top and connect<br>with the top Recruiters</p></center>
+					<div class="home-btn-spacer"></div>
+					<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">Sign Up</button></center>
+                    </div>
+            </div>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>
+		
+        <!-- About Us Section -->
+        <div class="row">
+			<div class="col-lg-12">
+                <h1 class="page-header">
+                    We've Helped Thousand's of People With their Careers
+                </h1>
+                <p class="head-desc">We assist people all over the world hire and get hired, Register now and be found by employers </p>
+            </div>
+			<div class="col-md-1">
+              
+            </div>
+            <div class="col-md-3">
+                <center><img class="img-responsive img-portfolio img-hover" src="images/career1.jpg" alt=""></center>
+            </div>
+            <div class="col-md-7">
+                <p class="about">We are a leading online career and recruitment website with cutting edge technology.
+Our Job Board provides best suited profiles to employers and relevant jobs to jobseekers across industry verticals, experience levels and geographies 
+Companies of all sizes hire the best talent with our Job Board, Contact us for more details</p>
+            </div>
+			<div class="col-md-1">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Get daily emails in your inbox with jobs that match your industry or sector when an opportunity opens up<br>Create a job alert for your jobs and get notified by email</p>
+                </div>
+				
+				<div class="col-md-1">
+                    
+                </div>
+				
+                <div class="col-md-3">
+                    <a class="btn btn-danger" href="#">Create a Job Alert</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        
+
+    </div>
+    <!-- /.container -->
+	
+	<div class="container-fluid footer-container">
+		<!-- Footer -->
+        <footer class="container">
+            <div class="row">
+			
+                <div class="col-lg-3">
+				<img src="images/footer-logo.jpg" alt="Logo">
+				<br><br>
+				<p class="copyright">© 2016 Ejobsitesoftware.com</p>
+                </div>
+				
+				<div class="col-lg-2">
+				<p><strong>JOB SEEKER</strong></p>
+				<p><a href="#">Register Now</a></p>
+				<p><a href="#">Search Jobs</a></p>
+				<p><a href="#">Login</a></p>
+				<p><a href="#">View Applications</a></p>
+				<p><a href="#">Job Alerts</a></p>
+				<p><a href="#">Post Resume</a></p>
+                </div>
+				
+				<div class="col-lg-2">
+				<p><strong>EMPLOYER</strong></p>
+				<p><a href="#">Post a Job</a></p>
+				<p><a href="#">Search Resume</a></p>
+				<p><a href="#">Sign In</a></p>
+				<p><a href="#">Register Now</a></p>
+				<p><a href="#">Resume Alerts</a></p>
+				<p><a href="#">Applicant Tracking</a></p>
+                </div>
+				
+				<div class="col-lg-2">
+				<p><strong>INFORMATION</strong></p>
+				<p><a href="aboutus.html">About Us</a></p>
+				<p><a href="#">Terms & Conditions</a></p>
+				<p><a href="#">Privacy Policy</a></p>
+				<p><a href="#">Resources</a></p>
+				<p><a href="#">Sitemap</a></p>
+				<p><a href="#">Contact Us</a></p>
+                </div>
+				
+				<div class="col-lg-3">
+				<p><strong>JOIN THE CONVERSATION</strong></p>
+				 <ul class="social-network social-circle">
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" class="icoGoogle-plus" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#" class="icoMobile-phone" title="Mobile-phone"><i class="fa fa-mobile-phone"></i></a></li>
+						<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                  </ul>
+				  <br> <br>
+				  <a href="#"><img src="images/app-store.png" alt="Logo"></a>
+				  <a href="#"><img src="images/gplay.png" alt="Logo"></a>
+                </div>
+				
+            </div>
+        </footer>
+	</div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>

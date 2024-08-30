@@ -1,0 +1,66 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h1 class="h2">{HEADING_TITLE}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-groupp mr-2">
+                    {quiz_menus}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header">
+                        <span class="title">
+                            {QUIZ_NAME}
+                            </sp>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{MEMBER_NAME}</th>
+                                    <th>{POINTS}</th>
+                                    <th>{STATUS}</th>
+                                    <th>{RESULT_STATUS}</th>
+                                    <th>{SUBMITTED}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN results -->
+                                <tr>
+                                    <td>{results.fullname}</td>
+                                    <td>{results.totalPoints}</td>
+                                    <td>{results.status}</td>
+                                    <td>{results.message}</td>
+                                    <td>{results.created_at}</td>
+                                </tr>
+                                <!-- END results -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

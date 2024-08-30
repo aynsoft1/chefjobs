@@ -1,0 +1,75 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script LANGUAGE="JavaScript">
+    function popUp(URL) {
+        day = new Date();
+        id = day.getTime();
+        eval("page" + id + " = window.open(URL, '" + id +
+            "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=800,height=600,left = 0,top = 0');"
+            );
+    }
+</script>
+
+<style>
+ .displayNone {
+        display: none;
+    }
+h1 {
+  font-size: 36px;
+}
+	
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="col-md-12">
+                        <div class="small mb-3"><span class="fw-bold">{INFO_TEXT_CATEGORY}: </span>{tabletext}</div>
+                        <h1 class="m-0">{title}</h1>
+                        
+                    </div>
+                </div>
+                <div class="card-body card-body-custom">
+
+                    <!-- Below Alert message File path is class/message_stack.php -->
+                    
+                    <hr class="mt-0" />
+                    <div>{article_img}</div>
+                    <div>{description}</div>
+                    <hr />
+                    <div class="small m-text-center">
+                        <span class="me-3 text-dark m-dblock">
+                            {INFO_TEXT_BY}: <i class="bi bi-person"></i> {author}
+                        </span>
+                        <span class="me-3 m-dblock">
+                            <i class="bi bi-printer"></i> {print}
+                        </span>
+                        <span class="me-3 m-dblock">
+                            <i class="bi bi-envelope"></i> {email}
+                        </span>
+                        <span class="me-3 m-dblock">
+                            <i class="bi bi-calendar2-check me-1"></i> {article_posted_date}
+                        </span>
+                        <span class="me-3 m-dblock">
+                            <i class="bi bi-eye"></i> {article_views}
+                        </span>
+                        {email_article}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{FOOTER_HTML}

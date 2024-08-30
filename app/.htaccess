@@ -1,0 +1,30 @@
+ErrorDocument 404 https://ejobsitesoftware.com/jobboard_demo/app/404.php
+
+RewriteEngine on
+#RewriteBase /
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+
+RewriteRule ^job_countries/$ job_countries.php [L]
+RewriteRule ^job_industry/$ job_industry.php [L]
+RewriteRule ^jobseeker_login/$ jobseeker_login.php [L]
+RewriteRule ^jobseeker_info/$ jobseeker_info.php [L]
+RewriteRule ^jobseeker_info1/$ jobseeker_info1.php [L]
+RewriteRule ^jobseeker_reg/$ jobseeker_reg.php [L]
+RewriteRule ^jobseeker_reg1/$ jobseeker_reg1.php [L]
+RewriteRule ^jobseeker_reg/$ jobseeker_reg.php [L]
+RewriteRule ^jobseeker_resumes/$ jobseeker_resumes.php [L]
+RewriteRule ^search/$ search.php [L]
+RewriteRule ^apply_job/$ apply_job.php [L]
+RewriteRule ^logout/$ logout.php [L]
+RewriteRule ^recruiter_login/$ recruiter_login.php [L]
+RewriteRule ^recruiter_login/$ recruiter_login.php [L]
+RewriteRule ^add_job/$ add_job.php [L]
+RewriteRule ^apply_job/$ apply_job.php [L]

@@ -1,0 +1,6 @@
+# Example: http://server/classinc/connect.php will not work
+
+<Files *.php>
+Order Deny,Allow
+Deny from all
+</Files>

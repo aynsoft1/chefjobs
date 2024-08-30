@@ -1,0 +1,107 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+        //when the Add Field button is clicked
+        $("#add-answer").click(function (e) {
+            //Append a new row of code to the "#items" div
+            $("#cardBody").append(
+                `
+                <div class="form-row row new-field">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control mb-2" name="question_choice[]" id="option" placeholder="Choice">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="number" class="form-control mb-2" name="points[]" placeholder="Point">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-danger deleteBox" role="button" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                `
+            );
+        });
+        $("body").on("click", ".deleteBox", function (e) {
+            const clickedElement = e.currentTarget;
+            clickedElement.closest(".new-field").remove()
+        });
+    });
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-5 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="dflex ms-auto">
+                {quiz_menus}
+            </div>
+        </div>
+    </div>
+    {update_message}
+
+        <div class="row">
+            <div class="{COL_SIZE}">
+                <div
+                    class="card card-custom">
+                    {form}
+					
+                        <div class="card-body card-body-custom" id="cardBody">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="title">{TEST_LABEL}</label>
+                                    {TEST_INPUT}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputPassword4">{TIMER_LABEL}</label>
+                                    {TIMER_INPUT}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="question">{QUESTION_LABEL}</label>
+                                {QUES_INPUT}
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <span class="h5">{ANSWER_LABEL}</span>
+                                    {ADD_NEW_ANS_BTN}
+                                </div>
+                            </div>
+
+                            <!-- BEGIN choices -->
+                            <div class="form-row row">
+                                <div class="form-group col-md-6">
+                                    {choices.choice_label}
+                                    {choices.ques_choice}
+                                </div>
+                                <div class="form-group col-md-4">
+                                    {choices.point_label}
+                                    {choices.ques_point}
+                                </div>
+                                <div class="form-group col-md-2">
+                                    {choices.hidden_field_in_edit}
+                                </div>
+                            </div>
+                            <!-- END choices -->
+                        </div>
+
+                        <div class="card-footer">
+                            {BUTTON}
+                        </div>
+                    </form>
+                </div>
+            </div>
+			
+            {DIV_IMG_IN_VIDEO}
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

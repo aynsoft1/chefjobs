@@ -1,0 +1,231 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script language="JavaScript">
+// <!--
+function show_hide()
+{
+ if(document["defineForm"]["post_url"].checked)
+ {
+  document.getElementById("myrow").style.visibility="visible"
+  document.getElementById("myrow1").style.display="none"
+  document.getElementById("myrow2").style.display="none"
+ }
+ else
+ {
+  document.getElementById("myrow").style.visibility="hidden"
+  document.getElementById("myrow1").style.display="block"
+  document.getElementById("myrow2").style.display="block"
+ }
+}
+function check_url()
+{
+ if(document.defineForm.post_url.checked)
+ if(document.defineForm.url.value=='')
+ {
+  alert("please Enter the Apply URL.");
+  document.defineForm.url.focus();
+ }
+}
+//-->
+</script>
+<script language="javascript" type="text/javascript" src="tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: '#description',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview' ],
+  images_upload_url: 'tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+ promotion: false
+
+	});
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+        <h1 class="main-heading">{HEADING_TITLE}</h1>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-body card-body-custom">
+									
+
+{post_job_form}{SCRIPT}
+
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_TITLE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_TITLE1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_REF}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_REF1}
+    </div>
+  </div>  
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_COUNTRY}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_COUNTRY1}
+    </div>
+  </div> 
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_STATE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_STATE1}
+    </div>
+  </div> 
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_LOCATION}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_LOCATION1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_SALARY}</label>
+    <div class="col-sm-9">
+      <div class="input-group mb-2 mr-sm-2">
+        {INFO_TEXT_SALARY1}
+      </div>
+    </div>
+  </div>
+
+   <div class="form-groupd row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_SKILLS}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_SKILLS1}
+    </div>
+  </div>
+
+   <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right"></label>
+    <div class="col-sm-9">
+      <small class="text-muted font-14">{INFO_TEXT_SEPARATED}</small>
+    </div>
+  </div>
+
+  
+
+
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_INDUSTRY_SECTOR}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_INDUSTRY_SECTOR1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_VACANCY_SUMMARY}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_VACANCY_SUMMARY1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_DESCRIPTION}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_DESCRIPTION1}
+    </div>
+  </div>
+
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_POST_URL}</label>
+    <div class="col-sm-9">
+      <div class="row align-items-center">
+        <div class="col-sm-1">
+          {INFO_TEXT_POST_URL1}
+        </div>
+        <div class="col-sm-11" id="myrow" style="visibility:hidden">
+          {SHOW_TEXT_BOX}
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="form-groupd row align-items-center" >
+    <label for="resume_will_go" id="myrow2" class="col-sm-3 col-form-label text-right">{INFO_TEXT_APPLICATION_GOTO}</label>
+    <div class="col-sm-9" id="myrow1">
+      {INFO_TEXT_APPLICATION_GOTO1}
+    </div>
+  </div> 
+  <div class="form-group row align-items-center" >
+    <label for="resume_will_go" id="myrow2" class="col-sm-3 col-form-label text-right"></label>
+    <div class="col-sm-9" id="myrow1">
+      <div class="font-14">{INFO_TEXT_APPLICATION_GOTO2}</div>
+    </div>
+  </div> 
+
+
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_TYPE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_TYPE1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_EXPERIENCE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_EXPERIENCE1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_ADVERTISE_WEEKS}</label>
+    <div class="col-sm-9">
+      <div class="">
+        {INFO_TEXT_ADVERTISE_WEEKS1}
+      </div>
+    </div>
+  </div>
+   <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_ADVERTISE_DATE}</label>
+    <div class="col-sm-9">
+      <div class="">
+        {INFO_TEXT_ADVERTISE_DATE1}
+      </div>
+      <!--row end-->
+    </div>
+    <!--col-sm-9 end-->
+  </div> 
+   <div class="form-group row align-items-center">
+    <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_AUTO_RENEW}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_AUTO_RENEW1}
+    </div>
+  </div> 
+  {JOBFAIR_TEXT} 
+  
+  <div class="form-group row align-items-center">
+   <label for="inputPassword" class="col-sm-3 col-form-label text-right">&nbsp;</label>
+    <div class="col-sm-9">
+      {buttons}
+    </div>
+  </div> 
+</div>
+</div>
+			     
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

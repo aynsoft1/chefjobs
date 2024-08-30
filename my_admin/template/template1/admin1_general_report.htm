@@ -1,0 +1,361 @@
+{ADMIN_HEADER_HTML}
+<script>
+  var base_domain = "{BASE_DOMAIN}";
+</script>
+<script src="{EMPLOYER_PERFORMANCE_URL}"></script>
+<script src="{JOB_PERFORMANCE_URL}"></script>
+<script src="{JOBSEEKER_PERFORMANCE_URL}"></script>
+<script src="{ORDER_PERFORMANCE_URL}"></script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+  <div class="left-sidebar-wrapper">
+    <div class="left-sidebar-spacer">
+      <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+        <div class="left-sidebar-content">
+          {LEFT_HTML}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon
+          name="bar-chart-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    {update_message}
+    <section class="pt-2 pb-2">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>{TABLE_HEADING_REPORT}</h4>
+        </div>
+        <div class="col-md-6">
+          {form}
+          <div class="btn-group float-right" role="group">
+            <!-- {TABLE_HEADING_STATISTICS} -->
+            {TABLE_HEADING_STATISTICS_YEAR}
+            {button}
+          </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>{TEXT_INFO_JOBSEEKERS}</td>
+                    <td>{TEXT_INFO_JOBSEEKERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_JOBSEEKERS}</td>
+                    <td>{TEXT_INFO_FEATURED_JOBSEEKERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_TOTAL_RECRUITERS}</td>
+                    <td>{TEXT_INFO_TOTAL_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_ACTIVE_RECRUITERS}</td>
+                    <td>{TEXT_INFO_ACTIVE_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_RECRUITERS}</td>
+                    <td>{TEXT_INFO_FEATURED_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_SALES}</td>
+                    <td>{TEXT_INFO_SALES1}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>{TEXT_INFO_TOTAL_JOBS}</td>
+                    <td>{TEXT_INFO_TOTAL_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_ACTIVE_JOBS}</td>
+                    <td>{TEXT_INFO_ACTIVE_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_EXPIRED_JOBS}</td>
+                    <td>{TEXT_INFO_EXPIRED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_DELETED_JOBS}</td>
+                    <td>{TEXT_INFO_DELETED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_JOBS}</td>
+                    <td>{TEXT_INFO_FEATURED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_OTHER_JOBS}</td>
+                    <td>{TEXT_INFO_OTHER_JOBS1}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header">
+              {TABLE_HEADING_REPORT_YEAR1}
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tr class="admin-table-head-bar">
+                  <td>{TABLE_HEADING_MONTH}</td>
+                  <td>{TABLE_HEADING_JOBSEEKER}</td>
+                  <td>{TABLE_HEADING_FEATURED_JOBSEEKER}</td>
+                  <td>{TABLE_HEADING_APPLICANTS}</td>
+                  <td>{TABLE_HEADING_JOB}</td>
+                  <td>{TABLE_HEADING_RECRUITER}</td>
+                  <td>{TABLE_HEADING_FEATURED_RECRUITER}</td>
+                  <td>{TABLE_HEADING_SALES}</td>
+                  <td>{TABLE_HEADING_ORDERS}</td>
+                </tr>
+                <!-- BEGIN report -->
+                <tr {report.row_selected}>
+                  <td><b>{report.TEXT_INFO_MONTH}</b></td>
+                  <td>{report.TEXT_INFO_JOBSEEKERS2}</td>
+                  <td>{report.TEXT_INFO_FEATURED_JOBSEEKERS2}</td>
+                  <td>{report.TEXT_INFO_APPLICANTS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_JOBS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_RECRUITERS2}</td>
+                  <td>{report.TEXT_INFO_FEATURED_RECRUITERS2}</td>
+                  <td>{report.TEXT_INFO_SALES2}</td>
+                  <td>{report.TEXT_INFO_ORDERS2}</td>
+                </tr>
+                <!-- END report -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- employer and jobseeker report -->
+    <section>
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="card-title">Employer Performance</h2>
+              <select class="filterSelect" id="filterSelect" onchange="applyFilter()">
+                <option value="today">Today</option>
+                <option value="last_7_days">Last 7 days</option>
+                <option value="last_30_days" selected>Last 30 days</option>
+              </select>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Employer</th>
+                    <th>Job Posted</th>
+                    <th>Job Views</th>
+                    <th>Applications</th>
+                    <th>Apply Clicks</th>
+                  </tr>
+                </thead>
+                <tbody id="employerTableBody">
+                  <!-- Data will be populated here by JavaScript -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <button class="page-link" id="prevPage" onclick="changePage('prev')"
+                              disabled>Previous</button>
+                          </li>
+                          <li class="page-item"><span class="page-link" id="currentPage">1</span></li>
+                          <li class="page-item">
+                            <button class="page-link" id="nextPage" onclick="changePage('next')">Next</button>
+                          </li>
+                        </ul>
+                      </nav>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="card-title"><strong>Job Performance</strong></h2>
+              <select class="filterSelect" id="filterJobSelect" onchange="applyJobPerformanceFilter()">
+                <option value="today">Today</option>
+                <option value="last_7_days">Last 7 days</option>
+                <option value="last_30_days" selected>Last 30 days</option>
+              </select>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Job Title</th>
+                    <th>Employer</th>
+                    <th>Job Views</th>
+                    <th>Applications</th>
+                    <th>Apply Clicks</th>
+                  </tr>
+                </thead>
+                <tbody id="employerJobTableBody">
+                  <!-- Data will be populated here by JavaScript -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <button class="page-link" id="prevJobPage" onclick="changeJobPerformancePage('prev')"
+                              disabled>Previous</button>
+                          </li>
+                          <li class="page-item"><span class="page-link" id="currentJobPage">1</span></li>
+                          <li class="page-item">
+                            <button class="page-link" id="nextJobPage"
+                              onclick="changeJobPerformancePage('next')">Next</button>
+                          </li>
+                        </ul>
+                      </nav>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- job and order report -->
+    <section>
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="card-title">Jobseeker Performance</h2>
+              <select class="filterSelect" id="filterJobseekerSelect" onchange="applyJobseekerFilter()">
+                <option value="today">Today</option>
+                <option value="last_7_days">Last 7 days</option>
+                <option value="last_30_days" selected>Last 30 days</option>
+              </select>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Jobseeker</th>
+                    <th>Resume Posted</th>
+                    <th>Resume Views</th>
+                    <th>Resume Clicks</th>
+                  </tr>
+                </thead>
+                <tbody id="jobseekerTableBody">
+                  <!-- Data will be populated here by JavaScript -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <button class="page-link" id="prevJobseekerPage" onclick="changeJobseekerPage('prev')"
+                              disabled>Previous</button>
+                          </li>
+                          <li class="page-item"><span class="page-link" id="currentJobseekerPage">1</span></li>
+                          <li class="page-item">
+                            <button class="page-link" id="nextJobseekerPage" onclick="changeJobseekerPage('next')">Next</button>
+                          </li>
+                        </ul>
+                      </nav>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="card-title"><strong>Order Performance</strong></h2>
+              <select class="filterSelect" id="filterOrderSelect" onchange="applyOrderFilter()">
+                <option value="recruiter">Recruiter</option>
+                <option value="jobseeker">Jobseeker</option>
+              </select>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Order Total</th>
+                  </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                  <!-- Data will be populated here by JavaScript -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <button class="page-link" id="prevOrderPage" onclick="changeOrderPage('prev')"
+                              disabled>Previous</button>
+                          </li>
+                          <li class="page-item"><span class="page-link" id="currentOrderPage">1</span></li>
+                          <li class="page-item">
+                            <button class="page-link" id="nextOrderPage" onclick="changeOrderPage('next')">Next</button>
+                          </li>
+                        </ul>
+                      </nav>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

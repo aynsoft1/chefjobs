@@ -1,0 +1,124 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "','toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=300,left = 0,top = 0');");
+}
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+ </td>
+</tr>
+<tr>
+	<td valign="top">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+				<td>
+				 <div align="center">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="left"><img src="img/main_bar_left.gif" width="2" height="30"></div></td>
+										<td width="100%" background="img/main_bar_bg.gif">
+											<table  width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+												<tr>
+													<td width="2%"><img src="img/spacer.gif" width="2" height="5"></td>
+													<td width="2%"><img src="img/dotted_bullet.gif" width="10" height="10"></td>
+													<td width="2%"><img src="img/spacer.gif" width="1" height="5"></td>
+													<td width="92%"><span class="style8">{HEADING_TITLE}ddd</span></td>
+													<td width="2%"><img src="img/spacer.gif" width="6" height="5"></td>
+												</tr>
+											</table>
+										</td>
+										<td width="0%" background="img/main_bar_bg.gif"><div align="right"><img src="img/main_bar_right.gif" width="2" height="30"></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" height="550"  border="0" cellpadding="15" cellspacing="1" bgcolor="#E2E2E2">
+									<tr>
+										<td valign="top" bgcolor="#FFFFFF">
+										 {update_message}
+           {save_search}
+           <table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+             <td class="label">{INFO_TEXT_TITLE_NAME}</td>
+             <td>{INFO_TEXT_TITLE_NAME1}</td>
+             <td>{save_button}</td>
+             {hidden_fields}
+            </tr></form>
+           </table>
+											<form name="page" method="post">
+           <table border="0" width="100%" cellspacing="3" cellpadding="0">
+            <tr>
+             <td>{total}</td><td valign="top" align="right">{list_page}&nbsp;{page}&nbsp;</td>
+            </tr>
+           </table>
+										 <table border="0" width="100%" cellspacing="3" cellpadding="0">
+            <tr>
+             <td valign="top">
+              <table border="0" width="100%" cellspacing="0" cellpadding="2">
+															<tr class="dataTableHeadingRow">
+																<td class="dataTableHeadingContent" width="25%">{INFO_TEXT_JOBSEEKER_NAME}</td>
+                <td class="dataTableHeadingContent" width="26%">{INFO_TEXT_JOBSEEKER_EMAIL_ADDRESS}</td>
+                <td class="dataTableHeadingContent" width="9%">{INFO_TEXT_JOBSEEKER_RATING}</td>
+                <td class="dataTableHeadingContent" width="15%">{INFO_TEXT_JOBSEEKER_PRIVATE_NOTES}</td>
+                <td class="dataTableHeadingContent" align="middle" width="8%">{TABLE_HEADING_AVAILABILITY}</td>
+                <td class="dataTableHeadingContent" width="10%">{TABLE_HEADING_INSERTED}</td>
+                <td class="dataTableHeadingContent" width="6%" align="middle">{TABLE_HEADING_RESUME}</td>
+															</tr>
+															<!-- BEGIN search_resume_result -->
+															<tr{search_resume_result.row_selected}>
+																<td valign="top" class="dataTableContent">{search_resume_result.name}</td>
+																<td valign="top" class="dataTableContent">{search_resume_result.email_address}</td>
+																<td valign="top" class="dataTableContent">{search_resume_result.rating}</td>
+																<td valign="top" class="dataTableContent">{search_resume_result.private_notes}</td>
+																<td valign="top" align="middle" class="dataTableContent">{search_resume_result.available_status}</td>
+																<td valign="top" class="dataTableContent">{search_resume_result.inserted}</td>
+																<td valign="top" class="dataTableContent" align="middle">{search_resume_result.view}</td>
+															</tr>
+															<!-- END search_resume_result -->
+														</table>
+														<table border="0" width="100%" cellspacing="0" cellpadding="10" class="show_page">
+															<tr>
+																<td>{total}&nbsp;</td>
+																<td align="right">{rate_mark}</td>
+															</tr>
+															{hidden_fields}
+															</form>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+     </div>
+			 </td>
+			</tr>
+		</table>
+	</td>
+</tr>
+{FOOTER_HTML}

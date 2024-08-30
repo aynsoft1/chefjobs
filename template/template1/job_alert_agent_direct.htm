@@ -1,0 +1,124 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script>
+    function addClass() { 
+        const radius = document.querySelector('[name="radius"]');
+        const location = document.querySelector('[name="location"]').placeholder = "state or city";
+        const zipcode = document.querySelector('[name="zip_code"]').placeholder = "zip code";
+        radius.classList.add('form-control');
+     }
+     window.addEventListener('load', addClass);
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-7 mx-auto">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>
+            </div>
+		 <!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}		
+            <div class="card card-custom">
+                <div class="card-body card-body card-body-custom">
+                    {form}
+                    
+                    <div class="form-group row">
+                        <label for="first" class="col-sm-3 col-form-label">{INFO_TEXT_JOB_ALERT_EMAIL}</label>
+                        <div class="col-sm-9">
+                            {INFO_TEXT_JOB_ALERT_EMAIL1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="second" class="col-sm-3 col-form-label">{INFO_TEXT_KEYWORD}</label>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {INFO_TEXT_KEYWORD1}
+                                </div>
+                                <div class="col-md-12 form-group mt-2">
+                                    <span class="form-check p-0">
+                                        <div>{INFO_TEXT_KEYWORD_CRITERIA}</div>
+                                        {INFO_TEXT_KEYWORD3}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="third" class="col-sm-3 col-form-label">{INFO_TEXT_JOB_ALERT_CRITERIA}
+                            :</label>
+                        <div class="col-sm-9 form-group">
+                            {INFO_TEXT_JOB_ALERT_CRITERIA1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-3 col-form-label">
+                            {INFO_TEXT_LOCATION} :
+                        </div>
+                        <div class="col-md-5">
+                            <!-- <label for="inputState">{INFO_TEXT_SEARCH_COUNTRY_STATE}</label> -->
+                            {INFO_TEXT_COUNTRY1}
+                        </div>
+                        <div class="col-md-4">
+                            <!-- <label for="inputZip">State or City</label> -->
+                            {INFO_TEXT_LOCATION1}
+                        </div>
+                    </div>
+
+                    {INFO_CODE_IF_COUNTRY_US}
+
+                    <div class="form-group row">
+                        <label for="first" class="col-sm-3 col-form-label">{INFO_TEXT_JOB_CATEGORY}</label>
+                        <div class="col-sm-9">
+                            {INFO_TEXT_JOB_CATEGORY1}
+                            <small>{INFO_TEXT_JOB_CATEGORY_TEXT}</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="first" class="col-sm-3 col-form-label">{INFO_TEXT_EXPERIENCE} :</label>
+                        <div class="col-sm-9">
+                            {INFO_TEXT_EXPERIENCE1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="first" class="col-sm-3 col-form-label">{INFO_TEXT_JOB_POSTED}</label>
+                        <div class="col-sm-9">
+                            {INFO_TEXT_JOB_POSTED1}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3"></div>
+                        <div class="col-sm-9">
+                            {button}
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

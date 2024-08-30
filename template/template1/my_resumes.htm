@@ -1,0 +1,84 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+	.displayNone {
+		display: none;
+	}
+
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone"
+			);
+		});
+	}, 50000);
+</script>
+
+<div class="container">
+	<div class="row">
+	<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends --> 
+	<div class="col-md-9 mx-auto">
+		<div class="col-md-12 d-flex align-items-center mb-4 m-dblock">
+			<div>
+			<h1 class="mb-0">{HEADING_TITLE}</h1>
+			<div class="small">{INFO_TEXT_MAX_RESUME}</div>
+			</div>
+			<div class="d-flex ms-auto">{add_new}</div>
+		</div>
+		
+
+		{update_message}
+		<div class="row row-cols-1 row-cols-md-3 g-4 align-items-center ">
+
+			<!-- BEGIN resume -->
+			<div class="col ">
+				<div class="card card-custom">
+					<div class="card-body card-body-custom small">
+						<div class="text-center">{resume.profile_img}</div>
+						<h5 class="card-title text-capitalize">{resume.resume_name}</h5>
+						<div class="my-1">
+							<span class="me-3">{TEXT_CREATED}</span><span>{resume.inserted}</span>
+						</div>
+						<div class="my-1">
+							<span class="me-3">{TEXT_UPDATED}</span><span>{resume.updated}</span>
+						</div>
+						<div class="my-1">
+							<span class="me-3">{TEXT_VIEWS}</span><span>{resume.viewed}</span>
+						</div>
+						<div class="my-1">
+							<span class="me-3">{TEXT_SEARCHABLE}</span><span>{resume.search_status}</span>
+						</div>
+						<div class="my-1">
+							<span class="me-3">{TEXT_AVAILABLE}</span><span>{resume.available_status}</span>
+						</div>
+						<div class="mt-3" style="display: flex;flex-direction: row;margin-bottom: 10px; justify-content: space-between;">
+							<div class="me-3">{resume.edit}</div>
+							<div class="me-3">{resume.delete}</div>
+							<div class="">{resume.duplicate}</div>
+						</div>
+						<!-- <div>
+							{resume.view}
+						</div> -->
+					</div>
+				</div>
+			</div>
+			</form>
+
+			<!-- END resume -->
+		</div>
+
+
+
+
+		<div class="small text-center mt-4">
+			<span class="float-left">{count_rows}</span> <span class="float-right text-right">{no_of_pages}</span>
+		</div>
+	</div>
+</div>
+</div>
+
+{FOOTER_HTML}

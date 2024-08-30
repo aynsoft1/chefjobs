@@ -1,0 +1,100 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="description2"],textarea[name="de_description2"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="mail-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-body pt-4 table-responsive">
+            <!-- Middle Starts -->
+            {form}
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{INFO_TEXT_JOBSEEKER_REGISTRATION_NAME}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBSEEKER_REGISTRATION_NAME1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{INFO_TEXT_JOBSEEKER_REGISTRATION_PRIORITY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBSEEKER_REGISTRATION_PRIORITY1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{INFO_TEXT_JOBSEEKER_REGISTRATION_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_JOBSEEKER_REGISTRATION_DESCRIPTION1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{INFO_TEXT_FR_JOBSEEKER_REGISTRATION_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FR_JOBSEEKER_REGISTRATION_DESCRIPTION1}
+              </div>
+            </div>
+
+            <!-- <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_MESSAGE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_MESSAGE1}
+              </div>
+            </div> -->
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {buttons}
+              </div>
+            </div>
+            </form>
+            <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

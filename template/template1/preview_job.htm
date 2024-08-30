@@ -1,0 +1,130 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+<!--
+function show_hide(){return 0;}
+function submitform()
+{
+ document.preview_job.action.value='back';
+ document.preview_job.submit();
+}
+//-->
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+    .input-group-text {
+      border: 0;
+    padding: 0!important;
+    }
+    .preview-container { margin-top: 10px; }
+    .preview-container iframe { width: 100%!important; height: 1595px; border-bottom: 1px solid; }
+    .preview-container img { max-width: 100%; height: auto; }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 4000);
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+		{update_message}
+            <div class="card card-custom border shadow-sm">
+      <div class="card-body card-body-custom">
+        <div class="2d-flex">
+          <div class="2flex-shrink-0">
+            {company_logo} {INFO_TEXT_COMPANY_LOGO}
+          </div>
+          <div class="flex-grow-1">
+		  {preview_job_form}
+            <h3 class="m-0 mt-3" style="font-size: 24px;">{INFO_TEXT_JOB_TITLE1}</h3>
+            <div class="mt-2 mb-2"><span class="mr-3"><span>{INFO_TEXT_COMPANY_NAME}</span><span class="mx-2">•</span><span>{INFO_TEXT_LOCATION1} {INFO_TEXT_STATE1} {INFO_TEXT_COUNTRY1} </span></div>
+            
+            <div class="row">
+              <div class="col">
+                <div class="row mb-3">
+                  <div class="text-muted">Experience</div>
+                  <div style="font-weight:600;">{INFO_TEXT_EXPERIENCE1}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">Salary</div>
+                  <div style="font-weight:600;">{INFO_TEXT_SALARY1}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">{INFO_TEXT_ADVERTISE_DATE}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_ADVERTISE_DATE1}</div>
+                </div>
+				
+				<div class="row mb-3">
+                  <div class="text-muted">{INFO_TEXT_APPLICATION_GOTO}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_APPLICATION_GOTO1}</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row mb-3">
+                  <div class="text-muted">{INFO_TEXT_INDUSTRY_SECTOR}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_INDUSTRY_SECTOR1}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">{INFO_TEXT_PROFESSION_SECTOR}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_INDUSTRY_SUB_SECTOR}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">{INFO_COMPANY_SIZES}</div>
+                  <div style="font-weight:600;">{INFO_COMPANY_SIZES1}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">Job Type</div>
+                  <div style="font-weight:600;">{INFO_TEXT_JOB_TYPE1}</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="text-muted">{INFO_CAREER_LEVEL}</div>
+                  <div style="font-weight:600;">{INFO_CAREER_LEVEL1}</div>
+                </div>
+				<div class="row mb-3">
+                  <div class="text-muted"> {INFO_TEXT_ADVERTISE_WEEKS}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_ADVERTISE_WEEKS1}</div>
+                </div>
+				<div class="row mb-3">
+                  <div class="text-muted">{INFO_TEXT_JOB_REF}</div>
+                  <div style="font-weight:600;">{INFO_TEXT_JOB_REF1}</div>
+                </div>
+				
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style="margin:0px -25px 18px -25px;border-top: 1px solid #a7adb3;">
+        <h3 class="pt-2 pb-2" style="font-size:1.2rem;">{INFO_TEXT_VACANCY_SUMMARY}</h3>
+        <div class="card-text">{INFO_TEXT_VACANCY_SUMMARY1}</div>
+
+        <h3 class="pt-3 pb-2" style="font-size:1.2rem;">{INFO_TEXT_DESCRIPTION}</h3>
+        <div class="card-text">{INFO_TEXT_DESCRIPTION1}</div>
+
+        <h3 class="pt-3 pb-2" style="font-size:1.2rem;">{INFO_TEXT_SKILLS}</h3>
+        <div class="skill-tag">{INFO_TEXT_SKILLS1}</div>
+		<div>{INFO_TEXT_JOBFAIR1}</div>
+
+    <h3 class="pt-3 pb-2" style="font-size:1.2rem;">Uploaded document</h3>
+    <div class="preview-container">{PREVIEW_UPLOADED_DOCS}</div>
+      
+	  {hidden_fields}	
+<div class="text-center py-4">{buttons}</div>
+	  </div>			
+
+</form>		
+		
+            </div>
+        </div>
+      </div>
+    </div>
+{FOOTER_HTML}

@@ -1,0 +1,52 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+<div class="container">
+	<div class="row">
+        <div class="col-md-7 mx-auto d-flex align-items-center mb-3">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+			<div class="d-flex ms-auto">
+				<a class="btn btn-outline-secondary" href="javascript:history.back();">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+				  </svg></a></div>
+        </div>
+    </div>
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<div class="card card-custom">
+				<div class="card-body card-body-custom">
+					{update_message}
+					{form}
+					
+					<div class="form-group row align-items-center">
+						<label for="my-input" class="col-md-3 text-end m-text-left">{INFO_TEXT_SUBJECT}</label>
+						<div class="col-md-9">
+							{INFO_TEXT_SUBJECT1}
+
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="my-input" class="col-md-3 text-end m-text-left">{INFO_TEXT_MESSAGE}</label>
+						<div class="col-md-9">
+							{INFO_TEXT_MESSAGE1}
+
+						</div>
+					</div>
+
+					<div class="form-group row align-items-center">
+						<label for="my-input" class="col-md-3 text-end m-text-left"></label>
+						<div class="col-md-9">
+							{button}
+
+						</div>
+					</div>
+					
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{FOOTER_HTML}

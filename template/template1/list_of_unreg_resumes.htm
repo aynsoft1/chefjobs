@@ -1,0 +1,82 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+	<div class="row">
+			{LEFT_HTML}
+		
+		<div class="col-md-9 mx-auto">
+			<div class="row">
+				<div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+					<h1 class="m-0">{HEADING_TITLE}</h1>
+					<div class="d-flex ms-auto mmt-15">{INFO_TEXT_LIST_OF_APPLICATIONS}</div>
+				  </div>
+			</div>
+
+		{update_message}
+			<div class="card card-custom">
+				<div class="card-body card-body-custom p-0">
+					<form name="page" method="post">
+						{total}
+						
+						<table class="table table-hover">
+							
+							<thead>
+								<tr class="jobs-table-headbar">
+									<th>{TABLE_HEADING_JOB_TITLE}</th>
+									<!-- <th>{TABLE_HEADING_APPLICANTNL_NAME}</th>
+									<th>{TABLE_HEADING_APPLICANTNL_EMAIL_ADDRESS}</th> -->
+									<th class="m-none">{TABLE_HEADING_INSERTED}</th>
+									<th class="m-none">{TABLE_HEADING_RESUME_DELETE}</th>
+									<th>{TABLE_HEADING_RESUME_VIEW}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- BEGIN applicantnl_result -->
+								<tr{search_resume_result.row_selected}>
+								<td>{applicantnl_result.job_title}
+									<div>{applicantnl_result.name}</div>
+									<div>{applicantnl_result.email_address}</div>
+								</td>
+								<td class="m-none">{applicantnl_result.inserted}</td>
+								<td class="m-none">{applicantnl_result.delete}</td>
+								<td>{applicantnl_result.view}</td>
+							</tr>
+							<!-- END applicantnl_result -->
+						</tbody>
+						
+					</table>
+					<div class="p-3 small">
+						<tr>
+							<td>{count_rows}</td>
+							<td>{no_of_pages}</td>
+							<td>{new_button}</td>
+							<td>{list_page}</td>
+							<td>{page}</td>
+						</tr>
+						{hidden_fields}
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{FOOTER_HTML}

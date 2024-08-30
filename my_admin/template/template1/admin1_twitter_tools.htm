@@ -1,0 +1,142 @@
+{ADMIN_HEADER_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+  function test_authentication() {
+    document.twitter_form.action.value = 'test_authentication';
+    document.twitter_form.submit();
+  }
+</SCRIPT>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="logo-twitter"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header card-header-divider">
+            Twitter submitter tool is currently {TWITTER_SUBMITTER_STATUS}
+            <ul class="small m-0">
+              <li>Application Type should be set on <b>Browser</b>
+              </li>
+              <li>Default Access type should be set to <b>Read & Write
+                </b>(this is NOT the default)</li>
+              <li>Callback URL :
+                <u>{INFO_TEXT_TWITTER_CALLBACK_URL}</u>
+              </li>
+            </ul>
+          </div>
+          {twitter_form}
+          <div class="card-body">
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_SUBMITTER}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_SUBMITTER1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_SUBMITTER_ID}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_SUBMITTER_ID1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_CONSUMER_KEY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_CONSUMER_KEY1}
+                <div>Enter your twiter CONSUMER KEY.<br>Don't you have such a key?.
+                  <a href="http://dev.twitter.com/apps/new" target="_blank" class="blue">Request one
+                    here!</a>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_CONSUMER_SECRET}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_CONSUMER_SECRET1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_ACCESS_TOKEN}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_ACCESS_TOKEN1}
+                <div>After create application. On the right hand
+                  side of your application page, click on 'My
+                  Access Token'.</div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TWITTER_TOKEN_SECRET}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TWITTER_TOKEN_SECRET1} {authentication_link}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_J_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_J_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_R_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_R_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_JOB_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_JOB_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_BITLY_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_BITLY_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_BITLY_USER_ID}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_BITLY_USER_ID1}
+                <div>Enter your Bit.ly User ID.<br>Don't you have
+                  such a key?
+                  <a href="http://bit.ly/account/register?rd=/" target="_blank" class="blue">Request one
+                    here!</a>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_BITLY_API_KEY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_BITLY_API_KEY1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

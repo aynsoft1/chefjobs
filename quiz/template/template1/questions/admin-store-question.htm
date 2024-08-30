@@ -1,0 +1,131 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+        //when the Add Field button is clicked
+        $("#add").click(function (e) {
+            //Append a new row of code to the "#items" div
+            $("#cardBody").append(
+                `
+                <div class="form-group row new-field">
+                    <label class="col-sm-3 col-form-label text-sm-right">Options-${labelCounter()}</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="question_choice[]" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <label class="col col-form-label text-sm-right">
+                                        Point
+                                    </label>
+                                    <div class="col">
+                                        <input type="number" name="points[]" class="form-control" min="0" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary deleteBox" role="button" type="button">- Remove option</button>
+                    </div>
+                </div>
+                `
+            );
+        });
+        $("body").on("click", ".deleteBox", function (e) {
+            const clickedElement = e.currentTarget;
+            clickedElement.closest(".new-field").remove()
+        });
+    });
+
+    function labelCounter() {
+        var id = document.getElementById("counterForLabel").value;
+        id = id - 1 + 2;
+        document.getElementById("counterForLabel").value = id;
+        return id;
+    };
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <h3>
+            <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+        </h3>
+        <div class="row">
+            <div class="col-md-9">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    {form}
+                    <div class="card-body" id="cardBody">
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label text-sm-right">{TITLE_LABEL}</label>
+                            <div class="col-6">
+                                {QUESTION_INPUT}
+                                {TITLE_ERROR}
+                            </div>
+                            <div class="col-3">
+                                <button id="add" class="btn btn-primary" type="button">+ Add another option</button>
+                            </div>
+                            {HIDDEN_INPUT}
+                            <input type="hidden" name="counterForLabel" id="counterForLabel" value="1" />
+                        </div>
+                        <!-- BEGIN choices -->
+                        <div class="form-group row">
+                            <label
+                                class="col-12 col-sm-3 col-form-label text-sm-right">{choices.option_label_name}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <div class="row">
+                                    <div class="col">
+                                        {choices.question_input_choice_box}
+                                        <!-- {CHOICE_INPUT_ERROR} -->
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <label class="col col-form-label text-sm-right">
+                                                {choices.point_label_name}
+                                            </label>
+                                            <div class="col">
+                                                {choices.question_input_point_box}
+                                                <!-- {POINT_INPUT_ERROR} -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {choices.hidden_field_in_edit}
+                        </div>
+                        <!-- END choices -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {BUTTON}sss
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

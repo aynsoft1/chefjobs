@@ -1,0 +1,8 @@
+# Example: http://server/cron_job/job_alert.php will not work
+
+<Files *.php>
+Order Deny,Allow
+Deny from all
+Allow  from 2a07:6fc0:1:0:6::162
+
+</Files>

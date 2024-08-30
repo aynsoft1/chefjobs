@@ -1,0 +1,88 @@
+{ADMIN_HEADER_HTML}
+<script>
+  function list_submit(id) {
+    document.page.jID.value = id;
+    document.page.submit();
+  }
+</script>
+<script>
+  function page_submit(name) {
+    if (name == 'email')
+      document.page.email.value = name;
+    else if (name == 'excel')
+      document.page.excel.value = name;
+    document.page.submit();
+  }
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-9">
+        {update_message}
+        <form name="page" method="post">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header small">
+              {list_page}&nbsp;{page}&nbsp;
+            </div>
+            <div class="card-body table-responsive middle_table2">
+              <table class="table table-borderless table-hover">
+                <thead class="admin-table-head-bar">
+                  <th>{TABLE_HEADING_NAME}<br>{TABLE_HEADING_EMAIL_ADDRESS}</th>
+                  <th>{TABLE_HEADING_COMPANY}<br>{TABLE_HEADING_POSITION}</th>
+                  <th>{TABLE_HEADING_INSERTED}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </thead>
+                <tbody>
+                  <!-- BEGIN search_result -->
+                  <tr{search_result.row_selected}>
+                    <td>{search_result.name_email}</td>
+                    <td>{search_result.company_pos}</td>
+                    <td>{search_result.inserted}</td>
+                    <td>{search_result.action}</td>
+                    </tr>
+                    <!-- END search_result -->
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer">
+              <div class="">
+                <div class="">
+                  {total}
+                </div>
+                <div class="mt-4">
+                  {new_button}
+                </div>
+                {hidden_fields}
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+            {ADMIN_RIGHT_HTML}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

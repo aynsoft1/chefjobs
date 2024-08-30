@@ -1,0 +1,69 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{VIDEO_TITLE}dd</h1>
+            <div class="dflex ms-auto">{quiz_menus} {create_video}</div>
+        </div>
+    </div>
+
+    {update_message}
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-custom">
+                    <div class="card-body p-0 card-body-custom">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TB_HEAD_VIDEO}</th>
+                                    <th>{TB_HEAD_JOBSEEKER}</th>
+                                    <th>{TB_HEAD_ASSESSMENT_NAME}</th>
+                                    <th>{TB_HEAD_TEST_NAME}</th>
+                                    <th>{TB_HEAD_QUESTION}</th>
+                                    <th>{TB_HEAD_DATE}</th>
+                                    <th>{TB_HEAD_JOB}</th>
+                                    <th>{TB_HEAD_COMPANY}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN video_lib -->
+                                <tr>
+                                    <td>{video_lib.name}</td>
+                                    <td>{video_lib.jobseeker_name}</td>
+                                    <td>{video_lib.assessment}</td>
+                                    <td>{video_lib.test}</td>
+                                    <td>{video_lib.question}</td>
+                                    <td>{video_lib.created_at}</td>
+                                    <td>{video_lib.job_title}</td>
+                                    <td>{video_lib.company}</td>
+                                </tr>
+                                <!-- END video_lib -->
+                                {NOT_FOUND_DATA}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

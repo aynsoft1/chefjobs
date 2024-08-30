@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://careerjobs.de/rss/">
+<channel>
+<title>Management &amp; Leadership RSS - CareerJobs</title>
+<description> jobs </description>
+<link>https://careerjobs.de/</link><copyright>Copyright 2024 careerjobs.de All Rights Reserved</copyright>
+<job:link  href="http://careerjobs.de/rss/1.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Jr. PHP developer</title>
+<description>asdasdasdasd</description>
+<job:job_id>11</job:job_id>
+<job:state>Baden-Württemberg</job:state>
+<job:location>Aichelberg</job:location>
+<link>https://careerjobs.de/11/Jr-PHP-developer</link>
+<guid>https://careerjobs.de/11/Jr-PHP-developer</guid>
+</item>
+<item>
+<title>PHP developer</title>
+<description>asdfsdfsd</description>
+<job:job_id>4</job:job_id>
+<job:state>Niedersachsen</job:state>
+<job:location>Ahlerstedt</job:location>
+<link>https://careerjobs.de/4/PHP-developer</link>
+<guid>https://careerjobs.de/4/PHP-developer</guid>
+</item>
+</channel>
+</rss>

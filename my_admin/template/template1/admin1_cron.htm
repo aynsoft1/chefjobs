@@ -1,0 +1,309 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="time-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-11">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body">
+            <table class="table table-borderless">
+              <td valign="top">
+                <table border="0" width="100%" cellspacing="0" cellpadding="0" cellpadding="0">
+                  <tr>
+                    <td valign="top">
+                      <table border="0" width="100%" align="center" cellspacing="0" cellpadding="10"
+                        id="admin-main-data-table">
+                        <tr class="dataTableRowSelected">
+                          <td colspan="2"><b>Cron command : Every Day </b> </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"> <b>Generate RSS of All Jobs</b> : To generate RSS of jobs
+                            Everyday<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_ALL_JOB_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_ALL_JOB_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Daily Report</b> : Generate Daily Report and send to
+                            admin<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_DAILY_REPORT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_DAILY_REPORT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Get Alert Before Job Expire</b> : Recruiter Get Alert
+                            Before Job Expire<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_EXPIRED_JOB_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_EXPIRED_JOB_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>plan expire Alert</b> : Recruiter Get Alert Before expiry
+                            of the plan<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_RECRUITER_ALERT_EXPIRE_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_RECRUITER_ALERT_EXPIRE_CRON_URL}
+                                  </nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Rss for Forum</b> : Generate RSS of all Forums<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_FORUM_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_FORUM_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Generate RSS for Forum Topics</b> : Generate RSS of new
+                            Forums Topics<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td rowspan="2"></td>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_TOPIC_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_TOPIC_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Generate RSS of Forum replies</b> : Generate RSS of new
+                            Forums Topics Replies<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_REPLY_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_REPLY_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Job Alert For Jobseeker</b> : Send Matching job alert to
+                            Jobseeker<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_JOB_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_JOB_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Job Alert For Non Registered Users</b> : Send Matching
+                            job alert to Non Registered User<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_JOB_ALERT_DIRECT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_JOB_ALERT_DIRECT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td colspan="2"><b>Resume Alert For Recruiters</b> : Send Matching resume to
+                            recruiter Criteria<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_RESUME_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_RESUME_ALERT_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>For Database Backup</b> : Takes Database Backup<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_DATABASE_BACKUP_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_DATABASE_BACKUP_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Delete Old Database</b> : Delete Old databse backup
+                            file<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_PRUNE_DATABASE_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_PRUNE_DATABASE_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>RSS of Jobs By Category</b> : Generate RSS of Jobs By
+                            Category<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td rowspan="2"><b></b></td>
+                                <td>
+                                  <nobr>0 0 * * * /usr/bin/curl {INFO_TEXT_JOB_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 * * * wget -q -O /dev/null {INFO_TEXT_JOB_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr class="dataTableRowSelected">
+                          <td colspan="2"><b>Cron command : Every month</b> </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Page Rank</b> : Sets page rank of the SIte<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td>
+                                  <nobr>0 0 1 * * /usr/bin/curl {INFO_TEXT_PAGE_RANK_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 1 * * wget -q -O /dev/null {INFO_TEXT_PAGE_RANK_CRON_URL}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Delete database</b> :Delete Who is Online
+                            database<br>&nbsp;
+                            <table border="0" width="90%" align="center" cellspacing="2" cellpadding="5">
+                              <tr>
+                                <td rowspan="2"><b></b></td>
+                                <td>
+                                  <nobr>0 0 1 * * /usr/bin/curl {INFO_TEXT_DELETE_WHOISONLINE}</nobr>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <nobr>0 0 1 * * wget -q -O /dev/null {INFO_TEXT_DELETE_WHOISONLINE}</nobr>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

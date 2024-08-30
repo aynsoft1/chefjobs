@@ -1,0 +1,60 @@
+{ADMIN_HEADER_HTML}
+<script language="JavaScript">
+  function set_action(action)
+  {
+   document.slider.action1.value=action;
+   document.slider.submit();
+  }
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="card row">
+      <div class="card-header">
+        {view_list_of_sliders}
+      </div>
+      <div class="card-body col-md-6">
+        {form}
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">{INFO_TEXT_TITLE}</label>
+          <div class="col-sm-10">
+            <p class="form-control form-control-sm-plaintext">
+              {INFO_TEXT_TITLE1}
+            </p>
+          </div>
+        </div>
+        {hidden_fields}
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">{INFO_TEXT_SLIDER_IMAGE}</label>
+          <div class="col-sm-10">
+            {INFO_TEXT_SLIDER_IMAGE1}
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            {button}
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

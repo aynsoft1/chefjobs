@@ -1,0 +1,167 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        $("#invite-btn").click(function (e) {
+            e.preventDefault()
+            const isFormValid = validateForm();
+            if (isFormValid) {
+                $("#send_invitation").submit();
+            }
+        })
+
+        function validateForm() {
+            let nameError = true; 
+            let emailError = true; 
+            // name required input check
+            if ($.trim($('#candidate-name').val()).length == 0) {
+                $('#candidate-name').addClass('is-invalid');
+            } else {
+                $('#candidate-name').removeClass('required is-invalid');
+                nameError = false;
+            }
+
+            // email field check
+            if ($.trim($('#candidate-email').val()).length == 0) {
+                $('#candidate-email').addClass('is-invalid');
+            } else {
+                if (!filter.test($('#candidate-email').val())) {
+                    $('#candidate-email').addClass('is-invalid');
+                    if ($("#invalid-email").length === 0) {
+                        $('#candidate-email').after(
+                            "<span class='text-danger' id='invalid-email'>Invalid Email</span>");
+                    }
+                } else {
+                    $('#candidate-email').removeClass('requird is-invalid');
+                    if ($("#invalid-email").length !== 0) {
+                        $('#invalid-email').remove();
+                    }
+                    emailError = false
+                }
+            }
+
+            if (!nameError && !emailError) {
+                return true
+            }
+
+            return false
+        }
+    })
+</script>
+
+<div class="be-content">
+    {update_message}
+    <div class="main-content container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            <h1 class="text-capitalize">{HEADING_TITLE}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-groupp mr-2">
+                    {quiz_menus}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="card card-custom">
+                    <div class="card-body card-body-custom">
+                        {form}
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                {HEADING_INVITE_CANDIDATE}
+                            </div>
+                            <div class="col-auto">
+                                {INFO_TEXT_TO_NAME1}
+                                <span class="text-danger">
+                                    {ERROR_CANDIDATE_NAME}
+                                </span>
+                            </div>
+                            <div class="col">
+                                {INFO_TEXT_TO_EMAIL_ADDRESS1}
+                                <span class="text-danger">
+                                    {ERROR_CANDIDATE_EMAIL}
+                                </span>
+                            </div>
+                            <div class="col">
+                                {button}
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-12 mb-3">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <span class="card-title">
+                            {HEADING_INCLUDED_TESTS}
+                        </span>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TEST}</th>
+                                    <th>{DURATION}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN library -->
+                                <tr>
+                                    <td>{library.title}</td>
+                                    <td><i class="fa fa-clock-o" aria-hidden="true"></i> {library.timer}</td>
+                                </tr>
+                                <!-- END library -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <span class="card-title">
+                            {CANDIDATES}
+                        </span>
+                    </div>
+                    <div class="card-body card-body-custom table-responsive p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{NAME}</th>
+                                    <th>{EMAIL}</th>
+                                    <th>{CANDIDATE_INVITATION_LINK}</th>
+                                    <th>{CANDIDATE_INVITATION_STATUS}</th>
+                                    <th>{INVITED_ON}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN invited_candidates -->
+                                <tr>
+                                    <td>{invited_candidates.name}</td>
+                                    <td>{invited_candidates.email}</td>
+                                    <td>{invited_candidates.link}</td>
+                                    <td>{invited_candidates.status}</td>
+                                    <td>{invited_candidates.invited_on}</td>
+                                </tr>
+                                <!-- END invited_candidates -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

@@ -1,0 +1,155 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+</td>
+</tr>
+<script language="JavaScript">
+  function set_action1(application, action) {
+    if (application != '' && action != '') {
+      document.page.application_id.value = application;
+      document.page.action.value = action;
+      document.page.submit();
+    }
+  }
+  function set_action(application) {
+    if (application != '') {
+      document.fead_back.mail_id.value = application;
+      document.fead_back.submit();
+    }
+  }
+//-->
+</script>
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="message1"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-md-2 small-font">
+      <div class="list-group mb-4">
+				<button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+					{INFO_TEXT_JOB_TITLE}
+				</button>
+				<div>{INFO_TEXT_ALL_APPLICANT}</div>
+				<div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+				<div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+				<div>{INFO_TEXT_JOB_DETAIL}</div>
+				<div>{INFO_TEXT_ADD_APPLICANT}</div>
+			</div>
+
+			<div class="list-group mb-4">
+				<button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+					REPORTS
+				</button>
+				<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+				<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+			</div>
+    </div> -->
+
+	<div class="col-md-3 small-font m-none">
+		<div class="card card-custom">
+			<div class="card-body card-body-custom p-0">
+				{RIGHT_HTML}
+			</div>
+		</div>
+    </div>
+	
+    <div class="col-md-9">
+		{update_message}
+		<div class="card card-custom">
+           <div class="card-header">
+			<div class="d-flex align-items-center m-dblock">
+				<h1 class="main-heading">{HEADING_TITLE}</h1>
+				<div class="d-flex ms-auto">{TABLE_HEADING_SHOW}</div>
+			</div>
+		 </div>
+        <div class="card-body card-body-custom">
+		<div class="table-responsive">
+		 {form1}
+		                <table class="table table-sm table-hover border-bottom mb-4">
+                              <thead>
+							  <tr class="dataTableHeadingRow">
+                                <th>{TABLE_HEADING_INTERACTION_SUBJECT}
+                                </th>
+                                <th>{TABLE_HEADING_INTERACTION_INSERTED}
+                                </th>
+                                <th>
+                                  {TABLE_HEADING_INTERACTION_FEADBACK}</th>
+                              </tr>
+							  </thead>
+                              <!-- BEGIN applicant_interation -->
+                              <tr {applicant_interation.row_selected}>
+                                <td valign="top" class="dataTableContent">{applicant_interation.subject}</td>
+                                <td valign="top" class="dataTableContent">{applicant_interation.inserted}</td>
+                                <td valign="top" class="dataTableContent" valign="top">
+                                  {applicant_interation.fead_back}</td>
+                              </tr>
+                              
+                              <!-- END applicant_interation -->
+                        </table></form>
+					</div>
+		
+			{form}
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col col-form-label text-right">{INFO_TEXT_TO}</label>
+			<div class="col-sm-10 col">
+			  {INFO_TEXT_TO1}
+			</div>
+		  </div>
+		
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label text-right col">{INFO_TEXT_FROM}</label>
+			<div class="col-sm-10 col">
+			  {INFO_TEXT_FROM1}
+			</div>
+		  </div>		
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label text-right">{INFO_TEXT_SUBJECT}</label>
+			<div class="col-sm-10">
+			  {INFO_TEXT_SUBJECT1}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label text-right">{INFO_MAIL_ATTACHMENT}</label>
+			<div class="col-sm-10">
+			  {INFO_MAIL_ATTACHMENT1}
+			</div>
+		  </div>
+		  
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label text-right">{INFO_TEXT_MESSAGE}</label>
+			<div class="col-sm-10">
+			  {INFO_TEXT_MESSAGE1}
+			</div>
+		  </div>
+			{hidden_fields}
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label text-right"></label>
+			<div class="col-sm-10">
+			 {buttons}
+			</div>
+		  </div>
+		  </form>
+		  					
+							
+		</div>
+	</div>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

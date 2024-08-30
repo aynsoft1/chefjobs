@@ -1,0 +1,64 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+            <h1 class="m-0">{INVITATION_TITLE}</h1>
+            <div class="dflex ms-auto">
+                {test_menus}
+            </div>
+        </div>
+    </div>
+
+
+    {update_message}
+
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-body p-0 card-body-custom table-responsive-sm">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{TH_ASSESSMENT}</th>
+                                    <th>{TH_COMPANY}</th>
+                                    <th>{TH_STATUS}</th>
+                                    <th>{TB_HEAD_DATE}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN invitaiton_list -->
+                                <tr>
+                                    <td>{invitaiton_list.assessment_name}</td>
+                                    <td>{invitaiton_list.company}</td>
+                                    <td>{invitaiton_list.status}</td>
+                                    <td>{invitaiton_list.date}</td>
+                                </tr>
+                                <!-- END invitaiton_list -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

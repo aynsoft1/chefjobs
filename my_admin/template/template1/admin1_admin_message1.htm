@@ -1,0 +1,113 @@
+{ADMIN_HEADER_HTML}
+<script language="JavaScript">
+<!--
+function view_data(data,data1)
+{
+ document.page.view.value=data;
+ document.page.mail_status.value=data1;
+ document.page.submit();
+}
+function select_action2()
+{
+	var check;
+	check=false;
+	for (var i=0;i < document.page.elements.length;i++)
+	{
+		var e = document.page.elements[i];
+		if (e.type == "checkbox")
+		{
+			if((e.checked) == true)
+			{
+   	check=true;
+				break;
+			}
+		}
+	}
+	if(check)
+	{
+  if(document.page.select_action.options[document.page.select_action.selectedIndex].value!="") 
+  {
+   document.page.action1.value=document.page.select_action.options[document.page.select_action.selectedIndex].value;
+   {mail_status}
+   {lower_value}
+   {higher_value}
+   document.page.submit();
+  }
+  else
+  {
+   return false;
+  }
+	}
+	else
+	{
+	 document.page.select_action.value=""; 
+  alert('Please check atleast one checkbox.');
+	}
+}
+//-->
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->      
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+     <td>
+      <table border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td><div class="admin-page-heading"><i class="fa fa-rss-square fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}</div></td>
+								<!-- <td>{different_applications}</td> -->
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">{update_message}<br>
+      <table border="0" width="100%" height="540" cellspacing="1" cellpadding="0" bgcolor="#E2E2E2">
+       <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+         <table border="0" width="100%" cellspacing="0" cellpadding="4" class="middle_table2">
+          <tr>
+											<td class="label" align="right" valign="top">{INFO_TEXT_SUBJECT}</td>
+											<td>{INFO_TEXT_SUBJECT1}</td>
+										</tr>
+										<tr>
+											<td class="label" align="right" valign="top">{INFO_TEXT_MESSAGE}</td>
+											<td>{INFO_TEXT_MESSAGE1}</td>
+										</tr>
+										<tr>
+											<td class="label" align="right" valign="top">&nbsp;</td>
+											<td>{INFO_TEXT_REPLY} &nbsp; {INFO_TEXT_BACK}</td>
+										</tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+<!-- Middle Ends	-->
+<!-- Right Starts -->
+     <td width="{RIGHT_BOX_WIDTH}" valign="top">
+      <table border="0" width="{RIGHT_BOX_WIDTH}" cellspacing="0" cellpadding="0">
+       <tr>
+        <td valign="top">{ADMIN_RIGHT_HTML}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

@@ -1,0 +1,330 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+
+  function set_action1(application, action) {
+    if (application != '' && action != '') {
+      document.page.application_id.value = application;
+      document.page.action1.value = action;
+      document.page.submit();
+    }
+  }
+</script>
+<!-- Below Script for auto close -->
+<style>
+  .displayNone {
+    display: none;
+  }
+
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone");
+      $(".messageStackError").addClass("displayNone");
+    });
+  }, 50000););
+</script>
+<div class="container">
+  <div class="row">
+    <!--<div class="col-md-3 small-font m-none d-none">
+      <div class="list-group mb-4">
+        <h4 class="card-header fw-bold">
+          {INFO_TEXT_JOB_TITLE}
+        </h4>
+        <div>{INFO_TEXT_ALL_APPLICANT}</div>
+        <div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+        <div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+        <div>{INFO_TEXT_JOB_DETAIL}</div>
+        <div>{INFO_TEXT_ADD_APPLICANT}</div>
+      </div>
+      <div class="list-group mb-4">
+        <h4 class="card-header fw-bold">
+          Reports
+        </h4>
+        <div>{INFO_TEXT_REPORT_PIPELINE}</div>
+        <div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+        <div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+        <div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+      </div>
+    </div>-->
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="d-flex ms-auto">{INFO_TEXT_BACK}</div>
+        </div>
+    </div>
+      <!-- Below Alert message File path is class/message_stack.php -->
+      {update_message}
+      <div class="card card-custom mb-3">
+      <div class="card-header border-bottom">
+        <a id="pipeline">{HEADING_TITLE_PIPELINE}</a>
+      </div>
+        <div class="card-body card-body-custom">
+          <div class="table-responsive">
+          <table border="0" width="100%" bgcolor="#CCCCCC" cellspacing="0" style="border: 1 solid #c0c0c0" cellpadding="0">
+            <tr>
+              <!-- BEGIN round_report -->
+              <td bgcolor="#FFFFFF">
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table border="0" bgcolor="#ffffff" cellspacing="0" cellpadding="5">
+                        <tr height="240">
+                          <td align="center" valign="bottom" background="img/line1.gif">
+                            <table>
+                              <tr>
+                                <td align="center" class="small">{round_report.value}</td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="bottom"> {round_report.image}</td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" bgcolor="#c0c0c0"></td>
+                        </tr>
+                        <tr>
+                          <td class="text-muted" style="font-size:13px;">{round_report.name}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <!-- END round_report -->
+            </tr>
+          </table>
+        </div>
+        </div>
+      </div>
+
+      <div class="card card-custom mb-3">
+        <div class="card-header border-bottom">
+          <a id="roundwise">{HEADING_TITLE_ROUNDWISE}</a>
+        </div>
+          <div class="card-body card-body-custom">
+            <div class="table-responsive">
+            <table border="0" width="100%" cellspacing="0" cellpadding="10">
+              <!-- BEGIN report_bar -->
+              {report_bar.start_row}
+              <td valign="bottom">
+                <table width="100%" border="0" bgcolor="#CCCCCC" cellspacing="1" cellpadding="0" style="border: 1px solid #ccc;">
+                  <tr>
+                    <td bgcolor="#FFFFFF">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>
+                            <table  width="100%" background="img/line1.gif" border="0" bgcolor="#ffffff" cellspacing="0"
+                              cellpadding="3">
+                              <tr height="230">
+                                <td align="center" valign="bottom">
+                                  <table>
+                                    <tr>
+                                      <td align="center" class="small">{report_bar.total}</td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center" valign="bottom"> <img style="border: 1 solid #000000"
+                                          src="img/bar1.gif" height="{report_bar.bar_total}" alt="{report_bar.total}"
+                                          width="20"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td align="center" valign="bottom">
+                                  <table>
+                                    <tr>
+                                      <td align="center" class="small">{report_bar.new}</td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center" valign="bottom"> <img style="border: 1 solid #000000"
+                                          src="img/bar2.gif" height="{report_bar.bar_new}" alt="{report_bar.new}"
+                                          width="20"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td align="center" valign="bottom">
+                                  <table>
+                                    <tr>
+                                      <td align="center" class="small">{report_bar.process}</td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center" valign="bottom"> <img style="border: 1 solid #000000"
+                                          src="img/bar3.gif" height="{report_bar.bar_process}" alt="{report_bar.process}"
+                                          width="20"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td align="center" valign="bottom">
+                                  <table>
+                                    <tr>
+                                      <td align="center" class="small">{report_bar.reject}</td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center" valign="bottom"> <img style="border: 1 solid #000000"
+                                          src="img/bar4.gif" height="{report_bar.bar_reject}" alt="{report_bar.reject}"
+                                          width="20"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td align="center" valign="bottom">
+                                  <table>
+                                    <tr>
+                                      <td align="center" class="small">{report_bar.select}</td>
+                                    </tr>
+                                    <tr>
+                                      <td align="center" valign="bottom"> <img style="border: 1 solid #000000"
+                                          src="img/bar5.gif" height="{report_bar.bar_select}" alt="{report_bar.select}"
+                                          width="20"></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <!--td align="center" valign="bottom"><table><tr><td align="center" class="small">{report_bar.waiting} </td></tr><tr><td align="center" valign="bottom"> <img style="border: 1 solid #000000" src="img/bar6.gif" height="{report_bar.bar_waiting}" alt="{report_bar.waiting}" width="20"></td></tr></table></td-->
+                              </tr>
+                              <tr bgcolor="#ffffff">
+                                <td align="center" style="border-top: 1 solid #000000" class="small "><b>Total</b></td>
+                                <td align="center" style="border-top: 1 solid #000000" class="small ">New</td>
+                                <td align="center" style="border-top: 1 solid #000000" class="small ">In Process</td>
+                                <td align="center" style="border-top: 1 solid #000000" class="small ">Rejected</td>
+                                <td align="center" style="border-top: 1 solid #000000" class="small ">Approved</td>
+                                <!--td align="center" style="border-top: 1 solid #000000" class="small">Wating</td-->
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2" height="20" align="center" bgcolor="#f2f2f2"><b>{report_bar.round}</b></td>
+                  </tr>
+                </table>
+  
+              </td>
+              {report_bar.end_row}
+              <!-- END report_bar -->
+            </table>
+          </div>
+          </div>
+        </div>
+
+
+        <div class="card card-custom mb-3">
+          <div class="card-header border-bottom">
+            <a id="roundwise_summary">{TABLE_HEADING_TITLE1}</a>
+          </div>
+            <div class="card-body card-body-custom">
+              <div class="table-responsive">
+          <table border="0" width="100%" cellspacing="3" cellpadding="0" style="border: 1px solid #ccc;">
+            <tr>
+              <td valign="top">
+                {update_message}
+                <table border="0" width="100%" cellspacing="1" cellpadding="2">
+                  <tr class="dataTableHeadingRow">
+                    <td class="dataTableHeadingContent ps-2">{TABLE_HEADING_ROUND_STATUS}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_TOTAL}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_NEW}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_PROCESS}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_REJECT}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_SELECT}</td>
+                    <td background="img/bg_job.gif" height="28" align="center">{TABLE_HEADING_WAITING}</td>
+                  </tr>
+                  <!-- BEGIN applicant_round -->
+                  <tr{applicant_round.row_selected}>
+                    <td class="ps-2" valign="top" height="28" background="img/bg_job.gif">{applicant_round.round}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center" style="color:#0000FF">{applicant_round.total}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center">{applicant_round.new}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center">{applicant_round.process}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center">{applicant_round.reject}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center">{applicant_round.select}</td>
+                    <td class="text-center" valign="top" class="dataTableContent text-center">{applicant_round.waiting}</td>
+            </tr>
+            <!-- END applicant_round -->
+          </table>
+          </td>
+          </tr>
+          </table>
+        </div>
+        </div>
+      </div>
+
+      <div class="card card-custom mb-3">
+        <div class="card-header border-bottom">
+          <a id="date_report">{TABLE_HEADING_TITLE}</a>
+        </div>
+          <div class="card-body card-body-custom">
+          {form}
+          <div class="row input-roup g-3">
+            {INFO_TEXT_FROM_DATE1}
+            {INFO_TEXT_TO_DATE}
+            {INFO_TEXT_SUBMIT}
+          </div>
+
+          <div class="table-responsive">
+          <table border="0" bgcolor="#CCCCCC" cellspacing="0" style="border: 1 solid #c0c0c0" cellpadding="0">
+            <tr>
+              <!-- BEGIN date_report -->
+              <td bgcolor="#FFFFFF">
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table border="0" bgcolor="#ffffff" cellspacing="0" cellpadding="3">
+                        <tr height="240">
+                          <td align="center" valign="bottom" background="img/line1.gif">
+                            <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td align="center" class="small">{date_report.value}</td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="bottom"> {date_report.image}</td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" bgcolor="#c0c0c0"></td>
+                        </tr>
+                        <tr>
+                          <td height="40" align="center" bgcolor="#f2f2f2" class="small">{date_report.name}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <!-- END date_report -->
+            </tr>
+          </table>
+        </div>
+          <!----------------->
+          <div class="table-responsive">
+          <table border="0" width="100%" cellspacing="1" cellpadding="2">
+            <tr class="dataTableHeadingRow">
+              <td class="dataTableHeadingContent">{TABLE_HEADING_DATE}</td>
+              <td class="dataTableHeadingContent">{TABLE_HEADING_APPLICATION}</td>
+              <td class="dataTableHeadingContent" align="center">{TABLE_HEADING_SELECTED_APPLICATION}</td>
+            </tr>
+            <!-- BEGIN applicant -->
+            <tr{applicant.row_selected}>
+              <td valign="top" class="dataTableContent">{applicant.date}</td>
+              <td valign="top" class="dataTableContent">{applicant.inserted}</td>
+              <td valign="top" class="dataTableContent">{applicant.selected}</td>
+              </tr>
+              <!-- END applicant -->
+              <tr style="background-color:#ffefef">
+                <td valign="top" class="dataTableContent"><span style="color:red"><b>{INFO_TEXT_TOTAL}</b></span></td>
+                <td valign="top" class="dataTableContent"><span style="color:red"><b>{no_of_inserted}</b></span></td>
+                <td valign="top" class="dataTableContent"><span style="color:red"><b>{no_of_selected}</b></span></td>
+              </tr>
+              </form>
+          </table>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

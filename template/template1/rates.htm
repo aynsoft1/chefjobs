@@ -1,0 +1,374 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<SCRIPT LANGUAGE="JavaScript">
+  // <!--
+  function check_submit(objFrm) {
+    var radio_check;
+    radio_check = false;
+    for (var i = 0; i < objFrm.length; i++) {
+      if (objFrm[i].type == 'radio') {
+        if (objFrm[i].checked == true) {
+          radio_check = true;
+        }
+      }
+    }
+    if (radio_check) {
+      return true;
+    } else {
+      alert('Please select product.');
+      return false;
+    }
+  }
+  //-->
+</SCRIPT>
+<style>
+  .displayNone {
+    display: none;
+  }
+  .plan-name1 label {
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  }
+   .plan-name2 label {
+  color: #000;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  }
+ .table-pricing {
+    margin: 0 -15px 0 -15px;
+	}
+.table tr td {
+    font-size: 13px;
+    padding: 6px 0;
+    border-color: #edede2;
+	border-width:1px 0 1px 0;
+}
+.table tr:nth-child(4) {
+	border-bottom: 1px solid #edede2!important;
+}
+.table tr:nth-child(3) {
+	border-bottom: 1px solid #edede2!important;
+} 
+ .btn-primary {
+    background: #8d8d21;
+    text-decoration: none;
+    border-radius: 50px;
+    height: 53px;
+    width: 85%;
+    display: block;
+    margin: 20px auto 0px auto;
+
+    color: #fff;
+    text-align: center;
+}
+@media only screen and (max-width: 321px) {
+  .card-body-custom {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.card-custom {
+  margin-bottom:0px!important;
+}
+
+}
+
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone"
+
+      );
+      // $messageStackSuccess
+    });
+  }, 50000);
+</script>
+
+<div class="container">
+<div class="row">		
+    <div class="col-md-11 mx-auto">
+     {update_message}
+		<div class="cardcard-custom">
+		<div class="cardheader m-none text-center">
+			<h2 class="mb-3">{HEADING_TITLE}</h2>
+		</div>	  
+        <div class="card-body card-body-custom text-center">
+		  <div class="m-none">{INFO_TEXT_QUOT1}</div>
+		  <div class="mb-4 m-none">{INFO_TEXT_QUOT2}</div>
+          <div id="max_rates" {INFO_TEXT_BLOCK3}>
+            <div class="col-md-12 text-center">
+              <h3 class="fw-bold mb-4 mt-5 text-dark" role="alert">{INFO_TEXT_POST_SEARCH}</h3>
+              <!-- <div class="d-flex ms-auto">{BUY_BUTTON}</div> -->
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+              <!-- BEGIN rates3 -->
+              <div class="col mb-4">
+                <div class="card card-custom border"  style="width: 100%;max-width: 365px;border-radius: 20px;margin-bottom: 70px;background-color: #fff;padding: 25px 15px 15px;">
+                  <div class="card-header card-header-custom text-center bg-transparent py-3">
+                    <div class="text-uppercase plan-name2">{rates3.radio} {rates3.name}</div>
+                  </div>
+                  <div class="card-body card-body-custom" style="background-color: #f9f9f2;border-radius: 10px;padding: 27px 15px 18px;margin: 12px 0 0px 0;border: 1px solid #edede2;">
+                    <h3 class="text-dark" style="text-align: center;font-size: 27px;color: #1d1d1b;font-weight: 800;line-height: 50px;margin:0 0 16px 0;display: block;">{rates3.fee}</h3>
+					<div class="table-responsive-sm table-pricing text-start">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_JOBS}</td>
+                            <td>{rates3.job}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_CVS}</td>
+                            <td>{rates3.cv}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                            <td>{rates3.time}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold border-bottom-0" scope="row">{TABLE_HEADING_PLAN_TYPE_FEE}</td>
+                            <td class="border-bottom-0">{rates3.fee}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+					{order_form}
+                      {rates3.rate_card_buy}
+                      <button type="submit" class="btn btn-primary">{BUY_NOW}</button>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- END rates3 -->
+            </div>
+          </div>
+
+          <div id="max_rates" {INFO_TEXT_BLOCK5}>
+            <div class="col-md-12 text-center">
+              <h3 class="fw-bold my-4 text-dark" role="alert">{INFO_TEXT_F_POST_SEARCH}</h3>
+              <!-- <div class="d-flex ms-auto">{BUY_BUTTON}</div> -->
+            </div>
+            <div class="row row-cols-1 row-cols-md-3">
+              <!-- BEGIN rates5 -->
+              <div class="col mb-4">
+                <div class="card card-custom border"  style="width: 100%;max-width: 365px;border-radius: 20px;margin-bottom: 70px;background-color: #fff;padding: 25px 15px 15px;">
+                  <div class="card-header card-header-custom text-center bg-transparent py-3">
+                    <div class="text-uppercase plan-name2">{rates5.radio} {rates5.name}</div>
+                    
+                  </div>
+                  <div class="card-body card-body-custom" style="background-color: #f9f9f2;border-radius: 10px;padding: 27px 15px 18px;margin: 12px 0 0px 0;border: 1px solid #edede2;">
+                    <h3 class="text-dark" style="text-align: center;font-size: 27px;color: #1d1d1b;font-weight: 800;line-height: 50px;margin:0 0 16px 0;display: block;">{rates5.fee}</h3>
+					<div class="table-responsive-sm table-pricing text-start">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_JOBS}</td>
+                            <td>{rates5.job}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_CVS}</td>
+                            <td>{rates5.cv}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                            <td>{rates5.time}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold border-bottom-0" scope="row">{TABLE_HEADING_PLAN_TYPE_FEE}</td>
+                            <td class="border-bottom-0">{rates5.fee}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+					{order_form}
+                      {rates5.rate_card_buy}
+                      <button type="submit" class="btn btn-primary">{BUY_NOW}</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <!-- END rates5 -->
+            </div>
+          </div>
+
+          <div id="max_rates" {INFO_TEXT_BLOCK1}>
+            <div class="col-md-12 text-center">
+              <h3 class="fw-bold my-4 text-dark" role="alert">{INFO_TEXT_POST_JOBS}</h3>
+              <!-- <div class="d-flex ms-auto">{BUY_BUTTON}</div> -->
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+              <!-- BEGIN rates1 -->
+              <div class="col mb-4">
+                <div class="card card-custom border"  style="width: 100%;max-width: 365px;border-radius: 20px;margin-bottom: 70px;background-color: #fff;padding: 25px 15px 15px;">
+                  <div class="card-header card-header-custom text-center bg-transparent py-3">
+                    <div class="text-uppercase plan-name2">{rates1.radio} {rates1.name}</div>
+                    
+                  </div>
+                  <div class="card-body card-body-custom" style="background-color: #f9f9f2;border-radius: 10px;padding: 27px 15px 18px;margin: 12px 0 0px 0;border: 1px solid #edede2;">
+                    <h3 class="text-dark" style="text-align: center;font-size: 27px;color: #1d1d1b;font-weight: 800;line-height: 50px;margin:0 0 16px 0;display: block;">{rates1.fee}</h3>
+					<div class="table-responsive-sm table-pricing text-start">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_JOBS}</td>
+                            <td>{rates1.job}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                            <td>{rates1.time}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold border-bottom-0" scope="row">{TABLE_HEADING_PLAN_TYPE_FEE}</td>
+                            <td class="border-bottom-0">{rates1.fee}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+					{order_form}
+                      {rates1.rate_card_buy}
+                      <button type="submit" class="btn btn-primary">{BUY_NOW}</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <!-- END rates1 -->
+            </div>
+          </div>
+
+          <div id="max_rates" class="mt-5" {INFO_TEXT_BLOCK2}>
+            <div class="col-md-12 text-center">
+              <h3 class="fw-bold my-4 text-dark" role="alert">{INFO_TEXT_SEARCH_RESUMES}</h3>
+              <!-- <div class="d-flex ms-auto">{BUY_BUTTON}</div> -->
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+              <!-- BEGIN rates2 -->
+              <div class="col mb-4">
+                <div class="card card-custom border"  style="width: 100%;max-width: 365px;border-radius: 20px;margin-bottom: 70px;background-color: #fff;padding: 25px 15px 15px;">
+                  <div class="card-header card-header-custom text-center bg-transparent py-3">
+                    <div class="text-uppercase plan-name2">{rates2.radio} {rates2.name}</div>
+                    
+                  </div>
+                  <div class="card-body card-body-custom" style="background-color: #f9f9f2;border-radius: 10px;padding: 27px 15px 18px;margin: 12px 0 0px 0;border: 1px solid #edede2;">
+                    <h3 class="text-dark" style="text-align: center;font-size: 27px;color: #1d1d1b;font-weight: 800;line-height: 50px;margin:0 0 16px 0;display: block;">{rates2.fee}</h3>
+					<div class="table-responsive-sm table-pricing text-start">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_CVS}</td>
+                            <td>{rates2.cv}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                            <td>{rates2.time}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold border-bottom-0" scope="row">{TABLE_HEADING_PLAN_TYPE_FEE}</td>
+                            <td class="border-bottom-0">{rates2.fee}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+					{order_form}
+                      {rates2.rate_card_buy}
+                      <button type="submit" class="btn btn-primary">{BUY_NOW}</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <!-- END rates2 -->
+            </div>
+          </div>
+
+          <div id="max_rates" {INFO_TEXT_BLOCK4}>
+            <div class="col-md-12 text-center">
+              <h3 class="fw-bold my-4 text-dark" role="alert">{INFO_TEXT_POST_F_JOBS}</h3>
+              <!-- <div class="d-flex ms-auto">{BUY_BUTTON}</div> -->
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
+              <!-- BEGIN rates4 -->
+              <div class="col mb-4">
+                <div class="card card-custom border"  style="width: 100%;max-width: 365px;border-radius: 20px;margin-bottom: 70px;background-color: #fff;padding: 25px 15px 15px;">
+                  <div class="card-header card-header-custom text-center bg-transparent py-3">
+                    <div class="text-uppercase plan-name2">{rates4.radio} {rates4.name}</div>
+                    
+                  </div>
+                  <div class="card-body card-body-custom" style="background-color: #f9f9f2;border-radius: 10px;padding: 27px 15px 18px;margin: 12px 0 0px 0;border: 1px solid #edede2;">
+                    <h3 class="text-dark" style="text-align: center;font-size: 27px;color: #1d1d1b;font-weight: 800;line-height: 50px;margin:0 0 16px 0;display: block;">{rates4.fee}</h3>
+					<div class="table-responsive-sm table-pricing text-start">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_NO_OF_JOBS}</td>
+                            <td>{rates4.job}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold" scope="row">{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</td>
+                            <td>{rates4.time}</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 fw-bold border-bottom-0" scope="row">{TABLE_HEADING_PLAN_TYPE_FEE}</td>
+                            <td class="border-bottom-0">{rates4.fee}</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+					{order_form}
+                      {rates4.rate_card_buy}
+                      <button type="submit" class="btn btn-primary">{BUY_NOW}</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <!-- END rates4 -->
+            </div>
+          </div>
+		  
+          </form>
+		  
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="col-md-12">
+          <h3 class="mb-3 m-none" role="alert">{INFO_TEXT_KEY_FEATURES}</h3>
+        </div>
+        <div class="row small text-muted">
+          <div class="col-md-6">
+            <h5 class="fw-bold">{INFO_TEXT_POST_JOBS}</h5>
+            <li>{INFO_TEXT_POST_JOB_INSTANTLY}</li>
+            <li>{INFO_TEXT_MANAGE_MONITOR}</li>
+            <li>{INFO_TEXT_TRACK_APPLICATION}</li>
+            <li>{INFO_TEXT_GET_RESUMES}</li>
+          </div>
+
+          <div class="col-md-6">
+            <h5 class="fw-bold">{INFO_TEXT_SEARCH_RESUMES}</h5>
+            <li>{INFO_TEXT_SEARCH_QUALIFIED}</li>
+            <li>{INFO_TEXT_VIEW_SAVE_ORGANISATION}</li>
+            <li>{INFO_TEXT_GET_ACCESS_TO_RESUME}</li>
+            <li>{INFO_TEXT_USE_APPLICANT_TRACKING}</li>
+          </div>
+        </div>
+        <span class="text-danger mt-4">*</span> <span class="small text-muted">{INFO_TEXT_FOR_OTHER_OPTIONS} <a
+            href="contact_us.php" class="text-dark">{INFO_TEXT_CONTACT_US}</a>.</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+{FOOTER_HTML}

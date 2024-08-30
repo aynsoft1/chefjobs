@@ -1,0 +1,105 @@
+User-agent: *
+
+Disallow: /_private/
+
+Disallow: /_vti_bin/
+
+Disallow: /_vti_cnf/
+
+Disallow: /_vti_log/
+
+Disallow: /_vti_pvt/
+
+Disallow: /_vti_txt/
+
+Disallow: /ads/
+
+Disallow: /apply_resume/
+
+Disallow: /box/
+
+Disallow: /class/
+
+Disallow: /classinc/
+
+Disallow: /cron_job/
+
+Disallow: /css/
+
+Disallow: /general_functions/
+
+Disallow: /htmlarea/
+
+Disallow: /image/
+
+Disallow: /images/
+
+Disallow: /img/
+
+Disallow: /img1/
+
+Disallow: /javascript/
+
+Disallow: /jscript/
+
+Disallow: /language/
+
+Disallow: /font/
+
+Disallow: /download_resume/
+
+Disallow: /mail_attachment/
+
+Disallow: /newsletter_history/
+
+Disallow: /pdf_files/
+
+Disallow: /pdfclass/
+
+Disallow: /logo/
+
+Disallow: /maintenance_1234/
+
+Disallow: /modules/
+
+Disallow: /my_admin/
+
+Disallow: /photo/
+
+Disallow: /tinymce6/
+
+Disallow: /uploads/
+
+Disallow: /resume/
+
+Disallow: /template/
+
+Disallow: /tep/
+
+Disallow: /.htaccess
+
+Disallow: /_vti_inf.html
+
+Disallow: /body.php
+
+Disallow: /footer.php
+
+Disallow: /header.php
+
+Disallow: /header_middle.php
+
+Disallow: /include_files.php
+
+Disallow: /left.php
+
+Disallow: /phpbb_login.php
+
+Disallow: /resume_download.php
+
+Disallow: /resume_download1.php
+
+Disallow: /right.php
+
+Disallow: /test.log
+
+Disallow: /tld.txt

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://careerjobs.de/rss/">
+<channel>
+<title>Engineering &amp; Technology RSS - CareerJobs</title>
+<description> jobs </description>
+<link>https://careerjobs.de/</link><copyright>Copyright 2024 careerjobs.de All Rights Reserved</copyright>
+<job:link  href="http://careerjobs.de/rss/6.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Manager</title>
+<description>manager required</description>
+<job:job_id>7</job:job_id>
+<job:state>Hamburg</job:state>
+<job:location>Hamburg</job:location>
+<link>https://careerjobs.de/7/Manager</link>
+<guid>https://careerjobs.de/7/Manager</guid>
+</item>
+<item>
+<title>Designer Apparel - Innovation (m/f/d)</title>
+<description>At adidas innovation, our #1 goal is to design the best for the athlete at speed, meaning we create innovative, industry leading and highly disruptive solutions for the world’s best athletes on the world’s biggest stages.</description>
+<job:job_id>3</job:job_id>
+<job:state>Bayern</job:state>
+<job:location></job:location>
+<link>https://careerjobs.de/3/Designer-Apparel-Innovation-m-f-d-</link>
+<guid>https://careerjobs.de/3/Designer-Apparel-Innovation-m-f-d-</guid>
+</item>
+</channel>
+</rss>

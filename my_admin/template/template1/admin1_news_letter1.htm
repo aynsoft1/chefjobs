@@ -1,0 +1,95 @@
+{ADMIN_HEADER_HTML}
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="content"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="newspaper-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+
+            {tep_draw_form}
+
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{TEXT_NEWSLETTER_MODULE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {news_module}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{TEXT_NEWSLETTER_TITLE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {news_title}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{INFO_TEXT_ATTACHMENT}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_ATTACHMENT1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3">{TEXT_NEWSLETTER_CONTENT}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {news_content}
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                for="inputText3"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {news_letter_button1}
+              </div>
+            </div>
+
+            </form>
+            <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

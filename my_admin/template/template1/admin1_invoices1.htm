@@ -1,0 +1,143 @@
+{ADMIN_HEADER_HTML}
+<script language="javascript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=800,height=600,left = 0,top = 0');");
+}
+</script>
+<style>
+.invoice-logo {
+    height: 25px;
+}
+</style>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->       
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+  <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+<div class="card-body table-responsive middle_table2">
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="0" id="admin-outer-table">
+    <tr>
+     <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td class="pageHeading">&nbsp;</td>
+        <td align="right">{HEADING_TITLE}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">
+<!-- Invoice Body -->
+
+<div class="invoice-box">
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+			<div>{logo}</div>
+			</td>
+			<td><div class="invoice-title">invoice</div></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>{ENTRY_CUSTOMER1}</td>
+			<td>
+				<table width="0" cellpadding="0" cellspacing="7" border="0" align="right">
+					<tr>
+						<td>Invoice number</td>
+						<td>:</td>
+						<td>{invoice_id}</td>
+					</tr>
+					<tr>
+						<td>Invoice date</td>
+						<td>:</td>
+						<td>{TABLE_HEADING_DATE_ADDED1}</td>
+					</tr>
+					<tr>
+						<td>Payment Method</td>
+						<td>:</td>
+						<td>{ENTRY_PAYMENT_METHOD1}</td>
+					</tr>
+					<tr>
+						<td>Status</td>
+						<td>:</td>
+						<td>{TABLE_HEADING_STATUS1}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="bill-to">Bill To:</div>
+				<div>{customer_email_address}</div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;
+				
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" cellspacing="5" border="0"  class="invoice-table-grid">
+		<tr>
+			<td>
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr class="invoice-details-title">
+						<th>Description</th>
+						<th width="120">Total</th>
+					</tr>
+					<tr class="invoice-details">
+						<td>
+						<div class="plan-name">{TABLE_HEADING_PRODUCTS}{TABLE_HEADING_PRODUCTS1}</div>
+						</td>
+						<td>{TABLE_HEADING_TOTAL_PRICE1}</td>
+					</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table width="100%" cellpadding="0" cellspacing="5" border="0" class="inv-ftr">
+		<tr>
+			<td>
+			<div class="plan-name-ftr">notes</div>
+			<div>Thanks for Business. Enjoy Software.</div>
+			</td>
+			
+		</tr>
+	</table>
+</div>
+<!-- End Invoice Body -->
+</div>
+</div>
+	 
+	 
+	 </td>
+	</tr>
+</table>
+</div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

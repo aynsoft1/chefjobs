@@ -1,0 +1,100 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">
+            <form name="disply" method="get" onsubmit="return ValidateForm(this)">
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">{INFO_TEXT_SEARCH_POST}</label>
+                  {INFO_TEXT_SEARCH_POST1}
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">{INFO_TEXT_SEARCH_FORUM}</label>
+                  {INFO_TEXT_SEARCH_FORUM1}
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">{INFO_TEXT_SEARCH_EMAIL}</label>
+                  {INFO_TEXT_SEARCH_EMAIL1}
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">Go</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    {TABLE_HEADING_TITLE}
+                  </th>
+                  <th>
+                    {TABLE_HEADING_FORUM}
+                  </th>
+                  <th>
+                    {TABLE_HEADING_FEATURED}
+                  </th>
+                  <th>
+                    {TABLE_HEADING_HITS}
+                  </th>
+                  <th>{TABLE_HEADING_INSERTED}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN search_tag -->
+                <tr{search_tag.row_selected}>
+                  <td>{search_tag.title}</td>
+                  <td>{search_tag.forum}</td>
+                  <td>{search_tag.featured}</td>
+                  <td>{search_tag.hits}</td>
+                  <td>{search_tag.inserted}</td>
+                  <td>{search_tag.action}</td>
+                  </tr>
+                  <!-- END search_tag -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">{count_rows}</td>
+                    <td colspan="4" align="right">{no_of_pages}</td>
+                  </tr>
+                </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

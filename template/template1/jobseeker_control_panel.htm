@@ -1,0 +1,211 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+    .no-pic img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 5px;
+}
+.candidate-pic img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 5px;
+}
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-4 m-dblock">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="d-flex ms-auto m-dblock">
+                <span class="me-2 mmr-none">{MY_APPLICATIONS}</span>
+                <!-- <a class="btn btn-sm btn-outline-secondary me-2" href="quiz/my_tests.php">My tests <i class="bi bi-file-earmark-text ms-2"></i></a> -->
+				<a class="btn btn-sm btn-primary mmt-15" href="jobseeker_resume1.php">{TEXT_ADD_RESUMES} <i class="bi bi-box-arrow-in-up-right ms-2"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3" style="margin-top: -32px;">
+        <div class="col-md-12">
+            <!-- Below Alert message File path is class/message_stack.php -->
+            {update_message}
+
+        </div>
+
+		
+
+ <!-- Left Starts -->
+               {LEFT_HTML_JOBSEEKER}
+  <!-- Left Ends -->   
+
+
+
+    <div class="col-md-5 col-5-custom">
+        <div class="row mb-2">
+            <div class="col-xl-6 col-md-6 mb-2">
+                <div class="card-widget h-100 border">
+                    
+                    <div class="card-widget-body">
+                        <div class="dot me-3 bg-indigo"></div>
+                        <div class="">
+                            <div class="m-flex">
+                                <div
+                                    class="text-gray-500 numbers2 mmr-10">{TOTAL_NUMBER_OF_RESUMES}</div>
+                                    <div class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{RESUME_CARD_VALUE}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon text-white -indigo ms-auto">
+                        <i class="bi bi-file-earmark-person dashboard-icon1"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6 mb-2">
+                <div class="card-widget h-100 border">
+                    
+                    <div class="card-widget-body">
+                        <div class="dot me-3 bg-green"></div>
+                        <div class="">
+                            <div class="m-flex">
+                                <div
+                                    class="text-gray-500 numbers2 mmr-10">{TOTAL_APPLICATIONS}</div>
+                                    <div class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{APPLICATION_CARD_VALUE}</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon text-white bg-green ms-auto">
+                        <i class="bi bi-briefcase dashboard-icon2"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6 mb-2">
+                <div class="card-widget h-100 border">
+                    
+                    <div class="card-widget-body">
+                        <div class="dot me-3 bg-blue"></div>
+                        <div class="">
+                            <div class="m-flex">
+                                <div
+                                    class="text-gray-500 numbers2 mmr-10">{TOTAL_SAVED_JOBS}</div>
+                                    <div class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{SAVED_JOB_CARD_VALUE}</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon text-white bg-blue ms-auto">
+                        <i class="bi bi-bookmark-check dashboard-icon3"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6 mb-2">
+                <div class="card-widget h-100 border">
+                    
+                    <div class="card-widget-body">
+                        <div class="dot me-3 bg-red"></div>
+                        <div class="">
+                            <div class="m-flex">
+                                <div
+                                    class="text-gray-500 numbers2 mmr-10">{TOTAL_SAVE_SEARCHES}</div>
+                                    <div class="text-muted m-l-height" style="font-weight: 400;font-size: 16px;">{SAVED_SEARCH_CARD_VALUE}</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon text-white bg-red ms-auto">
+                        <i class="bi bi-save dashboard-icon4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom">
+            <div class="card-header align-items-center d-flex card-header-custom px-3 py-0" style="border-top-left-radius:12px;border-top-right-radius:12px;">
+                <div class="">{RECOMMENDED_JOBS}</div>
+                <div class="d-flex ms-auto">{SHOW_ALL_JOBS}</div>
+                <!-- <small class="text-muted">Based on your profile and search history</small> -->
+            </div>
+            <div class="card-body card-body-custom pt-0">
+        <!-- BEGIN jobseeker_cpanel_jobs -->
+
+                <div class="d-flex previewBox border-topp py-3 align-items-center" id="1036">
+                    <div class="flex-shrink-0 ms-3">
+                        <div class="job-result-img">{jobseeker_cpanel_jobs.logo}</div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <div class="d-flex align-items-top">
+                            <div class="d-grow-1">
+                                <div class="m-0 mb-1">{jobseeker_cpanel_jobs.title}</div>
+                                <div class="job-company"><i class="bi bi-building me-1"></i>
+                                    {jobseeker_cpanel_jobs.company}</div>
+                                <div class="small">{jobseeker_cpanel_jobs.location}</div>
+                                <div class="small"><i class="bi bi-calendar2-check me-1"></i>
+                                    Posted: {jobseeker_cpanel_jobs.job_posted}</div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+        <!-- END jobseeker_cpanel_jobs -->
+
+
+
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="col-md-4 col-4-custom">
+        <div class="card card-custom mb-3">
+            <div class="card-header card-header-custom px-4 pt-4" style="border-top-left-radius:12px;border-top-right-radius:12px;">
+                <h6 class="m-0 mb-2">{TEXT_FEATURED_RESUME}</h6>
+            </div>
+            <div class="card-body card-body-custom pt-0">
+                {JOB_ALERT_BOX}
+            </div>
+        </div>
+
+        <div class="card card-custom mb-3">
+            <div class="card-header card-header-custom px-4 pt-4" style="border-top-left-radius:12px;border-top-right-radius:12px;">
+                <h6 class="m-0 mb-2">{TOP_COMPANIES}</h6>
+            </div>
+            <div class="card-body card-body-custom pt-0">
+        <!-- BEGIN top_company_list -->
+                <div class="d-flex align-items-center" style="margin-bottom: 1rem!important;">
+                    <div class="me-2 no-pic">
+                        {top_company_list.company_logo}
+                    </div>
+                    <div>
+                        <h6 class="m-0">{top_company_list.company_name}</h6>
+                        <div class="small text-muted">{top_company_list.total_jobs}</div>
+                    </div>
+                </div>
+		 <!-- END top_company_list -->
+
+            </div>
+        </div>
+        <!--Top Companies-->
+  
+    </div>  
+       
+    </div>
+</div>
+    {FOOTER_HTML}

@@ -1,0 +1,141 @@
+{ADMIN_HEADER_HTML}
+<script language="JavaScript">
+<!--
+function set_action(action)
+{
+ document.jobfair.action1.value=action;
+ document.jobfair.submit();
+}
+//-->
+</script>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-floppy-o fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+			{form}
+			
+			<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_TITLE}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JF_TITLE1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_LOGO}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JOBFAIR_LOGO1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_PDF}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                         {INFO_TEXT_JOBFAIR_PDF1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_VIDEO}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JF_VIDEO1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_BEGINDATE}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JOBFAIR_BEGINDATE1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_ENDDATE}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JOBFAIR_ENDDATE1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JOBFAIR_STATUS}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JOBFAIR_STATUS1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_LOCATION}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JF_LOCATION1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_VENUE}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JF_VENUE1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_JF_GOOGLEMAP_URL}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_JF_GOOGLEMAP_URL1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_SHORT_DESCRIPTION}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_SHORT_DESCRIPTION1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{INFO_TEXT_DESCRIPTION}</label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {INFO_TEXT_DESCRIPTION1}
+                      </div>
+                    </div>
+					
+					<div class="form-group row">
+                      <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3"></label>
+                      <div class="col-12 col-sm-8 col-lg-6">
+                        {button}
+                      </div>
+                    </div>
+					
+				
+					{hidden_fields}
+					
+			<!-- Middle Ends	-->
+			</form>
+		</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{ADMIN_FOOTER_HTML}

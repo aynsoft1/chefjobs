@@ -1,0 +1,70 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->       
+<script>
+function submitform()
+{
+ document.preview_mail.email.value='back';
+ document.preview_mail.submit();
+}
+</script>
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="1" cellpadding="0" class="middle_table1">
+    <tr>
+     <td valign="top">
+      <table border="0" width="100%" cellspacing="3" cellpadding="0" class="middle_table2">
+       <tr>
+        <td valign="top">
+         <table border="0" width="100%" cellspacing="3" cellpadding="0">
+          <tr>
+           <td class="pageHeading">{HEADING_TITLE}</td>
+          </tr>
+         </table>
+         <table border="0"  cellspacing="3" cellpadding="3">
+         {form}
+          <tr>
+           <td class="label" align="right">{TEXT_TO}</td>
+           <td>{TEXT_TO1}</td>
+          </tr>
+          <tr>
+           <td class="label" align="right">{TEXT_FROM}</td>
+           <td>{TEXT_FROM1}</td>
+          </tr>
+          <tr>
+           <td class="label" align="right" valign="top">{TEXT_SUBJECT}</td>
+           <td>{TEXT_SUBJECT1}</td>
+          </tr>
+          <tr>
+           <td class="label" align="right">{TEXT_MESSAGE}</td>
+           <td>{TEXT_MESSAGE1}</td>
+          </tr>
+          <tr>
+           <td colspan="2" align="middle">{buttons}</td>
+          </tr>
+          {hidden_fields}
+          </form>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+<!-- Middle Ends -->
+	</tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

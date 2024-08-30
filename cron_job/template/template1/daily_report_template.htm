@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Daily Report</title>
+</head>
+<style>
+body 
+{
+	BACKGROUND-COLOR: ##BFC4C8; 
+ FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif;
+}
+img 
+{
+	border: none;
+}
+A.report:link, A.report:visited, A.report:active  
+{
+ color: #000000;
+ text-decoration : none;
+}
+A.report:hover 
+{
+ color: red; 
+ text-decoration : none; 
+}
+TD
+{
+	font-family: Arial,Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+.dataTableRow1 
+{
+ height:20px;
+	background-color: #F0F1F1; 
+}
+.dataTableRow2 
+{ 
+ height:20px;
+	background-color: #ffffff; 
+}
+.dataTableContent 
+{ 
+ font-family: Arial,Verdana, Helvetica, sans-serif; 
+ font-size: 10px; 
+ color: #000000;
+}
+.heading 
+{ 
+ font-family: Arial,Verdana, Helvetica, sans-serif; 
+ font-size: 12px; 
+	font-weight: bold;
+ color: #0054A8;
+}
+.heading1 
+{ 
+ font-family: Arial,Verdana, Helvetica, sans-serif; 
+ font-size: 12px; 
+	font-weight: bold;
+ color: #FF0000;
+}
+
+</style>
+<body>
+<div class="heading1" align="center">{HEADING_TITLE}</div>
+<br>
+<table border="0" align="center" cellspacing="0" cellpadding="5">
+<tr>
+	<td class="heading" align="center">{HEADING_TITLE1} </td>
+</tr>
+<tr>
+	<td align="center">
+  <table  border="0" width="400" cellspacing="1" cellpadding="1">
+   <tr bgcolor="#dddddd">
+    <td></td>
+    <td><b>Added<b></td>
+   </tr>
+   <tr class="dataTableRow2">
+    <td class="dataTableContent" width="40%" >Total Jobseekers</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_JOBSEEKERS}</font></td>
+   </tr>
+   <tr class="dataTableRow1">
+    <td class="dataTableContent" >Total Recruiters</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_RECRUITERS}</font></td>
+   </tr>
+   <tr class="dataTableRow2">
+    <td class="dataTableContent" >Total Jobs</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_JOBS}</font></td>
+   </tr>
+   <tr class="dataTableRow1">
+    <td class="dataTableContent" >Total Resume</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_RESUMES}</font></td>
+   </tr>
+   <tr class="dataTableRow2">
+    <td class="dataTableContent" >Total Forum Post</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_FORUM_POST}</font></td>
+   </tr>
+   <tr class="dataTableRow1">
+    <td class="dataTableContent" >Total Forum Post Reply</td>
+    <td class="dataTableContent" ><font color="#ff0000">{INFO_TEXT_TOTAL_FORUM_POST_REPLY}</font></td>
+   </tr>
+  </table>
+</td>
+</tr>
+{INFO_TEXT_JOBSEEKER_CONTENT}
+<tr>
+	<td  >
+   <table  border="0" width="100%" cellspacing="1" cellpadding="1">
+   {INFO_TEXT_JOBSEEKER_CONTENT1}
+   <!-- BEGIN jobseekers -->
+   <tr {jobseekers.row_selected}>
+    <td class="dataTableContent" >{jobseekers.name}</td>
+    <td class="dataTableContent" >{jobseekers.email_address}</td>
+    <td class="dataTableContent" >{jobseekers.address}</td>
+   </tr>
+   <!-- END jobseekers -->
+  </table>
+ </td>
+</tr>
+{INFO_TEXT_RECRUITER_CONTENT}
+<tr>
+	<td  >
+  <table  border="0" width="100%" cellspacing="1" cellpadding="1">
+  {INFO_TEXT_RECRUITER_CONTENT1}
+   <!-- BEGIN recruiters -->
+   <tr {recruiters.row_selected}>
+    <td class="dataTableContent" >{recruiters.name}</td>
+    <td class="dataTableContent" >{recruiters.email_address}</td>
+    <td class="dataTableContent" >{recruiters.company}</td>
+    <td class="dataTableContent" >{recruiters.address}</td>
+   </tr>
+   <!-- END recruiters -->
+  </table>
+ </td>
+</tr>
+{INFO_TEXT_JOB_CONTENT}
+<tr>
+	<td  >
+   <table  border="0" width="100%" cellspacing="1" cellpadding="1">
+   {INFO_TEXT_JOB_CONTENT1}
+   <!-- BEGIN jobs -->
+   <tr {jobs.row_selected}>
+    <td class="dataTableContent" >{jobs.title}</td>
+    <td class="dataTableContent" >{jobs.company}</td>
+    <td class="dataTableContent" >{jobs.location}</td>
+   </tr>
+   <!-- END jobs -->
+  </table>
+ </td>
+</tr>
+</table>
+</body>
+</html>

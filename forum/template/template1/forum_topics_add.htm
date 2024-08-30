@@ -1,0 +1,70 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+<!-- <script>
+  window.setTimeout(function() {
+     $(".alert").fadeTo(500, 0).slideUp(500, function(){
+         $(this).remove(); 
+     });
+ }, 30000);
+ </script> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 mx-auto">
+      <div class="row">
+        <div class="col-md-12">
+            <h1 class="m-0">{forum_title}</h1>
+            <div class="small mb-3">
+              {INFO_TEXT_FORUM_HEADER_LINK}
+            </div>
+        </div>
+    </div>
+      <div class="card card-custom">
+        <div class="card-header card-header-custom justify-content-between">
+          
+          <span class="heading_bar_internal_content">
+            {INFO_TEXT_HEADING_SEARCH}
+          </span>
+        </div>
+	
+		
+        <div class="card-body card-body-custom">
+
+          
+          <section class="justify-content-center">
+            {update_message}
+            {form}
+              <div class="form-group row">
+                <div class="col-md-3 text-right">
+                  <label for="my-input" class="">{INFO_TEXT_TITLE}</label>
+                </div>
+                <div class="col-md-9">
+                  {INFO_TEXT_TITLE1}
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-3 text-right">
+                  <label for="my-input" class="">{INFO_TEXT_DESCRIPTION}</label>
+                </div>
+                <div class="col-md-9">
+                  {INFO_TEXT_DESCRIPTION1}
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-3 text-right">
+                <!-- blank label  -->
+                </div>
+                <div class="col-md-9">
+                  {button}
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{FOOTER_HTML}

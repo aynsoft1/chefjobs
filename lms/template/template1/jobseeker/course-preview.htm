@@ -1,0 +1,61 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12 d-flex align-items-center">
+            <div class="">{COURSE_BREADCRUMB}</div>
+        </div>
+    </div>
+    {update_message}
+    <div class="row gx-5">
+        <div class="col-md-8">
+            <div class="align-items-center mb-4">
+                <h1 class="mb-4 fw-bold" style="font-size: 36px;">{COURSE_TITLE}</h1>
+                <p class="d-flex" style="font-size: 18px;">{COURSE_SUMMARY}</p>
+
+                <div class="d-flex align-items-center">
+                    <div class="me-3 fw-bold" style="font-size: 16px;"><i class="bi bi-play-btn text-success"></i>
+                        {COURSE_TOTAL_LESSON}</div>
+                    <div class="fw-bold me-3" style="font-size: 16px;">{COURSE_DURATION}</div>
+                    <div class="fw-bold" style="font-size: 16px;"><i class="bi bi-people"></i> Enrolled: {COURSE_ENROLLED}</div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                {COURSE_THUMB}
+            </div>
+
+            <div class="mb-5">
+                {COURSE_OVERVIEW_VID}
+            </div>
+
+            <div class="row">
+                {SUB_INSTRUCTOR_DIV}
+
+                {RECRUITER_COMPANY_DIV}
+
+                <div class="col-md-12 mb-5">
+                    <div class="course-requirement mb-1" id="course-requirement">{COURSE_REQUIREMENT}</div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h3>Description</h3>
+                {COURSE_CONTENT}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-custom mb-4">
+                <div class="card-body">
+                    <h3 class="fw-bold mb-4">{COURSE_PRICE}</h3>
+                    {ENROLLED_COURSE}
+                </div>
+            </div>
+
+            {LESSON_SECTION}
+        </div>
+    </div>
+
+</div>
+{FOOTER_HTML}

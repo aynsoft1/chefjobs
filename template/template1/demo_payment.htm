@@ -1,0 +1,37 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                    <h1 class="main-heading mb-0">{HEADING_TITLE}</h1>
+                </div>
+                <div class="card-body card-body-custom pt-0">
+				{form}
+				<p class="text-muted mt-4">Please Click the following button to complete the order.</p>
+				{button}{hidden_fields}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

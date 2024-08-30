@@ -1,0 +1,200 @@
+body
+{
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#484848;
+ margin:0;
+}
+.main_table
+{
+max-width:800px;
+}
+#main_box
+{
+ padding:0;
+}
+.header
+{
+padding:10px;
+}
+#header_top_home
+{
+background:url(img/main.jpg) no-repeat top; background-color:#fff;
+}
+.search_box_home
+{
+ clear:left;
+ background:url(img/search_bg.png);
+ border-radius:12px;
+ height:40px;
+ padding:17px;
+ width:85%;
+ margin:100px auto 105px auto;
+}
+input.textfield_effect1
+{
+ width:245px; 
+ height:35px;font:bold 16px "Century Gothic";
+ padding:0 5px 0 5px; border:ff0000; margin:0 5px 5px 0;}
+.find_job
+{
+float:right;
+margin:0;
+}
+h2.job_search_title
+{
+ font:normal 18px Tahoma, Geneva, sans-serif; color:#a9c210;
+ margin:0;
+ cursor :pointer;
+}
+h2.job_search_title:hover
+{
+text-decoration : underline;
+}
+h1.job_detail_title
+{
+ font:normal 18px Tahoma, Geneva, sans-serif; color:#a9c210;
+ margin:0;
+ padding:0;
+}
+.job_detail_content
+{
+ font:normal 12px Tahoma, Geneva;
+}
+.job_detail_content1
+{
+ font:bold 12px Tahoma, Geneva;
+}
+.job_detail_sec
+{
+ padding-left:15px;
+}
+.job_detail_desc
+{
+ background-color:#fafafa; 
+ padding-top:5px;
+ padding-bottom:5px;
+ border-top:1px solid #d9d9d9;
+ padding-left:15px;
+ font-weight:bold;
+}
+.job_detail_desc1
+{
+ padding:15px;
+ font-family:Tahoma, Geneva, sans-serif;
+ font-size:12px;
+ color:#404040;
+}
+
+.job_search_b_content,.job_company
+{
+ font:bold 14px Tahoma, Geneva, sans-serif;
+}
+.job_search_content2
+{
+ font:normal 12px Tahoma, Geneva;
+}
+.job_search_content1
+{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ color: #333333;
+}
+.jobSearchRow1{
+ background-color:#fafafa; padding:15px 10px; border-top:1px solid #d9d9d9;
+}
+.jobSearchRow1:hover {background-color:#EFF2F7;}
+.jobSearchRow2{
+ background-color:#efefef; padding:15px 10px; border-top:1px solid #d9d9d9;
+}
+.jobSearchRow2:hover {background-color:#EFF2F7;}
+.jobSearchRowFea{
+ background-color:#FFFFEC; padding:15px 10px; border-top:1px solid #d9d9d9;
+}
+.jobSearchRowFea:hover {background-color:#EFF2F7;}
+.jobDetailRow{
+ background-color:#fafafa;
+ padding:15px 10px;
+ border-top:1px solid #d9d9d9;
+ border-bottom:1px solid #d9d9d9;
+ }
+#pagination-flickr li{
+border:0; margin:0; padding:0;
+font-size:11px;
+list-style:none;
+display: inline;
+}
+#pagination-flickr a{
+border:solid 1px #DDDDDD;
+margin-right:2px;
+}
+#pagination-flickr .previous-off,
+#pagination-flickr .next-off {
+color:#666666;
+display:block;
+float:left;
+font-weight:bold;
+padding:3px 4px;
+}
+#pagination-flickr .next a,
+#pagination-flickr .previous a {
+font-weight:bold;
+border:solid 1px #FFFFFF;
+}
+#pagination-flickr .active{
+color:#ff0084;
+font-weight:bold;
+display:block;
+float:left;
+padding:4px 6px;
+}
+#pagination-flickr a:link,
+#pagination-flickr a:visited {
+color:#666666;
+display:block;
+float:left;
+vertical-align:top;
+padding:3px 6px;
+text-decoration:none;
+}
+#pagination-flickr a:hover{
+border:solid 1px #666666;
+}
+.element_hide
+{
+ display:none;
+}
+.job_apply
+{
+background-color:#83aa15;
+padding:10px 25px;
+display:block;
+font:normal 24px Tahoma, Geneva, sans-serif; 
+color:#fff; 
+text-decoration:none;
+border-radius:4px; 
+margin:20px auto 0 auto;
+text-align:center; 
+width:150px;
+}
+div.loader
+{
+ background:url('img/loader.gif') no-repeat center ;
+ height:100px;
+ padding:10px;
+}
+#backSearch
+{
+display:block;
+background:url('img/back.jpg') no-repeat left;
+height:31px;
+float:left;
+padding-left:40px;
+line-height:30px;
+font-weight:bold;
+cursor :pointer;
+}
+#backSearch:hover
+{
+ color:#000088;
+}

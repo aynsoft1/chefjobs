@@ -1,0 +1,113 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+<script language="javascript">
+< !--
+    function DeleteSelected(action) {
+      var check;
+      check = false;
+      for (var i = 0; i < document.page.elements.length; i++) {
+        var e = page.elements[i];
+        if ((e.checked) == true) {
+          check = true;
+          break;
+        }
+      }
+      if (check) {
+        document.page.action1.value = action;
+        document.page.submit();
+      }
+      else {
+        alert('Please check atleast one checkbox and then click on delete.');
+      }
+    }
+//-->
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+
+
+
+          <div class="card-header">
+            <div class="d-flex align-items-enter mb-3">
+            <form class="" name="disply" method="get">
+              <div class="form-inline"><span class="mr-2">{INFO_TEXT_STATUS}</span> {INFO_TEXT_STATUS1}</div>
+            </form>
+            <div class="ms-auto">{new_button}</div>
+          </div>
+            <div class="small">{check_link}</div>
+          </div>
+
+
+
+          <div class="card-body table-responsive">
+            
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <thead>
+                <tr class="admin-table-head-bar">
+                  <th> </th>
+                  <th>{TABLE_HEADING_TITLE}</th>
+                  <th>{TABLE_HEADING_EMAIL}</th>
+                  <th>{TABLE_HEADING_COMPANY}</th>
+                  <th>{TABLE_HEADING_STATUS}</th>
+                  <th>{TABLE_HEADING_NO_OF_JOBFAIR_JOBS}</th>
+                  <th class="action-text">{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <form name="page" method="post">{hidden_fields}
+                <!-- BEGIN recruiters -->
+                <tr{recruiters.row_selected}>
+                  <td>{recruiters.check_box}</td>
+                  <td><h4>{recruiters.jobfairtitle}</h4></td>
+                  <td>{recruiters.email}</td>
+                  <td>{recruiters.company}</td>
+                  <td>{recruiters.status}</td>
+                  <td>{recruiters.no_fairjobs}</td>
+                  <td>{recruiters.action}</td>
+                  </tr>
+                  <!-- END recruiters -->
+            </table>
+            </form>
+            <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+              <tr>
+                <td align="left">{count_rows}</td>
+                <td align="right">{no_of_pages}</td>
+              </tr>
+            </table>
+            <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body p-0">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

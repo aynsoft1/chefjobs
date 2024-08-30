@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<channel>
+<job>
+<job_title>programmer</job_title>
+<job_reference>8560_29753</job_reference>
+<job_state>ut</job_state>
+<job_location>salt lake city,ut, united states</job_location>
+<job_salary>$80,000</job_salary>
+<job_city>salt lake city</job_city>
+<job_country>united states</job_country>
+<job_zip>84104</job_zip>
+<job_type>contract</job_type>
+<job_industry>it/software</job_industry>
+<!-- (separate by "," and matching categories) -->
+<job_short_description>job short description</job_short_description>
+<job_description><![CDATA[job  description]]></job_description>
+<job_duration>30</job_duration>
+<!-- number of days job active -->
+<job_apply_url></job_apply_url>
+<!-- online job apply url -->
+</job>
+</channel>

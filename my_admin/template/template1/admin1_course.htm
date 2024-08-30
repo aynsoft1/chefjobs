@@ -1,0 +1,158 @@
+{ADMIN_HEADER_HTML}
+<script language="javascript" type="text/javascript" src="../tinymce2/tinymce.js"></script>
+<script language="javascript" type="text/javascript">
+  tinyMCE.init({
+    theme: "modern",
+    plugins: [
+      'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      'searchreplace wordcount visualblocks visualchars code fullscreen',
+      'insertdatetime media nonbreaking save table contextmenu directionality',
+      'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+    ],
+    toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+    menubar: false,
+    image_advtab: true,
+
+    file_picker_types: 'image',
+    file_picker_callback: function (cb, value, meta) {
+      var input = document.createElement('input');
+      input.setAttribute('type', 'file');
+      input.setAttribute('accept', 'image/*');
+
+      /*
+        Note: In modern browsers input[type="file"] is functional without
+        even adding it to the DOM, but that might not be the case in some older
+        or quirky browsers like IE, so you might want to add it to the DOM
+        just in case, and visually hide it. And do not forget do remove it
+        once you do not need it anymore.
+      */
+
+      input.onchange = function () {
+        var file = this.files[0];
+
+        var reader = new FileReader();
+        reader.onload = function () {
+          /*
+            Note: Now we need to register the blob in TinyMCEs image blob
+            registry. In the next release this part hopefully won't be
+            necessary, as we are looking to handle it internally.
+          */
+          var id = 'blobid' + (new Date()).getTime();
+          var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+          var base64 = reader.result.split(',')[1];
+          var blobInfo = blobCache.create(id, file, base64);
+          blobCache.add(blobInfo);
+
+          /* call the callback and populate the Title field with the file name */
+          cb(blobInfo.blobUri(), { title: file.name });
+        };
+        reader.readAsDataURL(file);
+      };
+
+      input.click();
+    },
+    relative_urls: false,
+    remove_script_host: false,
+    mode: "exact",
+    elements: "description1",
+    theme_advanced_toolbar_location: "top",
+    theme_advanced_toolbar_align: "center"
+
+  });
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">{view_list_of_courses}</div>
+          <div class="card-body">
+            {form}
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TITLE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TITLE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SEO_NAME}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SEO_NAME1}{INFO_TEXT_SEO_NAME_DES}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_CATEGORY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_CATEGORY1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_AUTHOR}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_AUTHOR1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW_DATE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHOW_DATE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_COURSE_PHOTO}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_COURSE_PHOTO1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHOW1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHORT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHORT_DESCRIPTION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_DESCRIPTION1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

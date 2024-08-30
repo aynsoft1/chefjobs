@@ -1,0 +1,118 @@
+{HEADER_HTML}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000););
+</script>
+
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-7 mx-auto">
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom p-4 border-bottom">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            {company_logo}
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h4 class="mt-2">{job_title}</h4>
+                            <span class="text-muted">{company}</span>
+                            <span class="mx-1">
+                                &#8226;
+                            </span>
+                            <span class="text-muted">{job_location}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body card-body-custom">
+                    <!-- <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label"> </div>
+                            <div class="col-md-9">
+                                <h6 class="badge badge-secondary">{HEADING_TITLE}ss</h6>
+                            </div>
+                        </div>
+                    </div> -->
+                    {form}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label">
+                                {INFO_TEXT_NAME}
+                            </div>
+                            <div class="col-md-9">
+                                {INFO_TEXT_NAME1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label">
+                                {INFO_TEXT_EMAIL}
+                            </div>
+                            <div class="col-md-9">
+                                {INFO_TEXT_EMAIL1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label">
+                                {INFO_TEXT_MESSAGE}
+                            </div>
+                            <div class="col-md-9">
+                                {INFO_TEXT_MESSAGE1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label">
+                                {INFO_TEXT_UPLOAD_RESUME}
+                            </div>
+                            <div class="col-md-9 small">
+                                {INFO_TEXT_UPLOAD_RESUME1}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label">
+                                
+                            </div>
+                            <div class="col-md-9 small">
+                                {google_captcha}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-form-label"> </div>
+                            <div class="col-md-9"> {button} </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

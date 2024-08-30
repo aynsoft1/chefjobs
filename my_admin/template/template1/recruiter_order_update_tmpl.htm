@@ -1,0 +1,63 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="mail-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">{new_button}</div>
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <thead>
+                <tr class="admin-table-head-bar">
+                  <th class="dataTableHeadingContent">{TABLE_HEADING_ORDER_TEMPLATE_NAME}</th>
+                  <th class="dataTableHeadingContent" align="right">{TABLE_HEADING_ACTION}&nbsp;</th>
+                </tr>
+              </thead>
+              <!-- BEGIN recruiter_order_template -->
+              <tr{recruiter_order_template.row_selected}>
+                <td valign="top" class="dataTableContent">{recruiter_order_template.name}</td>
+                <td valign="top" class="dataTableContent" align="right">{recruiter_order_template.action}</td>
+                </tr>
+                <!-- END recruiter_order_template -->
+            </table>
+            <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+              <tr>
+                <td align="left">{count_rows}</td>
+                <td align="right">{no_of_pages}</td>
+              </tr>
+            </table>
+            <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

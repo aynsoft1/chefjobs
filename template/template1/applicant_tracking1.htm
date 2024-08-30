@@ -1,0 +1,108 @@
+{HEADER_HTML}
+
+{HEADER_MIDDLE_HTML}
+<script>
+function excelpage_submit(name)
+{
+ if(name=='excel')
+  document.page.excel.value=name;
+  document.page.submit();
+  document.page.excel.value='';
+}
+function show_result(val)
+{
+  document.page.show_result.value=val;
+  document.page.submit();
+}
+</script>
+<style>
+
+</style>
+<div class="container">
+    <div class="row">
+	
+			<!-- Left Starts -->
+			<!-- Left Ends -->    
+	<div class="col-md-12">
+            <div class="card card-custom">
+  				<div class="card-header card-header-secondary bg-white border-bottom pb-3 radius-bottom-0">
+					 
+
+						<div class="d-flex m-dblock">
+						<div>
+							<h1 class="mb-2">{HEADING_TITLE}</h1>
+							<div><span class="text-muted small">{TEXT_MATCHED} <span class="text-danger font-weight-bold">{no_of_applicants}</span> {TEXT_APPLICATIONS}</span></div>
+						</div>
+						<div class="ms-auto text-end">
+							<div class="mb-2"><span class="me-5">{TEXT_DASHBOARD}</span><span>{show_result}</span></div>
+							<div class="d-flex">
+								<div class="me-2">{INFO_TEXT_TRACKING_ROUND1}</div>
+								<div>{INFO_TEXT_APPLICATION_STATUS1}</div>
+								</div>
+						</div>
+
+						</div>
+
+<!--					<span class="">{create_excel_button}</span>
+					  {appl_form}<input type="hidden" name="excel" >
+	-->				  
+
+				</div>		
+  				<div class="card-header card-header-secondary bg-white border-bottom d-flex align-items-center m-none pb-3">
+					{ALL_ROUND_APP}
+					{SCREENING_ROUND}
+					{TELEPHONE_ROUND}
+					{INTERVIEW_ROUND}
+					{SKILL_CHECK_ROUND}
+					{BACKGROUND_CHECK_ROUND}
+					{REF_CHECK_ROUND}
+				</div>		
+						
+				<div class="card-body p-0">
+                <div class="table-responsive-sm">
+				<table class="table">
+										<thead class="m-none">
+										<tr class="jobs-table-headbar">
+											<!-- <th class="m-none" width="10%">{TABLE_HEADING_APPL_PHOTO}</th> -->
+											<th width="30%">{TABLE_HEADING_APPL_NAME}</th>
+											<th width="" class="">{TABLE_HEADING_APPL_STATUS}</th>
+											<th width="14%" class="m-none">{TABLE_HEADING_DATE_OF_APPLICATION}</th>
+											<th width="25%">{TABLE_HEADING_APPL_ACTION}</th>
+										</tr>
+										</thead>
+									<!-- BEGIN applicant_track -->
+									 <tr class="status" >
+										 <!-- <td valign="top" class="dataTableContent break mpr-0"></td> -->
+											<td valign="top" class="dataTableContent link-color break">
+												<div class="d-flex align-items-center">
+													<div class="me-3">{applicant_track.photo}</div>
+													<div>
+														<div>{applicant_track.name}</div>
+											<div>{applicant_track.job_title}</div>
+											<div class="m-none">{applicant_track.email_address}</div>
+													</div>
+												</div>
+												
+											</td>
+										 <td valign="top" class="dataTableContent break">{applicant_track.applicant_status}</td>
+										 <td valign="top" class="dataTableContent m-none">{applicant_track.inserted}</td>
+										 <td valign="top" class="dataTableContent break">{applicant_track.action}</td>
+										</tr>
+									 <!-- END applicant_track -->
+				</table>
+                                       <table>  
+                                       <tr>
+                                       <td class="label">{check_link1}</td>
+                                       <td valign="top" align="right" class="label">{list_page}&nbsp;{page}&nbsp;</td>
+                                       </tr>
+                                       </table>{hidden_fields}</form>  
+				</div>
+				</div>
+		</div>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="jscript/jquery-3.5.1.min.js"></script>
+{INFO_TEXT_JSCRIPT_FILE}
+{FOOTER_HTML}

@@ -1,0 +1,173 @@
+{ADMIN_HEADER_HTML}
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="description2"],textarea[name="fr_description2"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>
+            <span style="margin-right: 5px;font-size: 26px;float: left;">
+                <ion-icon name="mail-outline"></ion-icon>
+            </span>{HEADING_TITLE}
+        </h3>
+        <div class="row">
+            <div class="col-md-9">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-body table-responsive">
+                        {form}
+                        {method}
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                                for="inputText3">{INFO_TEXT_NAME}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INFO_TEXT_NAME1}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                                for="inputText3">{INFO_TEXT_TYPE}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INFO_TEXT_TYPE1}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right"
+                                for="inputText3">{INFO_TEXT_DESCRIPTION}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INFO_TEXT_DESCRIPTION1}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3"></label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {buttons}
+                            </div>
+                        </div>
+
+                        </form>
+                        <!-- Middle Ends -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <p>
+                            Use variables between curly braces. For eg: {CURLY_BRACES}
+                        </p>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>VARIABLE</th>
+                                    <th>MESSAGE</th>
+                                    <th>USE CASE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CANDIDATE_NAME</td>
+                                    <td>use this variable for dynamic candidate name</td>
+                                    <td>In invite mail</td>
+                                </tr>
+                                <tr>
+                                    <td>SITE_TITLE</td>
+                                    <td>use this variable for your site name</td>
+                                    <td>In invite mail</td>
+                                </tr>
+                                <tr>
+                                    <td>LINK_ASSESSMENT</td>
+                                    <td>use this variable for sending the assessment link</td>
+                                    <td>In invite mail</td>
+                                </tr>
+
+                                <tr>
+                                    <td>JOB_NAME</td>
+                                    <td>use this variable for dynamic job name for an assessment</td>
+                                    <td>In Invite mail</td>
+                                </tr>
+
+                                <tr>
+                                    <td>CANDIDATE_NAME</td>
+                                    <td>use this variable for dynamic candidate name</td>
+                                    <td>In complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>CANDIDATE_EMAIL</td>
+                                    <td>use this variable for dynamic candidate email</td>
+                                    <td>In complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>RECRUITER_NAME</td>
+                                    <td>use this variable for dynamic recruiter name</td>
+                                    <td>In complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>RECRUITER_EMAIL</td>
+                                    <td>use this variable for dynamic recruiter email</td>
+                                    <td>In complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>TEST_NAME</td>
+                                    <td>use this variable for dynamic test name</td>
+                                    <td>In complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>ASSESSMENT_NAME</td>
+                                    <td>use this variable for dynamic assessment name</td>
+                                    <td>In Invite/Complete mail</td>
+                                </tr>
+                                <tr>
+                                    <td>START_DATE</td>
+                                    <td>use this variable for print assessment creation date</td>
+                                    <td>In Invite mail</td>
+                                </tr>
+                                <tr>
+                                    <td>END_DATE</td>
+                                    <td>use this variable for print assessment end date</td>
+                                    <td>In Invite mail</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

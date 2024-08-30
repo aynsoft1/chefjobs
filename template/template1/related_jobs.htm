@@ -1,0 +1,70 @@
+{INFO_TEXT_SEARCH_JOB_TITLE}{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src="{HOST_NAME}jscript/pagination.js"></script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <!-- Below Alert message File path is class/message_stack.php -->
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="col-md-12">
+                        <h1 class="main-heading">{HEADING_TITLE}</h1>
+                    </div>
+                </div>
+                <div class="card-body card-body-custom py-0">
+                    <!-- BEGIN related_jobs -->
+                    <div class="border-topp2 py-3 d-flex">
+                        <div class="flex-shrink-1 ms-3">
+                            <div class="job-result-img me-2">{related_jobs.logo}</div>
+                        </div>
+                        <div class="flex-grow-1 ms-1">
+                            <div class="d-flex align-items-top">
+                                <div class="d-grow-1">
+                                <h4 class="m-0">{related_jobs.job_title}</h4>
+                                <div class="cname">
+                                    {related_jobs.job_company}</div>
+                                <div class="location">
+                                    {related_jobs.job_location}</div>
+                                <div class="desc m-none">{related_jobs.summary}</div>
+                                <div class="posted mt-2">{related_jobs.apply_before}</div>
+                                <div class="hide-on-desktop mmt-15">{related_jobs.apply_job}</div>
+
+                                <!-- <div class="text-muted small">
+                                    <span class="me-3"><i class="bi bi-clock me-1"></i> {related_jobs.job_type}</span>
+                                    <span><i class="bi bi-wallet2 me-1"></i> {related_jobs.salary}</span>
+                                </div> -->
+                                <!-- <div class="text-muted small"><i class="bi bi-briefcase me-1"></i> {related_jobs.job_experience}</div>
+                                <div class="text-muted small"><i class="bi bi-calendar2-week me-1"></i> Apply Before :
+                                    {related_jobs.apply_before}</div>
+                                <div class="text-muted small"><i class="bi bi-send me-1"></i> {related_jobs.email_job}</div>    
+                                <div class="text-muted small my-1" style="width:90%;">{related_jobs.summary}</div>
+                                <div class="small skill-tag">{related_jobs.job_skill}</div> -->
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- END related_jobs -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

@@ -1,0 +1,128 @@
+{ADMIN_HEADER_HTML}
+<script language="JavaScript">
+<!--
+function view_data(data,data1)
+{
+ document.page.view.value=data;
+ document.page.mail_status.value=data1;
+ document.page.submit();
+}
+function select_action2()
+{
+	var check;
+	check=false;
+	for (var i=0;i < document.page.elements.length;i++)
+	{
+		var e = document.page.elements[i];
+		if (e.type == "checkbox")
+		{
+			if((e.checked) == true)
+			{
+   	check=true;
+				break;
+			}
+		}
+	}
+	if(check)
+	{
+  if(document.page.select_action.options[document.page.select_action.selectedIndex].value!="") 
+  {
+   document.page.action1.value=document.page.select_action.options[document.page.select_action.selectedIndex].value;
+   {mail_status}
+   {lower_value}
+   {higher_value}
+   document.page.submit();
+  }
+  else
+  {
+   return false;
+  }
+	}
+	else
+	{
+	 document.page.select_action.value=""; 
+  alert('Please check atleast one checkbox.');
+	}
+}
+//-->
+</script>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="at-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">
+   
+          </div>
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            {form}
+            {view_link}
+            {view_link1}
+			
+            <table class="table table-hover">
+              <thead>
+              <tr class="admin-table-head-bar">
+                <th class="dataTableHeadingContent" width="2%"></th>
+                <th class="dataTableHeadingContent" width="20%">{TABLE_HEADING_USER_NAME}</th>
+                <th class="dataTableHeadingContent" width="20%">{TABLE_HEADING_MAIL_ADDRESS}</th>
+                <th class="dataTableHeadingContent" width="38%">{TABLE_HEADING_MAIL_SUBJECT}</th>
+                <th class="dataTableHeadingContent" width="20%">{TABLE_HEADING_MAIL_INSERTED}</th>
+              </tr>
+            </thead>
+              <!-- BEGIN user_mail -->
+              <tr{user_mail.row_selected}>
+                <td valign="top" class="dataTableContent">
+                  <nobr>{user_mail.check_box}</nobr>
+                </td>
+                <td valign="top" class="dataTableContent">{user_mail.user_name}</td>
+                <td valign="top" class="dataTableContent">{user_mail.email_address}</td>
+                <td valign="top" class="dataTableContent">{user_mail.subject}</td>
+                <td valign="top" class="dataTableContent">{user_mail.inserted}</td>
+                </tr>
+                <!-- END user_mail -->
+            </table>
+
+            <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+              <tr>
+                <td align="left">{check_link} {check_link1}</td>
+                <td align="right">{quick_action}</td>
+              </tr>
+              <tr>{hidden_fields}
+                <td>{total}</td>
+                <td align="right">{list_page}&nbsp;{page}&nbsp;</td>
+              </tr>
+              
+            </table>
+          </form>
+            <!-- Middle Ends	-->
+          </div>
+        </div>
+      </div>
+      <!-- Right Starts -->
+      <div class="col-md-3 pl-1">{ADMIN_RIGHT_HTML}</div>
+      <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+
+
+{ADMIN_FOOTER_HTML}

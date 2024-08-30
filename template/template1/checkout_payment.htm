@@ -1,0 +1,141 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<script language="javascript"><!--
+var selected;
+
+function selectRowEffect(object, buttonSelect) {
+  if (!selected) {
+    if (document.getElementById) {
+      selected = document.getElementById('defaultSelected');
+    } else {
+      selected = document.all['defaultSelected'];
+    }
+  }
+
+  if (selected) selected.className = 'moduleRow';
+  object.className = 'moduleRowSelected';
+  selected = object;
+
+// one button is not an array
+  if (document.checkout_payment.payment[0]) {
+    document.checkout_payment.payment[buttonSelect].checked=true;
+  } else {
+    document.checkout_payment.payment.checked=true;
+  }
+}
+
+function rowOverEffect(object) {
+  if (object.className == 'moduleRow') object.className = 'moduleRowOver';
+}
+
+function rowOutEffect(object) {
+  if (object.className == 'moduleRowOver') object.className = 'moduleRow';
+}
+//--></script>
+{javascript_validation}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+{javascript_validation}
+
+<div class="container">
+	<div class="row ">
+        <div class="col-md-10 mx-auto">
+            <h1 class="main-heading">{HEADING_TITLE}</h1>
+			{gift_error}
+				{form}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{error_message}
+            <div class="card card-custom mb-4">
+                <div class="card-body card-body-custom p-4">
+			<div class="row">
+			
+				<div class="col-md-6 mb-5">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{INFO_TEXT_BILLING_INFORMATION}</h4>
+				  <div class="acard-body">
+					{TITLE_BILLING_ADDRESS1}
+				  </div>
+				</div>
+				</div>
+
+				<div class="col-md-6 mb-5">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{INFO_TEXT_PRODUCT}</h4>
+				  <div class="acard-body">
+					<div class="fw-bold">{product_name}</div>
+					<div>{product_fee}</div>
+					<div>{order_total_string}</div>
+				  </div>
+				</div>
+				</div>
+
+				<div class="col-md-6 mb-5">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{TABLE_HEADING_PAYMENT_METHOD}</h4>
+				  <div class="acard-body">
+					<div>{INFO_TEXT_AMOUNT_DUE}</div>
+					<div class="col-9">{TABLE_HEADING_PAYMENT_METHOD1}</div>
+					 <table width="80%"  border="0" align="left" cellpadding="0" cellspacing="0">
+																					<!-- BEGIN payment -->
+																					<tr{payment.row_selected}>
+																						<td valign="top" class="dataTableContent" align="right" width="10%">{payment.radio_1}</td>
+																						
+																						<td valign="top" class="jobseeker_1">{payment.module_name}</td>
+																					</tr>
+																					<tr><td colspan="3">&nbsp;</td></tr>
+																					<tr>
+																						<td valign="top" colspan="3">
+																							<table border="0" cellspacing="3" cellpadding="0">
+																							{payment.payment_field_name_value}
+																							</table>
+																						</td>
+																					</tr>
+																					<!-- END payment -->
+																				</table>
+				  </div>
+				</div>
+				</div>
+				
+				<div class="col-md-6 mb-5">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{TABLE_HEADING_COMMENTS}</h4>
+				  <div class="acard-body">
+					<div>{TABLE_HEADING_COMMENTS1}</div>
+				  </div>
+				</div>
+				</div>				
+				
+				<div class="col-md-12 mb-3 text-center"><div class="alert-primary p-2">{TITLE_CONTINUE_CHECKOUT_PROCEDURE}</div></div>
+				<div class="col-md-12 text-center">{button}{hidden_fields}</div>
+				
+				
+			</div>	
+				
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>	
+
+
+{FOOTER_HTML}

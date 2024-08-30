@@ -1,0 +1,116 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<script>
+function print_page()
+{
+ window.open("","myNewWin","width=600,height=500,toolbar=0,resizable=1,scrollbars=1");
+ var a = window.setTimeout("document.checkout_confirmation1.submit();",500);
+}
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+{javascript_validation}
+
+<div class="container">
+	<div class="row ">
+        <div class="col-md-10 mx-auto d-flex align-items-center mb-3">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+				<div class="d-flex ms-auto">
+					{form1}
+					{back_button}
+					{button_print}
+					</form>
+				</div>
+			
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom mb-4">
+                <div class="card-body card-body-custom p-4">
+					{gift_error}
+					{form}
+			<div class="row">
+			
+				<div class="col-md-6 mb-4">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{HEADING_BILLING_INFORMATION}</h4>
+				  <div class="acard-body">
+					<div class="card-text">{HEADING_BILLING_ADDRESS}</div>
+					<div class="card-text">{HEADING_BILLING_ADDRESS1}</div>
+				  </div>
+				</div>
+				</div>
+				
+				<div class="col-md-6 mb-4">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{HEADING_PRODUCTS}</h4>
+				  <div class="acard-body">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="5">
+																		<tr>
+																			<td valign="top" class="style27" >{product_name} : </td>
+																			<td class="style27" >{product_fee}</td>
+																		</tr>
+																		{order_total_string}
+																	</table>
+				  </div>
+				</div>
+				</div>
+
+				<div class="col-md-6 mb-4">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{HEADING_PAYMENT_METHOD}</h4>
+				  <div class="acard-body">
+					<div class="card-text">{HEADING_PAYMENT_METHOD1}</div>
+					<div class="card-text">{HEADING_PAYMENT_INFORMATION}</div>
+					<div class="card-text">{HEADING_PAYMENT_INFORMATION1}</div>
+					<div class="card-text">{HEADING_PAYMENT_INFORMATION2}</div>
+				  </div>
+				</div>
+				</div>				
+				{gift_error}
+				<div class="col-md-6 mb-4">
+				<div class="acard">
+				<h4 class="acard-header fw-bold text-dark">{TABLE_HEADING_COMMENTS}</h4>
+				  <div class="acard-body">
+					<div class="card-text">{HEADING_ORDER_COMMENTS1}</div>
+				  </div>
+				</div>
+				</div>					 
+																	
+																	
+			</div>	
+			</div>
+			
+			<div class="card-footer align-items-center mb-3">
+				<div class="text-center">
+					{form}
+					{submit_button}
+					{process_buttons}
+				</form>
+			</div>
+			</div>
+			
+		</div>
+		</div>
+	</div>
+</div>
+			
+{FOOTER_HTML}

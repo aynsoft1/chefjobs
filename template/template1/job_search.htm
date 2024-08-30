@@ -1,0 +1,151 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+    function addPlace() {
+        const loc = document.querySelector("input[name='location']");
+        loc.placeholder = "State or City..";
+    }
+    window.addEventListener('load', addPlace);
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone"
+
+            );
+            // $messageStackSuccess
+        });
+    }, 50000);
+</script>
+
+<div class="container">
+    <div class="row">
+			<!-- Left Starts -->
+					{LEFT_HTML}
+			<!-- Left Ends -->    
+        <div class="col-md-7 mx-auto">
+            {update_message}
+            <div class="card card-custom">
+				<div class="card-header">
+				<h1 class="main-heading mb-0">{HEADING_TITLE}</h1>
+				</div>
+                <div class="card-body card-body-custom">
+
+                    {form}{COUNTRY_STATE_SCRIPT}
+                    <div class="form-groupd row align-items-center">
+                        <label for="" class="col-sm-3 col-form-label">
+                            {INFO_TEXT_KEYWORD}
+                        </label>
+                        <div class="col-sm-9">
+                            {INFO_TEXT_KEYWORD1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row align-items-center">
+                        <label for="" class="col-sm-3 col-form-label">
+                        </label>
+                        <div class="col-sm-9">
+                            <div>
+                                {INFO_TEXT_KEYWORD_CRITERIA}
+                            </div>
+                            <small class="form-check-inline m-none">
+                                {INFO_TEXT_KEYWORD3}
+                            </small>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group row align-items-center">
+                        <div class="col-md-3 col-form-label">
+                            {INFO_TEXT_SEARCH_COUNTRY_STATE} :
+                        </div>
+                        <div class="col-md-5">
+                            {INFO_TEXT_COUNTRY1}
+                        </div>
+                        <div class="col-md-4">
+                            {INFO_TEXT_STATE1}
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+					{INFO_CODE_IF_COUNTRY_US}
+
+                    <div class="form-groupd row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                            {INFO_TEXT_JOB_CATEGORY}
+                        </label>
+                        <div class="col-md-9">
+                            {INFO_TEXT_JOB_CATEGORY1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                        </label>
+                        <div class="col-md-9">
+                            <small>
+                                {INFO_TEXT_JOB_CATEGORY_TEXT}
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- <hr> -->
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                            {INFO_TEXT_JOB_TYPE}
+                        </label>
+                        <div class="col-md-9">
+                            {INFO_TEXT_JOB_TYPE1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                            {INFO_TEXT_EXPERIENCE} :
+                        </label>
+                        <div class="col-md-9">
+                            {INFO_TEXT_EXPERIENCE1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                            {INFO_TEXT_JOB_SALARY}
+                        </label>
+                        <div class="col-md-9">
+                            {INFO_TEXT_JOB_SALARY1}
+                        </div>
+                    </div>
+
+                    <!-- <hr> -->
+                    <div class="form-group row align-items-center">
+                        <label class="col-md-3 col-form-label">
+                            {INFO_TEXT_JOB_POSTED}
+                        </label>
+                        <div class="col-md-9">
+                            {INFO_TEXT_JOB_POSTED1}
+                        </div>
+                    </div>
+
+                    <div class="form-group row align-items-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9">
+                            {button}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

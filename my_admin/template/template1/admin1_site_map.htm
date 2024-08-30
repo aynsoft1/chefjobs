@@ -1,0 +1,136 @@
+{ADMIN_HEADER_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+< !--
+    function CheckForm() {
+      var check;
+      check = false;
+      for (var i = 0; i < document.site_map_ping.elements.length; i++) {
+        var e = site_map_ping.elements[i];
+        if ((e.checked) == true) {
+          check = true;
+          if (e.value == 'yahoo' && site_map_ping.elements[i + 1].value == '') {
+            alert("Please enter Yahoo Application ID.");
+            return false;
+          }
+        }
+      }
+      if (check) {
+        return true;
+      }
+      else {
+        alert('Please check atleast one checkbox.');
+        return false;
+      }
+    }
+//-->
+</SCRIPT>
+
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+     {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header d-flex">
+           <div class="ms-auto">{UPDATE_SITEMAP_BUTTON} {new_button}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_SITE_MAP_TITLE}</th>
+                  <th>{TABLE_HEADING_PRIORITY}</th>
+                  <th>{TABLE_HEADING_SITE_MAP_STATUS}</th>
+                  <th>{TABLE_HEADING_ACTION}&nbsp;</th>
+                </tr>
+              </thead>
+              <!-- BEGIN site_map -->
+              <tr{site_map.row_selected}>
+                <td>{site_map.name}</td>
+                <td>{site_map.priority}</td>
+                <td>{site_map.status}</td>
+                <td>{site_map.action}</td>
+                </tr>
+                <!-- END site_map -->
+            </table>
+            <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+              <tr>
+                <td align="left">{count_rows}</td>
+                <td align="right">{no_of_pages}</td>
+              </tr>
+            </table>
+<br></br>
+          </div>
+
+ <div class="col-md-9">
+		  {generate_form}
+            <h3 class="font-weight-bold" align="center">Generate Site Map : (for submission)</h3>
+            Your sitemap file name
+            {INFO_TEXT_FILE_NAME}{INFO_TEXT_FILE_TYPE}
+            <input type="submit" value="submit">
+            <font color="#ff0000">file name accept only the characters "a-z" , "0-9" , "_" and "-"
+            </font>
+            </form>
+            <h4 class="font-weight-bold">Status :</h4>
+            <!-- BEGIN site_map_status -->
+            {site_map_status.file_status}
+            <!-- END site_map_status -->
+
+            {site_map_ping_form}
+            <h4 class="font-weight-bold">Sitemap submission</h4>
+
+            <table>
+              <tr>
+                <td>{INFO_CHECKBOX_PING_GOOGLE} <label for='ping_google'>Google</label></td>
+                <td>Notify Google about updates of your site map.<br>
+                  No registration required, but you can join the <a href="http://www.google.com/webmasters/tools/"
+                    target="_blank" style="color:blue">Google
+                    Webmaster Tools</a> to check crawling statistics</td>
+              </tr>
+              <tr>
+                <td>{INFO_CHECKBOX_PING_BING} <label for='ping_bing'>Bing</label></td>
+                <td>Notify Bing.com about updates of your site
+                  map.<br> No registration required.</td>
+              </tr>
+            </table>
+          </div>
+ <div class="col-md-12" align="center">
+            <input type="submit" value="Resubmit the Sitemap" class="btn btn-primary">
+			</div>
+            </form>
+
+
+
+
+        </div>
+      </div>
+      <!-- Right Starts -->
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+        {ADMIN_RIGHT_HTML}
+      </div>
+      </div>
+    </div>
+      <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

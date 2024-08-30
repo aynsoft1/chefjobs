@@ -1,0 +1,103 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+<SCRIPT LANGUAGE="JavaScript">
+  function show_custom_search() {
+    const addClassInCaptcha = document.querySelector("[name='TR_security_code']").classList.add('form-control');
+    // const addClassSDate = document.querySelector("[name='s_date']").classList.add('form-control');
+    // const addClassSmonth = document.querySelector("[name='s_month']").classList.add('form-control');
+    // const addClassSyear = document.querySelector("[name='s_year']").classList.add('form-control');
+    // const addClassEdate = document.querySelector("[name='e_date']").classList.add('form-control');
+    // const addClassEmonth = document.querySelector("[name='e_month']").classList.add('form-control');
+    // const addClassEyear = document.querySelector("[name='e_year']").classList.add('form-control');
+    var object1 = document.getElementById('search_time');
+    var object2 = document.querySelector('#custom_search_block');
+    if (object1.value == 'custom')
+      object2.style.display = 'block';
+    else
+      object2.style.display = 'none';
+  }
+  show_custom_search();
+</SCRIPT>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card card-custom">
+        <div class="card-header">
+          <div class="d-flex align-items-center mb-3">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="d-flex ms-auto">
+              {INFO_TEXT_FORUM_HEADER_LINK}
+            </div>
+        </div>
+        </div>
+        <div class="card-body card-body-custom">
+          {update_message}
+          <table width="100%" border="0" cellpadding="4" cellspacing="0">
+            <tr> {form}
+              <!-- <td class="label" align="right" style="vertical-align: middle;">
+                {INFO_TEXT_KEAYWORD}:
+              </td> -->
+              <td class="label">{INFO_TEXT_KEAYWORD1}
+                <small>
+                  <!-- {INFO_TEXT_KEYWORD_CRITERIA} -->
+                  {INFO_TEXT_KEYWORD_CRITERIA1}
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <!-- <td class="label" align="right">
+                {INFO_TEXT_SEARCH_WITHIN}</td> -->
+              <td>{INFO_TEXT_SEARCH_WITHIN1}</td>
+            </tr>
+            <tr>
+              <!-- <td class="label" align="right">
+                {INFO_TEXT_SEARCH_CATEGORY}</td> -->
+              <td>{INFO_TEXT_SEARCH_CATEGORY1}</td>
+            </tr>
+            <tr>
+              <!-- <td class="label" align="right">{INFO_TEXT_SEARCH_FORUM}
+              </td> -->
+              <td>{INFO_TEXT_SEARCH_FORUM1}</td>
+            </tr>
+            <tr>
+              <!-- <td class="label" align="right" style="vertical-align: text-top;">{INFO_TEXT_FORUM_POSTED}
+              </td> -->
+              <td class="label">{INFO_TEXT_FORUM_POSTED1}
+                <div class="form-group row my-2">
+                  <div class="col-md-12">
+                    <label for="inputZip">Between</label>
+                    <div class="row">
+                      {INFO_TEXT_SEARCH_FROM_DATE}
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="inputZip">And</label>
+                    <div class="row">
+                      {INFO_TEXT_SEARCH_TO_DATE}
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>{INFO_TEXT_CAPTCHA_HIDE}
+            <tr>
+              <td class="label" valign="top" align="right">
+                {INFO_TEXT_SECURITY_CODE}</td>
+              <td class="label">{INFO_TEXT_SECURITY_CODE1}<br><span
+                  style="color:#ff0000;font-size:10px;">{INFO_TEXT_TYPE_CODE}</span>
+              </td>
+            </tr>{INFO_TEXT_CAPTCHA_HIDE1}
+            <tr>
+              <td align="left">{button}</td>
+            </tr>
+            </form>
+          </table>
+          <SCRIPT LANGUAGE="JavaScript">
+            show_custom_search();
+          </SCRIPT>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{FOOTER_HTML}

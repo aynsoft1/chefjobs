@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://careerjobs.de/rss/">
+<channel>
+<title>Education &amp; Social Work RSS - CareerJobs</title>
+<description> jobs </description>
+<link>https://careerjobs.de/</link><copyright>Copyright 2024 careerjobs.de All Rights Reserved</copyright>
+<job:link  href="http://careerjobs.de/rss/8.xml" rel="self" type="application/rss+xml"/>
+</channel>
+</rss>

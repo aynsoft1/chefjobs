@@ -1,0 +1,78 @@
+{FACEBOOK_HEADER_HTML}
+{FACEBOOK_HEADER_MIDDLE_HTML}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={FACEBOOK_APP_ID}";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="jobDetailResult">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td >&nbsp; </td>
+<tr>
+ <td class="jobDetailRow">
+	 <table width="100%"  border="0" cellspacing="1" cellpadding="1">
+	 <tr>
+	 	<td><h1 class="job_detail_title">{job_title}</h1></td>
+	 	<td rowspan="3">{job_logo}</td>
+	 </tr>
+	 <tr>
+	 	<td class="job_detail_content"><span class="job_company">{job_company}</span>,{job_location}</td>
+	 </tr>
+	 <tr>
+	 	<td><div class="fb-like" data-href="{job_url}" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></td>
+	 </tr>
+	 </table>
+ </td>
+</tr>
+<tr>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td class="job_detail_sec">
+	 <table width="100%"  border="0" cellspacing="3" cellpadding="1">
+	  <tr>
+	 	 <td class="job_detail_content1" width="15%">Location</td>
+	 	 <td class="job_detail_content">{job_location}</td>
+	  </tr>
+	  <tr>
+	 	 <td class="job_detail_content1" valign="top">Category</td>
+	 	 <td class="job_detail_content">{job_category}</td>
+	  </tr>
+	  <tr class="{job_salary_class}">
+	 	 <td class="job_detail_content1">Salary</td>
+	 	 <td class="job_detail_content">{job_salary}</td>
+	  </tr>
+	  <tr class="{job_type_class}">
+	 	 <td class="job_detail_content1">Job Type</td>
+	 	 <td class="job_detail_content">{job_type}</td>
+	  </tr>
+	  <tr>
+	 	 <td class="job_detail_content1">Posted On</td>
+	 	 <td class="job_detail_content">{job_posted}</td>
+	  </tr>
+	  <tr>
+	 	 <td class="job_detail_content1"><nobr>Apply before</nobr></td>
+	 	 <td class="job_detail_content">{job_expired}</td>
+	  </tr>
+  </table>
+	</td>
+</tr>
+<tr>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td class="job_detail_desc">Job Description</td>
+</tr>
+<tr>
+ <td class="job_detail_desc1">{job_description} {job_apply}</td>
+</tr>
+<tr>
+ <td></td>
+</tr>
+</table> 
+</div><div id="searchResult"></div>
+{FOOTER_HTML}

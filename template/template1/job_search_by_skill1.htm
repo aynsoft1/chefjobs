@@ -1,0 +1,52 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+        });
+    }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+			{LEFT_HTML}
+
+		<div class="col-md-9 mx-auto">
+             <!-- Below Alert message File path is class/message_stack.php -->
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="col-md-12">
+                        <h1 class="main-heading">{HEADING_TITLE}</h1>
+                    </div>
+                </div>
+                <div class="card-body card-body-custom">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN job_skill1 -->
+                            <span class="skill-tags">{job_skill1.job_skill_tag}</span>
+                            <!-- END job_skill1 -->
+
+                            <!-- BEGIN job_skill2 -->
+                            <span class="skill-tags">{job_skill2.job_skill_tag}</span>
+                            <!-- END job_skill2 -->
+
+                            <!-- BEGIN job_skill3 -->
+                            <span class="skill-tags">{job_skill3.job_skill_tag}</span>
+                            <!-- END job_skill3 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

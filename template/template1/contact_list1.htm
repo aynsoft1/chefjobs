@@ -1,0 +1,101 @@
+{HEADER_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+	function set_action(action)
+	{
+		document.contact_list.action.value=action;
+		document.contact_list.submit();
+	}
+	function set_action1(action,contact_id)
+	{
+		if(action=='delete')
+		{
+			if(confirm('Do you really want to delete this Information in your contact list ?'))
+			{
+				document.contact_list.action.value=action;
+				document.contact_list.contact_id.value=contact_id;
+				document.contact_list.submit();
+			}
+			else
+			return false;
+		}
+		else
+		{
+			document.contact_list.action.value=action;
+			document.contact_list.contact_id.value=contact_id;
+			document.contact_list.submit();
+		}
+	}
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+	<div class="row">
+			{LEFT_HTML}
+		<div class="col-md-9 mx-auto">
+			
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="d-flex align-items-center mb-12 m-dblock">
+						<h1 class="m-0">{HEADING_TITLE}</h1>
+						<div class="d-flex ms-auto">{add_new}</div>
+					</div>
+				</div>
+				<div class="card-body table-responsive-md p-0">
+					<div class="table-responsive-sm">
+					<div class="table-responsive-sm">
+					<table class="table table-hover table-border">
+						{contact_form}
+						<thead>
+							<tr>
+								<th>{TABLE_HEADING_USER_NAME} & {TABLE_HEADING_ADDRESS}</th>
+								<th>{TABLE_HEADING_EDIT}</th>
+								<th>{TABLE_HEADING_DELETE}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN contact_list -->
+							<tr{contact_list.row_selected}>
+							<td valign="top" class="dataTableContent fw-bold" align="left">{contact_list.user_name}<br>{contact_list.user_address}</td>
+							<td valign="top" class="dataTableContent" >{contact_list.edit}</td>
+							<td valign="top" class="dataTableContent" >{contact_list.delete}</td>
+						</tr>
+						<!-- END contact_list -->
+						{hidden_fields}
+					</form>
+				</tbody>
+				<tfoot>
+					<form name="page" method="post">
+						<tr>{hidden_fields}
+							<td class="label" align="left" colspan="2">{total}</td>
+							<td valign="top" align="right" colspan="2">{list_page}&nbsp;{page}&nbsp;</td>
+						</tr>
+					</form>					
+				</tfoot>
+			</table>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+{FOOTER_HTML}

@@ -1,0 +1,86 @@
+{ADMIN_HEADER_HTML}
+<script>
+  function unlimited() {
+    if (document.forms['0'].ch_no_of_jobs.checked == true) {
+      document.forms['0'].no_of_jobs.disabled = true;
+    }
+    else if (document.forms['0'].ch_no_of_jobs.checked == false) {
+      document.forms['0'].no_of_jobs.disabled = false;
+    }
+    if (document.forms['0'].ch_no_of_times.checked == true) {
+      document.forms['0'].no_of_days.disabled = true;
+    }
+    else if (document.forms['0'].ch_no_of_times.checked == false) {
+      document.forms['0'].no_of_days.disabled = false;
+    }
+  }
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      {HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header d-flex">
+            <div class="ms-auto">{new_button}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_PLAN_TYPE_NAME}</th>
+                  <th>{TABLE_HEADING_PLAN_TYPE_TIME_PERIOD}</th>
+                  <th>{TABLE_HEADING_PLAN_TYPE_FEE}</th>
+                  <th>{TABLE_HEADING_ACTION}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN plan_type -->
+                <tr{plan_type.row_selected}>
+                  <td>{plan_type.name}</td>
+                  <td>{plan_type.time_period}</td>
+                  <td>{plan_type.fee}</td>
+                  <td>{plan_type.action}</td>
+                  </tr>
+                  <!-- END plan_type -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>{count_rows}</td>
+                  <td align="right">{no_of_pages}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+        <!-- Right Starts -->
+        <div class="col-md-3 pl-1">
+          <div class="card card-border-color card-border-color-primary">
+            <div class="card-body">
+          {ADMIN_RIGHT_HTML}
+        </div>
+        </div>
+      </div>
+        <!-- Right Ends -->
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

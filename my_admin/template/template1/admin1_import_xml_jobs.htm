@@ -1,0 +1,105 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="cloud-upload-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-12">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-body table-responsive">
+            <table border="0" width="100%" cellspacing="0" cellpadding="4">
+              <tr>
+                <td>{import_form}
+                  <table border="0" width="100%" cellspacing="10" cellpadding="4">
+                   <tr>
+					 <td class="label" valign="top"><nobr>{INFO_TEXT_RECRUITER_ID}</nobr></td>
+					 <td class="label">{INFO_TEXT_RECRUITER_ID1}</td>
+					</tr>
+					<tr>
+					 <td class="label" valign="top"><nobr>{INFO_TEXT_IMPORT_JOBS}</nobr></td>
+					 <td class="label">{INFO_TEXT_IMPORT_JOBS1}</td>
+					</tr>
+                    <tr>
+                      <td> </td>
+                      <td class="label" valign="top">{button}<div class="general-text">{INFO_TEXT_SAMPLE_FILE}
+                        </div>
+                      </td>
+                    </tr>
+                    </form>
+                  </table>
+				  <br>
+			      <div class="right-bar-heading grey-bar"><h3>{INFO_TEXT_XML_FILE_FORMAT}</h3></div>
+ <table border="0" width="100%" cellspacing="0" cellpadding="0">
+																				 <tr>
+																					 <td >
+																						<style>
+																							span.xml_blue
+																							{
+																								color:#0000FF;
+																							}
+																							span.xml_red
+																							{
+																								color:#FF0000;
+																							}
+																							span.xml_comment
+																							{
+																								color:#666666;
+																							}
+																							</style>
+<pre class="style2">
+   <span class="xml_blue">&lt;?xml </span><span class="xml_red">version</span>="1.0" </span><span class="xml_red">encoding</span>="iso-8859-1" <span class="xml_blue">?&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">channel</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_title</span><span class="xml_blue">&gt;</span>Programmer<span class="xml_blue">&lt;/</span><span class="xml_red">job_title</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_reference</span><span class="xml_blue">&gt;</span>8560_29753<span class="xml_blue">&lt;/</span><span class="xml_red">job_reference</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_state</span><span class="xml_blue">&gt;</span>UT<span class="xml_blue">&lt;/</span><span class="xml_red">job_state</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_location</span><span class="xml_blue">&gt;</span>Salt Lake City,UT, United States<span class="xml_blue">&lt;/</span><span class="xml_red">job_location</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_salary</span><span class="xml_blue">&gt;</span>$80,000<span class="xml_blue">&lt;/</span><span class="xml_red">job_salary</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_city</span><span class="xml_blue">&gt;</span>Salt Lake City<span class="xml_blue">&lt;/</span><span class="xml_red">job_city</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_country</span><span class="xml_blue">&gt;</span>United States<span class="xml_blue">&lt;/</span><span class="xml_red">job_country</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_zip</span><span class="xml_blue">&gt;</span>84104<span class="xml_blue">&lt;/</span><span class="xml_red">job_zip</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_type</span><span class="xml_blue">&gt;</span>Contract<span class="xml_blue">&lt;/</span><span class="xml_red">job_type</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_industry</span><span class="xml_blue">&gt;</span>IT/Software<span class="xml_blue">&lt;/</span><span class="xml_red">job_industry</span><span class="xml_blue">&gt;</span>
+   <span style="color:green">&lt;!-- (separate by "," and matching categories) --&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_short_description</span><span class="xml_blue">&gt;</span>IT/Software<span class="xml_blue">&lt;/</span><span class="xml_red">job_short_description</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_description</span><span class="xml_blue">&gt;</span><span class="xml_blue">&lt;</span>![CDATA[job short description]]<span class="xml_blue">&gt;</span><span class="xml_blue">&lt;/</span><span class="xml_red">job_description</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_duration</span><span class="xml_blue">&gt;</span>30<span class="xml_blue">&lt;/</span><span class="xml_red">job_duration</span><span class="xml_blue">&gt;</span>
+   <span style="color:green">&lt;!-- Number of days job active --&gt;</span>
+   <span class="xml_blue">&lt;</span><span class="xml_red">job_apply_url</span><span class="xml_blue">&gt;</span><span class="xml_blue">&lt;/</span><span class="xml_red">job_apply_url</span><span class="xml_blue">&gt;</span>
+   <span style="color:green">&lt;!-- Online job apply URL --&gt;</span>
+    <span class="xml_blue">&lt;/</span><span class="xml_red">job</span><span class="xml_blue">&gt;</span>
+   <span class="xml_blue">&lt;/</span><span class="xml_red">channel</span><span class="xml_blue">&gt;</span>
+ </pre> 																				 </td>
+	 																		 </tr>
+																			 </table>
+              
+
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end main-content container-fluid-->
+</div>
+<!--end be-content-->
+{ADMIN_FOOTER_HTML}

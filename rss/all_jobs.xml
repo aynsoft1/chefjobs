@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://careerjobs.de/rss/">
+<channel>
+<title>CareerJobs RSS</title>
+<description> jobs </description>
+<link>https://careerjobs.de/</link><copyright>Copyright 2024 careerjobs.de All Rights Reserved</copyright>
+<job:link  href="http://careerjobs.de/rss/all_jobs.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Truck engineer</title>
+<description>asdfasfsf</description>
+<job:job_id>16</job:job_id>
+<job:country>Luxembourg</job:country>
+<job:state>Grevenmacher</job:state>
+<job:location>Grevenmacher</job:location>
+<link>https://careerjobs.de/16/Truck-engineer</link>
+<guid>https://careerjobs.de/16/Truck-engineer</guid>
+</item>
+<item>
+<title>Chef</title>
+<description>We are seeking a creative and experienced Chef to join our culinary team. The ideal candidate will have a passion for food and a strong understanding of various cooking techniques and cuisines. The Chef will be responsible for preparing and presenting high-quality dishes, managing kitchen operations, and ensuring that all food safety and hygiene standards are met.</description>
+<job:job_id>14</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Brandenburg</job:state>
+<job:location>Beeskow</job:location>
+<link>https://careerjobs.de/14/Chef</link>
+<guid>https://careerjobs.de/14/Chef</guid>
+</item>
+<item>
+<title>UI Designer</title>
+<description>We are a leading online career and recruitment website with cutting edge technology. Our Job Board provides best suited profiles to employers and relevant jobs to jobseekers across industry verticals, experience levels and geographies Companies of all sizes hire the best talent with our Job Board, Contact us for more details</description>
+<job:job_id>15</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Saarland</job:state>
+<job:location>Kleinblittersdorf</job:location>
+<link>https://careerjobs.de/15/UI-Designer</link>
+<guid>https://careerjobs.de/15/UI-Designer</guid>
+</item>
+<item>
+<title>Designer</title>
+<description>Need graphic designer</description>
+<job:job_id>6</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Berlin</job:state>
+<job:location>Berlin</job:location>
+<link>https://careerjobs.de/6/Designer</link>
+<guid>https://careerjobs.de/6/Designer</guid>
+</item>
+<item>
+<title>Manager</title>
+<description>manager required</description>
+<job:job_id>7</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Hamburg</job:state>
+<job:location>Hamburg</job:location>
+<link>https://careerjobs.de/7/Manager</link>
+<guid>https://careerjobs.de/7/Manager</guid>
+</item>
+<item>
+<title>Javascript developer</title>
+<description>sdcfsdfsdfsd</description>
+<job:job_id>9</job:job_id>
+<job:country>Germany</job:country>
+<job:state>197</job:state>
+<job:location>Zwillikon</job:location>
+<link>https://careerjobs.de/9/Javascript-developer</link>
+<guid>https://careerjobs.de/9/Javascript-developer</guid>
+</item>
+<item>
+<title>Jr. PHP developer</title>
+<description>asdasdasdasd</description>
+<job:job_id>11</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Baden-Württemberg</job:state>
+<job:location>Aichelberg</job:location>
+<link>https://careerjobs.de/11/Jr-PHP-developer</link>
+<guid>https://careerjobs.de/11/Jr-PHP-developer</guid>
+</item>
+<item>
+<title>Truck driver</title>
+<description>sdasd</description>
+<job:job_id>10</job:job_id>
+<job:country>Luxembourg</job:country>
+<job:state>Basel-Stadt</job:state>
+<job:location>Bettingen</job:location>
+<link>https://careerjobs.de/10/Truck-driver</link>
+<guid>https://careerjobs.de/10/Truck-driver</guid>
+</item>
+<item>
+<title>Javascript developer</title>
+<description>sadfsdfsdfsdfsdfsdf</description>
+<job:job_id>5</job:job_id>
+<job:country>Luxembourg</job:country>
+<job:state>Esch-sur-Alzette</job:state>
+<job:location>Leudelingen</job:location>
+<link>https://careerjobs.de/5/Javascript-developer</link>
+<guid>https://careerjobs.de/5/Javascript-developer</guid>
+</item>
+<item>
+<title>PHP developer</title>
+<description>asdfsdfsd</description>
+<job:job_id>4</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Lower Saxony</job:state>
+<job:location>Ahlerstedt</job:location>
+<link>https://careerjobs.de/4/PHP-developer</link>
+<guid>https://careerjobs.de/4/PHP-developer</guid>
+</item>
+<item>
+<title>Designer Apparel - Innovation (m/f/d)</title>
+<description>At adidas innovation, our #1 goal is to design the best for the athlete at speed, meaning we create innovative, industry leading and highly disruptive solutions for the world’s best athletes on the world’s biggest stages.</description>
+<job:job_id>3</job:job_id>
+<job:country>Germany</job:country>
+<job:state>Bavaria</job:state>
+<job:location></job:location>
+<link>https://careerjobs.de/3/Designer-Apparel-Innovation-m-f-d-</link>
+<guid>https://careerjobs.de/3/Designer-Apparel-Innovation-m-f-d-</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,6 @@
+# Example: http://server/language/file_names.php will not work
+
+<Files *.php>
+Order Deny,Allow
+Deny from all
+</Files>

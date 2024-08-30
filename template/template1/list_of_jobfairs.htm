@@ -1,0 +1,81 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+
+<div class="container">
+    <div class="row">
+       {LEFT_HTML}
+		
+		
+		<div class="col-md-9">
+
+			{update_message}
+            <div class="card card-custom">
+			<div class="card-header">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+                  <div class="card-body card-body-custom p-0">
+				<div class="table-responsive-sm">
+							<table class="table table-hover">
+								<thead>
+															<tr class="dataTableHeadingRow jobs-table-headbar">
+																<th class="dataTableHeadingContent">{TABLE_HEADING_TITLE}</th>
+																<th class="dataTableHeadingContent m-none">{TABLE_HEADING_INSERTED}</th>
+																<th class="dataTableHeadingContent m-none">{TABLE_HEADING_EXPIRED}</th>
+																<th class="dataTableHeadingContent m-none">{TABLE_HEADING_STATUS}</th>
+																<th class="dataTableHeadingContent m-none" align="middle">{TABLE_HEADING_JOBS}</th>
+																<th class="dataTableHeadingContent text-end">{TABLE_HEADING_ACTION}</th>
+															</tr>
+															</thead>
+															<!-- BEGIN jobfairs -->
+															<tr{jobfairs.row_selected}>
+																<td width="325" valign="top" class="dataTableContent">{jobfairs.title}</td>
+																<td valign="top" class="dataTableContent m-none">{jobfairs.begindate}</td>
+																<td valign="top" class="dataTableContent m-none">{jobfairs.enddate}</td>
+																<td valign="top" class="dataTableContent m-none">{jobfairs.status}</td>
+																<td valign="top" class="dataTableContent m-none text-center">{jobfairs.noofjobs}</td>
+																<td valign="top" class="dataTableContent text-end">{jobfairs.action}</td>
+															</tr>
+															<!-- END jobfairs -->
+														</table>
+														</div>
+				
+                </div>
+				
+				<div class="card-footer small">
+				<table border="0" width="100%" cellspacing="0" cellpadding="0" id="footer-pagination">
+															<tr>
+																<td>{count_rows}</td>
+																<td align="right">{no_of_pages}</td>
+															</tr>
+															<tr>
+																<td colspan="2" align="right">{new_button}</td>
+															</tr>
+														</table>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{FOOTER_HTML}

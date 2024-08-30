@@ -1,0 +1,462 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+  function classAdd() {
+    const btnClass = document.querySelector('div a.customClass');
+    btnClass.classList.add('btn', 'btn-sm', 'btn-primary');
+  }
+  window.addEventListener('load', classAdd);
+</script>
+<style>
+  .displayNone {
+    display: none;
+  }
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone");
+    });
+  }, 500000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
+  integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 d-flex align-items-center mb-12">
+      <h1 class="m-0">{INFO_TEXT_EMPLOYER_CONTROL_PANEL}</h1>
+      <div class="d-flex ms-auto">{INFO_TEXT_POST_JOB}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      {update_message}
+      <div class="card card-custom">
+        <div class="card-body card-body-custom">
+
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              {INFO_TEXT_LOGO}
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h4 class="mt-0">{INFO_TEXT_COMPANY_NAME}</h4>
+              <div class="text-muted text-muted-custom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-at me-1" viewBox="0 0 16 16">
+                  <path
+                    d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z" />
+                </svg>
+                {INFO_TEXT_EMAIL_ADDRESS1}</div>
+              <div class="text-muted text-muted-custom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-geo-alt me-1" viewBox="0 0 16 16">
+                  <path
+                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                {INFO_TEXT_ADDRESS1}</div>
+              <div class="text-muted text-muted-custom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-telephone me-1" viewBox="0 0 16 16">
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg>
+                {INFO_TEXT_PHONE1}</div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-4">
+              <!-- <div class="float-right mt-4"><span class="mt-1">{INFO_TEXT_EDIT_PROFILE}</span></div> -->
+              <!--<div class="card float-right">
+                <div class="card-body py-2">
+                  <span class="text-muted justify-content-sm-center d-block mb-2">
+                    Subscription Plan - Rate Card Post your jobs and access resumes instantly.
+                  </span>
+
+                  {RATE_CARD}
+
+                </div>
+              </div>-->
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                <div class="icon text-white bg-indigo mr-3 m-none me-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                    <path
+                      d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                  </svg>
+                </div>
+                <div class="card-widget-body">
+                  <div class="dot me-3 bg-indigo"></div>
+                  <div class="text">
+                    <div style="display: flex;">
+                      <h5 class="mb-0">{INFO_TEXT_TOTAL_JOBS_HEADING}</h5> <span
+                        class="text-gray-500 numbers">{INFO_TEXT_TOTAL_JOBS}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                <div class="icon text-white bg-green mr-3 m-none me-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    <path fill-rule="evenodd"
+                      d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                  </svg>
+                </div>
+                <div class="card-widget-body">
+                  <div class="dot me-3 bg-green"></div>
+                  <div class="text">
+                    <div style="display: flex;">
+                      <h5 class="mb-0">{INFO_TEXT_TOTAL_APPLICANT_HEADING}</h5><span
+                        class="text-gray-500 numbers">{INFO_TEXT_TOTAL_APPLICANT}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                <div class="icon text-white bg-blue mr-3 m-none me-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg>
+                </div>
+                <div class="card-widget-body">
+                  <div class="dot me-3 bg-blue"></div>
+                  <div class="text">
+                    <div style="display: flex;">
+                      <h5 class="mb-0">{INFO_TEXT_TOTAL_APPLICANT_SELETED_HEADING}</h5><span
+                        class="text-gray-500 numbers">{INFO_TEXT_TOTAL_APPLICANT_SELETED}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                <div class="icon text-white bg-red mr-3 m-none me-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                    <path
+                      d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                  </svg>
+                </div>
+                <div class="card-widget-body">
+                  <div class="dot me-3 bg-red"></div>
+                  <div class="text">
+                    <div style="display: flex;">
+                      <h5 class="mb-0">Total Views</h5><span class="text-gray-500 numbers">{TOTAL_VIEW}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card card-jobseeker">
+                <div class="card-body px-0 pb-0">
+                  <h4 class="mb-2 px-3 font-weight-bold text-dark">
+                    {INFO_TEXT_JOB_POSTING}
+                    <!--<span class="text-muted">{INFO_TEXT_PLAN_TYPE}</span>-->
+                  </h4>
+
+                  <h6 class="text-muted text-muted-custom px-3 font-15">{INFO_TEXT_FROM_TO}</h6>
+                  <table class="table mt-2 table-sm text-muted">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_JOBS}</th>
+                        <th scope="col" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_JOBS1}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_JOBS_USED}</th>
+                        <td class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_JOBS_USED1}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card card-jobseeker">
+                <div class="card-body px-0 pb-0">
+                  <h4 class="mb-2 px-3 font-weight-bold text-dark">
+                    {INFO_TEXT_RESUME}
+                    <!--<span class="text-muted">{INFO_TEXT_PLAN_TYPE1}</span>-->
+                  </h4>
+                  <h6 class="text-muted text-muted-custom px-3 font-15">{INFO_TEXT_FROM_TO1}</h6>
+
+                  <table class="table mt-2 table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_CV}</th>
+                        <th scope="col" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_CV1}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_CV_USED}</th>
+                        <td class="px-3 text-muted font-weight-normal">{INFO_TEXT_NO_OF_CV_USED1}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card card-jobseeker">
+                <div class="card-body px-3">
+                  <span class="text-muted justify-content-sm-center d-block mb-2">
+                    <h4 class="mb-2 font-weight-bold text-dark">Subscription Plan</h4>
+                    Rate
+                    Card Post your jobs and access resumes instantly.
+                  </span>
+
+                  <div style="padding: 0 0 7px 0;">{RATE_CARD}</div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                {INFO_TEXT_GRAPH}
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">
+                      {INFO_TEXT_JOB_POSTING}</h4>
+                    <div class="pb-1 postjob">{INFO_TEXT_POST_JOB}</div>
+                    <div class="pb-1">{INFO_TEXT_LIST_OF_JOBS}</div>
+                    <div class="pb-1">{INFO_TEXT_MY_ACTIVE_JOBS}</div>
+                    <div class="pb-1">{INFO_TEXT_MY_EXPIRED_JOBS}</div>
+                    <div class="pb-1">{INFO_TEXT_IMPORT_JOBS}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">
+                      {INFO_TEXT_HEADER_SEARCH_RESUMES}</h4>
+                    <div class="pb-1">{INFO_TEXT_SEARCH_RESUMES}</div>
+                    <div class="pb-1">{INFO_TEXT_SEARCH_APPLICANT}</div>
+                    <div class="pb-1">{INFO_TEXT_RESUME_SEARCH_AGENT}</div>
+                    <div class="pb-1">{INFO_TEXT_SAVE_RESUME}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">
+                      Applicant Tracking</h4>
+                    <div class="pb-1">{INFO_TEXT_LIST_OF_APPLICATIONS}</div>
+                    <div class="pb-1">{INFO_TEXT_APPLICANT_TRACKING}</div>
+                    <div class="pb-1">{INFO_TEXT_INTERVIEW}</div>
+                    <div class="pb-1">{INFO_TEXT_LIST_OF_UNREGISTERED_RESUMES}</div>
+                    {INFO_TEST}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">
+                      {INFO_TEXT_MY_ACCOUNT}</h4>
+                    <div class="pb-1">{INFO_TEXT_COMPANY_DESCRIPTION}</div>
+                    <div class="pb-1">{INFO_TEXT_MANAGED_USERS}</div>
+                    <div class="pb-1">{INFO_TEXT_ORDER_HISTORY}</div>
+                    <!--<div class="pb-1">{INFO_TEXT_CHANGE_PASSWORD}</div>-->
+                    <!-- <div class="pb-1 editprofile">{INFO_TEXT_EDIT_PROFILE}</div>-->
+                    <div class="pb-1">{INFO_TEXT_DIRECT_LOGIN}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">Resources</h4>
+                    <div class="pb-1">{INFO_TEXT_JOIN_FORUM}</div>
+                    <div class="pb-1">{INFO_TEXT_ARTICLE}</div>
+                    <div class="pb-1">{INFO_TEXT_NEWSLETTER}</div>
+                    <div class="pb-1">{INFO_TEXT_CONTACT_LIST}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card card-jobseeker">
+                  <div class="card-body" style="height: 200px;">
+                    <h4 class="mb-2 font-weight-bold text-dark">Correspondence
+                    </h4>
+                    <div class="pb-1">{INFO_TEXT_ADMIN_RESPONSE}</div>
+                    <div class="pb-1">{INFO_TEXT_JOBSEEKER_RESPONSE}</div>
+                    <div class="pb-1">{INFO_TEXT_LIST_OF_JOBFAIRS}</div>
+				    {INFO_LMS}
+				 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row mb-3">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="row">
+                    {INFO_TEXT_GRAPH}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+<!--<div class="row">
+            <div class="col-md-6 mt-3 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <canvas id="chartDivPie" width="100" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <canvas id="chartDivBar" width="200" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+<script>
+  const pieData = {
+    pieChart
+  } //for first chart json data
+  const barData = {
+    barChart
+  } //for second chart json data
+
+  pieChart(pieData);
+  barChart(barData);
+
+  function pieChart(pieD) {
+    const dataLabels = pieD.map(data => data.label);
+    const dataValue = pieD.map(data => data.y);
+    var ctx = document.getElementById('chartDivPie').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: dataLabels,
+        datasets: [{
+          data: dataValue,
+          backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)'
+          ],
+          borderWidth: 1,
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Jobs Status'
+          }
+        }
+      },
+    });
+  }
+
+  function barChart(barD) {
+    const dataLabels = barD.map(data => data.label);
+    const dataValue = barD.map(data => data.y);
+    var ctx = document.getElementById('chartDivBar').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: dataLabels,
+        datasets: [{
+          label: 'Applicant Pipeline',
+          data: dataValue,
+          backgroundColor: [
+            'rgba(75, 192, 192)',
+            'rgba(255, 99, 132)',
+            'rgba(255, 159, 64)',
+            'rgba(255, 205, 86)',
+            'rgba(54, 162, 235)',
+            'rgba(153, 102, 255)',
+            'rgba(201, 203, 207)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderWidth: 1,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Applicant Pipeline'
+          }
+        }
+      },
+    });
+  }
+</script>
+{FOOTER_HTML}

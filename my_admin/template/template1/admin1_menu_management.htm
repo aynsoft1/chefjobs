@@ -1,0 +1,227 @@
+{ADMIN_HEADER_HTML}
+ 
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+  <script src="lib/jquery-3.7.1.js"></script>
+  <script src="lib/jquery-ui.js"></script>
+ <script >
+  function show_image(url)
+  {
+   var obj=document.getElementById('popunder_content1');
+   var obj1=document.getElementById('popunder_image');
+   obj1.src=url;
+   obj.className='popup_content';
+   document.getElementById('fade').className='black_overlay';
+  }
+  function  close_popup()
+  {
+   document.getElementById('popunder_content1').className='popup_content2'
+   document.getElementById('fade').className='popup_content2'
+   var obj1=document.getElementById('popunder_image');
+   obj1.src="../img/spinner.gif";
+  }
+  function show_screenshot(img)
+  {
+   var obj;
+   if(obj=document.getElementById('default_main_screenshot'))
+   {
+    obj.src=img;
+   }
+  }
+ </script>
+ 
+ <style>
+  .sortable { list-style-type: none; margin: 0 ; padding: 20 0 0 0; width: 80%; }
+  .sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em;    }
+  .sortable li span { position: absolute; margin-left: -1.3em; }
+.dataTableHeadingRow 
+{ 
+ height:30px;
+ background-color:#cccccc;
+}
+#field_order_box tr.field_content
+{
+ background:#f5f5f5;
+ font-size:15px;
+}
+#field_order_box tr.field_content-highlight
+{
+height:40px;
+background:#FFFCBF;
+}
+.sortable li.sortable-highlight
+{
+height:40px;
+background:#FFFCBF;
+}
+
+#field_order_box tr.field_content:hover
+{
+ cursor: move;
+ background:#ffccff;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #cccccc;
+    background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+    font-weight: 400;
+    color: #007cba;
+}
+</style>
+ 
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="d-flex align-items-center">
+          <h3>{HEADING_TITLE}</h3>
+          <div class="ms-auto">{new_button}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      {update_message}
+      <div class="col-md-9 mt-4">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body">{menu_form}
+            <table class="table ">              
+              <thead>
+                <tr class="dataTableHeadingRow">
+                   <th>{TABLE_HEADING_VISIBLE}</th>
+                   <th>{TABLE_HEADING_TITTLE}</th>
+                    <th><nobr>{TABLE_HEADING_ORDER}</nobr></th>
+                </tr>
+              </thead>
+              <tbody id="field_order_box">
+              <!-- BEGIN menu -->
+                <tr id="menu_{menu.id}"  class="field_content" >                   
+                  <td width="5%" style="  vertical-align: text-top;">{menu.checkbox}</td>
+                  <td width="65%">
+                               <div class="col-md-12">
+                                <div class="row">
+                                 <div class="col-md-4 ">{menu.title}</div>
+                                 <div class="col-md-8">
+									<i class="fa fa-pencil-square-o"  onclick="edit_data('{menu.id}');"></i>&nbsp;&nbsp;
+
+									<i class="fa fa-trash text-muted" aria-hidden="true" onclick="delete_data('menu','{menu.id}');"></i>
+								 </div>
+                                </div>
+								{menu.sub_title}
+                               <div>
+
+
+                             
+                              </div>
+                              </td>
+                   <td>{menu.order} <span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+                </tr>
+              <!-- END menu -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">{button}</td>
+                </tr>
+              </tfoot>
+              
+            </table></form>
+          </div>
+        </div>
+      </div>
+	  
+    </div>
+  </div>
+</div>
+<div id="popup">
+
+</div>
+{INFO_TEXT_MENU_POPUP}
+<!-- Middle Ends -->
+<!-- Right Starts -->
+<!-- Right Ends -->
+<script type="text/javascript">
+<!--
+	 jQuery(document).ready(function(){
+ 
+ 
+  $("#add_new_button").click(function(){
+ var data_array='output=ajax&action1=add_item';
+
+     $.ajax({
+        type: "POST",
+         data: data_array, // serializes the form's elements.
+        success: function(data)
+         {
+          $("#popup").html(data);
+        
+          $("#myModal").modal('show');
+        set_custom_link();
+
+
+         }
+    });
+
+ });
+ jQuery( "#field_order_box" ).sortable({placeholder: "field_content-highlight"});
+ {sortable_script}
+ 
+ 
+});
+function delete_data(section,id)
+{
+ var data_array='output=ajax&action1=delete_'+section+'&id='+id;
+ if(confirm('Are you sure you want to delete this record'))
+ $.ajax({
+  type: "POST",
+   data: data_array,
+  success: function (rdata)
+	 {
+      $("#"+section+"_"+id).html(rdata);
+	  if(rdata=="success")
+	  {
+	   $("#"+section+"_"+id).remove();
+	  }
+     },
+  
+});
+}
+function edit_data(id)
+{
+ var data_array='output=ajax&action1=edit_menu&id='+id;
+  $.ajax({
+  type: "POST",
+   data: data_array,
+    success: function (rdata)
+	 {
+       $("#popup").html(rdata);
+        
+          $("#myModal").modal('show');
+        set_custom_link();
+     },
+  
+});
+}
+ function set_custom_link()
+   {
+	    var sel_val =$( "#menu_link option:selected" ).text();
+   if(sel_val=="custom")
+   $("#custom_link1").show();
+   else
+   $("#custom_link1").hide();
+   }
+ 
+//-->
+</script>
+{ADMIN_FOOTER_HTML}

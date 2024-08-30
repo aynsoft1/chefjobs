@@ -1,0 +1,81 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+    h1.main-heading {
+        font-size:42px!important;
+        font-weight: 400;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+	<div class="col-md-6 mx-auto">
+	<div class="card card-custom">
+				<div class="card-header card-header-custom border-bottom no-radius bg-transparent">
+					<h1 class="m-0">{HEADING_TITLE}</h1>
+					{FIRST_PARAGRAPH}
+				</div>
+				<div class="card-body card-body-custom">
+				
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message} 
+            
+				{form}
+											
+<div class="form-group-wrap">
+    <div class="form-section-header"></div>
+    <div class="row">
+        <div class="form-group col-12">
+            <label for="v-name" class="control-label">{INFO_TEXT_FULL_NAME}</label>
+            {INFO_TEXT_FULL_NAME1}
+        </div>
+    </div>
+        <div class="row">
+        <div class="form-group col-12">
+            <label for="v-email" class="control-label">{INFO_TEXT_EMAIL_ADDRESS}</label>
+            {INFO_TEXT_EMAIL_ADDRESS1}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-12">
+            <label for="v-message" class="control-label">{INFO_TEXT_SUBJECT}</label>
+            {INFO_TEXT_SUBJECT1}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-12">
+            <label for="v-message" class="control-label">{INFO_TEXT_MESSAGE}</label>
+            {INFO_TEXT_MESSAGE1}
+			<div class="form-group col-12 mt-4">
+            {google_captcha}
+        </div>
+		<div class="form-group col-12 text-center mt-4">
+            {button}
+        </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{FOOTER_HTML}

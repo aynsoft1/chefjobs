@@ -1,0 +1,59 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="container be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>
+            <span style="margin-right: 5px;font-size: 26px;float: left;">
+                <ion-icon name="desktop-outline"></ion-icon>
+            </span>{QUESTION_TITLE} 
+            <span class="badge badge-secondary">
+                {TOTAL_CHOICES}
+            </span>
+        </h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header row">
+                        <div class="col">
+                            {question_menus}
+                        </div>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{TH_CHOICE}</th>
+                                    <th>{TH_POINT}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN choices -->
+                                <tr>
+                                    <td>{choices.choice}</td>
+                                    <td>{choices.point}</td>
+                                </tr>
+                                <!-- END choices -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

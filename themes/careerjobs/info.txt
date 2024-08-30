@@ -1,0 +1,3 @@
+Theme Name: Career Jobs
+Description: Configure:</b><br>Header Middle Big Rotating Banner Size:1003 x 400<br>Custom Menu with two language<br>
+Version: 4.3

@@ -1,0 +1,99 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+.banner-lms h1 {
+    font-size: 36px;
+    color: #fff;
+}
+</style>
+<div class="container-fluid banner-lms">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1>{GET_UNLIMITED}</h1>
+                <p>{LEARN_IMPROVE}</p>
+
+                <div class="col-md-8 mt-3">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="search" name="q" class="form-control form-control-lg ms-search-input"
+                                placeholder="{WHAT_DOU_WANT}" aria-label="Recipient's username"
+                                aria-describedby="button-addon2" style="border-top-left-radius: 50px!important;border-bottom-left-radius: 50px!important;">
+                            <button class="btn btn-primary px-4" type="submit" id="button-addon2"><i
+                                    class="bi bi-search" style="font-size: 18px;"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <img class="py-3" src="https://ejobsitesoftware.com/jobboard_demo/img/lms-banner.png" width="250" alt="learning">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-2 my-4" style="border-bottom: 0px solid #e1e1e1;border-top: 0px solid #e1e1e1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto d-flex align-items-center">
+                <h1 class="m-0">{SEARCH_HEADING}</h1>
+                <div class="ms-auto d-flex">
+                    {category_dropdown}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {update_message}
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="row row-cols-1 row-cols-md-3 g-5">
+                <!-- BEGIN lms_courses -->
+                <div class="col">
+                    <div class="card card-custom">
+                        {lms_courses.thumb}
+                        <div class="card-body">
+                            <h4 class="article_title">{lms_courses.title}</h4>
+                            <div class="mb-2 small">{lms_courses.summary}</div>
+                            <div class="d-flex align-items-center mt-2">
+                                <!-- <img src="https://bpojobsite.com/img/author1.jpg" class="instructor-img-sm me-2"
+                                    alt="...">
+                                <div class="d-flex"><a href="#">by Beatriz Datangel</a></div> -->
+                            </div>
+                            <div class="d-flex align-items-center mt-2 font-12">
+                                {lms_courses.price}
+                                <div class="ms-auto d-flex align-items-center font-12">
+                                    {lms_courses.course_duration}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END lms_courses -->
+            </div>
+          <DIV class="mt-5 text-center">{COURSE_NOT_FOUND}</DIV>
+
+            <div class="text-center mt-5">
+                {PAGINATION_LINK}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center mb-5">
+    <div class="row">
+        <div class="col-md-12 mt-5 mb-5 text-center">
+            <h2 class="m-0">{FIND_THE_BEST}</h2>
+        </div>
+    </div>
+    {top_categories}
+</div>
+
+
+{FOOTER_HTML}

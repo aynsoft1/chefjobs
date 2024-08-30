@@ -1,0 +1,158 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="cloud-upload-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">
+            <form name="disply" method="get">
+              {INFO_TEXT_STATUS} {INFO_TEXT_STATUS1}
+              {new_button}
+            </form>
+          </div>
+          <div class="card-body table-responsive">
+            <!-- Middle Starts -->
+
+        
+            {feed_form}
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_CAMPAIGN_NAME}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_CAMPAIGN_NAME1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_PUBLISHER_ID}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+           {TEXT_INFO_PUBLISHER_ID1}&nbsp;&nbsp;{TEXT_PUBLISHER_ID_HELP}
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_RECRUITER_ID}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_RECRUITER_ID1}&nbsp;&nbsp;{TEXT_RECRUITER_ID_HELP}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_LOCATION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_LOCATION1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_COUNTRY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_COUNTRY1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_JOB_TYPE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_JOB_TYPE1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_CHANNEL}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_CHANNEL1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_JOB_DURATION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_JOB_DURATION1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_MAX_FEED}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_MAX_FEED1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_SORT_BY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_SORT_BY1}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_STATUS1}
+              </div>
+            </div>
+  
+           
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">{TEXT_INFO_KEYWORD}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                <!-- BEGIN job_category1 -->
+       {job_category1.check_box}
+       {job_category1.job_category}
+     <!-- END job_category1 -->
+     <!-- BEGIN job_category2 -->
+     {job_category2.check_box}
+     {job_category2.job_category}
+   <!-- END job_category2 -->
+
+     <!-- BEGIN job_category3 -->
+     {job_category3.check_box}
+     {job_category3.job_category}
+       <!-- END job_category3 -->
+              </div>
+            </div>
+           
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                <a onclick="checkall()">Check All</a> / <a  onclick="uncheckall()">Uncheck All</a>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {submit_button} 
+              </div>
+            </div>
+                </form>
+            <!-- Middle Ends -->
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

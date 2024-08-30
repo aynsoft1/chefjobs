@@ -1,0 +1,170 @@
+{HEADER_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+{HEADER_MIDDLE_HTML}
+<script language="javascript">
+function set_action(action1)
+{
+ document.education.action.value=action1;
+}
+function set_action1(action1)
+{
+ document.target.action.value=action1; 
+}
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=270,left = 100,top = 100');");
+}
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+	<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends --> 
+        <div class="col-md-9">
+		{JOBSEEKER_RESUME_LEFT}
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+			<div class="card-header">
+					<div class="d-flex align-items-center mb-12 m-dblock">
+        <h1 class="resume-heading m-0">{HEADING_TITLE}</h1>
+        <div class="d-flex ms-auto">{INFO_TEXT_RESUME_NAME1}</div>
+      </div>
+				</div>
+                <div class="card-body card-body-custom">
+				
+{registration_form}
+
+{RESUME_NAVIGATION}
+<!--<div class="alert alert-warning alert-warning-custom" role="alert">
+{SECTION_ACCOUNT_RESUME_NAME} {REQUIRED_INFO}</div>
+<div>{INFO_TEXT_RESUME_NAME} {INFO_TEXT_RESUME_NAME1}</div>-->
+
+
+<div class="table-responsive-sm">
+<table class="table table-hover table-bordered border-bottom mb-4">
+		<thead>
+		<tr class="dataTableHeadingRow ">
+			<th scope="col" class="dataTableHeadingContent" width="">{TABLE_HEADING_DEGREE}</th>
+			<th scope="col" class="dataTableHeadingContent" width="">{TABLE_HEADING_INSTITUTION_NAME}</th>
+			<th scope="col" class="dataTableHeadingContent m-none" width="">{TABLE_HEADING_DEGREE_OBT_DATE}</th>
+			<th scope="col" class="dataTableHeadingContent m-none" width="">{TABLE_HEADING_DEGREE_END_DATE}</th>
+			<th scope="col" class="dataTableHeadingContent" width="">{TABLE_HEADING_EDIT}</th>
+			<th scope="col" class="dataTableHeadingContent" width="">{TABLE_HEADING_DELETE}</th>
+		</tr>
+		</thead>
+		<!-- BEGIN education -->
+		<tr {education.row_selected}>
+			<td class="dataTableContent" >{education.degree}</td>
+			<td class="dataTableContent" >{education.institution_name}</td>
+			<td class="dataTableContent m-none" >{education.start_date}</td>
+			<td class="dataTableContent m-none" >{education.end_date}</td>{education.list_form}
+			<td class="dataTableContent" >{education.edit}</td>
+			<td class="dataTableContent" >{education.delete}</td></form>
+		</tr>
+		<!-- END education -->
+	</table>
+</div>
+
+<div class="form-group row align-items-center">
+  <label for="staticEmail" class="col-sm-3 text-success fw-bold mb-2 text-end m-text-start mmb-0">{SECTION_EDUCATION_DETAILS}</label>
+  <div class="col-sm-9">
+   <!-- <span class="small_red">*</span> -->
+  </div>
+</div>
+
+{education_form}
+<!-- {COUNTRY_STATE_SCRIPT} -->
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_DEGREE}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_DEGREE1}
+     <!-- <span class="small_red">*</span> -->
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_SPECIALIZATION}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_SPECIALIZATION1}
+    </div>
+  </div> 
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_INSTITUTION_NAME}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_INSTITUTION_NAME1}
+    </div>
+  </div> 
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_CITY}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_CITY1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_COUNTRY}</label>
+    <div class="col-sm-9">
+     {INFO_TEXT_COUNTRY1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_START_DATE}</label>
+    <div class="col-sm-9">
+      <div class="row">
+        {INFO_TEXT_START_DATE1}
+      </div>
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_END_DATE}</label>
+    <div class="col-sm-9">
+      <div class="row">
+        {INFO_TEXT_END_DATE1}
+      </div>
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom">{INFO_TEXT_RELATED_INFO}</label>
+    <div class="col-sm-9">
+	    {INFO_TEXT_RELATED_INFO1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label col-form-label-custom"></label>
+    <div class="col-sm-9 text-center">
+	{education_button} {add_next_button}
+    </div>
+  </div>
+<!-- <tr>
+		<td>&nbsp;</td>
+		<td><div align="right" class="style27">{INFO_TEXT_STATE}</div></td>
+		<td>&nbsp;</td>
+		<td>{INFO_TEXT_STATE1}</td>
+</tr> -->
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

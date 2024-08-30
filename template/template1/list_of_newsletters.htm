@@ -1,0 +1,72 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+	
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+		<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends -->
+					
+        <div class="col-md-9 mx-auto">
+
+		{update_message}
+            <div class="card card-custom">
+			<div class="card-header">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+                 <div class="card-body card-body-custom p-0">
+				
+		<div class="table-responsive-sm">
+		<table class="table table-hover">
+													<thead>
+													<tr class="jobs-table-headbar">
+																<th class="style30" width="33%">{TABLE_HEADING_TITLE}</th>
+																<th class="style30" width="33%">{TABLE_HEADING_INSERTED}</th>
+																<th class="style30" align="middle" width="33%">{TABLE_HEADING_VIEW}</th>
+															</tr>
+														</thead>
+														
+													 	<!-- BEGIN newsletter -->
+														 <tr{newsletter.row_selected}>
+															 <td valign="top">{newsletter.title}</td>
+															 <td valign="top">{newsletter.inserted}</td>{newsletter.list_form}
+															 <td valign="top">{newsletter.view}</td>
+															 </form> 
+														</tr>
+														 <!-- END newsletter -->
+														
+				</table>
+				</div>
+                </div>
+				
+				<div class="card-footer">
+				<form name="page" method="post">
+				  {total} {list_page}&nbsp;{page}
+				  {hidden_fields}
+				  </form>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

@@ -1,0 +1,92 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<SCRIPT LANGUAGE="JavaScript">
+	function popUp(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=270,left = 100,top = 100');");
+	}
+</script>
+<style>
+	.displayNone {
+		display: none;
+	}
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone");
+			// $messageStackSuccess
+		});
+	}, 50000);
+</script>
+<div class="container">
+	<div class="row">
+			{LEFT_HTML_JOBSEEKER}
+		
+		<div class="col-md-9 mx-auto">
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message}
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="col-md-12">
+						<h1 class="main-heading">{INFO_TEXT_SUBJECT1}</h1>
+					</div>
+				</div>
+				<div class="card-body card-body-custom">
+					{form}
+
+					<div class="form-group row row-cols-2">
+						<label for="staticEmail" class="col-sm-3 col-form-label mw-30">{INFO_TEXT_FROM}</label>
+						<div class="col-sm-9 mw-70">{INFO_TEXT_FROM1}</div>
+					</div>
+
+					<div class="form-group row row-cols-2">
+						<label for="staticEmail" class="col-sm-3 col-form-label mw-30">{INFO_TEXT_EMAIL}</label>
+						<div class="col-sm-9 mw-70">{INFO_TEXT_EMAIL1}</div>
+					</div>
+
+					<!-- <div class="form-group row">
+						<label for="staticEmail" class="col-sm-3 col-form-label">{INFO_TEXT_SUBJECT}</label>
+						<div class="col-sm-9 font-weight-bold">{INFO_TEXT_SUBJECT1}</div>
+					</div> -->
+
+					<div class="form-group row">
+						<label for="staticEmail"
+							class="col-sm-3 col-form-label">{INFO_TEXT_COVER_LETTER}</label>
+						<div class="col-sm-9">{INFO_TEXT_COVER_LETTER1}</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="staticEmail" class="col-sm-3 col-form-label"></label>
+						<div class="col-sm-9">{INFO_TEXT_DEFALUT_COVER_LETTER1}</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="staticEmail" class="col-sm-3 col-form-label">{INFO_TEXT_RESUMES}</label>
+						<div class="col-sm-9">{INFO_TEXT_RESUMES1}</div>
+					</div>
+					{INFO_TEXT_DISPLAY_JOBS_TITLE}
+
+					<div class="form-group row">
+						{screeners} <!--His structure defined in .php file-->
+					</div>
+
+					<div class="form-group row">
+						<label for="staticEmail" class="col-sm-3 col-form-label"></label>
+						<div class="col-sm-9">{button}</div>
+					</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+
+{FOOTER_HTML}

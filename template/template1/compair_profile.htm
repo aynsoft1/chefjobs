@@ -1,0 +1,85 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+	function popUp1(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=462,height=370,left = 100,top = 100');");
+	}
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 m-none">
+			<div class="list-group mb-4 small">
+				<h4 type="button" class="card-header">
+					<!--{INFO_TEXT_JOB_TITLE}-->{INFO_TEXT_JOB_TITLE1}
+				</h4>
+				<div>{INFO_TEXT_ALL_APPLICANT}</div>
+				<div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+				<div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+				<div>{INFO_TEXT_JOB_DETAIL}</div>
+				<div>{INFO_TEXT_ADD_APPLICANT}</div>
+			</div>
+
+			<div class="list-group mb-4">
+				<h4 type="button" class="card-header">
+					Reports {INFO_TEXT_REPORTS}
+				</h4>
+				<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+				<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<div class="cardcard-custom">
+				<div class="card-bodycard-body-custom">
+					{form}{hidden_fields}
+					<div class="card card-custom">
+						<div class="card-header">
+							<div class="col-md-12">
+								<h1 class="main-heading">{HEADING_TITLE}</h1>
+							</div>
+						</div>
+						<div class="card-header">
+
+							<div class="row">
+								<div class="col-md-6 float-right text-right pr-0">
+									<span class="mr-2">{change_order}</span>
+									<span class="">{back_buttons}</span>
+								</div>
+
+								<div class="col-md-6 float-right text-right">
+									<span class="mr-2">{change_order}</span>
+									<span class="">{back_buttons}</span>
+								</div>
+
+							</div>
+
+						</div>
+						</form>
+						<div class="card-body card-body-custom">
+							{SECTION_JOBSEEKER_PROFILE}
+							{SECTION_TARGET_JOB}
+							{SECTION_WORK_HISTORY_DETAIL}
+							{SECTION_REFERENCE_DETAILS}
+							{SECTION_EDUCATION_DETAILS}
+							{SECTION_SKILLS}
+							{SECTION_LANGUAGES}
+							{SECTION_DOCUMENT_VIDEO}
+							{SECTION_SOCIAL_ACCOUNT}
+							{SECTION_RESUME}
+							{SECTION_OBJECTIVE}
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{FOOTER_HTML}

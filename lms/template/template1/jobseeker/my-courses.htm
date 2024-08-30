@@ -1,0 +1,46 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<div class="container">
+    <div class="row gx-5">
+        <!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends --> 
+        <div class="col-md-9 mx-auto">
+		{update_message}
+		<div class="col-md-12 d-flex align-items-center mb-4">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+			<div class="d-flex ms-auto">
+            {menus}
+        </div>
+        </div>
+        
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- BEGIN my_courses -->
+                <div class="col">
+                    <div class="card card-custom">
+                        {my_courses.thumb}
+                        <div class="card-body">
+                            <h4 class="card-title">{my_courses.title}</h4>
+                            <div class="mb-2 small">{my_courses.summary}</div>
+                            <div class="d-flex align-items-center mt-2">
+                                <!-- <img src="https://bpojobsite.com/img/author1.jpg" class="instructor-img-sm me-2"
+                                    alt="...">
+                                <div class="d-flex"><a href="#">by Beatriz Datangel</a></div> -->
+                            </div>
+                            <div class="d-flex align-items-center mt-2">
+                                {my_courses.start_course_btn}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END my_courses -->
+            </div>
+            {COURSE_NOT_FOUND}
+
+            <div>
+                {PAGINATION_LINK}
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

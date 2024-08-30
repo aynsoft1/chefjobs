@@ -1,0 +1,100 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="javascript">
+  // <!--
+    function calculate_total()
+    {
+      var total;
+      total=document.weighting.IN_location_weight.value * 1 +
+      document.weighting.IN_industry_weight.value * 1 +
+      document.weighting.IN_job_type_weight.value * 1 +
+      document.weighting.IN_experience_weight.value * 1 ;
+      document.weighting.total.value =total;
+    }
+    //-->
+  </script>
+  <!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+	  <!-- Below Alert message File path is class/message_stack.php -->
+      {update_message}
+        <div class="card card-custom">
+		<div class="card-header">
+		<div class="col-md-12">
+				<h1 class="main-heading">{HEADING_TITLE}</h1>
+			</div>
+		</div>
+          <div class="card-body card-body-custom">
+			{form}
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_FIELDS}</label>
+			<div class="col-sm-9">
+			  {INFO_TEXT_WEIGHTS}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_LOCATION}</label>
+			<div class="col-sm-9">
+			  {INFO_TEXT_LOCATION1}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_INDUSTRY}</label>
+			<div class="col-sm-9">
+			  {INFO_TEXT_INDUSTRY1}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_EXPERIENCE}</label>
+			<div class="col-sm-9">
+			  {INFO_TEXT_EXPERIENCE1}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_JOB_TYPE}</label>
+			<div class="col-sm-9">
+			  {INFO_TEXT_JOB_TYPE1}
+			</div>
+		  </div>	
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label">{INFO_TEXT_TOTAL}</label>
+			<div class="col-sm-9">
+			   {INFO_TEXT_TOTAL1}
+			</div>
+		  </div>
+
+		  <div class="form-group row">
+			<label for="inputPassword" class="col-sm-3 col-form-label"></label>
+			<div class="col-sm-9">
+			  {save_button}
+			</div>
+		  </div>
+	    </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{FOOTER_HTML}

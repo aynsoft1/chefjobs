@@ -1,0 +1,133 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+<SCRIPT LANGUAGE="JavaScript">
+  function view_list(curr_dir) {
+    document.thems.curr_dir.value = curr_dir;
+    document.thems.submit();
+  }
+
+  function show_content(content) {
+    var obj = document.getElementById("upload_button");
+    var obj1 = document.getElementById("add_folder");
+    var obj2 = document.getElementById("upload_file");
+    if (content == 'add_folder') {
+      obj.style.display = 'none';
+      obj1.style.display = 'block';
+      obj2.style.display = 'none';
+    }
+    else if (content == 'upload_file') {
+      obj.style.display = 'none';
+      obj1.style.display = 'none';
+      obj2.style.display = 'block';
+    }
+    else {
+      obj.style.display = 'block';
+      obj1.style.display = 'none';
+      obj2.style.display = 'none';
+    }
+  }
+  function set_action(file, action) {
+    if (action == 'delete') {
+      var check = confirm("Are you sure you want to delete this file? :'" + escape(file) + "'.");
+      if (check == true) {
+        document.thems.file.value = file;
+        document.thems.action.value = action;
+        document.thems.submit();
+      }
+    }
+    else {
+      document.thems.file.value = file;
+      document.thems.action.value = action;
+      document.thems.submit();
+    }
+  }
+</SCRIPT>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="create-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      {update_message}
+      <div class="col-12 mb-2">
+        {theme_editor_form}
+        Select theme to edit:
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          {INFO_TEXT_THEME_LIST}
+          <button type="submit" class="btn btn-primary">Go</button>
+        </div>
+        </form>
+      </div>
+
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header"><b>{INFO_TEXT_FILE_NAME}</b> {INFO_TEXT_FILE_NAME1}</div>
+          {edit_form}
+          <div class="card-body">
+              {INFO_TEXT_FILE_CONTENT}
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3 pl-1">
+        <div class="card">
+          <div class="card" style="width: 18rem;">
+            {INFO_TEXT_THEME_SCREENSHOT}
+            <div class="card-body">
+              <h5>{INFO_TEXT_THEME_NAME}</h5>
+              <p class="mt-0">{INFO_TEXT_THEME_DIRECTORY} <strong>{INFO_TEXT_THEME_DIRECTORY1}</strong></p>
+              {theme_form}
+              <p><b>Files</b></p>
+              <!-- BEGIN file_list -->
+              <div class="mt-2 mb-2">{file_list.icon}</div>
+              <!-- END file_list -->
+              </form>
+              <div id="upload_button">
+                <h5>Upload</h5>
+                {INFO_TEXT_NEW_BUTTON}
+              </div>
+              <div id="add_folder" style="display:none;">
+                {folder_form}
+                <div class="form-group">
+                  <label for="text_folder">{INFO_TEXT_FOLDER}</label>
+                  {INFO_TEXT_FOLDER1}
+                </div>
+                <div class="form-group">
+                  {FOLDER_SAVE_BUTTON}
+                </div>
+                </form>
+              </div>
+              <div id="upload_file" style="display:none;">
+                {upload_form}
+                <div class="form-group">
+                  <label for="text_folder">{INFO_TEXT_UPLOAD_FILE_NAME}</label>
+                  {INFO_TEXT_UPLOAD_FILE_NAME1}
+                </div>
+                <div class="form-group">
+                  {UPLOAD_BUTTON}
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

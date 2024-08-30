@@ -1,0 +1,74 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-12">
+        {SCRIPT}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header d-flex">
+            <form class="" name="disply" method="get">
+              <div class="form-inline"><span class="mr-2">{search_form}</span> {search_text}</div>
+            </form>
+            <div class="form-inline ms-auto"><span class="mr-2">{invoice_form}</span> {invoice_text}</div>
+          </div>
+          <div class="card-body table-responsive middle_table2">
+            <!-- Middle Starts -->
+            <table class="table table-hover">
+              <thead class="admin-table-head-bar">
+                <th>{TABLE_HEADING_INVOICE_NO}</th>
+                <th>{TABLE_HEADING_COMPANY_NAME}</th>
+                <th>{TABLE_HEADING_EMAIL_ADDRESS}</th>
+                <th>{TABLE_HEADING_DATE_PURCHASED}</th>
+                <th>{TABLE_HEADING_INVOICE_TOTAL}</th>
+                <th>{TABLE_HEADING_PAYMENT_METHOD}</th>
+                <th>{TABLE_HEADING_STATUS}</th>
+                <th>{TABLE_HEADING_VIEW}</th>
+                <th>{TABLE_HEADING_EMAIL}</th>
+              </thead>
+                <!-- BEGIN invoice -->
+                <tr{invoice.row_selected}>
+                 <td>{invoice.invoice_no}</td>
+                 <td><h4 class="m-0">{invoice.company_name}</h4></td>
+                 <td>{invoice.email_address}</td>
+                 <td>{invoice.date_purchased}</td>
+                 <td>{invoice.invoice_total}</td>
+                 <td>{invoice.payment_method}</td>
+                 <td>{invoice.status}</td>
+                 <td>{invoice.view}</td>
+                 <td>{invoice.email}</td>
+                </tr>
+                <!-- END invoice -->
+               </table>
+               <table border="0" width="100%" cellspacing="0" cellpadding="0" class="bottom-select-bar">
+             <tr>
+              <td align="left">{count_rows}</td>
+              <td align="right">{no_of_pages}</td>
+             </tr>
+            </table>
+            <!-- Middle Ends -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{ADMIN_FOOTER_HTML}

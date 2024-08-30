@@ -1,0 +1,82 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+
+<div class="container">
+    <div class="row">
+			<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends --> 
+        <div class="col-md-9 mx-auto">
+      <!-- Below Alert message File path is class/message_stack.php -->
+      {update_message}		
+            <div class="card card-custom">
+			<div class="card-header">
+				<h1 class="main-heading">{INFO_TEXT_SEARCH_APPLICANTS}</h1>
+			  </div>
+                <div class="card-body card-body-custom">
+				  {form}
+				<h5 class="mb-3 font-weight-bold text-muted">{INFO_TEXT_ADVANCE_SEARCH}</h5>
+				
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right">{APPLICATION_ID2}</label>
+					<div class="col-sm-9">
+						{INFO_TEXT_APPLICATION1}
+					</div>
+				</div>
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_FIRST_NAME}</label>
+					<div class="col-sm-9">
+						{INFO_TEXT_FIRST_NAME1}
+					</div>
+				</div>
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_LAST_NAME}</label>
+					<div class="col-sm-9">
+						{INFO_TEXT_LAST_NAME1}
+					</div>
+				</div>
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_EXPERIENCE}</label>
+					<div class="col-sm-9">
+						{INFO_TEXT_EXPERIENCE1}
+					</div>
+				</div>
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_EMAIL_ADDRESS}</label>
+					<div class="col-sm-9">
+						{INFO_TEXT_EMAIL_ADDRESS1}
+					</div>
+				</div>
+				<div class="form-group row align-items-center">
+					<label for="inputPassword" class="col-sm-3 col-form-label text-right"></label>
+					<div class="col-sm-9">
+						{buttons}
+					</div>
+				</div>
+		
+				</form>		
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

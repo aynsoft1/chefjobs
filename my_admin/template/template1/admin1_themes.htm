@@ -1,0 +1,173 @@
+{ADMIN_HEADER_HTML}
+ <script >
+  function show_image(url)
+  {
+   var obj=document.getElementById('popunder_content1');
+   var obj1=document.getElementById('popunder_image');
+   obj1.src=url;
+   obj.className='popup_content';
+   document.getElementById('fade').className='black_overlay';
+  }
+  function  close_popup()
+  {
+   document.getElementById('popunder_content1').className='popup_content2'
+   document.getElementById('fade').className='popup_content2'
+   var obj1=document.getElementById('popunder_image');
+   obj1.src="../img/spinner.gif";
+  }
+  function show_screenshot(img)
+  {
+   var obj;
+   if(obj=document.getElementById('default_main_screenshot'))
+   {
+    obj.src=img;
+   }
+  }
+  
+
+ </script>
+ 
+ 
+ 
+ 
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="color-palette-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      {update_message}
+      <div class="col-md-12">
+        <div class="card shadow-sm">
+          <div class="card-body pt-4">
+        <div class="media theme-screen">
+          <!-- Button trigger modal -->
+		  <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalXl" style="padding:0;">
+		   {CURRENT_THEME_SCREENSHOT}</button>
+		  
+	
+          <span class="badge badge-sm badge-success" style="position: absolute;border-top-left-radius: 5px;top: 22px;left: 21px;">Active theme</span>
+          <div class="media-body ml-4">
+            <h4 class="mt-0 font-weight-bold text-success">{CURRENT_THEME_NAME}</h4> 
+            <p class="m-0">{CURRENT_THEME_DIRECTORY}</p>
+            <p class="m-0">Version: {CURRENT_THEME_VERSION}</p>
+            <hr>
+            <p>{CURRENT_THEME_DESCRIPTION}</p>
+            <p>{CURRENT_THEME_SCREENSHOT1}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+
+
+      <div class="col-md-12 mt-4">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-body">
+            <table class="table table table-hover">
+              {theme_form}
+              <thead>
+                <tr>
+                  <th>Available Themes</th>
+                  <th>{TABLE_HEADING_THEME_NAME}</th>
+                  <!--<th>{themes.directory}</th>-->
+                  <th>{TABLE_HEADING_THEME_VERSION}</th>
+                  <th>
+                    <nobr>{TABLE_HEADING_THEME_DEFAULT}</nobr>
+                  </th>
+                </tr>
+              </thead>
+              <!-- BEGIN themes -->
+              <tbody>
+                <tr {themes.row_selected}>
+                  <td>
+                    <div class="theme-screnshot">{themes.screenshot}</div>
+                  </td>
+                  <td valign="top">
+                    <h4 class="theme-name font-weight-bold">{themes.name}</h4>
+                    <div class="theme-desc">{themes.description}</div>
+                  </td>
+                  <td>
+                    <div class="theme-ver">{themes.version}</div>
+                  </td>
+                  <td>
+                    <div class="radio-btn">{themes.radio_button}</div>
+                  </td>
+                </tr>
+              </tbody>
+              <!-- END themes -->
+              <tfoot>
+                <tr>
+                  <td colspan="4">{button}</td>
+                </tr>
+              </tfoot>
+              </form>
+            </table>
+          </div>
+        </div>
+      </div>
+	  
+<div class="modal fade show" id="exampleModalXl" tabindex="-1" aria-labelledby="exampleModalXlLabel" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="exampleModalXlLabel">{CURRENT_THEME_NAME}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="{INFO_TEXT_LOGO}" id="popunder_image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-12" id='site_broken_themes' {INFO_TEXT_BROKEN_THEMES_STYLE}>
+        <table>
+          <thead>
+            <tr>
+              <th>{TABLE_HEADING_THEME_NAME}</th>
+              <th>{TABLE_HEADING_THEME_ERROR}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- BEGIN broken_themes -->
+            <tr{broken_themes.row_selected}>
+              <td>
+                <span style="font-size: 12px;font-weight: bold;font-family: Arial,Verdana, Helvetica, sans-serif;">
+                  {broken_themes.name}
+                </span>
+                <br>
+                {broken_themes.directory}
+              </td>
+              <td>
+                {broken_themes.error}
+              </td>
+              </tr>
+              <!-- END broken_themes -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

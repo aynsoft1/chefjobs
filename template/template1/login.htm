@@ -1,0 +1,67 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+  function placeHolderAdd() {
+    const mailInput1 = document.querySelector("[name='TREF_email_address1']").placeholder = "{EMAIL_ADDRESS}";
+    const passwordInput1 = document.querySelector("[name='TR_password1']").placeholder = "{PASSWORD}";
+    const mailInput2 = document.querySelector("[name='TREF_email_address2']").placeholder = "{EMAIL_ADDRESS}";
+    const passwordInput2 = document.querySelector("[name='TR_password2']").placeholder = "{PASSWORD}";
+  }
+  window.addEventListener('load', placeHolderAdd);
+</script>
+<style>
+  .displayNone {
+    display: none;
+  }
+
+</style>
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      $(".messageStackSuccess").addClass("displayNone");
+      // $messageStackSuccess
+    });
+  }, 50000);
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <!-- Below Alert message File path is class/message_stack.php -->
+      {update_message}
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-left:0;border-bottom:0px;">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active px-4" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+            type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">{HEADING_TITLE1}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link px-4" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+            type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">{HEADING_TITLE2}</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+          tabindex="0">
+          <div style="border-top-left-radius: 0px;border-top-right-radius: 0px;margin: -1px 0 0 0;" class="card card-custom card-login">
+            <div class="card-body card-body-custom">
+              <h3 class="mt-2 mb-1" style="font-size: 1.8rem;">{SIGN_IN}</h3>
+			  <div class="mb-3" style="font-size: 14px;font-weight: 400;color: rgba(0,0,0,0.9);">{STAY_UPDATED}</div>
+              <div>{AREA1}</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          <div style="border-top-left-radius: 0px;border-top-right-radius: 0px;margin: -1px 0 0 0;" class="card card-custom card-login">
+            <div class="card-body card-body-custom">
+              <h3 class="mt-2 mb-1" style="font-size: 1.8rem;">{SIGN_IN}</h3>
+			  <div class="mb-3" style="font-size: 14px;font-weight: 400;color: rgba(0,0,0,0.9);">{STAY_UPDATED}</div>
+              <div>{AREA2}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

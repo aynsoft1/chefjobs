@@ -1,0 +1,51 @@
+{FACEBOOK_HEADER_HTML}
+{FACEBOOK_HEADER_MIDDLE_HTML}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={FACEBOOK_APP_ID}";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="searchResult">
+<table width="90%"  border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                <td width="60%">{pages}</td>
+                <td id='pagination-flickr' align="right">{total_pages}</td>
+               </tr>
+              </table>
+														<div>{total}</div>
+  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+               <!-- BEGIN job_search_result -->
+               <tr>
+               	<td >
+               	   <td class="{job_search_result.row_selected}">
+                    <table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                     <tr>
+               	      <td colspan="2" class="job_title">{job_search_result.job_title}</td>
+               	      <td  rowspan="3"valign="middle">{job_search_result.logo}</td>
+               	     </tr>
+                     <tr>
+               	      <td class="job_search_content2"><span class="job_search_b_content">{job_search_result.company_name}</span><b>,</b> {job_search_result.location}</td>
+               	      <td class="job_search_content1">Apply Before:{job_search_result.apply_before}</td>
+               	     </tr>
+																				 <tr>
+               	      <td  colspan="2"class="job_search_content1">{job_search_result.description}</td>
+               	     </tr>
+																				 <tr>
+               	      <td  colspan="2"class="	">
+																						<div class="fb-like" id="fb_{job_search_result.job_id}" data-href="{job_search_result.job_url}" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+																						</td>
+               	     </tr>
+																				</table>
+																			</td>
+                  
+																</td>
+               </tr>
+               <!-- END job_search_result -->
+              </table>
+														</div>	<div id="jobDetailResult"></div>												
+
+{FOOTER_HTML}

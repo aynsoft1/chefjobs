@@ -1,0 +1,464 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .box {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .active_tab1 {
+        background-color: #fff;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .inactive_tab1 {
+        background-color: #f5f5f5;
+        color: #333;
+        cursor: not-allowed;
+    }
+
+    .has-error {
+        border-color: #cc0000;
+        background-color: #ffff99;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-3">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+            <div class="dflex ms-auto">
+                <!--{new_button}--> {menus}
+            </div>
+        </div>
+    </div>
+    {update_message}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 mb-2">
+                <div class="d-flex align-items-center">
+                    <div class="arrow-steps clearfix">
+                        <div class="step current" id="step_1_tab">
+                            {BASIC}
+                        </div>
+                        <div class="step" id="step_2_tab">
+                            {MEDIA}
+                        </div>
+                        <div class="step" id="step_final_tab">
+                            {INSTRUCTOR}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card card-custom">
+                    <div class="card-header" id="test_link_menu">
+                    </div>
+                    {form}
+                    <div class="card-body">
+                        <div class="tab-content">
+                            {form_method}
+                            <!-- step one -->
+                            <div class="tab-pane active" id="step_1_form">
+                                <div class="form-group row align-items-center">
+                                    <label for="course_title"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_TITLE}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_input_tag}
+                                        <span id="error_course_title" class="text-danger">{error_title}</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_summary"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_SUMMARY}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_summary_tag}
+                                        <span id="error_course_summary" class="text-danger">{error_summary}</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_description"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_DESCRIPTION}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_description_tag}
+                                        <span id="error_course_description"
+                                            class="text-danger">{error_description}</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="lms_category_id"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_CATEGORY}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {lms_category}
+                                        <span id="error_lms_category_id" class="text-danger">{error_category}</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_duration"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_DURATION}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_duration_tag}
+                                        <span id="error_course_duration" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_description"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_REQUIREMENT}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_requirement_tag}
+                                        <span class="fw-lighter">comma separated value</span>
+                                        <span id="error_requirement" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_price" class="col-12 col-sm-4 col-form-label text-sm-right">
+
+                                    </label>
+                                    <div class="form-check col-12 col-sm-8 col-lg-6">
+                                        {course_price_checkbox_tag} <label
+                                            for="course_price">{COURSE_PRICE_CHECK}</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center" id="price-div-box">
+                                    <label for="price" class="col-12 col-sm-4 col-form-label text-sm-right">
+                                        {COURSE_PRICE}
+                                    </label>
+                                    <div class="form-check col-12 col-sm-8 col-lg-6">
+                                        {course_price_tag}
+                                        <span id="error_price" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-12 col-sm-4 col-form-label text-sm-right">&nbsp;</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <button type="button" name="step_1_next_btn" id="step_1_next_btn"
+                                            class="btn btn-lg btn-primary btn-block">{BTN_NEXT}</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- step 2 media -->
+                            <div class="tab-pane" id="step_2_form">
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_overview_provider"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_OVERVIEW_PROVIDER}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_overview_provider_tag}
+                                        <span id="error_course_overview_provider" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_overview_url"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_OVERVIEW_URL}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_overview_url}
+                                        <span id="error_course_overview_url" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_thumbnail"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_THUMBNAIL}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {course_thumbnail}
+                                        <span id="error_course_thumbnail" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center mt-4">
+                                    <label for="course_thumbnail"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right"></label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <button type="button" name="prev_step_1_btn" id="prev_step_1_btn"
+                                            class="btn btn-outline-secondary px-4 me-2">
+                                            {BTN_PREVIOUS}
+                                        </button>
+                                        <button type="button" name="final_step_btn" id="step_2__btn"
+                                            class="btn btn-primary px-4 me-2 mmt-15">
+                                            {BTN_NEXT}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- step final -->
+                            <div class="tab-pane" id="final_step_form">
+
+                                <div class="form-group row align-items-center">
+                                    <label for="course_instructor_name"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right">{COURSE_INSTRUCTOR}</label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        {instructor_box}
+                                        {ADD_NEW_INSTRUCTOR}
+                                        <span id="course_instructor_id" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row align-items-center mt-4">
+                                    <label for="course_thumbnail"
+                                        class="col-12 col-sm-4 col-form-label text-sm-right"></label>
+                                    <div class="col-12 col-sm-8 col-lg-6">
+                                        <button type="button" name="prev_step_1_btn" id="prev_step_2_btn"
+                                            class="btn btn-outline-secondary px-4 me-2">
+                                            {BTN_PREVIOUS}
+                                        </button>
+                                        <button type="button" name="final_step_btn" id="final_step_btn"
+                                            class="btn btn-primary px-4 me-2 mmt-15">
+                                            {BTN_SUBMIT}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript" src="{tiny_mce_script_url}"></script>
+<script>
+    $(document).ready(function () {
+
+        tinymce.init({
+            selector: 'textarea[name="course_description"]',
+            plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code' ],
+            images_upload_url: 'tinymce6/upload_image.php',
+            force_br_newlines : true,
+            force_p_newlines : false,
+            branding: false,
+            promotion: false,
+            convert_urls: false,
+            relative_urls: false,
+        });
+        
+        /*
+        tinyMCE.init({
+            theme: "modern",
+            plugins: [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+            ],
+            toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+            menubar: false,
+            image_advtab: true,
+            relative_urls: false,
+            remove_script_host: false,
+            mode: "exact",
+            elements: "course_description",
+            height: "400",
+            theme_advanced_toolbar_location: "top",
+            theme_advanced_toolbar_align: "center",
+            force_br_newlines: true,
+            force_p_newlines: false,
+            forced_root_block: ''
+
+        });
+        */
+
+        toggle_price_box();
+
+        // step1 clicked next
+        $('#step_1_next_btn').click(function () {
+            // validation
+            var is_step1_form_valid = step_1_validation_form()
+
+            if (is_step1_form_valid) {
+                move_to_step_1();
+            }
+        });
+
+        // previous btn clicked from step 2
+        $('#prev_step_1_btn').click(function () {
+            move_prev_to_step_1();
+        });
+
+        // step2 next btn clicked
+        $('#step_2_next_btn').click(function () {
+            // var is_step2_form_valid = step_2_validation_form()
+
+            // if (is_step2_form_valid) {
+            //     move_to_step_2();
+            // }
+            move_to_step_2();
+        });
+
+        // previous btn clicked from final step
+        $('#prev_step_2_btn').click(function () {
+            move_prev_to_step_2();
+        });
+
+        // step final submit
+        $('#final_step_btn').click(function () {
+            console.log('final form submit');
+            $("#lms-course-submit").submit();
+        });
+
+        function move_to_step_1() {
+            // remove class active from first step form
+            $('#step_1_form').removeClass('active')
+            // add active class in second next form
+            $('#step_2_form').addClass('active')
+            // remove current class in first tab
+            $('#step_1_tab').removeClass('current')
+            // active next tab also
+            $('#step_2_tab').addClass('current')
+        }
+
+        function move_prev_to_step_1() {
+            // remove class from final step form
+            $('#step_2_form').removeClass('active')
+            // active class step 1 form
+            $('#step_1_form').addClass('active')
+            // remove class from final_tab
+            $('#step_2_tab').removeClass('current')
+            // active first tab
+            $('#step_1_tab').addClass('current')
+        }
+
+        function move_to_step_2() {
+            // remove class active from first step form
+            $('#step_2_form').removeClass('active')
+            // add active class in second next form
+            $('#final_step_form').addClass('active')
+            // remove current class in first tab
+            $('#step_2_tab').removeClass('current')
+            // active next tab also
+            $('#step_final_tab').addClass('current')
+        }
+
+        function move_prev_to_step_2() {
+            // remove class from final step form
+            $('#final_step_form').removeClass('active')
+            // active class step 1 form
+            $('#step_2_form').addClass('active')
+            // remove class from final_tab
+            $('#step_final_tab').removeClass('current')
+            // active first tab
+            $('#step_2_tab').addClass('current')
+        }
+
+        function step_1_validation_form() {
+            let error_title = '';
+            let error_cat_id = '';
+            let error_summary = '';
+            let error_description = '';
+            let error_price = '';
+
+            // title required
+            if ($.trim($('#course_title').val()).length == 0) {
+                error_title = "course title is required";
+                $('#error_course_title').text(error_title);
+            } else {
+                $('#error_course_title').text('');
+            }
+
+            // summary required
+            if ($.trim($('#course_summary').val()).length == 0) {
+                error_summary = "course summary is required";
+                $('#error_course_summary').text(error_summary);
+            } else {
+                $('#error_course_summary').text('');
+            }
+
+            // description required
+            var tiny_mce_text = tinymce.get("course_description").getContent();
+            // $('#course_description').val()
+            if (tiny_mce_text.length == 0) {
+                error_description = "course description is required";
+                $('#error_course_description').text(error_description);
+            } else {
+                $('#error_course_description').text('');
+            }
+
+            // category id required
+            if ($('#lms_category_id').val() <= 0) {
+                error_cat_id = 'Please select a valid category.';
+                $('#error_lms_category_id').text(error_cat_id);
+            } else {
+                $('#error_lms_category_id').text('');
+            }
+
+            // price is required
+            if (($('#price').val()).length <= 0) {
+                error_price = 'price is required if it is free then check the checkbox';
+                $('#error_price').text(error_price);
+            } else {
+                $('#error_price').text();
+            }
+
+            if (error_title != '' || error_cat_id != 0 || error_summary != '' || error_description != '' ||
+                error_price != '') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function step_2_validation_form() {
+            let error_media_provider = '';
+            let error_media_url = '';
+
+            // overview provider id required
+            if ($('#course_overview_provider').val() <= 0) {
+                error_media_provider = 'Please select a valid provider.';
+                $('#error_course_overview_provider').text(error_media_provider);
+            } else {
+                $('#error_course_overview_provider').text('');
+            }
+
+            // url required
+            if ($.trim($('#course_overview_url').val()).length == 0) {
+                error_media_url = 'media url is required';
+                $('#error_course_overview_url').text(error_media_url);
+            } else {
+                $('#error_course_overview_url').text('');
+            }
+
+            if (error_media_provider != 0 || error_media_url != '') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function toggle_price_box() {
+            const price_checkbox = document.getElementById("course_price");
+            const price_input = document.getElementById("price");
+            const price_div_box = document.getElementById("price-div-box");
+
+            price_checkbox.addEventListener('click', function () {
+                if (price_checkbox.checked === true) {
+                    // if checkbox checked means free course than set value 0 and hide the input box
+                    price.value = "0";
+                    price_div_box.classList.add("visually-hidden")
+                } else {
+                    price_div_box.classList.remove("visually-hidden");
+                    price.focus();
+                }
+            })
+        }
+    });
+</script>
+{FOOTER_HTML}

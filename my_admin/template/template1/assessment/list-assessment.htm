@@ -1,0 +1,62 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="container be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>{ASSESSMENT_HEADING}</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-header">
+                        {new_button}
+                        {employer_test_btn}
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{TH_ASSESSMENT_NAME}</th>
+                                    <th>{TH_COMPANY_NAME}</th>
+                                    <th>{TH_ASSESSMENT_TEST_COUNT}</th>
+                                    <th>{TH_ASSESSMENT_DATE}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- BEGIN assessments -->
+                                <tr>
+                                    <td>{assessments.name}</td>
+                                    <td>{assessments.company}</td>
+                                    <td>{assessments.no_of_test_included}</td>
+                                    <td>{assessments.date}</td>
+                                </tr>
+                                <!-- END assessments -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        {PAGINATION_LINK}
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

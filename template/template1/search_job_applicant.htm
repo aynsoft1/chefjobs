@@ -1,0 +1,121 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}{INFO_TEXT_JSCRIPT_FILE}
+ </td>
+</tr>
+<script language="javascript" type="text/javascript" src="TinyMCE/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+		<script language="javascript" type="text/javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "simple"
+	});
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+		<div class="col-md-3 small-font">
+		<div class="list-group mb-4">
+		  <div class="list-group-item list-group-item-action info-bg font-weight-bold">
+			Applicant tracking<!--{INFO_TEXT_JOB_TITLE}{INFO_TEXT_JOB_TITLE1}-->
+		  </div>
+		  <div>{INFO_TEXT_ALL_APPLICANT}</div>
+		  <div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+		  <div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+		  <div>{INFO_TEXT_JOB_DETAIL}</div>
+		  <div>{INFO_TEXT_ADD_APPLICANT}</div>
+		</div>
+		
+		<div class="list-group mb-4">
+		  <button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+			{INFO_TEXT_REPORTS}
+		  </button>
+			<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+			<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+			<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+			<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+		</div>
+		</div>
+		
+		
+		
+        <div class="col-md-9">
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-header card-header-custom">
+                    <h1 class="display-6 p-0 m-0 float-left">{HEADING_TITLE}</h1>
+					
+                </div>
+                <div class="card-body card-body-custom">
+				<div class="badge badge-secondary mb-3">{INFO_TEXT_ADVANCE_SEARCH}</div>
+				{form}
+			  <div class="form-group">
+				<!--<label for="exampleInputEmail1">{INFO_TEXT_FIRST_NAME}</label>-->
+				{INFO_TEXT_FIRST_NAME1}
+			  </div>
+			  
+			  <div class="form-group">
+				<!--<label for="exampleInputEmail1">{INFO_TEXT_LAST_NAME}</label>-->
+				{INFO_TEXT_LAST_NAME1}
+			  </div>
+	
+			  <div class="form-group">
+				<!--<label for="exampleInputEmail1">{INFO_TEXT_EMAIL_ADDRESS}</label>-->
+				{INFO_TEXT_EMAIL_ADDRESS1}
+			  </div>			  
+			  <div class="form-group">
+				{INFO_TEXT_EXPERIENCE1}
+			  </div>			  
+
+			  <div class="form-group">
+				{buttons}
+			  </div>
+			  </form>
+			
+			<hr>
+			<div class="badge badge-secondary mb-3">{INFO_TEXT_SEARCH_BY_ROUND}</div>
+			{form}
+			 <div class="row form-group">
+				<!--<label for="exampleInputEmail1"></label>-->
+				<div class="col">{INFO_TEXT_TRACKING_ROUND1}</div>
+				<div class="col">{INFO_TEXT_APPLICATION_STATUS1}</div>
+			  </div>
+			<div class="form-group">{buttons}</div>
+			</form>
+			
+			
+			<hr>
+			<div class="badge badge-secondary mb-3">{INFO_TEXT_SEARCH_BY_ID}</div>
+			{form}
+			 <div class="form-group">
+				<!--<label for="exampleInputEmail1">{INFO_TEXT_APPLICATION}</label>-->
+				{INFO_TEXT_APPLICATION1}
+			  </div>
+			<div class="form-group">{buttons}</div>
+			</form>
+			
+</div>
+			</div>
+		</div>
+		
+		<div class="col-md-3 small-font">
+			{RIGHT_HTML}
+		</div>
+</div>
+</div>
+
+
+
+{FOOTER_HTML}

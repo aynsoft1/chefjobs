@@ -1,0 +1,450 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script>
+  function classAdd() {
+    const btnClass = document.querySelector('div a.customClass');
+    btnClass.classList.add('btn', 'btn-sm', 'btn-primary');
+  }
+  window.addEventListener('load', classAdd);
+</script>
+
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#" class="text-white">JOB BOARD</a>
+        <div id="close-sidebar">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="sidebar-header text-center">
+        <div class="user-pic">
+          <div class="img-responsive img-rounded">{INFO_TEXT_LOGO}</div>
+        </div>
+        <div class="user-info mt-2">
+          <span class="user-name">
+            <strong>{INFO_TEXT_COMPANY_NAME}</strong>
+          </span>
+          <span class="user-role light-color">{INFO_TEXT_EMAIL_ADDRESS1}</span>
+          <span class="user-role light-color">{INFO_TEXT_ADDRESS1}</span>
+          <span class="user-role light-color">{INFO_TEXT_PHONE1}</span>
+          <!--<span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>-->
+        </div>
+      </div>
+
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa fa-tachometer" aria-hidden="true"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-briefcase"></i>
+              <span>Job Posting</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  {INFO_TEXT_POST_JOB2}
+                  
+                </li>
+                <li>
+                  {INFO_TEXT_LIST_OF_JOBS}
+                </li>
+                <li>
+                  {INFO_TEXT_MY_ACTIVE_JOBS}
+                </li>
+				<li>
+                  {INFO_TEXT_MY_EXPIRED_JOBS}
+                </li>
+				<li>
+                  {INFO_TEXT_IMPORT_JOBS}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <span>Search Resumes</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  {INFO_TEXT_SEARCH_RESUMES}
+                </li>
+                <li>
+                  {INFO_TEXT_SEARCH_APPLICANT}
+                </li>
+                <li>
+                  {INFO_TEXT_RESUME_SEARCH_AGENT}
+                </li>
+                <li>
+                  {INFO_TEXT_SAVE_RESUME}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>Applicant Tracking</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a>{INFO_TEXT_LIST_OF_APPLICATIONS}</a>
+                </li>
+                <li>
+                  <a>{INFO_TEXT_APPLICANT_TRACKING}</a>
+                </li>
+                <li>
+                  <a href="#">Interview</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <span>My Account</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  {INFO_TEXT_COMPANY_DESCRIPTION}
+                </li>
+                <li>
+                  {INFO_TEXT_MANAGED_USERS}
+                </li>
+				<li>
+                  {INFO_TEXT_ORDER_HISTORY}
+                </li>
+				<li>
+                  {INFO_TEXT_EDIT_PROFILE}
+                </li>
+				<li>
+                  <a style="display:inline-flex;" href="#">{INFO_TEXT_DIRECT_LOGIN}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+		  <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-wrench" aria-hidden="true"></i>
+              <span>Resources</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  {INFO_TEXT_JOIN_FORUM}
+                </li>
+                <li>
+                  <a href="#">Articles</a>
+                </li>
+                <li>
+                  {INFO_TEXT_NEWSLETTER}
+                </li>
+				<li>
+                  {INFO_TEXT_CONTACT_LIST}
+                </li>
+              </ul>
+            </div>
+          </li>
+		  <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+              <span>Correspondence</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  {INFO_TEXT_ADMIN_RESPONSE}
+                </li>
+                <li>
+                  {INFO_TEXT_JOBSEEKER_RESPONSE}
+                </li>
+                <li>
+                  {INFO_TEXT_LIST_OF_JOBFAIRS}
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+	        <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <small class="d-block mb-2 rates" style="color:#b8bfce;">
+            Subscription Plan - Rate Card Post your jobs and access resumes instantly.
+            </small>
+            {RATE_CARD}
+        </div>
+		
+      </div>
+    </div>
+    <!-- sidebar-content  -->
+  </nav>
+  
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12 mb-4">
+			<h1 class="display-6 float-left text-left">{INFO_TEXT_EMPLOYER_CONTROL_PANEL}</h1>
+			<div class="text-right float-right">{INFO_TEXT_POST_JOB}</div>
+			</div>
+		</div>
+      	<div class="row">
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                  <div class="icon text-white bg-indigo mr-3"><ion-icon name="briefcase-outline"></ion-icon></div>
+                  <div class="card-widget-body">
+                      <div class="dot me-3 bg-indigo"></div>
+                      <div class="text">
+                          <a style="display: flex;" href="">
+                              <h6 class="mb-0">Jobs</h6> <span class="text-gray-500 numbers">{INFO_TEXT_TOTAL_JOBS}</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                  <div class="icon text-white bg-green mr-3"><ion-icon name="people-outline"></ion-icon></div>
+                  <div class="card-widget-body">
+                      <div class="dot me-3 bg-green"></div>
+                      <div class="text">
+                          <a style="display: flex;" href="">
+                              <h6 class="mb-0">Applicants</h6><span class="text-gray-500 numbers">{INFO_TEXT_TOTAL_APPLICANT}</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                  <div class="icon text-white bg-blue mr-3"><ion-icon name="checkmark-done-outline"></ion-icon></div>
+                  <div class="card-widget-body">
+                      <div class="dot me-3 bg-blue"></div>
+                      <div class="text">
+                          <a style="display: flex;" href="">
+                              <h6 class="mb-0">Selected</h6><span class="text-gray-500 numbers">{INFO_TEXT_TOTAL_APPLICANT_SELETED}</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card-widget h-100 border">
+                  <div class="icon text-white bg-red mr-3"><ion-icon name="eye-outline"></ion-icon></div>
+                  <div class="card-widget-body">
+                      <div class="dot me-3 bg-red"></div>
+                      <div class="text">
+                          <a style="display: flex;" href="">
+                              <h6 class="mb-0">Job Views</h6><span class="text-gray-500 numbers">1</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+ </div>
+  <div class="row">
+    <div class="col-md-12">
+	{update_message}
+      <div class="cardss card-customss">
+        <div class="card-bodyss card-body-customss">
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body p-0">                    
+                    <div class="row">
+
+                      {INFO_TEXT_GRAPH}
+
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+		  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="display-6 mb-2">{INFO_TEXT_JOB_POSTING}
+                    <small class="">{INFO_TEXT_PLAN_TYPE}</small></h5>
+                  <h6 class="card-subtitle text-muted text-muted-custom">{INFO_TEXT_FROM_TO}</h6>
+                  <div class="text-muted text-muted-custom">{INFO_TEXT_NO_OF_JOBS} {INFO_TEXT_NO_OF_JOBS1}</div>
+                  <div class="text-muted text-muted-custom">{INFO_TEXT_NO_OF_JOBS_USED} {INFO_TEXT_NO_OF_JOBS_USED1}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-9">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="display-6 mb-2">{INFO_TEXT_RESUME} - <small
+                      class="">{INFO_TEXT_PLAN_TYPE1}</small></h5>
+                  <h6 class="card-subtitle text-muted text-muted-custom">{INFO_TEXT_FROM_TO1}</h6>
+                  <div class="text-muted text-muted-custom">{INFO_TEXT_NO_OF_CV} {INFO_TEXT_NO_OF_CV1}</div>
+                  <div class="text-muted text-muted-custom">{INFO_TEXT_NO_OF_CV_USED} {INFO_TEXT_NO_OF_CV_USED1}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+		<!--<div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <h5 class="card-header alert-info">{INFO_TEXT_JOB_POSTING}</h5>
+                <div class="card-body py-2">
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_POST_JOB}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_LIST_OF_JOBS}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_LIST_OF_JOBFAIRS}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_MY_ACTIVE_JOBS}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_MY_EXPIRED_JOBS}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_IMPORT_JOBS}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_ADMIN_RESPONSE}</div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                    </i> {INFO_TEXT_JOBSEEKER_RESPONSE}</div>
+                  <div class="pb-1">{INFO_TEXT_DIRECT_LOGIN}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <h5 class="card-header alert-info">{INFO_TEXT_HEADER_SEARCH_RESUMES}</h5>
+                <div class="card-body py-2" style="height: 228px;">
+                  <div class="pb-1">
+                    <i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_SEARCH_RESUMES}
+                  </div>
+                  <div class="pb-1">
+                    <i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_SEARCH_APPLICANT}
+                  </div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_RESUME_SEARCH_AGENT}
+                  </div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_SAVE_RESUME}
+                  </div>
+                  <div class="pb-1">
+                    {INFO_TEXT_LIST_OF_APPLICATIONS}
+                  </div>
+                  <div class="pb-1">
+                    {INFO_TEXT_APPLICANT_TRACKING}
+                  </div>
+                  <div class="pb-1">
+                    {INFO_TEXT_LIST_OF_UNREGISTERED_RESUMES}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <h5 class="card-header alert-info">{INFO_TEXT_MY_ACCOUNT}</h5>
+                <div class="card-body py-2" style="height: 148px;">
+                  <div class="row">
+                    <div class="col-md-9">
+                     <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_EDIT_PROFILE}</div>
+						
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_CONTACT_LIST}</div>
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_COMPANY_DESCRIPTION}</div>
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_NEWSLETTER}</div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_ORDER_HISTORY}</div>
+                      <!-- <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_CHANGE_PASSWORD}</div> 
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_MANAGED_USERS}</div>
+                      <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true">
+                        </i> {INFO_TEXT_JOIN_FORUM}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <h5 class="card-header alert-info">{INFO_TEXT_CURRENT_STATUS}</h5>
+                <div class="card-body py-2">
+                  <div class="pb-1">
+                    <i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_TOTAL_JOBS}
+                  </div>
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                   {INFO_TEXT_TOTAL_APPLICANT}
+                  </div>
+                
+				  <div class="pb-1">{INFO_TEXT_TOTAL_DIRECT_APPLICANT}</div>
+
+                  <div class="pb-1"><i class="fa fa-angle-right icon-page-title" aria-hidden="true"></i>
+                    {INFO_TEXT_TOTAL_APPLICANT_SELETED}
+                  </div>
+                  <div class="pb-1">{INFO_TEXT_RATE_CHART1}</div>
+                </div>
+              </div>
+            </div>
+		</div>-->
+		
+		
+        </div>
+      </div>
+    </div>
+  </div>
+	  
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper-->
+{FOOTER_HTML} 

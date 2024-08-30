@@ -1,0 +1,57 @@
+{HEADER_HTML} {HEADER_MIDDLE_HTML}
+<!-- Left Starts -->
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 d-flex align-items-center mb-3 m-dblock">
+          <h1 class="m-0">{HEADING_TITLE}</h1>
+          <div class="dflex ms-auto">{quiz_menus} {quiz_menus_1}</div>
+      </div>
+  </div>
+  {update_message}
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="card card-custom card-table"
+        >
+          <div class="card-body card-body-custom table-responsive p-0">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{MEMBER_NAME}</th>
+                  <th>{TABLE_HEADING_VIEW_RESUME}</th>
+                  <th>{TEST_NAME}</th>
+                  <th>{SCORE}</th>
+                  <th>{TH_IP}</th>
+                  <th>{TH_IP_LOCATION}</th>
+                  <th>{TH_MOUSE_ON_SAME}</th>
+                  <th>{MESSAGE}</th>
+                  <th>{ANSWER}</th>
+                  <th>Add Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN my_candidates -->
+                <tr>
+                  <td>{my_candidates.candidate_name}</td>
+                  <td>{my_candidates.view_resume}</td>
+                  <td>{my_candidates.test_name}</td>
+                  <td>{my_candidates.score}</td>
+                  <td>{my_candidates.ip}</td>
+                  <td>{my_candidates.location}</td>
+                  <td>{my_candidates.mouse_on_same_window}</td>
+                  <td>{my_candidates.message}</td>
+                  <td>{my_candidates.result_ans_link}</td>
+                  <td>{my_candidates.note_link}</td>
+                </tr>
+                {my_candidates.answer}
+                <!-- END my_candidates -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{FOOTER_HTML}

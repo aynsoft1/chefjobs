@@ -1,0 +1,218 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+{MAP_JAVA_SCRIPT_LINK}
+
+<script src="{HOST_NAME}jscript/map.js"></script>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+  function popUp(URL) {
+
+    day = new Date();
+
+    id = day.getTime();
+
+    eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=400,left = 0,top = 0');");
+
+  }
+</script>
+<style>
+  .preview-container { margin-top: 10px; }
+  .preview-container iframe { width: 100%!important; height: 1595px; border-bottom: 1px solid; }
+  .preview-container img { max-width: 100%; height: auto; }
+</style>
+<script>
+  function buttonGroup() {
+    const similarJobs = document.querySelector('.addMe');
+
+    const mainButtonGroup = document.querySelector('.mainButtonGroup');
+    
+    const viewIcon = document.querySelector('.addViewJobsToButtonGroup');
+
+    const skillsMargin = document.querySelector('.customMargin').classList.add('mr-1');
+    
+    // console.log(similarJobs);
+    mainButtonGroup.appendChild(similarJobs); //similar jobs added in button group
+
+    mainButtonGroup.appendChild(viewIcon);
+    
+  }
+  window.addEventListener("load", buttonGroup);
+</script>
+<script>
+ window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 50000););
+</script>
+{MAP_JAVA_SCRIPT}
+
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-md-3 m-none">
+      <div class="card mb-3 shadow-bg">
+        <div class="card-body jobseeker-left">
+			<div class="font-weight-bold mb-2 text-dark">Refine Search</div>
+          {job_search_form}
+          {keyword_search}
+          {location_search}
+          {search_button}
+          <div class="">{advance_search}</div>
+		  
+		  <div class="font-weight-bold mt-4 mb-2 text-dark">Search Jobs</div>
+		  <div>{jobs_by_category}</div>
+          <div>{jobs_by_companies}</div>
+          <div>{jobs_by_location}</div>
+          <div>{jobs_by_skill}</div>
+		  {jobs_by_map}
+		  
+		  <div class="font-weight-bold mt-4 mb-2 text-dark">Date Posted</div>
+		  <div>{one_week}</div>
+          <div>{two_week}</div>
+          <div>{three_week}</div>
+          <div>{one_month}</div>
+		  
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="col-md-8 mx-auto">
+	<!-- Below Alert message File path is class/message_stack.php -->
+    {update_message}
+	
+
+    <div class="card card-custom position-fixed" style="border-radius: 0;box-shadow: none;margin: -28px 0 0 0;width: 896px;">
+      <div class="card-body card-body-custom">
+        <div class="2d-flex">
+          <div class="2flex-shrink-0 mb-2">
+            {company_logo}
+          </div>
+          <div class="flex-grow-1">
+            <h1 class="m-0">{INFO_TEXT_JOB_TITLE1}</h1>
+            <div class="mt-2 mb-4"><span class="mr-3"><span>{INFO_TEXT_COMPANY_NAME1}</span><span class="mx-2">•</span>
+              <span>{INFO_TEXT_JOB_LOCATION1}</span>
+            </div>
+            
+            <div class="row">
+              <div class="col-auto me-4">
+                <div class="row mb-1">
+                  <!-- <div class="text-muted">Experience</div> -->
+                  <div><i class="bi bi-briefcase me-2"></i>{INFO_TEXT_EXPERIENCE1}</div>
+                </div>
+                <!-- <div class="row mb-1">
+                  <div class="text-muted">Salary</div>
+                  <div>{INFO_TEXT_SALARY1}</div>
+                </div> -->
+               <div class="row mb-1">
+                  <div><i class="bi bi-calendar2-check me-2"></i>Posted: {INFO_TEXT_JOB_POSTED1}<!-- {INFO_TEXT_JOB_APPLY_BEFORE1} --></div>
+                </div>
+              </div>
+              <div class="col">
+                 <div class="row mb-1">
+                  <!-- <div class="text-muted">Category</div> -->
+                  <div><i class="bi bi-list-check me-2"></i>{INFO_JOB_CATEGORY1}</div>
+                </div>
+                <div class="row mb-1">
+                  <!-- <div class="text-muted">Job Type</div> -->
+                  <div><i class="bi bi-gear me-2"></i>{INFO_TEXT_JOB_TYPE1}</div>
+                </div>                
+              </div>
+
+            </div>
+            <div class="my-4">{button_apply}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card card-custom" style="margin-top: 314px;z-index: -1;border-radius: 0px;border-top: 0px;box-shadow: none;">
+      <!--<div class="card-header card-header-custom">
+                  <h1 class="main-heading"><i class="fa fa-search icon-page-title" aria-hidden="true"></i> {HEADING_TITLE}</h1>
+              </div>-->
+      <div class="card-body card-body-custom">
+        <!-- <hr style="margin:0px -25px 18px -25px;border-top: 1px solid #a7adb3;"> -->
+
+        <h3 class="pt-2 pb-2" style="font-size:1.2rem;">{INFO_TEXT_SHORT_DESCRIPTION}</h3>
+        <div class="card-text">{INFO_TEXT_SHORT_DESCRIPTION1}</div>
+
+        <h3 class="pt-3 pb-2" style="font-size:1.2rem;">{INFO_TEXT_JOB_DETAILS}</h3>
+        <div class="card-text">{INFO_TEXT_JOB_DETAILS1}</div>
+
+        <h3 class="pt-3 pb-2" style="font-size:1.2rem;">{INFO_TEXT_SKILLS}</h3>
+        <div class="skill-tag">{INFO_TEXT_SKILLS1}</div>
+
+        <h3 class="pt-3 pb-2" style="font-size:1.2rem;">{UPLOADED_DOC}</h3>
+        <div class="preview-container">{PREVIEW_UPLOADED_DOCS}</div>
+
+        {DISPLAY_MAP_CANVAS}
+
+
+
+
+        <script type='text/javascript'
+          src='//platform-api.sharethis.com/js/sharethis.js#property=5c170ed5423bba0012ec3a54&product=inline-share-buttons'
+          async='async'></script>
+
+
+
+
+        {SHOW_MAP}
+
+
+
+        <script language="javascript">
+
+// < !--
+
+var max_history = 1;
+
+          if (navigator.appName == 'Microsoft Internet Explorer')
+
+            max_history = 0;
+
+          var h_obj = document.getElementById("job_detail_back");
+
+          if (h_obj) {
+
+            if (window.history.length > max_history)
+
+              h_obj.style.display = "visible";
+
+            else
+
+              h_obj.style.display = "none";
+
+          }
+        //-->
+        </script>
+      </div>
+
+      <div class="card-footer card-footer-custom text-center" style="border-top:1px solid #e6e9ec;">
+        <div class="d-inline" role="group" aria-label="Basic example">
+          {button}            
+        </div>
+        
+        <div class="btn-group btn-group" role="group" aria-label="Basic example">
+          {INFO_TEXT_SIMILAR_JOBS}
+        </div>
+        
+
+        <div class="btn-group btn-group m-dblock" role="group" aria-label="Basic example">
+        <span class="addViewJobsToButtonGroup mx-4 text-muted">
+          <i class="bi bi-eye"></i> {INFO_TEXT_JOB_VIEWED}
+        </span>
+      </div>
+        <div class="btn-group btn-group mmt-15" role="group" aria-label="Basic example">
+          <div class="sharethis-inline-share-buttons mx-4"></div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+{FOOTER_HTML}

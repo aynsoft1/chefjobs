@@ -1,0 +1,83 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            {view_list_of_articles}
+            {form}
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_TITLE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_TITLE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_CATEGORY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_CATEGORY1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_AUTHOR}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_AUTHOR1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW_DATE}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHOW_DATE1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_FORUM_PHOTO}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_FORUM_PHOTO1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_SHOW}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_SHOW1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_DESCRIPTION}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_DESCRIPTION1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

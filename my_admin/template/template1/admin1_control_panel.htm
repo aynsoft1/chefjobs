@@ -1,0 +1,372 @@
+{ADMIN_HEADER_HTML}
+<script src="{CHART_JS}"></script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+  <div class="left-sidebar-wrapper">
+    <div class="left-sidebar-spacer">
+      <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+        <div class="left-sidebar-content">
+          {LEFT_HTML}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3 class="title">
+      <span style="margin-right:5px;">{HEADING_TITLE}
+    </h3>
+
+    <div class="row">
+      <div class="col-12 col-lg-6 col-xl-3">
+        <div class="widget widget-tile shadow-sm rounded-xl">
+          <div class="data-info">
+            <div class="float-left">
+              <div class="desc">Job Seekers</div>
+              <span id="counting" class="count font-weight-bold">{TEXT_INFO_JOBSEEKERS1}</span>
+            </div>
+            
+            <div class="float-right desc">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3">
+        <div class="widget widget-tile rounded-xl">
+          <div class="data-info">
+            <div class="float-left text-start">
+              <div class="desc">Recruiters
+              </div>
+              <span id="counting" class="count font-weight-bold">{TEXT_INFO_TOTAL_RECRUITERS1}</span>
+            </div>
+            <div class="float-right desc">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3">
+        <div class="widget widget-tile rounded-xl">
+          <div class="data-info">
+            <div class="float-left">
+              <div class="desc">Jobs</div>
+              <span id="counting" class="count font-weight-bold">{TEXT_INFO_TOTAL_JOBS1}</span>
+            </div>
+            <div class="float-right desc">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-3">
+        <div class="widget widget-tile rounded-xl">
+          <div class="data-info">
+            <div class="float-left">
+              <div class="desc">Sales
+              </div>
+              <span id="counting" class="count font-weight-bold">{TEXT_INFO_SALES1}</span>
+            </div>
+            <div class="float-right desc">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- chart row start -->
+    <div class="row">
+      <!-- chart 1 -->
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header d-flex align-items-center">
+            <div class="title">Members</div>
+            <div class="ms-auto">
+              <select class="form-select" onchange="changeInterval(this.value)">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly" selected>Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <canvas id="chart_1"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- chart 2 -->
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header d-flex align-items-center">
+            <div class="title">Sales</div>
+            <div class="ms-auto">
+              <select class="form-select" onchange="changeSalesInterval(this.value)">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly" selected>Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <canvas id="chart_2"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chart row end -->
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header" style="padding-top: 16px;padding-bottom: 16px;">
+            <div class="title">{TABLE_HEADING_REPORT}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Numbers</th>
+                </tr>
+              </thead>
+              <tbody class="no-border-x">
+                <tr>
+                  <td>{TEXT_INFO_JOBSEEKERS}</td>
+                  <td>{TEXT_INFO_JOBSEEKERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_FEATURED_JOBSEEKERS}</td>
+                  <td>{TEXT_INFO_FEATURED_JOBSEEKERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_TOTAL_RECRUITERS}</td>
+                  <td>{TEXT_INFO_TOTAL_RECRUITERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_ACTIVE_RECRUITERS}</td>
+                  <td>{TEXT_INFO_ACTIVE_RECRUITERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_FEATURED_RECRUITERS}</td>
+                  <td>{TEXT_INFO_FEATURED_RECRUITERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_TOTAL_JOBS}</td>
+                  <td>{TEXT_INFO_TOTAL_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_ACTIVE_JOBS}</td>
+                  <td>{TEXT_INFO_ACTIVE_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_EXPIRED_JOBS}</td>
+                  <td>{TEXT_INFO_EXPIRED_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_DELETED_JOBS}</td>
+                  <td>{TEXT_INFO_DELETED_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_FEATURED_JOBS}</td>
+                  <td>{TEXT_INFO_FEATURED_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_OTHER_JOBS}</td>
+                  <td>{TEXT_INFO_OTHER_JOBS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_TOTAL_ORDERS}</td>
+                  <td>{TEXT_INFO_TOTAL_ORDERS1}</td>
+                </tr>
+                <tr>
+                  <td>{TEXT_INFO_SALES}</td>
+                  <td>{TEXT_INFO_SALES1}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header">
+            {form}
+            <div class="title d-flex align-items-center" style="font-weight: 500;"> {TABLE_HEADING_REPORT_YEAR1}
+              <div class="btn-group ms-auto align-items-center" role="group">
+                <span style="font-size:12px!important;margin:0 5px 0 0;">
+                  {TABLE_HEADING_STATISTICS}
+                </span>
+                {TABLE_HEADING_STATISTICS_YEAR}{button}
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{TABLE_HEADING_MONTH}</th>
+                  <th>{TABLE_HEADING_JOBSEEKER}</th>
+                  <th>{TABLE_HEADING_JOB}</th>
+                  <th>{TABLE_HEADING_RECRUITER}</th>
+                  <th>{TABLE_HEADING_SALES}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- BEGIN report -->
+                <tr>
+                  <td>{report.TEXT_INFO_MONTH}</td>
+                  <td>{report.TEXT_INFO_JOBSEEKERS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_JOBS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_RECRUITERS2}</td>
+                  <td>{report.TEXT_INFO_SALES2}</td>
+                </tr>
+                <!-- END report -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="admin-box-white2 table-responsive col-md-6 col-lg-6">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <div id="chart_div" style="background-color:#fff!important;"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="admin-box-white2 table-responsive col-md-6 col-lg-6">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <div id="chart_div1" style="background-color:#fff!important;"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div> -->
+
+    <!---------------------------------->
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header" style="padding-top: 16px;padding-bottom: 16px;">
+            <div class="title">Latest Employers</div>
+          </div>
+          <div class="card-body table-responsive">
+            {LATEST_EMPLOYERS}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header" style="padding-top: 16px;padding-bottom: 16px;">
+            <div class="title">Latest Jobseekers</div>
+          </div>
+          <div class="card-body table-responsive">
+            {LATEST_JOBSEEKERS}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------->
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header" style="padding-top: 16px;padding-bottom: 16px;">
+            <div class="title">{INFO_TEXT_SECTION_ORDER}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <tbody class="no-border-x">
+                <!-- BEGIN recruiter_order -->
+                <tr>
+                  <td><h4 class="m-0">{recruiter_order.name}</h4></td>
+                  <td>
+                    <nobr>{recruiter_order.order_total}</nobr>
+                  </td>
+                  <td>
+                    <nobr>{recruiter_order.date_purchased}</nobr>
+                  </td>
+                  <td>{recruiter_order.status}</td>
+                </tr>
+                <!-- END recruiter_order -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" align="right">{INFO_TEXT_MORE_ORDER}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header" style="padding-top: 16px;padding-bottom: 16px;">
+            <div class="title">{INFO_TEXT_SECTION_HELP}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td width="10"><i class="far fa-question-circle"></i></td>
+                  <td><a href="https://youtu.be/Kkr7NLBnj8U" class="admin_video_help" target="_blank">Order Process
+                      Guide
+                      (Video file)</a></td>
+                </tr>
+                <tr>
+                  <td><i class="far fa-question-circle"></i></td>
+                  <td><a href="https://ejobsitesoftware.com/wiki/" class="admin_video_help" target="_blank">How to
+                      Add/Edit
+                      Content (Video file)</a></td>
+                </tr>
+                <tr>
+                  <td><i class="far fa-question-circle"></i></td>
+                  <td><a href="https://youtu.be/PT3aLTP5WWs" class="admin_video_help" target="_blank">Banner Manager
+                      Help
+                      Guide (Video file)</a></td>
+                </tr>
+                <tr>
+                  <td><i class="far fa-question-circle"></i></td>
+                  <td><a href="https://youtu.be/hu-SXy8qDSo" class="admin_video_help" target="_blank">Title & Meta Tags
+                      (Video file)</a></td>
+                </tr>
+                <tr>
+                  <td><i class="far fa-question-circle"></i></td>
+                  <td><a href="http://www.ejobsitesoftware.com/help_file/newsletter.html" class="admin_video_help"
+                      target="_blank">How to Send Newsletter (Video file)</a></td>
+                </tr>
+                <tr>
+                  <td><i class="far fa-question-circle"></i></td>
+                  <td><a href="https://youtu.be/PgbXkpx5BCE" class="admin_video_help" target="_blank">How to Add Job
+                      Category (Video file)</a></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2" align="right">{INFO_TEXT_MORE_HELP}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script src="{CHART_SCRIPT_JS}"></script>
+
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

@@ -1,0 +1,257 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    body {background-color: #fff!important;}
+</style>
+<!-- Page Content -->
+<div class="container-fluidbg-light">
+<div class="container">
+    <div class="row">
+    <!--Left Sidebar-->
+    <div class="col-md-3">
+    <!--Job Alert-->
+    <div class="card card-custom card-gray skeleton mb-4">
+        <div class="card-body card-body-custom">
+            <div class="card-header-title mb-1">ss{CREATE_JOB_ALERT}</div>
+            <div class="">
+                <div class="col-12 mb-4">
+                    <span class="mmb-15" style="opacity: 55%;">{GET_EMAIL_TEXT}</span>
+                </div>
+                <div class="">
+                    <div class="">
+                        <!--{GET_EMAIL_TEXT}-->{CREATE_ALERT}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Category-->
+    <div class="card card-custom skeleton">
+        <div class="card-body card-body-custom">
+    <div class="card-header-title mb-3">{CATEGORIES}</div>
+    {JOB_CATEGORY}
+   </div>
+</div>
+</div>
+
+    <!--Middle Sidebar-->
+    <div class="col-md-6">
+        
+            <!-- Job Section -->
+    <div class="row">
+        <!-- <div class="col-lg-12 d-flex align-items-center mb-3">
+            <h2 class="m-0 recent-job-title">
+                {LATEST_JOBS}
+                </h2>
+                <div class="d-flex ms-auto theme9-sub-header align-items-center m-none">
+                    <span class="me-3">Search by</span>
+                    <a href="https://ejobsitesoftware.com/jobboard_demo/job-search-by-industry/" class="badge badge-light border p-2 me-2">Category</a><a class="badge badge-light border p-2 me-2" href="https://ejobsitesoftware.com/jobboard_demo/jobs-by-company/">Company</a><a class="badge badge-light border p-2 me-2" href="https://ejobsitesoftware.com/jobboard_demo/job-search-by-location/">Location</a><a class="badge badge-light border p-2 me-2" href="https://ejobsitesoftware.com/jobboard_demo/job_by_map.php">Map</a> <span class="float-right"><form name="search_select_form" action="https://ejobsitesoftware.com/jobboard_demo/job-search/" method="post"><input type="hidden" name="action" value="search"><select name="days" onchange="this.form.submit()" class="form-select form-select-sm theme9-form">
+                                <option value="0">Posted</option>
+                                <option value="7">Last 1 weeks</option>
+                                <option value="14">Last 2 weeks</option>
+                                <option value="21">Last 3 weeks</option>
+                                <option value="30">Last 30 days</option>
+                                <option>30+ days</option>
+                            </select><input type="hidden" name="job_post_day"></form></span>
+                </div>
+        </div> -->
+
+        <div class="mb-3">
+            <div class="d-flex align-items-center">
+                <h2 class="float-left mt-1 recent-job-title mmt-15 mpt-15">{RECENT_JOBS}</h2>
+                <div class="d-flex ms-auto theme9-sub-header align-items-center m-none">
+                    <span class="me-3">{SEARCH_BY}</span>
+                    {JOB_SEARCH} <span class="float-right">{searchform}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BEGIN latest_jobs -->
+        <div class="col-md-12 mb-4">
+            <div class="card card-custom {latest_jobs.job_featured}">
+                <div class="card-body card-body-custom p-3 d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 skeleton">
+                            {latest_jobs.logo}
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="text-capitalize skeleton job-title-home">{latest_jobs.title}</h5>
+                            <div class="align-items-center">
+                                <span class="skeleton">{latest_jobs.company}</span>
+                                <span class="mx-2 dot">•</span>
+                                <span class="text-muted para-theme1 skeleton"><i class="bi bi-geo-alt"></i> {latest_jobs.location}</span>
+                            </div>
+                            <div class="small">
+                                <span class="para-theme1 skeleton">{latest_jobs.salary}</span>
+                                <span class="mx-2 dot">•</span>
+                                <span class="para-theme1 skeleton">{latest_jobs.job_posted}</span>
+                                <span class="mx-2 dot">•</span>
+                                <span class="para-theme1 skeleton">{latest_jobs.experience}</span>
+                            </div>
+                        </div>
+                    </div>
+					<div class="d-flex para-theme1 skeleton ms-auto">
+						{latest_jobs.jobtype}
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- END latest_jobs -->
+    </div>
+
+
+    </div>
+    <!--Right Sidebar-->
+    <div class="col-md-3">
+    <!--Job Alert-->
+    <div class="card card-custom card-gray skeleton mb-4">
+        <div class="card-body card-body-custom">
+            <div class="card-header-title mb-1 text-center mb-4">{FEATURED_JOBS}</div>
+            <div class="">
+                <!-- <div class="col-12 mb-4 text-center">
+                    <span class="mmb-15" style="opacity: 55%;">{FEATURED_TEXT}</span>
+                </div> -->
+                <div class="">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- BEGIN featured_jobs -->
+                          <div class="carousel-item {featured_jobs.active_class}">                          
+                            <div class="d-flex align-items-center mx-3">
+                                <div class="flex-shrink-0 skeleton">
+                                    <!-- <img src="http://localhost/careerjobs/themes/careerjobs/images/company4.png" class="theme1-featured-logo" alt="Featured Job"> -->
+                                    {featured_jobs.logo}
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="text-capitalize skeleton job-title-home"><a href="#">{featured_jobs.title}</a></h5>
+                                    <div class="skeleton">{featured_jobs.company}</div>
+                                    <div class="text-muted para-theme1 skeleton"><i class="bi bi-geo-alt"></i> {featured_jobs.location}</div>
+                                </div>
+                            </div>                       
+                          </div>
+                           <!-- END featured_jobs -->
+                          <!-- <div class="carousel-item">
+                            
+                            <div class="d-flex align-items-center mx-3">
+                                <div class="flex-shrink-0 skeleton">
+                                    <img src="http://localhost/careerjobs/themes/careerjobs/images/company4.png" class="theme1-featured-logo" alt="Featured Job">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="text-capitalize skeleton job-title-home"><a href="#">PHP Developer</a></h5>
+                                    <div class="skeleton">Microsoft</div>
+                                    <div class="text-muted para-theme1 skeleton"><i class="bi bi-geo-alt"></i> New York</div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                           
+                            <div class="d-flex align-items-center mx-3">
+                                <div class="flex-shrink-0 skeleton">
+                                    <img src="http://localhost/careerjobs/themes/careerjobs/images/company4.png" class="theme1-featured-logo" alt="Featured Job">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="text-capitalize skeleton job-title-home"><a href="#">PHP Developer</a></h5>
+                                    <div class="skeleton">Microsoft</div>
+                                    <div class="text-muted para-theme1 skeleton"><i class="bi bi-geo-alt"></i> New York</div>
+                                </div>
+                            </div>
+                          </div> -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{PREVIOUS}</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{NEXT}</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Job Seeker Login-->
+    <!-- <div class="card card-custom skeleton mb-4">
+            <div class="card-body card-body-custom">
+        <div class="card-header-title mb-3">Job seeker login</div>
+        <form name="login" action="#" method="post" onsubmit="return ValidateForm(this)"><input type="hidden" name="action" value="check">
+            <div class="mb-3">
+                <input type="email" name="TREF_email_address1" class="form-control" placeholder="Email address" aria-describedby="basic-addon2" required="">
+            </div>
+            <div class="mb-3">
+                <input type="password" name="TR_password1" class="form-control" placeholder="Password" aria-describedby="basic-addon2" required="">
+            </div>
+            <div class="form-group"><button type="submit" class="btn btn-green">Login</button></div>
+            <div class="text-center small"><a href="https://ejobsitesoftware.com/jobboard_demo/jobseeker_forgot_password.php">Forget Password?</a></div>
+            <div class="text-center small">or</div>
+            <div class="text-center small mb-3">Sign in with</div>
+            <div class="text-center mt-1"> <a href="facebook_application.php" title="Sign in with Facebook" class="btn btn-default border btn-facebook"><i class="bi bi-facebook"></i></a> <a href="google_application.php" title="Sign in with Google" class="btn btn-default border btn-google-plus"><i class="bi bi-google"></i></a></div>
+            <a type="button" class="btn btn-outline-secondary mt-3 w-100 d-block" href="https://ejobsitesoftware.com/jobboard_demo/jobseeker-register/">Sign up</a>
+        </form>
+        
+       </div>
+     
+    </div> -->
+    {INFO_JOBSEEKER_LOGIN_BOX}
+
+    <!-- Featured Recruiters -->
+    <div class="card card-custom skeleton mb-4">
+        <div class="card-body card-body-custom">
+    <div class="card-header-title mb-3">{FEATURED_RECRUITERS}</div>
+    <div class="row">
+<!-- BEGIN featured -->
+<div class="col-md-4">
+    <div class="skeleton">{featured.employer}</div>
+</div>
+<!-- END featured -->
+</div>
+</div>
+</div>
+
+
+</div>
+
+    <!-- /.row -->
+</div>
+
+<div class="container mmt-0">
+    <!-- Career Article Section -->
+    <div class="text-center">
+        <div class="col-lg-12 mb-5">
+            <h2 class="m-0 recent-job-title text-center">
+                {LATEST_ARTICLES}
+            </h2>
+        </div>
+        <div class="row">
+            {ARTICLE_HOME}
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+
+<div class="container">
+    <!-- About Us Section -->
+    <div class="row mt-5 mmt-15">
+        <div class="colmd-12">
+            <div
+                class="card flex-md-row mb-4 card-custom card-hero align-items-center">
+                <div class="col-md-6">
+                    <h3 class="mb-0 skeleton text-white about-title">{ABOUT_US_HEADING}</h3>
+                    <p class="card-text mt-4 skeleton text-white mmb-15">{ABOUT_US_TEXT}</p>
+                </div>
+                <div class="col-md-6 skeleton text-end">
+                    <img class="img-fluid" style="border-radius: 25px;" width="500" height="416" src="themes/careerjobs/images/career1.jpg"
+                        alt="About Us">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+</div>
+
+<!-- /.container -->
+{FOOTER_HTML}

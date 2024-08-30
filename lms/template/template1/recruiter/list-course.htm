@@ -1,0 +1,122 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<div class="container">
+    <div class="row">
+		{LEFT_HTML}
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 d-flex align-items-center mb-12">
+                    <h1 class="m-0">{HEADING_TITLE}
+                        <div class="d-flex ms-auto">{new_button}
+                            <!--{menus}-->
+                        </div>
+                </div>
+            </div>
+            {update_message}
+            <div class="cardcard-custom col-md-7 mb-4 ">
+                <div class="cardbody">
+                    <div class="row row-cols-3 row-cols-md-3 m-gap-0">
+                        <div class="col">
+
+                            <div class="card card-custom box bg-primarya">
+                                <div class="card-body">
+                                    <h5 class="card-title m-0 d-flex align-items-center">
+                                        <div class="me-3"><i class="bi bi-file-earmark-text icon-style1"></i></div>
+                                        <div class="">
+                                            <h3 class="ms-auto m-0" style="color: #5e5873;">{TOTAL_COURSES}</h3>
+                                            <div class="asses-title">{COURSES}</div>
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div class="card card-custom box bg-primarya">
+                                <div class="card-body">
+                                    <h5 class="card-title m-0 d-flex align-items-center">
+                                        <div class="me-3"><i class="bi bi-people icon-style2"></i></div>
+                                        <div class="">
+                                            <h3 class="ms-auto m-0" style="color: #5e5873;">{TOTAL_ENROLLS}</h3>
+                                            <div class="asses-title">{ENROLLED}</div>
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div class="card card-custom box bg-primarya">
+                                <div class="card-body">
+                                    <h5 class="card-title m-0 d-flex align-items-center">
+                                        <div class="me-3"><i class="bi bi-wallet2 icon-style3"></i></div>
+                                        <div class="">
+                                            <h3 class="ms-auto m-0" style="color: #5e5873;">{TOTAL_SALES}</h3>
+                                            <div class="asses-title">{SALES}</div>
+                                        </div>
+                                    </h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom mb-3">
+                <div class="card-body p-0 card-body-custom">
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr class="small">
+                                    <th scope="col" class="">#</th>
+                                    <th scope="col" class="">{TH_TITLE}</th>
+                                    <th scope="col" class="m-none">{TH_CATEGORY}</th>
+                                    <th scope="col" class="m-none">{TH_LESSON_SECTION}</th>
+                                    <th scope="col" class="m-none">{TH_ENROLLED_STUDENT}</th>
+                                    <th scope="col" class="m-none">{TH_STATUS}</th>
+                                    <th scope="col" class="m-none">{TH_PRICE}</th>
+                                    <th scope="col" class="m-none">{TH_DATE}</th>
+                                    <th scope="col" class="">{TH_ACTION}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- BEGIN lms_courses -->
+                                <tr>
+                                    <td class="">
+                                        {lms_courses.thumb}
+                                    </td>
+                                    <td class="text-capitalize fw-bold">
+                                        {lms_courses.title}
+                                    </td>
+                                    <td class="small text-muted m-none">{lms_courses.category}</td>
+                                    <td class="small text-muted m-none">
+                                        <span class="d-block"><strong>Section:
+                                            </strong>{lms_courses.total_section}</span>
+                                        <span class="d-block"><strong>Lesson:
+                                            </strong>{lms_courses.total_lessons}</span>
+
+                                    </td>
+                                    <td class="small text-muted m-none">{lms_courses.enrolled}</td>
+                                    <td class="small text-muted m-none">{lms_courses.status}</td>
+                                    <td class="small text-muted m-none">{lms_courses.price}</td>
+                                    <td class="small text-muted m-none">{lms_courses.created_at}</td>
+                                    <td class="small text-muted">{lms_courses.action}</td>
+                                </tr>
+                                <!-- END lms_courses -->
+                                {COURSE_NOT_FOUND}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-flex align-items-center small">
+                    {PAGINATION_LINK}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

@@ -1,0 +1,137 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+ </td>
+</tr>
+<script language="JavaScript">
+<!--
+function set_action(action)
+{
+ document.preview_mail.action.value=action;
+ document.preview_mail.submit();
+}
+//-->
+</script>
+<script language="javascript" type="text/javascript" src="tinymce2/tinymce.js"></script>
+<script type="text/javascript">
+	tinyMCE.init({
+  theme : "modern",
+	plugins: [
+    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+    'searchreplace wordcount visualblocks visualchars code fullscreen',
+    'insertdatetime media nonbreaking save table contextmenu directionality',
+    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+  ],
+  toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+//   toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+  menubar:false,
+  image_advtab: true,
+  
+  relative_urls : false,
+remove_script_host : false,
+			mode : "exact",
+ 	elements : "description",
+  theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "center",
+force_br_newlines : true,
+    force_p_newlines : false,
+    forced_root_block : '' 
+
+	});
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+		<!-- <div class="col-md-3">
+			<div class="list-group mb-4">
+				<button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+					//{INFO_TEXT_JOB_TITLE}-->{INFO_TEXT_JOB_TITLE}//
+				</button>
+				<div>{INFO_TEXT_ALL_APPLICANT}</div>
+				<div>{INFO_TEXT_SELECTED_APPLICANT}</div>
+				<div>{INFO_TEXT_SEARCH_APPLICANT}</div>
+				<div>{INFO_TEXT_JOB_DETAIL}</div>
+				<div>{INFO_TEXT_ADD_APPLICANT}</div>
+			</div>
+
+			<div class="list-group mb-4">
+				<button type="button" class="list-group-item list-group-item-action info-bg font-weight-bold">
+					Reports
+				</button>
+				<div>{INFO_TEXT_REPORT_PIPELINE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE}</div>
+				<div>{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</div>
+				<div>{INFO_TEXT_VIEW_DATE_REPORT}</div>
+			</div>
+		</div> -->
+		
+		<div class="col-md-3 small-font">
+			<div class="card card-custom">
+				<div class="card-body card-body-custom p-0">
+					{RIGHT_HTML}
+				</div>
+			</div>
+		</div>
+		
+        <div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12 d-flex align-items-center mb-4">
+					<h1 class="m-0">{INFO_TEXT_STATUS_HISTORY}</h1>
+					<div class="d-flex ms-auto">{INFO_TEXT_BACK}</div>
+				</div>
+			</div>
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-body card-body-custom">
+				{form}
+
+				  <div class="form-group row">
+					<label for="inputPassword" class="col-sm-2 col-form-label">{INFO_TEXT_SUBJECT}</label>
+					<div class="col-sm-10">
+					  {INFO_TEXT_SUBJECT1}
+					</div>
+				  </div>
+
+				  <div class="form-group row">
+					<label for="inputPassword" class="col-sm-2 col-form-label">{INFO_TEXT_REMARK}</label>
+					<div class="col-sm-10">
+					  {INFO_TEXT_REMARK1}
+					</div>
+				  </div>
+
+				  <div class="form-group row">
+					<label for="inputPassword" class="col-sm-2 col-form-label">{INFO_TEXT_DESCRIPTION}</label>
+					<div class="col-sm-10">
+					  {INFO_TEXT_DESCRIPTION1}
+					</div>
+				  </div>
+
+				  <div class="form-group row">
+					<label for="inputPassword" class="col-sm-2 col-form-label"></label>
+					<div class="col-sm-10">
+					  {buttons}
+					</div>
+				  </div>				  
+			   </form>
+				</div>
+			</div>
+		</div>
+		
+		
+</div>
+</div>
+
+{FOOTER_HTML}

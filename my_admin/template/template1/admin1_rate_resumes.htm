@@ -1,0 +1,103 @@
+{ADMIN_HEADER_HTML}
+<script>
+  function list_submit(id)
+  {
+   document.page.jID.value=id;
+   document.page.submit();
+  }
+  </script>
+<script>
+function page_submit(name)
+{
+  if(name=='email')
+  document.page.email.value=name;
+  else if(name=='excel')
+  document.page.excel.value=name;
+  document.page.submit();
+}
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="star-half-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-9">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header">
+            <div class="row">
+              <p>
+                {total}
+              </p>
+              <div class="col-md-9">
+                {list_page}&nbsp;{page}&nbsp;
+              </div>
+              {save_search}
+              <div class="col-md-3 pl-1">
+                  {INFO_TEXT_TITLE_NAME}
+                  {INFO_TEXT_TITLE_NAME1}
+                  {hidden_fields}
+                </div>
+              </form>
+            </div>
+          </div>
+          <form name="page" method="post">
+            <div class="card-body table-responsive middle_table2">
+              <table class="table table-borderless table-hover">
+                <thead class="admin-table-head-bar">
+                  <th>{INFO_TEXT_JOBSEEKER_NAME}</th>
+                  <th>{TABLE_HEADING_EMAIL_ADDRESS}</th>
+                  <th>{TABLE_HEADING_RESUME_TITLE}</th>
+                  <th>{TABLE_HEADING_AVAILABILITY}</th>
+                  <th>{TABLE_HEADING_RATING}</th>
+                  <th>{TABLE_HEADING_INSERTED}</th>
+                  <th>{TABLE_HEADING_RESUME}</th>
+                </thead>
+                <tbody>
+                  <!-- BEGIN search_resume_result -->
+                  <tr{search_result.row_selected}>
+                    <td>{search_resume_result.name}</td>
+                    <td>{search_resume_result.email_address}</td>
+                    <td>{search_resume_result.resume_title}</td>
+                    <td>{search_resume_result.available_status}</td>
+                    <td>{search_resume_result.rating}</td>
+                    <td>{search_resume_result.inserted}</td>
+                    <td>{search_resume_result.view}</td>
+                    </tr>
+                    <!-- END search_resume_result -->
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer">
+              <div class="">
+                <div class="">
+                  {total}
+                </div>
+                {hidden_fields}
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 pl-1">
+        {ADMIN_RIGHT_HTML}
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

@@ -1,0 +1,97 @@
+{ADMIN_HEADER_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+  function test_authentication() {
+    document.google_form.action.value = 'test_authentication';
+    document.google_form.submit();
+  }
+</SCRIPT>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="logo-google"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+          <div class="card-header card-header-divider">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="font-weight-bold">Google Plugin is currently {google_PLUGIN_STATUS}</div>
+                <ul class="small m-0">
+                  <li>Application Type should be set on <b>Web application</b></li>
+                  <li>JavaScript origins: <u>{INFO_TEXT_GOOGLE_JAVASCRIPT_URL}</u></li>
+                  <li>Redirect URIs :<br /> {INFO_TEXT_GOOGLE_REDIRECT_URL}</li>
+                </ul>
+              </div>
+              <div class="col-md-4 text-right">
+                <a href="../google_plugin.htm" target="_blank">Google
+                  Plugin Admin Help</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            {google_form}
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_GOOGLE_PLUGIN}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_GOOGLE_PLUGIN1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_GOOGLE_PLUGIN_KEY}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_GOOGLE_PLUGIN_KEY1}
+                <div>Enter your google Api KEY.<br>Don't you have such a key?.
+                  <a href="https://code.google.com/apis/console/" target="_blank" class="blue">Request one
+                    here!</a>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_GOOGLE_PLUGIN_SECRET}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {INFO_TEXT_GOOGLE_PLUGIN_SECRET1} {authentication_link}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_J_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_J_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEXT_INFO_R_MODULE_STATUS}</label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {TEXT_INFO_R_MODULE_STATUS1}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-12 col-sm-3 col-form-label text-sm-right"></label>
+              <div class="col-12 col-sm-8 col-lg-6">
+                {button}
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{ADMIN_FOOTER_HTML}

@@ -1,0 +1,104 @@
+{ADMIN_HEADER_HTML}
+<script language="javascript">
+  function DeleteSelected(action) {
+    var check;
+    check = false;
+    for (var i = 0; i < document.page.elements.length; i++) {
+      var e = page.elements[i];
+      if ((e.checked) == true) {
+        check = true;
+        break;
+      }
+    }
+    if (check) {
+      document.page.action1.value = action;
+      document.page.submit();
+    } else {
+      alert('Please check atleast one checkbox and then click on delete.');
+    }
+  }
+</script>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+  <div class="left-sidebar-wrapper">
+    <div class="left-sidebar-spacer">
+      <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+        <div class="left-sidebar-content">
+          {LEFT_HTML}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;">
+              </span>{HEADING_TITLE}
+    </h3>
+    <div class="row">
+      <div class="col-9">
+        {update_message}
+        <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+          <div class="card-header">
+            <div class="">{search_box}</div>
+          </div>
+          <div class="card-body table-responsive">
+            <table class="table table-hover">
+              <thead class="admin-table-head-bar">
+                <th>{TABLE_HEADING_APPLICANT_PIC}</th>
+                <th>{TABLE_HEADING_APPLICANT_NAME} {TABLE_HEADING_APPLICANT_EMAIL}</th>
+                <th>{TABLE_HEADING_APPLICANT_COMP_APPLIED}</th>
+                <th>{TABLE_HEADING_APPLICANT_JOB_APPLIED}</th>
+                <th>{TABLE_HEADING_DATE_OF_APPLICATION}</th>
+                <th>{TABLE_HEADING_APPLICANT_SELECT}</th>
+                <th>{TABLE_HEADING_ACTION}</th>
+              </thead>
+              <tbody>
+                <form name="page" method="post">{hidden_fields}
+                  <!-- BEGIN applicant -->
+                  <tr{applicant.row_selected}>
+                    <td><div class="jobseeker-img">{applicant.app_pic}</div></td>
+                    <td><h4 class="mb-0">{applicant.app_name}</h4>{applicant.app_email}</td>
+                    <td>{applicant.comp_applied}</td>
+                    <td>{applicant.job_applied}</td>
+                    <td>{applicant.date_of_application}</td>
+                    <td>{applicant.applicant_select}</td>
+                    <td>{applicant.action}</td>
+                    </tr>
+                    <!-- END applicant -->
+                </form>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <div class="">
+              <div class="">
+                {count_rows}
+              </div>
+              <div class="">
+                {no_of_pages}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Starts -->
+      <div class="col-md-3 pl-1">
+        <div class="card card-border-color card-border-color-primary">
+          <div class="card-body">
+            {ADMIN_RIGHT_HTML}
+          </div>
+        </div>
+      </div>
+      <!-- Right Ends -->
+    </div>
+    <!-- Right Ends -->
+  </div>
+  <!--end main-content container-fluid-->
+</div>
+<!--end be-content-->
+{ADMIN_FOOTER_HTML}

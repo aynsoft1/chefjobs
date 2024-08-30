@@ -1,0 +1,480 @@
+{ADMIN_HEADER_HTML}
+<!-- <script src="{INFO_TEXT_JSCRIPT_FILE}"></script> -->
+<script language="JavaScript">
+// <!--
+function show_hide()
+{
+ if(document["defineForm"]["post_url"].checked)
+ {
+  document.getElementById("myrow").style.visibility="visible"
+  document.getElementById("myrow1").style.display="none"
+  document.getElementById("myrow2").style.display="none"
+ }
+ else
+ {
+  document.getElementById("myrow").style.visibility="hidden"
+  document.getElementById("myrow1").style.display="block"
+  document.getElementById("myrow2").style.display="block"
+ }
+}
+function check_url()
+{
+ if(document.defineForm.post_url.checked)
+ if(document.defineForm.url.value=='')
+ {
+  alert("please Enter the Apply URL.");
+  document.defineForm.url.focus();
+ }
+}
+//-->
+</script>
+     <script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="description"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code' ],
+  images_upload_url: 'tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+<style>
+        .file-upload {
+        display: flex;
+        align-items: center;
+    }
+
+    .file-upload input[type="file"] {
+        flex-grow: 1;
+        margin-right: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+    }
+
+    .browse-btn {
+        padding: 10px 20px;
+        background-color: #ccc;
+        border: 1px solid #999;
+        border-radius: 4px;
+        cursor: pointer;
+        height: 48px;
+    }
+    #recruiter_suggestions div:hover {
+    background-color: #f0f0f0;
+    }
+    .required {
+    border-left: 2px solid #c01910 !important;
+}
+</style>
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  {update_message}
+  <div class="main-content container-fluid">
+    <h3>
+      Post a job
+    </h3>
+    <div class="card-body card-body-custom" style="margin-right: 388px;">
+									
+
+        {post_job_form}
+        <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_RECRUITER}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_JOB_RECRUITER1}
+              {INFO_TEXT_JOB_RECRUITER2}
+              <div id="recruiter_suggestions" style="border: 1px solid #ccc; display: none; position: absolute; background: #fff; z-index: 1000;"></div>
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_TITLE}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_JOB_TITLE1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_REF}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_JOB_REF1}
+            </div>
+          </div>  
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_COUNTRY}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_COUNTRY1}
+            </div>
+          </div> 
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_STATE}:</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_STATE1}
+            </div>
+          </div> 
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">Cities:</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_LOCATION1}
+            </div>
+          </div>
+          <!-- <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_SALARY}</label>
+            <div class="col-sm-9">
+              <div class="input-group mb-2 mr-sm-2 m-flex-wrap">
+                {INFO_TEXT_SALARY1}
+              </div>
+            </div>
+          </div> -->
+        
+           <div class="form-groupd row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_SKILLS}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_SKILLS1}
+            </div>
+          </div>
+        
+           <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right"></label>
+            <div class="col-sm-9">
+              <small class="text-muted font-14">{INFO_TEXT_SEPARATED}</small>
+            </div>
+          </div>
+        
+          
+        
+        
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_INDUSTRY_SECTOR}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_INDUSTRY_SECTOR1}
+            </div>
+          </div>
+        
+          <!-- <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_PROFESSION_SECTOR}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_INDUSTRY_SUB_SECTOR}
+            </div>
+          </div> -->
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_VACANCY_SUMMARY}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_VACANCY_SUMMARY1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_DESCRIPTION}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_DESCRIPTION1}
+            </div>
+          </div>
+        
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_POST_URL}</label>
+            <div class="col-sm-9">
+              <div class="row align-items-center">
+                <div class="col-sm-1">
+                  {INFO_TEXT_POST_URL1}
+                </div>
+                <div class="col-sm-11" id="myrow" style="visibility:hidden">
+                  {SHOW_TEXT_BOX}
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          <div class="form-groupd row align-items-center" >
+            <label for="resume_will_go" id="myrow2" class="col-sm-3 col-form-label text-right">{INFO_TEXT_APPLICATION_GOTO}</label>
+            <div class="col-sm-9" id="myrow1">
+              {INFO_TEXT_APPLICATION_GOTO1}
+            </div>
+          </div> 
+          <div class="form-group row align-items-center" >
+            <label for="resume_will_go" id="myrow2" class="col-sm-3 col-form-label text-right"></label>
+            <div class="col-sm-9" id="myrow1">
+              <div class="font-14">{INFO_TEXT_APPLICATION_GOTO2}</div>
+            </div>
+          </div> 
+        
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_COMPANY_SIZES}</label>
+            <div class="col-sm-9">
+              {INFO_COMPANY_SIZES1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_TYPE}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_JOB_TYPE1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_CAREER_LEVEL}</label>
+            <div class="col-sm-9">
+              {INFO_CAREER_LEVEL1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_EXPERIENCE}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_EXPERIENCE1}
+            </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_ADVERTISE_WEEKS}</label>
+            <div class="col-sm-9">
+              <div class="">
+                {INFO_TEXT_ADVERTISE_WEEKS1}
+              </div>
+            </div>
+          </div>
+           <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_ADVERTISE_DATE}</label>
+            <div class="col-sm-9">
+              <div class="">
+                {INFO_TEXT_ADVERTISE_DATE1}
+              </div>
+              <!--row end-->
+            </div>
+            <!--col-sm-9 end-->
+          </div> 
+           <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right">{INFO_TEXT_JOB_AUTO_RENEW}</label>
+            <div class="col-sm-9">
+              {INFO_TEXT_JOB_AUTO_RENEW1}
+            </div>
+          </div> 
+          {JOBFAIR_TEXT} 
+        
+          <div class="form-group row align-items-center">
+            <label for="inputPassword" class="col-sm-3 col-form-label text-right"></label>
+            <div class="col-sm-9">
+            
+        
+            <div>
+                <!-- <input type="file" id="fileUpload" name="fileUpload" class="form-control" accept=".html,.zip,.pdf"> -->
+                {UPLOAD_DOCS}
+            </div>
+            <label class="mt-2">Upload HTML/HTML-ZIP/PDF</label>
+          </div>
+        </div>
+          
+          <div class="form-group row align-items-center">
+           <label for="inputPassword" class="col-sm-3 col-form-label text-right">&nbsp;</label>
+            <div class="col-sm-9">
+              {buttons}
+            </div>
+          </div> 
+        </div>
+  </div>
+</div>
+<script>
+    document.querySelector('.browse-btn').addEventListener('click', function() {
+         document.getElementById('fileUpload').click();
+     });
+ // Function to fetch and update job subcategories based on selected job category
+ function fetchJobSubCategories(categorySelectElement) {
+     var categoryId = categorySelectElement.value;
+     console.log(categoryId);
+     
+     // Check if a category is selected
+     if (categoryId === '0' || !categoryId) {
+         var subCategorySelect = document.getElementById('TR_post_job_sub_category');
+         if (subCategorySelect && subCategorySelect.tagName === 'SELECT') {
+             subCategorySelect.innerHTML = '<option value="">{INFO_TEXT_PROFESSION_SELECT}</option>';
+         } else {
+             console.error('Element with ID "TR_post_job_sub_category" is not a SELECT element.');
+         }
+         return;
+     }
+ 
+     // Create an AJAX request to fetch job subcategories
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '../api/fetch_job_sub_categories.php?category_id=' + encodeURIComponent(categoryId), true);
+     xhr.onreadystatechange = function () {
+         if (xhr.readyState === 4 && xhr.status === 200) {
+             var response = JSON.parse(xhr.responseText);
+             var subCategorySelect = document.getElementById('TR_post_job_sub_category');
+             
+             if (subCategorySelect && subCategorySelect.tagName === 'SELECT') {
+                 // Clear existing options
+                 subCategorySelect.innerHTML = '<option value="">{INFO_TEXT_PROFESSION_SELECT}</option>';
+                 
+                 // Add new options based on the response
+                 response.forEach(function(subCategory) {
+                     var option = document.createElement('option');
+                     option.value = subCategory.id;
+                     option.text = subCategory.name;
+                     subCategorySelect.add(option);
+                 });
+             } else {
+                 console.error('Element with ID "TR_post_job_sub_category" is not a SELECT element.');
+             }
+         }
+     };
+     xhr.send();
+ }
+ 
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+    var countryDropdown = document.getElementsByName('country1')[0];
+    var stateDropdown = document.getElementById('state');
+    var cityDropdown = document.getElementById('location'); // Assuming you have an ID for the city dropdown
+
+    if (!countryDropdown || !stateDropdown || !cityDropdown) {
+        console.error("Country, State, or City dropdown element not found");
+        return;
+    }
+
+    // Function to fetch states based on country ID
+    function fetchStates(countryId) {
+        if (!countryId) {
+            stateDropdown.innerHTML = '<option value="">State</option>';
+            cityDropdown.innerHTML = '<option value="">City</option>'; // Reset city dropdown as well
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../api/fetch_zones.php?country_id=' + countryId, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                try {
+                    var states = JSON.parse(xhr.responseText);
+                    var options = '<option value="">State</option>';
+
+                    states.forEach(function(state) {
+                        options += '<option value="' + state.zone_id + '">' + state.zone_name + '</option>';
+                    });
+
+                    stateDropdown.innerHTML = options;
+                    cityDropdown.innerHTML = '<option value="">City</option>'; // Reset city dropdown
+                } catch (e) {
+                    console.error("Error parsing JSON:", e);
+                }
+            } else {
+                console.error("Failed to fetch states:", xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error("Request failed");
+        };
+        xhr.send();
+    }
+
+    // Trigger fetching states when country dropdown changes
+    countryDropdown.addEventListener('change', function() {
+        var countryId = this.value;
+        fetchStates(countryId);
+    });
+
+    // Fetch cities based on selected state
+    stateDropdown.addEventListener('change', function() {
+        var stateId = this.value;
+
+        if (!stateId) {
+            cityDropdown.innerHTML = '<option value="">City</option>';
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../api/fetch_cities.php?state_id=' + stateId, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                try {
+                    var cities = JSON.parse(xhr.responseText);
+                    var options = '<option value="">City</option>';
+
+                    cities.forEach(function(city) {
+                        options += '<option value="' + city.city_name + '">' + city.city_name + '</option>';
+                    });
+
+                    cityDropdown.innerHTML = options;
+                } catch (e) {
+                    console.error("Error parsing JSON:", e);
+                }
+            } else {
+                console.error("Failed to fetch cities:", xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error("Request failed");
+        };
+        xhr.send();
+    });
+
+    // Automatically fetch zones for country ID 81 (Germany) on page load
+    fetchStates(81); // You can change this ID to the desired country's ID if necessary
+    countryDropdown.value = 81; // Set the dropdown to Germany by default
+});
+
+
+
+document.getElementById('job_recruiter_input').addEventListener('input', function() {
+    var query = this.value;
+
+    if (query.length > 0) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../api/fetch_recruiters.php?q=' + query, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var results = JSON.parse(xhr.responseText);
+                console.log(results);
+                var suggestions = document.getElementById('recruiter_suggestions');
+                
+                suggestions.innerHTML = '';
+                suggestions.style.display = 'block';
+
+                results.forEach(function(item) {
+                    var div = document.createElement('div');
+                    div.textContent = item.recruiter_company_name;
+                    div.style.padding = '5px';
+                    div.style.cursor = 'pointer';
+                    div.onclick = function() {
+                       // Alert if the recruiter cannot post jobs
+                       console.log(item.can_post_job);
+                       if (item.can_post_job === '0') {
+                            alert('This recruiter is currently unable to post jobs.');
+                        }else{
+                        document.getElementById('job_recruiter_input').value = item.recruiter_company_name;
+                        document.getElementById('job_recruiter_input2').value = item.recruiter_id;
+
+                        // Update the email dropdown
+                        var emailDropdown = document.querySelector('select[name="TREF_email_address"]');
+                        emailDropdown.innerHTML = ''; // Clear existing options
+                        var option = document.createElement('option');
+                        option.value = item.recruiter_email_address;
+                        option.text = item.recruiter_email_address;
+                        emailDropdown.appendChild(option);
+                        suggestions.style.display = 'none';
+                        }                      
+                    };
+                    suggestions.appendChild(div);
+                });
+            }
+        };
+        xhr.send();
+    } else {
+        document.getElementById('recruiter_suggestions').style.display = 'none';
+    }
+});
+
+ </script>
+ 
+{ADMIN_FOOTER_HTML}

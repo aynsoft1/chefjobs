@@ -1,0 +1,78 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+                <div class="left-sidebar-content">
+                    {LEFT_HTML}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+    {update_message}
+    <div class="main-content container-fluid">
+        <h3>
+            <i class="fa fa-edit fa-admin-icons" aria-hidden="true"></i> {HEADING_TITLE}
+        </h3>
+        <div class="row">
+            <div class="col-md-9">
+                <div
+                    class="card card-table card-border-color card-border-color-primary shadow-sm card-border-color-primary">
+                    <div class="card-body">
+                        {form}
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{TEST_CAT}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {categoires}
+                                {IS_CATEGORY_ERROR}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{TITLE_LABEL}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INPUT_TITLE}
+                                {IS_TITLE_ERROR}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{INFO_TEXT_QUIZ_PHOTO}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INFO_TEXT_QUIZ_PHOTO1}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{DESCRIPTION_LABEL}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {TEXTAREA_DESCRIPTION}
+                                {IS_DESCRIPTION_ERROR}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">{TIMER}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {INPUT_TIMER}
+                                {IS_TIMER_ERROR}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-3 col-form-label text-sm-right">
+                                {back_btn}
+                            </div>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {BUTTON}
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{ADMIN_FOOTER_HTML}

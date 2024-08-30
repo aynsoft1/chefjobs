@@ -1,0 +1,56 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+  <title>Resume Match Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Middle Starts -->
+ <div class="text-center mb-3">
+  <h4 class="fw-bold m-0">{HEADING_TITLE}</h4>
+  <h5 class="text-success m-0">{INFO_TEXT_JOBSEEKER_NAME}</h5>
+  <div class="text-muted small">{INFO_TEXT_JOBSEEKER_APP_ID} <b>{INFO_TEXT_JOBSEEKER_APP_ID1}</b></div>
+</div>
+
+  <table class="table table table-striped small">
+    <thead>
+      <tr>
+        <th scope="col">Fields</th>
+        <th scope="col" class="text-center">Job Weights</th>
+        <th scope="col" class="text-center">Resume Match</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Location</th>
+        <td class="text-center">{INFO_TEXT_JOB_LOCATION1}</td>
+        <td class="text-center">{INFO_TEXT_RESUME_LOCATION1}</td>
+      </tr>
+      <tr>
+        <th scope="row">Industry</th>
+        <td class="text-center">{INFO_TEXT_JOB_INDUSTRY1}</td>
+        <td class="text-center">{INFO_TEXT_RESUME_INDUSTRY1}</td>
+      </tr>
+      <tr>
+        <th scope="row">Experience</th>
+        <td class="text-center">{INFO_TEXT_JOB_EXPERIENCE}</td>
+        <td class="text-center">{INFO_TEXT_RESUME_EXPERIENCE}</td>
+      </tr>
+      <tr>
+        <th scope="row">Job Type</th>
+        <td class="text-center">{INFO_TEXT_JOB_JOB_TYPE1}</td>
+        <td class="text-center">{INFO_TEXT_RESUME_JOB_TYPE1}</td>
+      </tr>
+      <tr>
+        <th scope="row">{INFO_TEXT_TOTAL}</th>
+        <td class="text-center text-danger fw-bold">100%</td>
+        <td class="text-center text-success fw-bold">{INFO_TEXT_TOTAL1}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Middle Ends -->
+</body>
+
+</html>

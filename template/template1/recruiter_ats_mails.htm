@@ -1,0 +1,135 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+    function view_data(data,data1)
+    {
+     document.page.view.value=data;
+     document.page.mail_status.value=data1;
+     document.page.submit();
+    }
+    function select_action2()
+    {
+        var check;
+        check=false;
+        for (var i=0;i < document.page.elements.length;i++)
+        {
+            var e = document.page.elements[i];
+            if (e.type == "checkbox")
+            {
+                if((e.checked) == true)
+                {
+           check=true;
+                    break;
+                }
+            }
+        }
+        if(check)
+        {
+      if(document.page.select_action.options[document.page.select_action.selectedIndex].value!="") 
+      {
+       document.page.action1.value=document.page.select_action.options[document.page.select_action.selectedIndex].value;
+       {mail_status}
+       {lower_value}
+       {higher_value}
+       document.page.submit();
+      }
+      else
+      {
+       return false;
+      }
+        }
+        else
+        {
+         document.page.select_action.value=""; 
+      alert('Please check atleast one checkbox.');
+        }
+    }
+    //-->
+</script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+            $(".messageStackSuccess").addClass("displayNone");
+            // $messageStackSuccess
+        });
+    }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+            <!-- Left Starts -->
+			{LEFT_HTML}
+            <!-- Left Ends -->
+        <div class="col-md-9 mx-auto">
+            <!-- Below Alert message File path is class/message_stack.php -->
+            {update_message}
+            <div class="card card-custom">
+                <div class="card-header">
+                    <div class="col-md-12">
+                        <h1 class="main-heading">{HEADING_TITLE}</h1>
+                    </div>
+                </div>
+				
+				<div class="card-header card-header-custom">
+				{form}
+				<div class="d-flex align-items-center mb-2">
+                    <div>
+					<div class="">{view_link}</div>
+					</div>
+					<div class="d-flex ms-auto m-float-left m-m-t-10">{view_link1}</div>
+				</div>
+				</div>	
+				
+				<div class="card-header card-header-custom py-2 border-top">
+					<div class="d-flex align-items-center small">
+					<div>{check_link}</div>
+					<div class="d-flex ms-auto">{check_link1} {quick_action}</div>
+					</div>
+				
+					{hidden_fields}
+				</div>
+				
+                <div class="card-body card-body-custom p-0">
+                    <div class="table-responsive-sm border-top">
+					<table class="table table-hover">
+									<thead>
+                                    <tr class="dataTableHeadingRow jobs-table-headbar">
+                                        <th width="2%"></th>
+                                        <th width="20%">{TABLE_HEADING_MAIL_SENDER}</th>
+                                        <th class="m-none" width="19%">{TABLE_HEADING_APPLICATION_ID}</th>
+                                        <th class="style30 m-none" width="38%">{TABLE_HEADING_MAIL_SUBJECT}</th>
+                                        <th width="21%">{TABLE_HEADING_MAIL_INSERTED}</th>
+                                    </tr>
+									</thead>
+                                    <!-- BEGIN jobseeker_mail -->
+                                    <tr{jobseeker_mail.row_selected}>
+                                        <td valign="top" class="dataTableContent">{jobseeker_mail.check_box}</td>
+                                        <td valign="top" class="dataTableContent fw-bold">{jobseeker_mail.sender}</td>
+                                        <td valign="top" class="dataTableContent m-none">{jobseeker_mail.application_id}</td>
+                                        <td valign="top" class="style27 m-none">{jobseeker_mail.subject}</td>
+                                        <td valign="top" class="dataTableContent">{jobseeker_mail.inserted}</td>
+                        </tr>
+                        <!-- END jobseeker_mail -->
+                    </table>
+					</div>
+                </div>
+				
+					
+				<div class="card-footer">
+					{total}
+					{list_page}&nbsp;{page}&nbsp;
+				</div>	
+</form>				
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

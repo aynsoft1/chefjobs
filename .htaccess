@@ -1,0 +1,95 @@
+DirectoryIndex index.php index.htm index.html
+#ErrorDocument 404 https://careerjobs.de/404.shtml
+#php_value session.use_trans_sid 0
+#php_value register_globals 0
+#php_value magic_quotes_gpc on
+#php_value register_long_arrays on
+
+
+RewriteEngine on
+#RewriteBase /
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index_error.php [F,L]
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule  ^about-us/$ about_us.php [L]
+RewriteRule  ^terms/$ terms.php [L]
+RewriteRule  ^site-map/$ site_map.php [L]
+RewriteRule  ^faq/$ faq.php [L]
+RewriteRule  ^privacy/$ privacy.php [L]
+RewriteRule  ^job-search-by-location/$ job_search_by_location.php [L]
+RewriteRule  ^job-search-by-industry/$ job_search_by_industry.php [L]
+RewriteRule  ^job-search-by-skill/$ job_search_by_skill.php [L]
+RewriteRule  ^job-search/$ job_search.php [L]
+RewriteRule  ^contact-us/$ contact_us.php [L]
+RewriteRule  ^jobs-by-company/$ company_profile.php [L]
+RewriteRule  ^job_search/$ job_search.php [L]
+RewriteRule  ^article/$ article.php [L]
+RewriteRule  ^login/$ login.php [L]
+RewriteRule  ^recruiter-login/$ login.php?u=1 [L]
+RewriteRule  ^jobseeker-register/$ jobseeker_registration_step1.php [L]
+RewriteRule  ^recruiter-registation/$ recruiter_registration.php [L]
+RewriteRule  ^jobfair/$ jobfair.php [L]
+RewriteRule  ^lms/courses/$ lms/courses.php [L]
+RewriteRule  ^lms/courses-list/$ lms/courses-list.php [L]
+RewriteRule  ^jobfair/$ jobfair.php [L]
+
+RewriteRule ^([-.,0-9a-zA-z]*)-jobfair\.html$  jobfair.php?jobfair_seo=$1 [L]
+RewriteRule ^mobile/([-.,0-9a-zA-z]*)-jobfair\.html$  mobile/jobfair.php?jobfair_seo=$1 [L]
+
+RewriteRule  ^job/([-.,_0-9a-zA-z]*)/apply$ apply_now.php?query_string=$1 [L]
+#RewriteRule ^/([0-9]+)\d$ company_details.php?query_string=$1
+
+RewriteRule ^([-.,0-9a-zA-z]*)-jobs/?$ job_search_by_industry.php?search_category=$1  [L]
+
+RewriteRule ^article_cat_([1-9][0-9]*)\.html$  article.php?cat_path=$1 [L]
+RewriteRule ^article_([1-9][0-9]*)\.html$  article.php?article_id=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^company\/([-.,0-9a-zA-z]*)\/$  company_details.php?company=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)\/$  article.php?article_seo=$1 [L]
+
+RewriteRule ^([1-9][0-9]*)/([-.,0-9a-zA-z]*)-jobs\.html?$ job_search_by_industry.php?search_id=$1  [L]
+RewriteCond %{QUERY_STRING} action=(.*)
+
+# Skip rewrite for temp_extract_ folders
+RewriteCond %{REQUEST_URI} !^/careerjobs/temp_extract_.*
+
+# Your existing rewrite rules
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$ https://%{HTTP_HOST}/$1/$2?action=%1 [L,R=301,NE]
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$ https://%{HTTP_HOST}/$1/$2 [L,R=301,NE]
+
+
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)$  job_details.php?query_string=$1&action=%1 [L]
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)$  job_details.php?query_string=$1 [L]
+
+
+RewriteRule ^jobskill$ job_search_by_skill.php [L]
+RewriteRule ^jobskill/$ job_search_by_skill.php [L]
+
+#RewriteRule ^jobskill/([\+-.,0-9a-zA-zâ]*)-jobs$ job_search_by_skill.php?skill=$1  [L]
+RewriteRule ^jobskill/(.*)-jobs$ job_search_by_skill.php?skill=$1  [L]
+
+
+RewriteRule ^forum/([1-9][0-9]*)/([-.,0-9a-zA-z]*)\.html$ forum/forum_topics.php?forum_id=$1 [L]
+RewriteRule ^forum/([-.,0-9a-zA-z]*)_([1-9][0-9]*)\.html$ forum/topic_details.php?topic_id=$2 [L]
+RewriteRule ^mobile/([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$  mobile/job_details.php?query_string=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/$ job_search_by_location.php?country=$2  [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/$ job_search_by_location.php?action=search&state=$3  [L]

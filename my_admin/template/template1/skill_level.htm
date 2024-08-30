@@ -1,0 +1,73 @@
+{ADMIN_HEADER_HTML}
+{update_message}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->        
+<!-- Middle Starts -->
+  <td width="100%" valign="top">
+   <table border="0" width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+     <td>
+      <table border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td class="pageHeading">{HEADING_TITLE}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td valign="top">
+      <table border="0" width="100%" cellspacing="1" cellpadding="0" class="middle_table1">
+       <tr>
+        <td valign="top">
+         <table border="0" width="100%" cellspacing="0" cellpadding="4" class="middle_table2">
+          <tr class="dataTableHeadingRow">
+           <td class="dataTableHeadingContent">{TABLE_HEADING_EDUCATION_LEVEL_NAME}</td>
+           <td class="dataTableHeadingContent" align="right">{TABLE_HEADING_ACTION}&nbsp;</td>
+          </tr>
+          <!-- BEGIN skill_level -->
+          <tr{skill_level.row_selected}>
+           <td valign="top" class="dataTableContent">{skill_level.name}</td>
+           <td valign="top" class="dataTableContent" align="right">{skill_level.action}</td>
+          </tr>
+          <!-- END skill_level -->
+         </table>
+         <table border="0" width="100%" cellspacing="0" cellpadding="2" class="show_page">
+          <tr>
+           <td class="small">{count_rows}</td>
+           <td align="right" class="small">{no_of_pages}</td>
+          </tr>
+          <tr>
+           <td colspan="2" align="right">{new_button}</td>
+          </tr>
+         </table>
+   					</td>
+       </tr>
+      </table>
+     </td>
+<!-- Middle Ends -->
+<!-- Right Starts -->
+     <td width="{RIGHT_BOX_WIDTH}" valign="top">
+      <table border="0" width="{RIGHT_BOX_WIDTH}" cellspacing="0" cellpadding="0">
+       <tr>
+        <td valign="top">{ADMIN_RIGHT_HTML}</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}
